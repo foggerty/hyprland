@@ -27,7 +27,7 @@ Global {
 Plugin {
   type=menu
   Config {
-    image=/usr/share/lxpanel/images/window-manager.png
+    image=/usr/share/lxpanel/images/file-manager.png
     system {
     }
     separator {
@@ -41,16 +41,6 @@ Plugin {
       image=gnome-logout
       command=logout
     }
-  }
-}
-Plugin {
-  type=monitors
-  Config {
-    DisplayCPU=1
-    DisplayRAM=1
-    CPUColor=#0000FF
-    RAMColor=#FF0000
-    Action=/bin/bash htop
   }
 }
 Plugin {

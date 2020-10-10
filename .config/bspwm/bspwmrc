@@ -51,7 +51,6 @@ run light-locker
 run blueman-applet &
 run cbatticon &
 run nm-applet &
-run albert & # TODO - find a replacement
 lxpanel &
 
 

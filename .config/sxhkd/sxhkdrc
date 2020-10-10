@@ -19,11 +19,15 @@ XF86MonBrightnessUp
 
 # program launcher
 super + alt + space
-      albert toggle
+      gmrun
 
 # terminal emulator
 super + Return
       xfce4-terminal
+
+# File Manager - Thunar
+super + shift + f
+      thunar
 
 # Firefox
 super + shift + b
