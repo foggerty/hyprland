@@ -1,13 +1,5 @@
 #! /bin/sh
 
-## run (only once) processes which spawn with the same name
-function run {
-   if (command -v $1 && ! pgrep $1); then
-     $@&
-   fi
-}
-
-
 # Run sxhkd - used to handle keypress events
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -45,14 +37,10 @@ xinput --set-prop "DELL08AF:00 06CB:76AF Touchpad" "libinput Middle Emulation En
 
 
 # Helper apps (i.e. make this an actual desktop)
-run nitrogen --restore
-run picom -b --experimental-backends
-run light-locker
-run blueman-applet &
-run cbatticon &
-run nm-applet &
+nitrogen --restore
+picom -b --experimental-backends
+blueman-applet &
+xfce4-power-manager
 lxpanel &
-
-
-# This gets ingnored....FARK
-bspc config top_padding 0
+pa-applet &
+light-locker &

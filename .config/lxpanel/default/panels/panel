@@ -6,12 +6,12 @@ Global {
   allign=left
   margin=0
   widthtype=request
-  width=100
+  width=11
   height=31
   transparent=1
   tintcolor=#585858
   alpha=255
-  setdocktype=0
+  setdocktype=1
   setpartialstrut=0
   usefontcolor=1
   fontcolor=#ffffff
@@ -44,12 +44,22 @@ Plugin {
   }
 }
 Plugin {
-  type=tray
+  type=space
   Config {
+    Size=6
+  }
+  expand=1
+}
+Plugin {
+  type=launchbar
+  Config {
+    Button {
+      id=iwgtk.desktop
+    }
   }
 }
 Plugin {
-  type=volume
+  type=tray
   Config {
   }
 }
@@ -61,5 +71,6 @@ Plugin {
     BoldFont=0
     IconOnly=0
     CenterText=0
+    Action=touch
   }
 }
