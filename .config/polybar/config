@@ -25,20 +25,20 @@ font-0 = "Cantarell:size=12;2"
 type = internal/date
 date = %a %d %b
 time = %H:%M
-label = %date% | %time%
+label = %date%  -  %time%
 format = <label>
 
 [module/cpu]
 type = internal/cpu
 interval = .5
 format = <label>
-label = CPU: %percentage%%
+label = cpu: %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = .5
 format = <label>
-label = RAM: %percentage_used%%
+label = ram: %percentage_used%%
 
 [module/net]
 type = custom/script
