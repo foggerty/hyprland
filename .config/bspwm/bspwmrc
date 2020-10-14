@@ -10,7 +10,7 @@ bspc monitor -d I II III IV V VI
 
 # Configure gloabl settings
 bspc config border_width          2
-bspc config window_gap            16
+bspc config window_gap            12
 bspc config split_ratio           0.52
 bspc config borderless_monocle    false
 bspc config gapless_monocle       false
@@ -21,11 +21,9 @@ bspc config focus_follows_pointer true
 # xprop | grep WM_CLASS and then click on the window.
 bspc rule -a Emacs state=tiled
 bspc rule -a firefox desktop='^5'
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
+
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
 
 
 # Keyboard/mouse/trackpad settings
@@ -39,8 +37,12 @@ xinput --set-prop "DELL08AF:00 06CB:76AF Touchpad" "libinput Middle Emulation En
 # Helper apps (i.e. make this an actual desktop)
 nitrogen --restore
 picom -b --experimental-backends
-blueman-applet &
-xfce4-power-manager
-lxpanel &
-pa-applet &
 light-locker &
+kupfer --no-splash &
+
+
+# Panel, notifications and systray apps
+polybar bar &
+volumeicon &
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+xfce4-power-manager

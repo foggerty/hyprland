@@ -18,8 +18,8 @@ XF86MonBrightnessUp
 # Applications
 
 # program launcher
-super + alt + space
-      gmrun
+#super + space
+#      kupfer
 
 # terminal emulator
 super + Return
