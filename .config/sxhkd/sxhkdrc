@@ -99,16 +99,11 @@ super + bracket{left,right}
 super + {grave,Tab}
       bspc {node,desktop} -f last
 
-# focus the older or newer node in the focus history
-super + {o,i}
-      bspc wm -h off; \
-      bspc node {older,newer} -f; \
-      bspc wm -h on
-
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
       bspc {desktop -f,node -d} '^{1-9,10}'
 
+# increade/decrease z-level?
 
 
 ################################################################################
@@ -116,15 +111,15 @@ super + {_,shift + }{1-9,0}
 
 # preselect the direction
 super + ctrl + {Left,Down,Up,Right}
-      bspc node -p {west,south,north,east}
+      bspc node --presel-dir {west,south,north,east}
 
 # preselect the ratio
 super + ctrl + {1-9}
-      bspc node -o 0.{1-9}
+      bspc node --presel-ratio 0.{1-9}
 
 # cancel the preselection for the focused node
 super + ctrl + space
-      bspc node -p cancel
+      bspc node --presel-dir cancel
 
 # cancel the preselection for the focused desktop
 super + ctrl + shift + space
@@ -137,12 +132,15 @@ super + ctrl + shift + space
 
 # expand a window by moving one of its side outward
 super + alt + {Left,Down,Up,Right}
-      bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+      bspc node --resize {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {Left,Down,Up,Right}
-      bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+      bspc node --resize {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
-super +ctrl + alt + {Left,Down,Up,Right}
-      bspc node -v {-20 0,0 20,0 -20,20 0}
+super + ctrl + alt + {Left,Down,Up,Right}
+      bspc node --move {-20 0,0 20,0 -20,20 0}
+
+super + ctrl + {o,p}
+      bspc node --circulate {forward,backward}
