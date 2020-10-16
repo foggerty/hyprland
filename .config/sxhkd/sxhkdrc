@@ -18,8 +18,8 @@ XF86MonBrightnessUp
 # Applications
 
 # program launcher
-#super + space
-#      kupfer
+super + space
+       rofi -show run
 
 # terminal emulator
 super + Return

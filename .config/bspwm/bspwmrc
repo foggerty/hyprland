@@ -20,10 +20,6 @@ bspc config focus_follows_pointer true
 # To find the name (requires XDG name) use:
 # xprop | grep WM_CLASS and then click on the window.
 bspc rule -a Emacs state=tiled
-bspc rule -a firefox desktop='^5'
-
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
 
 
 # Keyboard/mouse/trackpad settings
@@ -38,11 +34,11 @@ xinput --set-prop "DELL08AF:00 06CB:76AF Touchpad" "libinput Middle Emulation En
 nitrogen --restore
 picom -b --experimental-backends
 light-locker &
-kupfer --no-splash &
 
 
 # Panel, notifications and systray apps
 polybar bar &
-volumeicon &
+pa-applet &
+blueman-applet & # in 'blueman' package
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 xfce4-power-manager

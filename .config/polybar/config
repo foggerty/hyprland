@@ -9,7 +9,7 @@ background = ${colors.back}
 border-size = 1
 border-color = #aaaaaa
 width = 99%
-height = 3.5%
+height = 3%
 offset-x = .5%
 offset-y = .5%
 padding = 2
@@ -20,6 +20,7 @@ tray-maxize= = 32
 tray-background =
 ; note: the ';2' at the end is vertical offset
 font-0 = "Cantarell:size=12;2"
+wm-restack = bspwm
 
 [module/date]
 type = internal/date
