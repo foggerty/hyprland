@@ -142,5 +142,13 @@ super + alt + shift + {Left,Down,Up,Right}
 super + ctrl + alt + {Left,Down,Up,Right}
       bspc node --move {-20 0,0 20,0 -20,20 0}
 
+## Note on path selectors: '@/' below is shorthand for @focused:/thing.
+## The man page is shite at explaining things like this.
+
+# Rotate nodes around currently selected
 super + ctrl + {o,p}
-      bspc node --circulate {forward,backward}
+      bspc node @/ --rotate {270,90}
+
+# 'Balance' nodes.  Not sure how it figures ratios out though...
+super + ctrl + b
+      bspc node @/ -B
