@@ -23,7 +23,7 @@ super + space
 
 # terminal emulator
 super + Return
-      xfce4-terminal
+      sakura
 
 # File Manager - Thunar
 super + shift + f
@@ -36,6 +36,13 @@ super + shift + b
 # Emacs
 super + e
       emacsclient -c
+
+# Screenshot - cannot figure out notation to allow for one command here...
+super + shift + s
+      scrot '%Y%m%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Pictures/shots/'
+
+super + shift + ctrl + s
+      scrot '%Y%m%d_%H:%M:%S_$wx$h.png' -b -u -e 'mv $f ~/Pictures/shots/'
 
 
 ################################################################################
@@ -142,7 +149,8 @@ super + alt + shift + {Left,Down,Up,Right}
 super + ctrl + alt + {Left,Down,Up,Right}
       bspc node --move {-20 0,0 20,0 -20,20 0}
 
-## Note on path selectors: '@/' below is shorthand for @focused:/thing.
+## Note on path selectors: '@/' below is shorthand for @focused:/<JUMP_IMSTRUCTION>.
+## - @[DESKTOP_SELECTOR:][[/]JUMP](/JUMP)*
 ## The man page is shite at explaining things like this.
 
 # Rotate nodes around currently selected

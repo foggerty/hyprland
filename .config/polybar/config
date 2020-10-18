@@ -1,5 +1,5 @@
 [colors]
-back = #991a2b3c
+back = #bb1a2b3c
 
 [bar/bar]
 modules-left = memory cpu
@@ -8,10 +8,10 @@ modules-right = net
 background = ${colors.back}
 border-size = 1
 border-color = #aaaaaa
-width = 98.8%
-height = 3%
-offset-x = .5%
-offset-y = .5%
+width = 1896
+height = 3.2%
+offset-x = 12
+offset-y = 12
 padding = 2
 module-margin = 2
 locale = en_NZ.UTF-8
