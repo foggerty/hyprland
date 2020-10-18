@@ -36,9 +36,15 @@ xinput --set-prop "DELL08AF:00 06CB:76AF Touchpad" "libinput Tapping Drag Enable
 xinput --set-prop "DELL08AF:00 06CB:76AF Touchpad" "libinput Middle Emulation Enabled" 1
 
 
+# Sets wallpaper, and updates terminal themes to match.
+# Note: in the 'python-pywal' package
+wal -i ~/Pictures/Wallpapers/current
+#nitrogen --current
+
+
 # Helper apps (i.e. make this an actual desktop)
-nitrogen --restore
 picom -b --experimental-backends
+wal -i ~/Pictures/Wallpapers/current
 light-locker &
 
 
