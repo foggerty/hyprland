@@ -12,7 +12,7 @@ bspc monitor -d I II III IV V VI
 bspc config removal_adjustment     true
 bspc config border_width           2
 bspc config window_gap             12
-bspc config split_ratio            0.33
+bspc config split_ratio            0.5
 bspc config focus_follows_pointer  true
 bspc config automatic_scheme       longest_side
 bspc config borderless_monocle     false
@@ -38,6 +38,8 @@ xinput --set-prop "DELL08AF:00 06CB:76AF Touchpad" "libinput Middle Emulation En
 
 # Sets wallpaper, and updates terminal themes to match.
 # Note: in the 'python-pywal' package
+# Call before other apps, as some things (like rofi) get their theme from wal
+# (in ~.cache/wal/colors-...)
 wal -i ~/Pictures/Wallpapers/current
 bspc config normal_border_color "$color1"
 bspc config active_border_color "$color2"
@@ -53,6 +55,7 @@ light-locker &
 # Panel, notifications and systray apps
 polybar bar &
 pa-applet &
+nm-applet &
 blueman-applet & # in 'blueman' package
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 xfce4-power-manager
