@@ -4,7 +4,7 @@ back = #bb1a2b3c
 [bar/bar]
 modules-left = memory cpu
 modules-center = date
-modules-right =
+modules-right = iwd
 background = ${colors.back}
 border-size = 1
 border-color = #aaaaaa
@@ -40,16 +40,7 @@ interval = .5
 format = <label>
 label = ram: %percentage_used%%
 
-; This is for iwd, which I'm not currently using (cos it keeps breaking).
-; Note: that may be because iwd also uses an internal dhcpd?  Look into it at some point.
 [module/iwd]
 type = custom/script
 exec = iwctl station wlan0 show | head -n 6 | tail -n 1 | awk '{print $2}'
 click-left = pkill iwgtk || iwgtk &
-
-[module/wlan]
-type = internal/network
-interface = wlan0
-interval = 3
-label-connected = "connected"
-label-disconnected = "disconnected"

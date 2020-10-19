@@ -26,6 +26,7 @@ bspc config single_monocle         true
 # To find the name (requires XDG name) use:
 # xprop | grep WM_CLASS and then click on the window.
 bspc rule -a Emacs state=tiled
+bspc rule -a Iwgtk state=floating
 
 
 # Keyboard/mouse/trackpad settings
