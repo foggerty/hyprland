@@ -1,0 +1,5 @@
+*
+!.config/bspwm/**/*
+!.config/sxhkd/**/*
+!.config/picom/**/*
+!.config/lxpanel/**/*

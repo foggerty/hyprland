@@ -4,7 +4,7 @@ back = #bb1a2b3c
 [bar/bar]
 modules-left = memory cpu
 modules-center = date
-modules-right = iwd
+modules-right =
 background = ${colors.back}
 border-size = 1
 border-color = #aaaaaa
