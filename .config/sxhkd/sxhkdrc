@@ -7,11 +7,13 @@
 super + Escape
       pkill -USR1 -x sxhkd
 
-XF86MonBrightnessDown
-      brightnessctl set 10%-
+# Arch mapped the keycodes badly, I'm too lazy to set things up to load
+# a tweaked version at each xorg start :-)
+XF86Search
+   brightnessctl set 10%-
 
-XF86MonBrightnessUp
-      brightnessctl set +10%
+XF86Messenger
+   brightnessctl set +10%
 
 
 ################################################################################
@@ -19,7 +21,7 @@ XF86MonBrightnessUp
 
 # program launcher
 super + space
-       rofi -show run
+      rofi -show run
 
 # terminal emulator
 super + Return
@@ -43,7 +45,7 @@ super + shift + s
 
 super + shift + ctrl + s
       scrot '%Y%m%d_%H:%M:%S_$wx$h.png' -b -u -e 'mv $f ~/Pictures/shots/'
-
+ 
 
 ################################################################################
 # bspwm hotkeys

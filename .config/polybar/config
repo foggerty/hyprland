@@ -19,7 +19,7 @@ tray-position = right
 tray-maxize= = 32
 ; note: the ';2' at the end is vertical offset
 font-0 = "Cantarell:size=12;2"
-wm-restack = bspwm
+wm-restack = i3
 
 [module/date]
 type = internal/date
