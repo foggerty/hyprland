@@ -12,6 +12,7 @@ super + Escape
 XF86Search
    brightnessctl set 10%-
 
+# note - install brightnessctl first!
 XF86Messenger
    brightnessctl set +10%
 
