@@ -16,6 +16,9 @@ XF86Search
 XF86Messenger
    brightnessctl set +10%
 
+# Lock the screeb
+super + l
+      xflock4
 
 ################################################################################
 # Applications
@@ -41,10 +44,10 @@ super + shift + e
       emacsclient -c
 
 # Screenshot - cannot figure out notation to allow for one command here...
-super + shift + s
+super + shift + s  # Desktop
       scrot '%Y%m%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Pictures/shots/'
 
-super + shift + ctrl + s
+super + shift + ctrl + s # Active Window
       scrot '%Y%m%d_%H:%M:%S_$wx$h.png' -b -u -e 'mv $f ~/Pictures/shots/'
 
 
