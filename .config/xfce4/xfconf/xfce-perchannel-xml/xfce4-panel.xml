@@ -23,13 +23,11 @@
         <value type="int" value="5"/>
         <value type="int" value="19"/>
         <value type="int" value="21"/>
-        <value type="int" value="15"/>
+        <value type="int" value="6"/>
         <value type="int" value="8"/>
         <value type="int" value="10"/>
         <value type="int" value="25"/>
         <value type="int" value="11"/>
-        <value type="int" value="6"/>
-        <value type="int" value="24"/>
         <value type="int" value="23"/>
       </property>
       <property name="background-style" type="uint" value="1"/>
@@ -37,7 +35,7 @@
         <value type="double" value="0.000000"/>
         <value type="double" value="0.000000"/>
         <value type="double" value="0.000000"/>
-        <value type="double" value="0.417857"/>
+        <value type="double" value="0.520000"/>
       </property>
       <property name="mode" type="uint" value="0"/>
       <property name="disable-struts" type="bool" value="false"/>
@@ -94,7 +92,7 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="firefox.instance1036;firefox.instance2897;firefox.instance2966;firefox.instance3478;firefox.instance4486;firefox.instance771;firefox.instance774;firefox.instance912"/>
+      <property name="mpris-players" type="string" value="firefox.instance1036;firefox.instance2897;firefox.instance2966;firefox.instance3019;firefox.instance3478;firefox.instance4486;firefox.instance702;firefox.instance771;firefox.instance774;firefox.instance788;firefox.instance912"/>
     </property>
     <property name="plugin-10" type="string" value="notification-plugin"/>
     <property name="plugin-11" type="string" value="separator">
@@ -104,10 +102,6 @@
       <property name="mode" type="uint" value="2"/>
     </property>
     <property name="plugin-7" type="string" value="separator">
-      <property name="style" type="uint" value="0"/>
-      <property name="expand" type="bool" value="false"/>
-    </property>
-    <property name="plugin-15" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
       <property name="expand" type="bool" value="false"/>
     </property>
@@ -154,10 +148,6 @@
         <property name="color" type="string" value="rgba(0,0,0,0)"/>
         <property name="use-color" type="bool" value="false"/>
       </property>
-    </property>
-    <property name="plugin-24" type="string" value="separator">
-      <property name="style" type="uint" value="0"/>
-      <property name="expand" type="bool" value="false"/>
     </property>
     <property name="plugin-23" type="string" value="separator">
       <property name="style" type="uint" value="0"/>

@@ -5,7 +5,7 @@
   <property name="notify-location" type="uint" value="3"/>
   <property name="log-level" type="uint" value="0"/>
   <property name="log-level-apps" type="uint" value="0"/>
-  <property name="theme" type="string" value="Default"/>
+  <property name="theme" type="string" value="Bright"/>
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
       <value type="string" value="application.iwgtk"/>
@@ -18,11 +18,11 @@
       <value type="string" value="thunar"/>
       <value type="string" value="thunar-volman"/>
       <value type="string" value="Volume Icon"/>
+      <value type="string" value="Xfce volume control"/>
       <value type="string" value="Xfce4-notifyd settings"/>
       <value type="string" value="xfce4-power-manager"/>
     </property>
     <property name="muted_applications" type="array">
-      <value type="string" value="pa-applet"/>
     </property>
   </property>
   <property name="initial-opacity" type="double" value="0.760000"/>
