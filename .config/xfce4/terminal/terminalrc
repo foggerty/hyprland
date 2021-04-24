@@ -29,7 +29,6 @@ MiscShowUnsafePasteDialog=TRUE
 ShortcutsNoMenukey=TRUE
 ShortcutsNoMnemonics=TRUE
 ShortcutsNoHelpkey=TRUE
-FontName=Source Code Pro 11
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=0.780000
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
@@ -43,4 +42,5 @@ ColorBold=#93a1a1
 ColorBoldUseDefault=FALSE
 TabActivityColor=#dc322f
 ScrollingOnOutput=FALSE
+FontName=Monospace 11
 

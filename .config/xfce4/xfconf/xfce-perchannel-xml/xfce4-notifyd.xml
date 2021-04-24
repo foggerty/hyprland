@@ -5,7 +5,7 @@
   <property name="notify-location" type="uint" value="3"/>
   <property name="log-level" type="uint" value="0"/>
   <property name="log-level-apps" type="uint" value="0"/>
-  <property name="theme" type="string" value="Bright"/>
+  <property name="theme" type="string" value="Smoke"/>
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
       <value type="string" value="application.iwgtk"/>
@@ -13,6 +13,7 @@
       <value type="string" value="Firefox"/>
       <value type="string" value="kupfer"/>
       <value type="string" value="nm-applet"/>
+      <value type="string" value="notify-send"/>
       <value type="string" value="org.kde.ktorrent"/>
       <value type="string" value="pa-applet"/>
       <value type="string" value="thunar"/>
@@ -28,5 +29,5 @@
   <property name="initial-opacity" type="double" value="0.760000"/>
   <property name="do-slideout" type="bool" value="true"/>
   <property name="do-fadeout" type="bool" value="true"/>
-  <property name="expire-timeout" type="int" value="3"/>
+  <property name="expire-timeout" type="int" value="2"/>
 </channel>

@@ -8,7 +8,7 @@
     <property name="sleep-button-action" type="uint" value="3"/>
     <property name="battery-button-action" type="uint" value="3"/>
     <property name="hibernate-button-action" type="uint" value="3"/>
-    <property name="show-tray-icon" type="bool" value="false"/>
+    <property name="show-tray-icon" type="bool" value="true"/>
     <property name="presentation-mode" type="bool" value="false"/>
     <property name="general-notification" type="bool" value="true"/>
     <property name="handle-brightness-keys" type="bool" value="true"/>

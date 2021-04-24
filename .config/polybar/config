@@ -29,7 +29,7 @@ type = internal/bspwm
 label-empty-foreground = ${colors.gray}
 label-occupied-foreground = ${colors.gray}
 label-focused-foreground = ${colors.white}
-label-separator = "   "
+label-separator = " "
 
 [module/date]
 type = internal/date

@@ -1,3 +1,10 @@
+# Tro to keep comvention:
+#  Supper + x           Update windows (full screen etc.)
+#  Supter + shift + x   Launch applications
+#  Super + Ctrl + x     Position windows (with shift as modifier)
+#  Super + alt + x      Resize windows (with shift as modifier)
+
+
 ################################################################################
 # bspwm hotkeys
 
@@ -18,18 +25,10 @@ super + {_,shift + }w
 super + Escape
       pkill -USR1 -x sxhkd
 
-# Arch mapped the keycodes badly, I'm too lazy to set things up to load
-# a tweaked version at each xorg start :-)
-XF86Search
-   brightnessctl set 10%-
-
-# note - install brightnessctl first!
-XF86Messenger
-   brightnessctl set +10%
-
 # Lock the screen
 super + l
       xflock4
+
 
 ################################################################################
 # Applications
@@ -40,7 +39,7 @@ super + space
 
 # terminal emulator
 super + Return
-      sakura
+      xfce4-terminal
 
 # File Manager - Thunar
 super + shift + f
