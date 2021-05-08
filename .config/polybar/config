@@ -1,5 +1,5 @@
 [colors]
-back = #44000000
+back = #22000000
 border = #aaaaaa
 gray = #888888
 white = #ffffff
@@ -9,6 +9,7 @@ modules-left = memory cpu
 modules-center = date
 modules-right = bspwm
 background = ${colors.back}
+tray-background = ${colors.back}
 border-size = 1
 border-color = ${colors.border}
 width = 1896

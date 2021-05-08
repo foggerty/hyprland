@@ -30,6 +30,7 @@ super + l
       xflock4
 
 
+
 ################################################################################
 # Applications
 
@@ -40,6 +41,10 @@ super + space
 # terminal emulator
 super + Return
       xfce4-terminal
+
+# Calculator
+super + shift + c
+      galculator
 
 # File Manager - Thunar
 super + shift + f

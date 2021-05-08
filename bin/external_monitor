@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+# Udev script to enable/disable external monitor
+#
+# Udev rule:
+#      ACTION=="change", SUBSYSTEM=="drm", HOTPLUG=="1", RUN+="/home/matt/bin/external_monitor"
+
+# Gnome handles this for us
+
+pgrep gnome-session && exit
+
+monitors=$(mons | head -n 1 | cut -d " " -f 2)
+
+# note to self, using [[ blah ]] coreces to integer in BASH.  Still
+# not figured out how to do this with sh.
+
+[[ monitors -eq 1 ]] && mons -o
+[[ monitors -eq 2 ]] && mons -e right
