@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+notify-send HERE
+
 # Udev script to enable/disable external monitor
 #
 # Udev rule:

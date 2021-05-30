@@ -40,7 +40,7 @@ super + space
 
 # terminal emulator
 super + Return
-      xfce4-terminal
+      alacritty
 
 # Calculator
 super + shift + c

@@ -1,0 +1,14 @@
+font:
+  normal:
+    family: monospace
+  size: 6.5
+
+background_opacity: 0.8
+
+#draw_bold_text_with_bright_colors: false
+
+cursor:
+  style:
+    shape: Beam
+    blinking: On
+    blink_interval: 750
