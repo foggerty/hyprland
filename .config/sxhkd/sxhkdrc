@@ -1,25 +1,72 @@
-# Tro to keep comvention:
+# Try to keep convention:
 #  Supper + x           Update windows (full screen etc.)
 #  Supter + shift + x   Launch applications
 #  Super + Ctrl + x     Position windows (with shift as modifier)
 #  Super + alt + x      Resize windows (with shift as modifier)
 
+# BSPWM node selection:
+#
+# bspc [node/desktop/monitor] [selection] [action]
+#
+# DIR (north/south/east/west)
+# CYCLE_DIR (next/prev)
+# STATE: tiled/pseudo_tiled/floating/fullscreen
+# FLAG: hidden/sticky/private/locked/marked/urgent
+# LAYER: below/normal/above
+# SPLIT_TYPE: horizontal/verticalE
+# JUMP: first/second/brother/patent/DIR
+#
+# SELECTION: <REFERENCE#>DESCRIPTOR<.MODIFIER>*
+#
+# DESCRIPTOR: DIR, CYCLE_DIR, PATH, focused, biggest, pointed
+#             smallest, first_ancestor, older, newer, <node_id>
+#
+# MODIFIERS: (all can be negated with !) focused, active, leaf,
+#            window, tiled, pseudo_tiled, floating, fullscreen,
+#            automatic, same_class, descendant_of, ancestor_of,
+#            hidden, sticky, private, locked, marked, urgent,
+#            below, normal, above, horizontal, vertical
+#
+# NODE COMMANDS: --focus, --activate, --to-desktop, --to-node NODE_SELECTOR
+#           --swap NODE_SEL, --presel-dir <~>DIR, --presel-ratio, --move x y,
+#           --resize, --ratio, --rotate, --flip horizontal?vertical, --equalize,
+#           --balance, --state STATE, --flag FLAG, --layer LAYER, --close, --kill
+#
+# To quey, use bspc query QUERY_COMMAND QUERY_OPTION
+#
+# QUERY_COMMANDS: --nodes, --desktops, --monitors, --tree
+# QERY_OPTIONS: --node NODE_SELECTOR, --names
+#
+# Rules: bspc rule RULE_COMMAND
+# RUKE_COMMAND: --add, --delete, --list
+#
+# Examples:
+#     Switch focus from focused to node to its right:
+#            bspc focused#east --focus
+#     Switch focus to biggest node:
+#            bspc node biggest --focus
+#     Swap biggest and smallest nodes:
+#            bspc node biggest --swap smallest
+
+
 
 ################################################################################
 # bspwm hotkeys
+################################################################################
 
 # quit/restart bspwm
 super + alt + {q,r}
-      bspc {quit,wm -r}
+      bspc {quit,wm --restart}
 
 # close and kill
 super + {_,shift + }w
-      bspc node -{c,k}
+      bspc node {--close,--kill}
 
 
 
 ################################################################################
 # wm independent hotkeys
+################################################################################
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -33,6 +80,7 @@ super + l
 
 ################################################################################
 # Applications
+################################################################################
 
 # program launcher
 super + space
@@ -70,19 +118,21 @@ super + shift + ctrl + s # Active Window
 
 ################################################################################
 # state/flags
+################################################################################
 
 # set the window state
 super + {t,shift + t,s,f}
-      bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+      bspc node focused --state {tiled,pseudo_tiled,floating,fullscreen}
 
-# set the node flags
-super + ctrl + {m,x,y,z}
-      bspc node -g {marked,locked,sticky,private}
+# Mark current node
+super + ctrl + m
+      bspc node any.marked --flag marked=off ; bspc node --flag marked=on
 
 
 
 ################################################################################
 # preselect
+################################################################################
 
 # preselect the direction
 super + ctrl + {Left,Down,Up,Right}
@@ -104,21 +154,22 @@ super + ctrl + shift + space
 
 ################################################################################
 # focus/swap/layout
+################################################################################
 
 super + ctrl + s
-      bspc node -s newest.marked.local
+      bspc node focused --swap newest.marked.local
 
 # alternate between the tiled and monocle layout
 super + m
       bspc desktop -l next
 
 # move the newest marked node to the newest preselected node
-super + y
-      bspc node newest.marked.local -n newest.!automatic.local
+super + ctrl + y
+      bspc node --to-node last.!automatic
 
 # swap the current node and the biggest window
-super + g
-      bspc node -s biggest.window
+super + {g, shift + g}
+      bspc node --swap {biggest,smallest}.window
 
 # move the node in the given direction
 super + {_,shift + }{Left,Down,Up,Right}
@@ -146,7 +197,7 @@ super + {_,shift + }{1-9,0}
 
 # Rotate nodes around currently selected
 super + ctrl + {o,p}
-      bspc node @/ --rotate {270,90}
+      bspc node @/ --circulate {forward,backward}
 
 # 'Balance' nodes.  Not sure how it figures ratios out though...
 super + ctrl + b
@@ -156,6 +207,7 @@ super + ctrl + b
 
 ################################################################################
 # move/resize
+################################################################################
 
 # expand a window by moving one of its side outward
 super + alt + {Left,Down,Up,Right}
