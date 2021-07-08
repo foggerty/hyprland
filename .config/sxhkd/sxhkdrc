@@ -165,7 +165,7 @@ super + m
 
 # move the newest marked node to the newest preselected node
 super + ctrl + y
-      bspc node --to-node last.!automatic
+      bspc node newest.marked --to-node last.!automatic
 
 # swap the current node and the biggest window
 super + {g, shift + g}
