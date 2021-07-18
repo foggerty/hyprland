@@ -74,7 +74,7 @@ super + Escape
 
 # Lock the screen
 super + l
-      xflock4
+      light-locker-command -l
 
 
 
