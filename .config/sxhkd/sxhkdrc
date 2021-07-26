@@ -76,6 +76,11 @@ super + Escape
 super + l
       light-locker-command -l
 
+XF86MonBrightnessDown
+      brightnessctl set 10%-
+
+XF86MonBrightnessUp
+      brightnessctl set +10%
 
 
 ################################################################################
