@@ -89,7 +89,7 @@ XF86MonBrightnessUp
 
 # program launcher
 super + space
-      rofi -show run
+      rofi -show run -show-icons
 
 # terminal emulator
 super + Return

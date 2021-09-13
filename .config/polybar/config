@@ -5,7 +5,7 @@ gray = #888888
 white = #ffffff
 
 [bar/bar]
-modules-left = memory cpu
+modules-left = memory cpu temp
 modules-center = date
 modules-right = bspwm battery
 background = ${colors.back}
@@ -22,8 +22,10 @@ locale = en_NZ.UTF-8
 tray-position = right
 tray-maxize= = 32
 ; note: the ';2' at the end is vertical offset
-font-0 = "Cantarell:size=11;2"
-font-1 = "Cantarell:size=8;2"
+#font-0 = "Cantarell:size=11;2"
+#font-1 = "Cantarell:size=8;2"
+font-0 = "Source Code Pro Narrow:size=11;2"
+font-1 = "Source Code Pro Narrow:size=8;2"
 font-2 = Font Awesome 5 Free:pixelsize=12;2
 font-3 = Font Awesome 5 Free Solid:pixelsize=12;2
 wm-restack = bspwm
@@ -44,13 +46,13 @@ format = <label>
 
 [module/cpu]
 type = internal/cpu
-interval = .5
+interval = .25
 format = <label>
 label = cpu: %percentage%%
 
 [module/memory]
 type = internal/memory
-interval = .5
+interval = .25
 format = <label>
 label = ram: %percentage_used%%
 
@@ -82,3 +84,11 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
+
+[module/temp]
+type = internal/temperature
+interval = .25
+thermalzone = 0
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input
+base-temperature = 20
+warn-temperature = 60
