@@ -1,10 +1,21 @@
 {
     "layer": "top",
-
-    "modules-left": ["cpu", "memory"],
+    "spacing": 30,
+    "height": 35,
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-top": 6,
+    "modules-left": ["custom/space", "cpu", "custom/space", "memory"],
     "modules-center": ["clock"],
-    "modules-right": ["battery", "network", "pulseaudio", "tray"],
+    "modules-right": ["battery", "custom/space",
+                      "network", "custom/space",
+                      "pulseaudio", "custom/space",
+                      "tray", "custom/space"],
 
+
+    "custom/space": {
+        "format": "\t"
+    },
 
     "battery": {
         "format": "{capacity}% {icon}",
@@ -18,7 +29,7 @@
 
     "tray": {
         "icon-size": 21,
-        "spacing": 10
+        "spacing": 30
     },
 
 
@@ -56,13 +67,13 @@
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{essid} ({signalStrength}%)  ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click-right": "nm-connection-editor"
+        "on-click-right": "foot bash -i -c nmtui"
     },
 
 
