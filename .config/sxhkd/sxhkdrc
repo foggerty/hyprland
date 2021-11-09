@@ -89,7 +89,7 @@ XF86MonBrightnessUp
 
 # program launcher
 super + space
-      rofi -show run -show-icons
+      rofi -show-icons -show run -config ~/.cache/wal/colors-rofi-dark.rasi
 
 # terminal emulator
 super + Return
@@ -109,7 +109,7 @@ super + shift + b
 
 # Emacs
 super + shift + e
-      emacsclient -c
+      alacritty -e emacsclient -t
 
 # Screenshot - cannot figure out notation to allow for one command here...
 super + shift + s  # Desktop
@@ -189,7 +189,7 @@ super + bracket{left,right}
       bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
+super + {Tab}
       bspc {node,desktop} -f last
 
 # focus or send to the given desktop
