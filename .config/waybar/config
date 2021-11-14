@@ -5,12 +5,14 @@
     "margin-left": 10,
     "margin-right": 10,
     "margin-top": 6,
-    "modules-left": ["custom/space", "cpu", "custom/space", "memory"],
+    "modules-left": ["custom/space", "cpu",
+                     "custom/space", "memory",
+                     "custom/space"],
     "modules-center": ["clock"],
-    "modules-right": ["battery", "custom/space",
-                      "network", "custom/space",
+    "modules-right": ["battery",    "custom/space",
+                      "network",    "custom/space",
                       "pulseaudio", "custom/space",
-                      "tray", "custom/space"],
+                      "tray",       "custom/space"],
 
 
     "custom/space": {
