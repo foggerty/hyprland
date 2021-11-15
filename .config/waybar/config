@@ -7,7 +7,7 @@
     "margin-top": 6,
     "modules-left": ["custom/space", "cpu",
                      "custom/space", "memory",
-                     "custom/space"],
+                     "custom/space", "sway/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["battery",    "custom/space",
                       "network",    "custom/space",
@@ -82,6 +82,10 @@
     "river/tags": {
         "num-tags": 4,
         "tag-labels": ["1", "2", "3", "4"]
-    }
+    },
+
+    "sway/workspaces": {
+        "format": "{name}"
+    },
 
 }

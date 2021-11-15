@@ -4,7 +4,11 @@ window#waybar {
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 15px;
-    color: mix(@theme_text_color, #C0C0C0, 0.25);
+    /* color: mix(@theme_text_color, #C0C0C0, 0.25); */
+}
+
+#workspaces button.focused {
+    font-weight: bold;
 }
 
 #cpu

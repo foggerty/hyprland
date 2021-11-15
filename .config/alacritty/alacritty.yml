@@ -10,7 +10,7 @@ background_opacity: 0.8
 #draw_bold_text_with_bright_colors: false
 
 mouse:
-  hide_when_typing: on
+  hide_when_typing: true
 
 cursor:
   style:
