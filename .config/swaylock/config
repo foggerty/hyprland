@@ -1,0 +1,7 @@
+image=~/Pictures/Wallpapers/AngryMarines.jpg
+
+clock
+timestr=%R
+datestr=%a, %e of %B
+
+fade-in=0.2
