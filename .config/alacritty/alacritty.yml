@@ -1,13 +1,21 @@
 live_config_reload: true
 
+env:
+  TERM: xterm
+
 font:
   normal:
-    family: monospace
-  size: 10
+    family: "Source Code Pro"
+  size: 7
 
 background_opacity: 0.8
 
 #draw_bold_text_with_bright_colors: false
+
+window:
+  padding:
+    x: 6
+    y: 6
 
 mouse:
   hide_when_typing: true

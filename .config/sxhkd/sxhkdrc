@@ -55,7 +55,7 @@
 ################################################################################
 
 # quit/restart bspwm
-super + alt + {q,r}
+super + shift + {q,r}
       bspc {quit,wm --restart}
 
 # close and kill
@@ -101,7 +101,7 @@ super + shift + c
 
 # File Manager - Thunar
 super + shift + f
-      thunar
+      pcmanfm
 
 # Firefox
 super + shift + b
@@ -109,7 +109,7 @@ super + shift + b
 
 # Emacs
 super + shift + e
-      alacritty -e emacsclient -t
+      alacritty -e bash -i -c em
 
 # Screenshot - cannot figure out notation to allow for one command here...
 super + shift + s  # Desktop

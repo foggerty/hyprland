@@ -1,5 +1,5 @@
 [colors]
-back = #22000000
+back = #60000000
 border = #aaaaaa
 gray = #888888
 white = #ffffff
@@ -20,7 +20,7 @@ padding = 2
 module-margin = 2
 locale = en_NZ.UTF-8
 tray-position = right
-tray-maxize= = 32
+tray-maxize= = 64
 ; note: the ';2' at the end is vertical offset
 #font-0 = "Cantarell:size=11;2"
 #font-1 = "Cantarell:size=8;2"
