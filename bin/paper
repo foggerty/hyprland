@@ -1,0 +1,7 @@
+wal -i $1
+
+echo "Hit enter..."
+
+read
+
+wal -i ~/Pictures/Wallpapers/current

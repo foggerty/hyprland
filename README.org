@@ -1,0 +1,9 @@
+* BSPWM Config 'stuff'
+
+After installing the usual xorg and required drivers, install these via pacman:
+
+~bspwm xshkd polybar volumeicon alacritty python-pywal xfce4-notifyd light-locker lightdm rofi galculator pcmanfm firefox scrot~
+
+* Do To
+ - [ ] Add (compressed) icons
+ - [ ] Switch back to compton
