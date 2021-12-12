@@ -6,6 +6,6 @@ After installing the usual xorg and required drivers, install these via pacman:
 ~bspwm xshkd polybar volumeicon alacritty python-pywal xfce4-notifyd light-locker lightdm rofi gvfs gvfs-smb galculator pcmanfm firefox scrot xcompmgr lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings~
 
 * To do
- - [ ] Add (compressed) icons
- - [ ] Switch back to picom
  - [ ] Get libinput working so can swipe to change desktops
+ - [X] Add (compressed) icons and theme
+ - [X] Switch back to picom
