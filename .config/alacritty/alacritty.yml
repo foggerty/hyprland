@@ -6,13 +6,10 @@ env:
 font:
   normal:
     family: "Source Code Pro"
-  size: 11
-
-background_opacity: 0.8
-
-#draw_bold_text_with_bright_colors: false
+  size: 7
 
 window:
+  opacity: 0.8
   padding:
     x: 6
     y: 6
