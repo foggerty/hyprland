@@ -12,10 +12,8 @@ background = ${colors.back}
 tray-background = ${colors.back}
 border-size = 1
 border-color = ${colors.border}
- width = 1896  # Laptop (1920x1080)
-#width = 2536  # Desktop (2560x1440)
- height = 3.2%  # Laptop (1920x1080)
-#height = 2.5%  # Desktop (2560x1440)
+width = 99%  # Laptop (1920x1080)
+height = 3.2%  # Laptop (1920x1080)
 offset-x = 12
 offset-y = 12
 padding = 2
@@ -24,9 +22,8 @@ locale = en_NZ.UTF-8
 tray-position = right
 # note: the ';2' at the end is vertical offset
 font-0 = "Source Code Pro Narrow:size=11;2"
-font-1 = "Source Code Pro Narrow:size=8;2"
-font-2 = Font Awesome 5 Free:pixelsize=12;2
-font-3 = Font Awesome 5 Free Solid:pixelsize=12;2
+font-1 = Font Awesome 6 Free:pixelsize=11;2
+font-2 = Font Awesome 6 Free Solid:pixelsize=11;2
 wm-restack = bspwm
 
 [module/bspwm]
@@ -68,8 +65,8 @@ full-at = 100
 time-format = %H:%M
 label-charging = %percentage%%
 label-discharging = %percentage%% %time%
-label-charging-font = 2
-label-discharging-font = 2
+label-charging-font = 1
+label-discharging-font = 1
 format-full = <ramp-capacity>
 format-charging = <animation-charging>  <label-charging>
 format-discharging = <ramp-capacity>  <label-discharging>
