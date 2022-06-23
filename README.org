@@ -1,4 +1,4 @@
-* BSPWM Config 'stuff'
+* BSPWM Config 'stuff' for Arch.
 
 After installing the usual xorg and required drivers, install these via pacman:
 
@@ -6,6 +6,11 @@ After installing the usual xorg and required drivers, install these via pacman:
 ~bspwm xshkd polybar volumeicon alacritty python-pywal xfce4-notifyd light-locker lightdm rofi gvfs gvfs-smb galculator pcmanfm firefox scrot xcompmgr lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings~
 
 * To do
- - [ ] Get libinput working so can swipe to change desktops
- - [X] Add (compressed) icons and theme
- - [X] Switch back to picom
+ - [ ] Find the best wallpaper possible in the entirety of possibility.
+ - [ ] Find out how to make volume NOT muted at startup (it's a OS boot thing, not window manager thing).
+ - [ ] Firefox startup time is still awful after a reboot.
+ - [ ] Get libinput working so can swipe to change desktops.
+ - [X] Polybar should have a shadow.
+ - [X] Find out why Polybar's background isn't blurred.
+ - [X] Add (compressed) icons and theme.
+ - [X] Switch back to picom.

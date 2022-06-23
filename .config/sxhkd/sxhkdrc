@@ -112,11 +112,11 @@ super + shift + e
       alacritty -e bash -i -c em
 
 # Screenshot - cannot figure out notation to allow for one command here...
-super + shift + s  # Desktop
-      scrot '%Y%m%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Pictures/shots/'
+super + shift + s
+      scrot '%Y%m%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/'
 
-super + shift + ctrl + s # Active Window
-      scrot '%Y%m%d_%H:%M:%S_$wx$h.png' -b -u -e 'mv $f ~/Pictures/shots/'
+super + shift + ctrl + s
+      scrot '%Y%m%d_%H:%M:%S_$wx$h.png' -b -u -e 'mv $f ~/Pictures/Screenshots/'
 
 
 

@@ -1,5 +1,5 @@
 [colors]
-back = #60000000
+back = #99000000
 border = #aaaaaa
 gray = #888888
 white = #ffffff
@@ -11,11 +11,11 @@ modules-right = bspwm battery
 background = ${colors.back}
 tray-background = ${colors.back}
 border-size = 1
-border-color = ${colors.border}
-width = 99%  # Laptop (1920x1080)
-height = 3.2%  # Laptop (1920x1080)
-offset-x = 12
-offset-y = 12
+border-color = ${colors.back}
+width = 1900
+height = 3.5%
+offset-x = 10
+offset-y = 10
 padding = 2
 module-margin = 2
 locale = en_NZ.UTF-8
