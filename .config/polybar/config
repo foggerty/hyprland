@@ -1,5 +1,5 @@
 [colors]
-back = #99000000
+back = #aa000000
 border = #aaaaaa
 gray = #888888
 white = #ffffff
@@ -11,7 +11,7 @@ modules-right = bspwm battery
 background = ${colors.back}
 tray-background = ${colors.back}
 border-size = 1
-border-color = ${colors.back}
+border-color = ${colors.gray}
 width = 1900
 height = 3.5%
 offset-x = 10

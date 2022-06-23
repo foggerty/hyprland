@@ -101,7 +101,7 @@ super + shift + c
 
 # File Manager - Thunar
 super + shift + f
-      pcmanfm
+      thunar
 
 # Firefox
 super + shift + b
@@ -130,7 +130,7 @@ super + {t,shift + t,s,f}
       bspc node focused --state {tiled,pseudo_tiled,floating,fullscreen}
 
 # Mark current node
-super + ctrl + m
+super + m
       bspc node any.marked --flag marked=off ; bspc node --flag marked=on
 
 
@@ -169,7 +169,7 @@ super + m
       bspc desktop -l next
 
 # move the newest marked node to the newest preselected node
-super + ctrl + y
+super + ctrl + m
       bspc node newest.marked --to-node last.!automatic
 
 # swap the current node and the biggest window
