@@ -1,4 +1,4 @@
-* BSPWM Config 'stuff' for Arch.
+* BSPWM Config 'stuff'.
 
 After installing the usual xorg and required drivers, install these via pacman:
 

@@ -113,7 +113,7 @@ super + shift + f
 
 # Firefox
 super + shift + b
-      refox
+      firefox
 
 # Emacs
 super + shift + e
