@@ -7,7 +7,7 @@ white = #ffffff
 [bar/bar]
 modules-left = memory cpu temp
 modules-center = date
-modules-right = bspwm battery
+modules-right = bspwm battery wifi volume
 background = ${colors.back}
 tray-background = ${colors.back}
 border-size = 1
@@ -24,6 +24,7 @@ tray-position = right
 font-0 = "Source Code Pro Narrow:size=11;2"
 font-1 = Font Awesome 6 Free:pixelsize=11;2
 font-2 = Font Awesome 6 Free Solid:pixelsize=11;2
+font-3 = Symbols Nerd Font
 wm-restack = bspwm
 
 [module/bspwm]
@@ -52,10 +53,10 @@ interval = .25
 format = <label>
 label = ram: %percentage_used%%
 
-[module/iwd]
+[module/wifi]
 type = custom/script
-exec = iwctl station wlan0 show | head -n 6 | tail -n 1 | awk '{print $2}'
-click-left = pkill iwgtk || iwgtk &
+exec = nmcli | head -n 1 | awk '{print $2}'
+click-left = pkill nmtui || alacritty -e bash -i -c nmtui &
 
 [module/battery]
 type = internal/battery
@@ -80,6 +81,19 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
+
+[module/volume]
+type = internal/pulseaudio
+use-us-max = true
+interval = 3
+format-volume = 🔈  <label-volume>
+format-muted = <label-muted>
+label-volume = %percentage%%
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-3 = 🔊
+label-muted = 🔇 muted
+label-muted-foreground = #666
 
 [module/temp]
 type = internal/temperature

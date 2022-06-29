@@ -82,8 +82,16 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
       brightnessctl set +10%
 
+XF86AudioRaiseVolume
+   pamixer -i 5
 
-################################################################################
+XF86AudioLowerVolume
+   pamixer -d 5
+
+XF86AudioMute
+   pamixer -t
+
+
 # Applications
 ################################################################################
 
@@ -105,7 +113,7 @@ super + shift + f
 
 # Firefox
 super + shift + b
-      firefox
+      refox
 
 # Emacs
 super + shift + e
