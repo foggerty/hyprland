@@ -116,8 +116,12 @@ super + shift + b
       firefox
 
 # Emacs
-super + shift + e
+super + e
       alacritty -e bash -i -c em
+
+# Notes file
+super + n
+      alacritty -e bash -i -c "em ~/Documents/RandomNotes.org"
 
 # Screenshot - cannot figure out notation to allow for one command here...
 super + shift + s
