@@ -1,5 +1,5 @@
 [colors]
-back = #77000000
+back = #9e000000
 border = #aaaaaa
 gray = #888888
 white = #ffffff
@@ -55,7 +55,7 @@ label = ram: %percentage_used%%
 
 [module/wifi]
 type = custom/script
-exec = nmcli | head -n 1 | awk '{print $2}'
+exec = nmcli | head -n 5 | tail -n 1 | awk '{print $2}'
 click-left = pkill nmtui || alacritty -e bash -i -c nmtui &
 
 [module/battery]

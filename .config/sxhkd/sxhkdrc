@@ -177,7 +177,7 @@ super + ctrl + s
       bspc node focused --swap newest.marked.local
 
 # alternate between the tiled and monocle layout
-super + m
+super + o
       bspc desktop -l next
 
 # move the newest marked node to the newest preselected node
