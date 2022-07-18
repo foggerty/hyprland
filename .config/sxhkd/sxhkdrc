@@ -107,9 +107,9 @@ super + Return
 super + shift + c
       galculator
 
-# File Manager - Thunar
+# File Manager
 super + shift + f
-      thunar
+      pcmanfm
 
 # Firefox
 super + shift + b
