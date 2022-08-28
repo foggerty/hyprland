@@ -127,9 +127,6 @@ super + n
 super + shift + s
       scrot '%Y%m%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/'
 
-super + shift + ctrl + s
-      scrot '%Y%m%d_%H:%M:%S_$wx$h.png' -b -u -e 'mv $f ~/Pictures/Screenshots/'
-
 
 
 
