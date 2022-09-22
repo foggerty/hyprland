@@ -22,3 +22,16 @@ cursor:
     shape: Beam
     blinking: On
     blink_interval: 750
+
+# Note that below shouldn't be required once this has been implemented:
+# https://github.com/alacritty/alacritty/issues/3101
+
+# For now, reference guide is here:
+# https://www.youtube.com/watch?v=lHBD6pdJ-Ng&t=185s
+# This just sets up ctrl+tab to send crtl+tab to whatever
+# application is listening etc.  (I think.  Honestly, the whole VT
+# thing is a bloody nightmare to go through.)
+
+key_bindings:
+  - { key: Tab,   mods: Control, chars: "\x1b[9;5u" }
+  - { key: Return, mods: Control, chars: "\x1b[13;5u" }
