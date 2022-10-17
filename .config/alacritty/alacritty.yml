@@ -33,5 +33,5 @@ cursor:
 # thing is a bloody nightmare to go through.)
 
 key_bindings:
-  - { key: Tab,   mods: Control, chars: "\x1b[9;5u" }
+  - { key: Tab,    mods: Control, chars: "\x1b[9;5u" }
   - { key: Return, mods: Control, chars: "\x1b[13;5u" }
