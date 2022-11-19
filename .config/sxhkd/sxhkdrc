@@ -107,7 +107,7 @@ super + shift + c
 
 # File Manager
 super + shift + f
-      pcmanfm
+      thunar
 
 # Firefox
 super + shift + b

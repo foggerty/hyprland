@@ -12,7 +12,7 @@ font:
     y: 1
 
 window:
-  opacity: 0.8
+  opacity: 0.78
   padding:
     x: 6
     y: 6
@@ -36,5 +36,6 @@ cursor:
 # thing is a bloody nightmare to go through.)
 
 key_bindings:
-  - { key: Tab,    mods: Control, chars: "\x1b[9;5u" }
-  - { key: Return, mods: Control, chars: "\x1b[13;5u" }
+  - { key: Tab,       mods: Control, chars: "\x1b[9;5u" }
+  - { key: Return,    mods: Control, chars: "\x1b[13;5u" }
+#  - { key: Backspace, mods: Control, chars: "\x1b[8;5u]" }
