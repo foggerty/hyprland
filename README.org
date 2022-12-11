@@ -3,11 +3,16 @@
 After installing the usual xorg and required drivers, install these via pacman:
 
 ** Basic desktop
-~bspwm xshkd polybar volumeicon alacritty python-pywal xfce4-notifyd light-locker lightdm rofi gvfs gvfs-smb galculator pcmanfm firefox scrot xcompmgr lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings thunar-archive-plugin thunar-media-tags-plugin file-roller thunar-shares-plugin tumbler~
+~bspwm xshkd polybar alacritty python-pywal xfce4-notifyd light-locker lightdm rofi gvfs gvfs-smb galculator firefox scrot picom  lightdm-gtk-greeter lightdm-gtk-greeter-settings thunar thunar-archive-plugin thunar-media-tags-plugin file-roller ffmpegthumbnailer tumbler~
 
 * To do
- - [ ] Find the best wallpaper possible in the entirety of possibility.
  - [ ] Get libinput working so can swipe to change desktops.
+ - [ ] Update thunar emacaclient app to use alactitty
+ - [ ] Fix the bloody right-click menu in Firefox.
+ - [ ] Thumbnailer service...
+ - [ ] Which Thunar uses.
+ - [X] Thunar also uses nice image viewer that's floating.
+ - [X] Find the best wallpaper possible in the entirety of possibility.
  - [X] Find out how to make volume NOT muted at startup (it's a OS boot thing, not window manager thing).
  - [X] Firefox startup time is still awful after a reboot.
  - [X] Polybar should have a shadow.
