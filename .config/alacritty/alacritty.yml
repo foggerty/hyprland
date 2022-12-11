@@ -36,6 +36,10 @@ cursor:
 # thing is a bloody nightmare to go through.)
 
 key_bindings:
-  - { key: Tab,       mods: Control, chars: "\x1b[9;5u" }
-  - { key: Return,    mods: Control, chars: "\x1b[13;5u" }
-#  - { key: Backspace, mods: Control, chars: "\x1b[8;5u]" }
+  # Shift ALT ALT+S CTRL CTRL+S CTRL+ALT CTRL+ALT+S
+  # 2u    3u  4u    5u   6u     7u       u
+  # Ignore 1b[, imprtant bits are "<key code>;<control code>"
+  - { key: Tab,    mods: Control, chars: "\x1b[9;5u" }
+  - { key: Return, mods: Control, chars: "\x1b[13;5u" }
+  - { key: Comma,   mods: Control, chars: "\x1b[44;5u"     }
+  #  - { key: Backspace, mods: Control, chars: "\x1b[8;5u]" }
