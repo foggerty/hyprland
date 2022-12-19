@@ -5,7 +5,7 @@
   <property name="notify-location" type="uint" value="2"/>
   <property name="log-level" type="uint" value="0"/>
   <property name="log-level-apps" type="uint" value="0"/>
-  <property name="theme" type="string" value="Smoke"/>
+  <property name="theme" type="string" value="Bright"/>
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
       <value type="string" value="application.iwgtk"/>
@@ -20,6 +20,7 @@
       <value type="string" value="org.gnome.Boxes"/>
       <value type="string" value="org.kde.ktorrent"/>
       <value type="string" value="org.twosheds.iwgtk"/>
+      <value type="string" value="org.xfce.Thunar"/>
       <value type="string" value="pa-applet"/>
       <value type="string" value="thunar"/>
       <value type="string" value="thunar-volman"/>

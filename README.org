@@ -6,11 +6,15 @@ After installing the usual xorg and required drivers, install these via pacman:
 ~bspwm xshkd polybar alacritty python-pywal xfce4-notifyd light-locker lightdm rofi gvfs gvfs-smb galculator firefox scrot picom  lightdm-gtk-greeter lightdm-gtk-greeter-settings thunar thunar-archive-plugin thunar-media-tags-plugin file-roller ffmpegthumbnailer tumbler~
 
 * To do
- - [ ] Get libinput working so can swipe to change desktops.
- - [ ] Update thunar emacaclient app to use alactitty
+ - [ ] Get emacs & fucking EWAL workingn correctly.
+ - [ ] Get the rest of Emacs back up and running.
+   - [ ] Read up on new Eglot integration.
+   - [ ] Read up on TreeSitter.
  - [ ] Fix the bloody right-click menu in Firefox.
- - [ ] Thumbnailer service...
- - [ ] Which Thunar uses.
+ - [ ] Switch to new Emacs client, make Thunar use it.
+ - [ ] Get libinput working so can swipe to change desktops.
+ - [X] Thumbnailer service...
+ - [X] Which Thunar uses.
  - [X] Thunar also uses nice image viewer that's floating.
  - [X] Find the best wallpaper possible in the entirety of possibility.
  - [X] Find out how to make volume NOT muted at startup (it's a OS boot thing, not window manager thing).
