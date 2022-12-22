@@ -119,7 +119,7 @@ super + e
 
 # Notes file
 super + n
-      alacritty -e bash -i -c "em ~/Documents/RandomNotes.org"
+      emacsclient -c ~/Documents/RandomNotes.org
 
 # Screenshot - cannot figure out notation to allow for one command here...
 super + shift + s
@@ -168,9 +168,6 @@ super + ctrl + shift + space
 # focus/swap/layout
 ################################################################################
 
-super + ctrl + s
-      bspc node focused --swap newest.marked.local
-
 # alternate between the tiled and monocle layout
 super + o
       bspc desktop -l next
@@ -178,10 +175,6 @@ super + o
 # move the newest marked node to the newest preselected node
 super + ctrl + m
       bspc node newest.marked --to-node last.!automatic
-
-# swap the current node and the biggest window
-super + {g, shift + g}
-      bspc node --swap {biggest,smallest}.window
 
 # move the node in the given direction
 super + {_,shift + }{Left,Down,Up,Right}
