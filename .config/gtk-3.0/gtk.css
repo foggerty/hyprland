@@ -1,6 +1,5 @@
 * {
-    border: 0;
+    border-style: none;
     border-width: 0;
-    padding: 0;
     box-shadow: none;
 }
