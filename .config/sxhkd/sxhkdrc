@@ -101,6 +101,10 @@ super + space
 super + Return
       alacritty
 
+# HTop
+super + h
+      alacritty -e bash -i -c htop
+
 # Calculator
 super + shift + c
       galculator
@@ -115,11 +119,11 @@ super + shift + b
 
 # Emacs
 super + e
-      emacsclient -c
+      alacritty -e bash -i -c "emacsclient -t"
 
 # Notes file
 super + n
-      emacsclient -c ~/Documents/RandomNotes.org
+      alacritty -e bash -i -c "emacsclient -t ~/Documents/RandomNotes.org"
 
 # Screenshot - cannot figure out notation to allow for one command here...
 super + shift + s
