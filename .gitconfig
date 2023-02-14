@@ -1,0 +1,8 @@
+[user]
+	name = Foggerty
+	email = foggerty@gmail.com
+[core]
+	editor = em
+	pager = bash -i -c more
+[color]
+	ui = auto
