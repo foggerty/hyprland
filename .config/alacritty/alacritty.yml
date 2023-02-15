@@ -46,4 +46,4 @@ key_bindings:
   - { key : Comma,     mods: Control,       chars: "\x1b[44;5u" }
   - { key : Minus,     mods: Control|Alt,   chars: "\x1b[45;7u" }
   - { key : Equals,    mods: Control|Alt,   chars: "\x1b[61;7u" }
-  - { key : Z,         mods: Control|Shift, chars: "\x1b[90;6u" }
+  - { key : Z,         mods: Control|Shift, chars: "\x1b[90;6u" }  # WHY DOES THIS WORK?
