@@ -9,6 +9,7 @@
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
       <value type="string" value="application.iwgtk"/>
+      <value type="string" value="appname"/>
       <value type="string" value="cantata"/>
       <value type="string" value="cbatticon"/>
       <value type="string" value="de.haeckerfelix.Shortwave"/>

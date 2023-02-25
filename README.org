@@ -9,12 +9,14 @@ With ~yay / paru~ install ~touchegg~.
 
 Icon theme is [[https://github.com/bikass/kora][Kora]], GTK theme is [[https://github.com/paullinuxthemer/Pro-Dark-GTK][Pro Dark GTK]].
 
+Desktop wallpapers are swiped from https://wallpaperaccess.com/.
+
 * To do
+ - [ ] Fix System Tray in Polybar.
+   - [ ] Can I have two top bars, and make the second tray only?
  - [ ] Fix Emacs margins.
- - [ ] Look into updating picom so that fading doesn't do whatever the hell it's doing right now with fading.
  - [ ] Get working on 2K monitor.
- - [ ] See if can update EWAL so that fringe has same background color.
- - [X] Fix System Tray in Polybar.
+ - [X] Look into updating picom so that fading doesn't do whatever the hell it's doing right now with fading.
  - [X] Get libinput working so can swipe to change desktops.
  - [X] Get the rest of Emacs back up and running.
    - [X] Read up on new Eglot integration.
