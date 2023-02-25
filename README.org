@@ -1,36 +1,22 @@
-* BSPWM Config 'stuff'.
+* Hyperland Config 'stuff'.
 
-After installing the usual xorg and required drivers, install these via pacman:
+So much for BSPWM.....
+
+Install these via pacman:
 
 ** Basic desktop
-~emacs bspwm sxhkd polybar alacritty python-pywal nitrogen blueman xfce4-notifyd light-locker lightdm rofi gvfs gvfs-smb galculator keychain firefox scrot picom  lightdm-gtk-greeter lightdm-gtk-greeter-settings thunar thunar-archive-plugin thunar-media-tags-plugin file-roller ffmpegthumbnailer tumbler networkmanager~
+~emacs bspwm alacritty python-pywal nitrogen blueman xfce4-notifyd light-locker lightdm rofi gvfs gvfs-smb galculator keychain firefox scrot picom lightdm-gtk-greeter lightdm-gtk-greeter-settings thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman file-roller ffmpegthumbnailer tumbler networkmanager~
 
-With ~yay / paru~ install ~touchegg~.
+With ~yay / paru~ install ~hyprland touchegg~.
 
 Icon theme is [[https://github.com/bikass/kora][Kora]], GTK theme is [[https://github.com/paullinuxthemer/Pro-Dark-GTK][Pro Dark GTK]].
 
 Desktop wallpapers are swiped from https://wallpaperaccess.com/.
 
+
+
 * To do
- - [ ] Fix System Tray in Polybar.
-   - [ ] Can I have two top bars, and make the second tray only?
- - [ ] Fix Emacs margins.
- - [ ] Get working on 2K monitor.
- - [X] Look into updating picom so that fading doesn't do whatever the hell it's doing right now with fading.
- - [X] Get libinput working so can swipe to change desktops.
- - [X] Get the rest of Emacs back up and running.
-   - [X] Read up on new Eglot integration.
-   - [X] Read up on TreeSitter.
- - [X] Fix the bloody right-click menu in Firefox.
- - [X] Get emacs & fucking EWAL workingn correctly.
- - [X] Switch to new Emacs client, make Thunar use it.
- - [X] Thumbnailer service...
- - [X] Which Thunar uses.
- - [X] Thunar also uses nice image viewer that's floating.
- - [X] Find the best wallpaper possible in the entirety of possibility.
- - [X] Find out how to make volume NOT muted at startup (it's a OS boot thing, not window manager thing).
- - [X] Firefox startup time is still awful after a reboot.
- - [X] Polybar should have a shadow.
- - [X] Find out why Polybar's background isn't blurred.
- - [X] Add (compressed) icons and theme.
- - [X] Switch back to picom.
+ - [ ] Get a basic top-bar with just a clock and transparent theme.
+ - [ ] Get multi-media keys working.
+ - [ ] Add wifi setup (nm-applet?)
+ - [ ] Add monitoring.
