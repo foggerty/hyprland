@@ -5,11 +5,12 @@
 }
 
 window#waybar {
-    background-color: rgba(00, 00, 00, 0.8);
-    border-bottom: 3px solid rgba(256, 256, 256, 1.0);
+    background-color: rgba(00, 00, 00, 0.6);
+    border: 1px solid rgba(156, 156, 156, 1.0);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
+    border-radius: 13;
 }
 
 window#waybar.hidden {
