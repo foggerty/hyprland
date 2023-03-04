@@ -5,7 +5,7 @@ So much for BSPWM.....
 Install these via pacman:
 
 ** Basic desktop
-~pavucontrol emacs bspwm alacritty python-pywal nitrogen blueman xfce4-notifyd light-locker lightdm rofi gvfs gvfs-smb galculator keychain firefox scrot picom lightdm-gtk-greeter lightdm-gtk-greeter-settings thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman file-roller ffmpegthumbnailer tumbler networkmanager~
+~pavucontrol emacs bspwm alacritty python-pywal nitrogen blueman xfce4-notifyd light-locker lightdm rofi gvfs gvfs-smb galculator keychain firefox scrot picom lightdm-gtk-greeter lightdm-gtk-greeter-settings thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman swaybar swidle swaylock file-roller ffmpegthumbnailer tumbler networkmanager wlr-randr~
 
 With ~yay / paru~ install ~hyprland hyprland-waybar~
 
@@ -16,10 +16,14 @@ Desktop wallpapers are swiped from https://wallpaperaccess.com/.
 
 
 * To do
- - [X] Get a basic top-bar with just a clock and transparent theme.
- - [ ] Get workspace module working.
+ - [ ] Add wifi setup (nm-applet?)
  - [ ] No border around notifications.
  - [ ] Get notifications appearing where they should be.
  - [ ] Get multi-media keys working.
- - [ ] Add wifi setup (nm-applet?)
- - [ ] Add monitoring.
+ - [X] Turn monitor off and lock screen etc:
+   - [X] Suspend on close-lid
+   - [X] Lock screen with key-combo
+   - [X] Lock screen on close lid (bonus if it locks other logins?)
+ - [X] Add monitoring.
+ - [X] Get a basic top-bar with just a clock and transparent theme.
+ - [X] Get workspace module working.
