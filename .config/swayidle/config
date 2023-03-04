@@ -1,0 +1,2 @@
+timeout 1800 'swaylock --daemonize'
+timeout 1805 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
