@@ -17,9 +17,10 @@ Desktop wallpapers are swiped from https://wallpaperaccess.com/.
 
 * To do
  - [ ] Add wifi setup (nm-applet?)
+ - [ ] Fix shadows.
  - [ ] No border around notifications.
  - [ ] Get notifications appearing where they should be.
- - [ ] Get multi-media keys working.
+ - [X] Get multi-media keys working.
  - [X] Turn monitor off and lock screen etc:
    - [X] Suspend on close-lid
    - [X] Lock screen with key-combo
