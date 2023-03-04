@@ -16,10 +16,11 @@ Desktop wallpapers are swiped from https://wallpaperaccess.com/.
 
 
 * To do
- - [ ] Add wifi setup (nm-applet?)
+ - [ ] Get blur working again.
  - [ ] Fix shadows.
  - [ ] No border around notifications.
  - [ ] Get notifications appearing where they should be.
+ - [X] Add wifi setup (nm-applet?)
  - [X] Get multi-media keys working.
  - [X] Turn monitor off and lock screen etc:
    - [X] Suspend on close-lid
