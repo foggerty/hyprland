@@ -1,7 +1,28 @@
-wal --backend haishoku -i $1
+if [ -z "$1" ]; then
+    echo "Please specify an image file to use."
+    exit 0
+fi
 
-echo "Hit enter..."
+wal -i $1
+swaybg -i $1 &>/dev/null&
 
-read
+echo "Looks good?"
 
-wal --backend haishoku -i ~/Pictures/Wallpapers/current
+select yn in y n; do
+
+    case $yn in
+        y)
+            cp $1 ~/Pictures/Wallpapers/current
+            break
+            ;;
+        n)
+            wal --backend haishoku -i ~/Pictures/Wallpapers/current
+            swaybg -i ~/Pictures/Wallpapers/current &>/dev/null &
+            break
+            ;;
+        *)
+            echo "It's your own time that you're wasting."
+            ;;
+    esac
+
+done
