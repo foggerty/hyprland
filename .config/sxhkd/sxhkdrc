@@ -119,7 +119,7 @@ super + shift + b
 
 # Emacs
 super + e
-      alacritty -e bash -i -c "emacsclient -t"
+      emacsclient -c
 
 # Notes file
 super + n
