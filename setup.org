@@ -6,8 +6,8 @@ Note: install via ~yay~.
  - Terminal :: ~alacritty~
  - Application launcher :: ~wofi~
  - Useful applications :: ~galculator fileroller ffmpegthumbnailer tumbler~
- - File manager :: ~thunar gvfs thunar-archive-plugin thunar-media-tags-plugun thunar-volman~
+ - File manager :: ~thunar gvfs gvfs-smb thunar-archive-plugin thunar-media-tags-plugun thunar-volman~
  - Fonts :: ~ttf-fontawsome adobe-source-code-pro-fonts~
  - Greeter :: ~lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings~
  - Browser :: ~firefox~
- - Way :: ~python python-pip imagemagick~ then: ~pip install pywal colorise haishoku~
+ - Wal :: ~python python-pip imagemagick~ the runn: ~pip install pywal colorise haishoku~
