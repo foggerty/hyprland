@@ -7,12 +7,12 @@ font:
   normal:
     family: "Sauce Code Pro Nerd Font"
     style: Regular
-  size: 11
+  size: 7
   offset:
     y: 1
 
 window:
-  opacity: 0.9
+  opacity: 0.8
   padding:
     x: 6
     y: 6
