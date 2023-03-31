@@ -5,6 +5,7 @@ fi
 
 wal -i $1
 swaybg -i $1 &>/dev/null&
+emacsclient -e "(load-theme 'ewal-doom-one t)"
 
 echo "Looks good?"
 
@@ -16,8 +17,9 @@ select yn in y n; do
             break
             ;;
         n)
-            wal --backend haishoku -i ~/Pictures/Wallpapers/current
+            wal -i ~/Pictures/Wallpapers/current
             swaybg -i ~/Pictures/Wallpapers/current &>/dev/null &
+            emacsclient -e "(load-theme 'ewal-doom-one t)"
             break
             ;;
         *)
