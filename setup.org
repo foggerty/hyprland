@@ -2,7 +2,7 @@
 Note: install via ~yay~.
 
  - Hyperland :: ~hyprland-bin waybar-hyprland wlr-randr~
- - Make it a desktop :: ~swaybg swaylock swayidle mako keychain xdg-desktop-portal-hyprland-git~
+ - Make it a desktop :: ~swaybg swaylock swayidle keychain xdg-desktop-portal-hyprland-git~
  - Terminal :: ~alacritty~
  - Application launcher :: ~wofi~
  - Useful applications :: ~galculator fileroller ffmpegthumbnailer tumbler~
@@ -10,4 +10,4 @@ Note: install via ~yay~.
  - Fonts :: ~ttf-fontawsome adobe-source-code-pro-fonts~
  - Greeter :: ~lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings~
  - Browser :: ~firefox~
- - Wal :: ~python python-pip imagemagick~ the runn: ~pip install pywal colorise haishoku~
+ - Wal :: ~python python-pip imagemagick~ the run: ~pip install pywal colorise haishoku~
