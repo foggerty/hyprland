@@ -1,0 +1,14 @@
+
+* Install
+Note: install via ~yay~.
+
+ - Hyperland :: ~hyprland waybar-hyprland wlr-randr~
+ - Make it a desktop :: ~swaybg swayidle keychain xdg-desktop-portal-hyprland brightnessctl pamixer~
+ - Terminal :: ~alacritty~
+ - Application launcher :: ~rofi~
+ - Useful applications :: ~galculator fileroller ffmpegthumbnailer tumbler~
+ - File manager :: ~pcmanfm gvfs gvfs-smb~
+ - Fonts :: ~otf-font-awsome ttf-sourcecodepro-nerd~
+ - Greeter :: ~lightdm light-locker lightdm-gtk-greeter lightdm-gtk-greeter-settings~
+ - Browser :: ~firefox~
+ - Wal :: ~python python-pip imagemagick,~ then run: ~pip install pywal~
