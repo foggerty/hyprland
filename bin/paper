@@ -3,9 +3,12 @@ if [ -z "$1" ]; then
     exit 0
 fi
 
+wal -c
 wal -i $1
 swaybg -i $1 &>/dev/null&
 emacsclient -e "(load-theme 'ewal-doom-one t)"
+pkill waybar
+waybar &
 
 echo "Looks good?"
 
@@ -17,9 +20,12 @@ select yn in y n; do
             break
             ;;
         n)
+            wal -c
             wal -i ~/Pictures/Wallpapers/current
             swaybg -i ~/Pictures/Wallpapers/current &>/dev/null &
             emacsclient -e "(load-theme 'ewal-doom-one t)"
+            pkill waybar
+            waybar &
             break
             ;;
         *)

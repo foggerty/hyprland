@@ -1,3 +1,5 @@
+before-sleep 'dm-tool lock'
+
 # Screen timeouts.
-timeout 120 'dm-tool -l'
+timeout 120 'dm-tool lock'
 timeout 180 'systemctl suspend'
