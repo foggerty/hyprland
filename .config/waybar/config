@@ -4,7 +4,7 @@
     "spacing": 12,
     "margin-left": 10,
     "margin-right": 10,
-    "margin-top": 6,
+    "margin-top": 10,
     "modules-left": ["memory", "cpu", "temperature"],
     "modules-center": ["clock"],
     "modules-right": ["wlr/workspaces", "pulseaudio", "network", "battery", "tray"],

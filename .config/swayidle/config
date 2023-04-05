@@ -1,2 +1,3 @@
-timeout 1800 'swaylock'
-timeout 1805 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+# Screen timeouts.
+timeout 120 'dm-tool -l'
+timeout 180 'systemctl suspend'
