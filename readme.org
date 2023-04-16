@@ -11,4 +11,9 @@ Note: install via ~yay~.
  - Fonts :: ~otf-font-awsome ttf-sourcecodepro-nerd~
  - Greeter :: ~lightdm light-locker lightdm-gtk-greeter lightdm-gtk-greeter-settings~
  - Browser :: ~firefox~
- - Wal :: ~python python-pip imagemagick,~ then run: ~pip install pywal~
+ - Wal :: ~python python-pip imagemagick,~ then run: ~pip install pywal
+ - Theme :: ~materia-gtk-theme kora-icon-theme~
+
+Then run:
+  ~gsettings set org.gnome.desktop.interface gtk-theme "Materia-compact"~
+  ~gsettings set org.gnome.desktop.interface icon-theme kora~
