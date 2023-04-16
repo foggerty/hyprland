@@ -7,7 +7,7 @@ Note: install via ~yay~.
  - Terminal :: ~alacritty~
  - Application launcher :: ~rofi~
  - Useful applications :: ~galculator fileroller ffmpegthumbnailer tumbler~
- - File manager :: ~pcmanfm gvfs gvfs-smb~
+ - File manager :: ~thunar thunar-volman gvfs gvfs-smb~
  - Fonts :: ~otf-font-awsome ttf-sourcecodepro-nerd~
  - Greeter :: ~lightdm light-locker lightdm-gtk-greeter lightdm-gtk-greeter-settings~
  - Browser :: ~firefox~

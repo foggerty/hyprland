@@ -1,5 +1,5 @@
-before-sleep 'dm-tool lock'
+before-sleep 'swaylock'
 
 # Screen timeouts.
-timeout 120 'dm-tool lock'
-timeout 180 'systemctl suspend'
+timeout 180 'swaylock lock'
+timeout 300 'systemctl suspend'
