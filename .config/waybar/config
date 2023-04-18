@@ -28,11 +28,13 @@
 
     "cpu": {
         "format": "cpu: {usage}%",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "gnome-system-monitor"
     },
 
     "memory": {
-        "format": "memory: {}%"
+        "format": "memory: {}%",
+        "on-click": "gnome-system-monitor"
     },
 
     "temperature": {

@@ -3,7 +3,7 @@
 Note: install via ~yay~.
 
  - Hyperland :: ~hyprland waybar-hyprland wlr-randr~
- - Make it a desktop :: ~swaybg swayidle keychain xdg-desktop-portal-hyprland brightnessctl pamixer~
+ - Make it a desktop :: ~swaybg swayidle keychain xdg-desktop-portal-hyprland brightnessctl pamixer gnome-system-monitor~
  - Terminal :: ~alacritty~
  - Application launcher :: ~rofi~
  - Useful applications :: ~galculator fileroller ffmpegthumbnailer tumbler~
@@ -19,3 +19,5 @@ Install ~gnome-professional-solid-40.1~ from [[https://gnome-look.org][GnomeLook
 Then run:
   ~gsettings set org.gnome.desktop.interface gtk-theme gnome-professional-solid-40.1~
   ~gsettings set org.gnome.desktop.interface icon-theme kora~
+
+  because as far as I can tell, ~Firefox~ and ~Thunar~ are using a service to determine what the theme is, and totally ignore the configuration file......?  Will look into it at some point.
