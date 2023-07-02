@@ -1,0 +1,87 @@
+{
+    "layer": "top",
+    "height": 38,
+    "spacing": 12,
+    "margin-left": 6,
+    "margin-right": 6,
+    "margin-top": 6,
+    "modules-left": ["memory", "cpu", "temperature"],
+    "modules-center": ["clock"],
+    "modules-right": ["wlr/workspaces", "pulseaudio", "battery", "network", "tray"],
+
+    "wlr/workspaces": {
+        "format": "{name}",
+        "sort-by-number": true,
+        "active-only": false,
+        "current-only": false,
+        "on-click": "activate",
+        "all-outputs": false,
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": []
+        }
+    },
+
+    "tray": {
+        "icon-size": 16,    
+        "spacing": 10
+    },
+
+    "clock": {
+        "timezone": "Pacific/Auckland",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a %d - %H:%M}"
+    },
+
+    "cpu": {
+        "format": "cpu: {usage}%",
+        "tooltip": false,
+        "on-click": "alacritty -e atop"
+    },
+
+    "memory": {
+        "format": "memory: {}%",
+        "on-click": "gnome-system-monitor"
+    },
+
+    "temperature": {
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+        "format": "{temperatureC}°C",
+    },
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-full": "",
+        "format-icons": ["", "", "", "", ""],
+        "intrerval": 10
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "nm-connection-editor"
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "on-click": "pavucontrol",
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+    }
+}

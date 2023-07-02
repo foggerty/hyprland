@@ -1,0 +1,38 @@
+#!/bin/bash
+
+applications="galculator vlc zeal"
+audio="pipewire pipewire-jack wireplumber"
+basics="linux-firmware man"
+browser="firefox"
+desktop="xdg-desktop-portal-hyprland avahi network-manager-applet blueman brightnessctl pamixer gnome-system-monitor cliphist"
+editor="emacs"
+file_manager="thunar thunar-volman gvfs gvfs-smb file-roller ffmpegthumbnailer tumbler 7zip"
+fonts="otf-font-awesome ttf-sourcecodepro-nerd noto-fonts noto-fonts-emoji ttf-linux-libertine"
+greeter="greetd greetd-tuigreet"
+gpu="libva-intel-driver vulkan-intel"
+hyprland="hyprland waybar wlr-randr swayidle swaylock swaybg"
+launcher="rofi"
+power="acpid tlp lm_sensors thermald"
+theme="kora-icon-theme qt6ct"
+screenshots="grim swappy"
+terminal="alacritty bash-completion htop moarp tldr"
+wal="python-pywal imagemagick"
+
+to_install="$applications $audio $basics $browser $desktop $editor $file_manager \
+            $fonts $greeter"
+
+services=(thermald acpid avahi-daemon bluetooth fancontrol upower lm_sensors tlp greetd)
+
+if [[ $1 = "install" ]]
+then
+    paru --needed -S $to_install
+    wal -i ~/Pictures/Wallpapers/current
+elif [[ $1 = "start" ]]
+then
+    for service in ${services[@]}; do
+        systemctl enable $service
+        systemctl start $service
+    done
+else
+    echo "Usage: bootstrap 'install|enable' to install apps or start required services."
+fi

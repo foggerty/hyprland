@@ -1,0 +1,3 @@
+#!/bin/bash
+
+[ `pgrep $1` ] && pkill $1 || $1

@@ -1,0 +1,7 @@
+image=/home/$USER/Pictures/Wallpapers/lockscreen
+
+indicator-thickness=6
+indicator-x-position=80
+indicator-y-position=80
+
+inside-color=00000000

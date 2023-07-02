@@ -1,0 +1,2 @@
+include "/usr/share/themes/gnome-professional/gtk-2.0/gtkrc"
+include "/home/matt/.gtkrc-2.0.mine"

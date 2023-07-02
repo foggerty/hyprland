@@ -1,0 +1,14 @@
+[Default Applications]
+application/zip=thunar.desktop
+application/x-shellscript=userapp-emacsclient -c-CI0N31.desktop
+audio/x-mod=userapp-emacsclient -c-CI0N31.desktop
+text/plain=userapp-emacsclient -c-CI0N31.desktop
+application/x-zerosize=userapp-emacsclient -c-CI0N31.desktop
+
+[Added Associations]
+application/zip=thunar.desktop;
+application/x-shellscript=emacsclient.desktop;userapp-emacsclient -c-CI0N31.desktop;
+audio/x-mod=userapp-emacsclient -c-CI0N31.desktop;
+text/plain=userapp-emacsclient -c-CI0N31.desktop;
+application/x-zerosize=userapp-emacsclient -c-CI0N31.desktop;
+image/jpeg=feh.desktop;
