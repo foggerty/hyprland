@@ -2,7 +2,7 @@
 
 applications="galculator vlc zeal"
 audio="pipewire pipewire-jack wireplumber"
-basics="linux-firmware man"
+basics="linux-firmware man base-devel"
 browser="firefox"
 desktop="xdg-desktop-portal-hyprland avahi network-manager-applet blueman brightnessctl pamixer gnome-system-monitor cliphist"
 editor="emacs"
@@ -19,13 +19,13 @@ terminal="alacritty bash-completion htop moarp tldr"
 wal="python-pywal imagemagick"
 
 to_install="$applications $audio $basics $browser $desktop $editor $file_manager \
-            $fonts $greeter"
+            $fonts $greeter $gpu $power $theme $screenshots $terminal $wal"
 
 services=(thermald acpid avahi-daemon bluetooth fancontrol upower lm_sensors tlp greetd)
 
 if [[ $1 = "install" ]]
 then
-    paru --needed -S $to_install
+    yay --needed -S $to_install
     wal -i ~/Pictures/Wallpapers/current
 elif [[ $1 = "start" ]]
 then

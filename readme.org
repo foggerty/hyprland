@@ -1,14 +1,22 @@
-* Post install:
- - Setup tuigreet :: Edit ~/etc/greetd/config.toml~ and under ~[default_session]~ set ~command~ to ~"tuigreet --cmd /usr/bin/Hyprland"~
+* Installation
+- Install [[https://archlinux.org][Arch Linux]].
+- Install [[https://github.com/Jguer/yay][yay]].
+- From your home directory run the following:
 
-Install [[https://github.com/paullinuxthemer/Prof-Gnome][this theme]].
- 
-Then run:
-#+begin_src shell
-gsettings set org.gnome.desktop.interface gtk-theme gnome-professional-solid-40.1
-gsettings set org.gnome.desktop.interface icon-theme kora
-gettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
-#+end_src
+  #+begin_src shell
+  git init
+  git remote add origin https://github.com/foggerty/hyprland
+  git pull origin master
+  #+end_src
+  
+- Install [[https://github.com/paullinuxthemer/Prof-Gnome][this theme]].
+- Run ~~/bin/bootstrap~
+- Then run:
+  #+begin_src shell
+  gsettings set org.gnome.desktop.interface gtk-theme gnome-professional-solid-40.1
+  gsettings set org.gnome.desktop.interface icon-theme kora
+  gettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+  #+end_src
 
 Note that you can also set ~cursor-theme~ and ~font-name~ if required.  This is because of a [[https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland][known GTK3 issue.]]
 
