@@ -1,4 +1,4 @@
-Post install:
+* Post install:
  - Setup tuigreet :: Edit ~/etc/greetd/config.toml~ and under ~[default_session]~ set ~command~ to ~"tuigreet --cmd /usr/bin/Hyprland"~
 
 Install [[https://github.com/paullinuxthemer/Prof-Gnome][this theme]].
