@@ -11,6 +11,9 @@
   
 - Install [[https://github.com/paullinuxthemer/Prof-Gnome][this theme]].
 - Run ~~/bin/bootstrap~
+- Go and make some coffee, as this will build QT6's web kit.  Remove 
+- Update [[https://wiki.archlinux.org/title/Greetd][greetd's]] command to:
+  ~command="tuigreet --cmd Hyprland"~
 - Then run:
   #+begin_src shell
   gsettings set org.gnome.desktop.interface gtk-theme gnome-professional-solid-40.1
@@ -20,7 +23,11 @@
 
 Note that you can also set ~cursor-theme~ and ~font-name~ if required.  This is because of a [[https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland][known GTK3 issue.]]
 
+
+
 * ToDo
+  * [ ] Get fecking clipboard history working again
+  * [ ] Add QT5 theme support (i.e. copy GTK2 thingie)
   * [ ] Checklist of everything that needs to be working post-install
     * [ ] Can browse SAMBA shares
     * [ ] Can browse with AVAHI

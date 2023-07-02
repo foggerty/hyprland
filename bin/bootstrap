@@ -1,6 +1,6 @@
 #!/bin/bash
 
-applications="galculator vlc zeal"
+applications="galculator vlc"
 audio="pipewire pipewire-jack wireplumber"
 basics="linux-firmware man base-devel"
 browser="firefox"
@@ -19,7 +19,7 @@ terminal="alacritty bash-completion htop moar tldr"
 wal="python-pywal imagemagick"
 
 to_install="$applications $audio $basics $browser $desktop $editor $file_manager \
-            $fonts $greeter $gpu $power $theme $screenshots $terminal $wal"
+            $fonts $greeter $gpu $hyprland $launcher $power $theme $screenshots $terminal $wal"
 
 services=(thermald acpid avahi-daemon bluetooth fancontrol upower lm_sensors tlp greetd)
 
