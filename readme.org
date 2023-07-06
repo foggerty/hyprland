@@ -11,7 +11,6 @@
   
 - Install [[https://github.com/paullinuxthemer/Prof-Gnome][this theme]].
 - Run ~~/bin/bootstrap~
-- Go and make some coffee, as this will build QT6's web kit.  Remove 
 - Update [[https://wiki.archlinux.org/title/Greetd][greetd's]] command to:
   ~command="tuigreet --cmd Hyprland"~
 - Then run:
@@ -20,17 +19,31 @@
   gsettings set org.gnome.desktop.interface icon-theme kora
   gettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
   #+end_src
+- Update ~/etc/systemd/logind.conf~ and set:
+   #+begin_src conf
+   HandleLidSwitch=suspend
+   IdleAction=lock
+   IdleActionSec=4min
+   #+end_src
 
 Note that you can also set ~cursor-theme~ and ~font-name~ if required.  This is because of a [[https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland][known GTK3 issue.]]
 
 
 
 * ToDo
+  * [-] Get a passing score (70%+ on lynis)
+    * [X] Get Uncomplicated Firewall setup
+    * [X] Look into a simple to configure GTK firewall front-end if possible.  Setup network name to open it on right-click.
+    * [ ] install (and configure) apparmour
+    * [ ] use lynis (there will be a "how-to" somewhere linking solutions to problems) to plug holes
   * [ ] Get fecking clipboard history working again
+  * [ ] Make paper choose a random file if no argument is given.
+  * [ ] Oh, and make paper check if the bloody file exists first.
   * [ ] Add QT5 theme support (i.e. copy GTK2 thingie)
   * [ ] Checklist of everything that needs to be working post-install
     * [ ] Can browse SAMBA shares
     * [ ] Can browse with AVAHI
     * [ ] Firefox is using GPU
-    * [ ] Firefox is using libva for video rendering
+    * [ ] Firefox is using libva for video rendering (should be on by default from V115+)
   * [ ] Make notification window thingie look nice.
+  * [X] Polkit!

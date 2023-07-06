@@ -1,27 +1,35 @@
-#!/bin/bash
+#!/bin/sh
 
 applications="galculator vlc"
 audio="pipewire pipewire-jack wireplumber"
 basics="linux-firmware man base-devel"
 browser="firefox"
-desktop="xdg-desktop-portal-hyprland avahi network-manager-applet blueman brightnessctl pamixer gnome-system-monitor cliphist"
+desktop="xdg-desktop-portal-hyprland avahi network-manager-applet
+blueman brightnessctl pamixer gnome-system-monitor cliphist"
 editor="emacs"
-file_manager="thunar thunar-volman gvfs gvfs-smb file-roller ffmpegthumbnailer tumbler"
-fonts="otf-font-awesome ttf-sourcecodepro-nerd noto-fonts noto-fonts-emoji ttf-linux-libertine"
+file_manager="thunar thunar-volman gvfs gvfs-smb file-roller
+ffmpegthumbnailer tumbler"
+fonts="otf-font-awesome ttf-sourcecodepro-nerd noto-fonts
+noto-fonts-emoji ttf-linux-libertine"
 greeter="greetd greetd-tuigreet"
 gpu="libva-intel-driver vulkan-intel"
 hyprland="hyprland waybar wlr-randr swayidle swaylock swaybg"
 launcher="rofi"
-power="acpid tlp lm_sensors thermald"
+locale="aspell aspell-en"
+power="acpid tlp lm_sensors thermald rrdtool"
 theme="kora-icon-theme qt6ct"
 screenshots="grim swappy"
+security="ufw gufu polkit lxpolkit-gtk3"
 terminal="alacritty bash-completion htop moar tldr"
-wal="python-pywal imagemagick"
+wal="python-pywal imagemagick feh"
 
-to_install="$applications $audio $basics $browser $desktop $editor $file_manager \
-            $fonts $greeter $gpu $hyprland $launcher $power $theme $screenshots $terminal $wal"
+to_install="$applications $audio $basics $browser $desktop $editor \
+            $file_manager $fonts $greeter $gpu $hyprland $launcher \
+            $locale $power $theme $screenshots $terminal $wal"
 
-services=(thermald acpid avahi-daemon bluetooth fancontrol upower lm_sensors tlp greetd)
+services=(ufw thermald acpid avahi-daemon bluetooth fancontrol upower lm_sensors tlp greetd)
+allowed_apps=() # http,https if you want to do web development or run
+                # services with a html front-end "-)"
 
 if [[ $1 = "install" ]]
 then
@@ -32,6 +40,14 @@ then
     for service in ${services[@]}; do
         systemctl enable $service
         systemctl start $service
+    done
+
+    ufw default deny
+    ufw allow from 192.168.0.0/24
+    ufw enable
+
+    for app in ${allowed_apps[@]}; do
+        ufw allow $app
     done
 else
     echo "Usage: bootstrap 'install|enable' to install apps or start required services."
