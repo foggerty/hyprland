@@ -1,7 +1,6 @@
 #!/bin/sh
 
 applications="galculator vlc"
-audio="pipewire pipewire-jack wireplumber"
 basics="linux-firmware man base-devel"
 browser="firefox"
 desktop="xdg-desktop-portal-hyprland avahi network-manager-applet
@@ -29,11 +28,11 @@ to_install="$applications $audio $basics $browser $desktop $editor \
 
 services=(ufw thermald acpid avahi-daemon bluetooth fancontrol upower lm_sensors tlp greetd)
 allowed_apps=() # http,https if you want to do web development or run
-                # services with a html front-end "-)"
+                # services with an html front-end :-)
 
 if [[ $1 = "install" ]]
 then
-    yay --needed -S $to_install
+    pacman --needed -S $to_install
     wal -i ~/Pictures/Wallpapers/current
 elif [[ $1 = "start" ]]
 then

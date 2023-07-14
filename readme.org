@@ -1,23 +1,42 @@
 * Installation
-- Install [[https://archlinux.org][Arch Linux]].
-- Install [[https://github.com/Jguer/yay][yay]].
-- From your home directory run the following:
+- Install [[https://archlinux.org][Arch Linux]] using the ~archinstall~ script - for audio, select ~Pipewire~.
 
+- Install [[https://github.com/paullinuxthemer/Prof-Gnome][this theme]] (hint: this might be easier to do when you have a working desktop ).
+  
+- From your home directory run the following:
   #+begin_src shell
   git init
   git remote add origin https://github.com/foggerty/hyprland
   git pull origin master
   #+end_src
-  
-- Install [[https://github.com/paullinuxthemer/Prof-Gnome][this theme]].
-- Run ~~/bin/bootstrap~
+
+- Update ~$HOME/bin/bootstrap~ with the drivers for your laptop.
+  Note that the ~bootstrap~ script assumes that you're running it on a laptop, so there may be some applications you can remove/change, or just remove entries from the ~to_install~ variable.  Change the editor to ~code~ for Visual Studio Code.
+
+- Run ~$HOME/bin/bootstrap~.
+
 - Update [[https://wiki.archlinux.org/title/Greetd][greetd's]] command to:
   ~command="tuigreet --cmd Hyprland"~
+
 - Then run:
   #+begin_src shell
   gsettings set org.gnome.desktop.interface gtk-theme gnome-professional-solid-40.1
   gsettings set org.gnome.desktop.interface icon-theme kora
   gettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+  #+end_src
+
+  Note that you can also set ~cursor-theme~ and ~font-name~ if required.  This is because of a [[https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland][known GTK3 issue.]]
+
+- Optional, but will automatically setup your BASH environment for you based on what's been installed:
+  #+begin_src shell
+  git init
+  git remote add origin https://github.com/foggerty/hyprland
+  git pull origin master
+  mkdir ~/util
+  cd ~/util
+  git clone https://github.com/foggerty/dotgen
+  cd doten
+  ./dotgen.rb
   #+end_src
 - Update ~/etc/systemd/logind.conf~ and set:
    #+begin_src conf
@@ -26,24 +45,27 @@
    IdleActionSec=4min
    #+end_src
 
-Note that you can also set ~cursor-theme~ and ~font-name~ if required.  This is because of a [[https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland][known GTK3 issue.]]
-
-
-
 * ToDo
-  * [-] Get a passing score (70%+ on lynis)
-    * [X] Get Uncomplicated Firewall setup
-    * [X] Look into a simple to configure GTK firewall front-end if possible.  Setup network name to open it on right-click.
+  * [-] Get a passing score (70%+ on lynis).
+    * [X] Get Uncomplicated Firewall setup.
     * [ ] install (and configure) apparmour
-    * [ ] use lynis (there will be a "how-to" somewhere linking solutions to problems) to plug holes
-  * [ ] Get fecking clipboard history working again
+    * [ ] use lynis (there will be a "how-to" somewhere linking solutions -> problems) to plug holes.
+  * [ ] Get fecking clipboard history working again.
   * [ ] Make paper choose a random file if no argument is given.
   * [ ] Oh, and make paper check if the bloody file exists first.
-  * [ ] Add QT5 theme support (i.e. copy GTK2 thingie)
-  * [ ] Checklist of everything that needs to be working post-install
-    * [ ] Can browse SAMBA shares
-    * [ ] Can browse with AVAHI
-    * [ ] Firefox is using GPU
-    * [ ] Firefox is using libva for video rendering (should be on by default from V115+)
+  * [ ] Add QT5 theme support (i.e. copy GTK2 thingie).
+  * [ ] Checklist of everything that needs to be working post-install.
+    * [ ] Can browse SAMBA shares.
+    * [ ] Can browse with AVAHI.
+    * [ ] Firefox is using GPU.
+    * [ ] Firefox is using libva for video rendering (should be on by default from V115+).
+    * [ ] Passing score on lynis.
   * [ ] Make notification window thingie look nice.
   * [X] Polkit!
+
+
+       This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>. 
