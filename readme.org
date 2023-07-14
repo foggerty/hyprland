@@ -47,6 +47,10 @@
    IdleActionSec=4min
    #+end_src
 
+* Changing theme
+There's a (pretty shit, but usable) script here: ~/bin/paper~
+Note that it lives in a world where people are sensible and run Emacs in daemon mode, and that they have installed the ~ewal-*~ themes.
+
 * ToDo
   * [-] Get a passing score (70%+ on lynis).
     * [X] Get Uncomplicated Firewall setup.
