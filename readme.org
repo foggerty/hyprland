@@ -1,7 +1,9 @@
 * Installation
 - Install [[https://archlinux.org][Arch Linux]] using the ~archinstall~ script - for audio, select ~Pipewire~.
 
-- Install [[https://github.com/paullinuxthemer/Prof-Gnome][this theme]] (hint: this might be easier to do when you have a working desktop ).
+- Install [[https://github.com/Jguer/yay][yay]].
+
+- Install [[https://github.com/paullinuxthemer/Prof-Gnome][this theme]] (might be easier to do when you have a working desktop).
   
 - From your home directory run the following:
   #+begin_src shell
