@@ -4,7 +4,7 @@ applications="galculator vlc"
 basics="linux-firmware man base-devel"
 browser="firefox"
 desktop="xdg-desktop-portal-hyprland avahi network-manager-applet
-blueman brightnessctl pamixer gnome-system-monitor cliphist"
+blueman brightnessctl pamixer gnome-system-monitor cliphist flatpak"
 editor="emacs"
 file_manager="thunar thunar-volman gvfs gvfs-smb file-roller
 ffmpegthumbnailer tumbler"
@@ -27,8 +27,6 @@ to_install="$applications $audio $basics $browser $desktop $editor \
             $locale $power $theme $screenshots $terminal $wal"
 
 services=(ufw thermald acpid avahi-daemon bluetooth fancontrol upower lm_sensors tlp greetd)
-allowed_apps=() # http,https if you want to do web development or run
-                # services with an html front-end :-)
 
 if [[ $1 = "install" ]]
 then

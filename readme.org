@@ -12,7 +12,7 @@
   git pull origin master
   #+end_src
 
-- Update ~$HOME/bin/bootstrap~ with the drivers for your laptop.
+- Update ~$HOME/bin/bootstrap~ with the drivers for your machine.
   Note that the ~bootstrap~ script assumes that you're running it on a laptop, so there may be some applications you can remove/change, or just remove entries from the ~to_install~ variable.  Change the editor to ~code~ for Visual Studio Code.
 
 - Run ~$HOME/bin/bootstrap~.
@@ -24,7 +24,6 @@
   #+begin_src shell
   gsettings set org.gnome.desktop.interface gtk-theme gnome-professional-solid-40.1
   gsettings set org.gnome.desktop.interface icon-theme kora
-  gettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
   #+end_src
 
   Note that you can also set ~cursor-theme~ and ~font-name~ if required.  This is because of a [[https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland][known GTK3 issue.]]
@@ -41,37 +40,70 @@
   ./dotgen.rb
   #+end_src
 - Update ~/etc/systemd/logind.conf~ and set:
-   #+begin_src conf
-   HandleLidSwitch=suspend
-   IdleAction=lock
-   IdleActionSec=4min
-   #+end_src
+  #+begin_src conf
+  HandleLidSwitch=suspend
+  IdleAction=lock
+  IdleActionSec=4min
+  #+end_src
+- For Emacs:
+  #+begin_src conf
+  gettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+  sudo loginctl enable-linger $USER
+  #+end_src
 
 * Changing theme
 There's a (pretty shit, but usable) script here: ~/bin/paper~
 Note that it lives in a world where people are sensible and run Emacs in daemon mode, and that they have installed the ~ewal-*~ themes.
 
 * ToDo
-  * [-] Get a passing score (70%+ on lynis).
-    * [X] Get Uncomplicated Firewall setup.
-    * [ ] install (and configure) apparmour
-    * [ ] use lynis (there will be a "how-to" somewhere linking solutions -> problems) to plug holes.
+  * [ ] Get Uncomplicated Firewall setup.
+  * [ ] install (and configure) apparmour
+  * [ ] use lynis (there will be a "how-to" somewhere linking solutions -> problems) to plug holes.
   * [ ] Get fecking clipboard history working again.
   * [ ] Make paper choose a random file if no argument is given.
   * [ ] Oh, and make paper check if the bloody file exists first.
   * [ ] Add QT5 theme support (i.e. copy GTK2 thingie).
-  * [ ] Checklist of everything that needs to be working post-install.
-    * [ ] Can browse SAMBA shares.
-    * [ ] Can browse with AVAHI.
-    * [ ] Firefox is using GPU.
-    * [ ] Firefox is using libva for video rendering (should be on by default from V115+).
-    * [ ] Passing score on lynis.
   * [ ] Make notification window thingie look nice.
   * [X] Polkit!
 
+  * [ ] Checklist of everything that needs to be working post-install.
+    * [ ] Application support
+      * [ ] Steam
+      * [ ] Zoom - web
+      * [ ] Zoom - native
+      * [ ] Discord - is there a web client?
+      * [ ] Steam - can local settings be saved? (e.g. use client for all titles)
+      * [ ] .zip files (also create from Thunar)
+    * [ ] Networking (should be able to use Thunar to connect)
+      * [ ] Can browse SAMBA shares.
+      * [ ] Can browse with AVAHI (i.e. ping hostname.local).
+      * [ ] Can connect to UFS share - how common is this?
+    * [ ] Firefox
+      * [ ] Correctly displays Chinese/Korean/Japanese/Greek/Sanskrit/Arabic/Hebrew/Cryclic/Thai
+      * [ ] Firefox is using GPU.
+      * [ ] Firefox is using libva for video rendering (should be on by default from V115+).
+    * [ ] Security
+      * [ ] Passing score on lynis.
+    * [ ] Laptop (assuming drivers!)
+      * [ ] Wifi is working, can browse and connect
+      * [ ] Ditto for Bluetooth
+      * [ ] Lid sleeps & locks
 
-       This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+Images in ~$HOME/Pictures/Wallpapers~ are copyright their respective owners, and were copied from ~https:/wallpaperaccess.com~.
 
-    You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>. 
+--------------------------------------------------------------------------------
+
+       This program is free software: you can redistribute it and/or
+       modify it under the terms of the GNU General Public License as
+       published by the Free Software Foundation, either version 3 of
+       the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see
+    <https://www.gnu.org/licenses/>.
