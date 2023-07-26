@@ -56,6 +56,13 @@
 * Changing theme
 Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~ on an image in Thunar (this will call the same script).  Note that the script lives in a world where people are generally sensible and run Emacs in daemon mode.  It also assumes that they have installed the ~ewal-*~ themes.
 
+* Screenshots
+
+[[file:Pictures/info.png][Basic Info]]
+
+[[file:Pictures/building_emacs.png][Building Emacs]]
+
+
 * ToDo
   * [ ] Un-fuck Emacs config.
   * [ ] install (and configure) apparmour
