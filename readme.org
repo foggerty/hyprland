@@ -17,8 +17,7 @@
 
 - Run ~$HOME/bin/bootstrap~.
 
-- Update [[https://wiki.archlinux.org/title/Greetd][greetd's]] command to:
-  ~command="tuigreet --cmd Hyprland"~
+- Update [[https://wiki.archlinux.org/title/Greetd][greetd's]] command to: ~command="tuigreet --cmd Hyprland"~
 
 - Then run:
   #+begin_src shell
@@ -55,10 +54,10 @@
 - Disable watchdogs by appending ~nowatchdog~ to the kernel parameters.
 
 * Changing theme
-There's a (pretty shit, but usable) script here: ~/bin/paper~
-Note that it lives in a world where people are sensible and run Emacs in daemon mode, and that they have installed the ~ewal-*~ themes.
+Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~ on an image in Thunar (this will call the same script).  Note that the script lives in a world where people are generally sensible and run Emacs in daemon mode.  It also assumes that they have installed the ~ewal-*~ themes.
 
 * ToDo
+  * [ ] Un-fuck Emacs config.
   * [ ] install (and configure) apparmour
   * [ ] [[https://wiki.archlinux.org/title/General_recommendations#Optimization][Optimise 'stuff']].
   * [ ] use lynis (there will be a "how-to" somewhere linking solutions -> problems) to plug holes.

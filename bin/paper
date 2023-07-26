@@ -1,10 +1,10 @@
 #!/bin/bash
 
 function setWallpaper {
-    wal -c
-    wal -i $1
     pkill swaybg
     swaybg -i $1 &>/dev/null &
+    wal -c
+    wal -i $1
     emacsclient -e "(load-theme 'ewal-doom-one t)"
     pkill waybar
     waybar -l off &>/dev/null &
