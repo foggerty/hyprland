@@ -58,9 +58,9 @@ Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~
 
 * Screenshots
 
-[[file:Pictures/info.png][Basic Info]]
+[[file:Pictures/info.png]]
 
-[[file:Pictures/building_emacs.png][Building Emacs]]
+[[file:Pictures/building_emacs.png]]
 
 
 * ToDo
