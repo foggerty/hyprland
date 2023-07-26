@@ -45,25 +45,31 @@
   IdleAction=lock
   IdleActionSec=4min
   #+end_src
+- Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
+- See if there's anything specific for you [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
 - For Emacs:
   #+begin_src conf
   gettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
   sudo loginctl enable-linger $USER
   #+end_src
+- Disable watchdogs by appending ~nowatchdog~ to the kernel parameters.
 
 * Changing theme
 There's a (pretty shit, but usable) script here: ~/bin/paper~
 Note that it lives in a world where people are sensible and run Emacs in daemon mode, and that they have installed the ~ewal-*~ themes.
 
 * ToDo
-  * [ ] Get Uncomplicated Firewall setup.
   * [ ] install (and configure) apparmour
+  * [ ] [[https://wiki.archlinux.org/title/General_recommendations#Optimization][Optimise 'stuff']].
   * [ ] use lynis (there will be a "how-to" somewhere linking solutions -> problems) to plug holes.
   * [ ] Get fecking clipboard history working again.
   * [ ] Make paper choose a random file if no argument is given.
-  * [ ] Oh, and make paper check if the bloody file exists first.
   * [ ] Add QT5 theme support (i.e. copy GTK2 thingie).
   * [ ] Make notification window thingie look nice.
+  * [X] Make Thunar use paper script when changing wallpaper.
+  * [X] Make paper check if the bloody file exists before setting.
+  * [X] Have paper just set by default, no prompt.
+  * [X] Get Uncomplicated Firewall setup.
   * [X] Polkit!
 
   * [ ] Checklist of everything that needs to be working post-install.
@@ -77,7 +83,6 @@ Note that it lives in a world where people are sensible and run Emacs in daemon 
     * [ ] Networking (should be able to use Thunar to connect)
       * [ ] Can browse SAMBA shares.
       * [ ] Can browse with AVAHI (i.e. ping hostname.local).
-      * [ ] Can connect to UFS share - how common is this?
     * [ ] Firefox
       * [ ] Correctly displays Chinese/Korean/Japanese/Greek/Sanskrit/Arabic/Hebrew/Cryclic/Thai
       * [ ] Firefox is using GPU.

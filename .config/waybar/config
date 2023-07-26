@@ -61,7 +61,7 @@
         "format-charging": "{capacity}% ",
         "format-full": "",
         "format-icons": ["", "", "", "", ""],
-        "intrerval": 10
+        "interval": 3
     },
 
     "network": {

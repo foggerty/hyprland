@@ -12,4 +12,15 @@
 	<startup-notify/>
 	<directories/>
 </action>
+<action>
+	<icon>photolayoutseditor</icon>
+	<name>Set Theme</name>
+	<submenu></submenu>
+	<unique-id>1690370923779211-1</unique-id>
+	<command>$HOME/bin/paper %f</command>
+	<description>Uses ~/bin/paper</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
 </actions>

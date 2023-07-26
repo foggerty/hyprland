@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [ -z "$1" ]; then
-    echo "Please specify an image file to use."
-    exit 0
-fi
-
 function setWallpaper {
     wal -c
     wal -i $1
@@ -13,23 +8,31 @@ function setWallpaper {
     emacsclient -e "(load-theme 'ewal-doom-one t)"
     pkill waybar
     waybar -l off &>/dev/null &
+    cp $1 ~/Pictures/Wallpapers/current
 }
 
-setWallpaper "$1"
+if [ -z "$1" ]; then
+    echo "Please specify an image file to use."
+    exit -1
+fi
 
-echo "Looks good?"
+if [ ! -s "$1" ]; then
+    echo "That's not a file.  Try again."
+    exit -1
+fi
 
-select yn in y n; do
+supported=("PNG" "XPM" "JPEG" "TIFF" "PNM" "RAS" "BMP") # gdk-pixbuf
 
-    case $yn in
-        y)
-            cp $1 ~/Pictures/Wallpapers/current
-            exit 0
-            ;;
-        *)
-            setWallpaper "/home/$USER/Pictures/Wallpapers/current"
-            exit 0
-            ;;
-    esac
+fileType=`file $1 | cut -d " " -f 2`
 
+for imageType in ${supported[@]}
+do
+    if [ "$fileType" = "$imageType" ]; then
+        setWallpaper $1
+        exit 0
+    fi
 done
+
+echo "Not a recognised file type."
+exit -1
+

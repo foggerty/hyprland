@@ -1,18 +1,18 @@
 #!/bin/sh
 
 applications="galculator vlc"
-basics="linux-firmware man base-devel"
+basics="man linux-firmware base-devel"
 browser="firefox"
 desktop="xdg-desktop-portal-hyprland avahi network-manager-applet
-blueman brightnessctl pamixer gnome-system-monitor cliphist flatpak"
+         blueman brightnessctl pamixer gnome-system-monitor cliphist flatpak
+         hyprland waybar wlr-randr swayidle swaylock swaybg"
 editor="emacs"
-file_manager="thunar thunar-volman gvfs gvfs-smb file-roller
-ffmpegthumbnailer tumbler"
-fonts="otf-font-awesome ttf-sourcecodepro-nerd noto-fonts
-noto-fonts-emoji ttf-linux-libertine"
+file_manager="thunar thunar-archive-plugin thunar-volman gvfs gvfs-smb file-roller
+              ffmpegthumbnailer tumbler nfe-utils"
+fonts="otf-font-awesome ttf-sourcecodepro-nerd noto-fonts oto-fonts-emoji ttf-linux-libertine"
 greeter="greetd greetd-tuigreet"
-gpu="libva-intel-driver vulkan-intel"
-hyprland="hyprland waybar wlr-randr swayidle swaylock swaybg"
+intel_hardware="intel-ucode libva-intel-driver vulkan-intel"
+amd_hardware="amd-ucode"
 launcher="rofi"
 locale="aspell aspell-en"
 power="acpid tlp lm_sensors thermald rrdtool"
@@ -22,30 +22,30 @@ security="ufw gufu polkit lxpolkit-gtk3"
 terminal="alacritty bash-completion htop moar tldr"
 wal="python-pywal imagemagick feh"
 
-to_install="$applications $audio $basics $browser $desktop $editor \
-            $file_manager $fonts $greeter $gpu $hyprland $launcher \
+to_install="$applications $basics $browser $desktop $editor \
+            $file_manager $fonts $greeter $intel_hardware $launcher \
             $locale $power $theme $screenshots $terminal $wal"
 
-services=(ufw thermald acpid avahi-daemon bluetooth fancontrol upower lm_sensors tlp greetd)
+services=(ufw thermald acpid avahi-daemon bluetooth fancontrol upower lm_sensors tlp)
 
-if [[ $1 = "install" ]]
-then
-    yay --needed -S $to_install
-    wal -i ~/Pictures/Wallpapers/current
-elif [[ $1 = "start" ]]
-then
-    for service in ${services[@]}; do
-        systemctl enable $service
-        systemctl start $service
-    done
+yay --needed -S $to_install
 
-    ufw default deny
-    ufw allow from 192.168.0.0/24
-    ufw enable
+wal -i ~/Pictures/Wallpapers/current
 
-    for app in ${allowed_apps[@]}; do
-        ufw allow $app
-    done
-else
-    echo "Usage: bootstrap 'install|enable' to install apps or start required services."
-fi
+for service in ${services[@]}; do
+    systemctl enable $service
+    systemctl start $service
+done
+
+ufw default deny
+ufw allow from 192.168.0.0/24
+ufw enable
+
+for app in ${allowed_apps[@]}; do
+    ufw allow $app
+done
+
+rm /usr/lib/thunax-3/thunar-wallpaper-plugin.so
+
+systemctl enable greetd
+systemctl start  greetd
