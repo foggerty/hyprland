@@ -2,8 +2,6 @@
 - Install [[https://archlinux.org][Arch Linux]] using the ~archinstall~ script - for audio, select ~Pipewire~.
 
 - Install [[https://github.com/Jguer/yay][yay]].
-
-- Install [[https://github.com/paullinuxthemer/Prof-Gnome][this theme]] (might be easier to do when you have a working desktop).
   
 - From your home directory run the following:
   #+begin_src shell
@@ -13,13 +11,13 @@
   #+end_src
 
 - Update ~$HOME/bin/bootstrap~ with the drivers for your machine.
-  Note that the ~bootstrap~ script assumes that you're running it on a laptop, so there may be some applications you can remove/change, or just remove entries from the ~to_install~ variable.  Change the editor to ~code~ for Visual Studio Code.
+  Note that the ~bootstrap~ script assumes that you're running it on a laptop, so there may be some applications you can remove/change, or just remove entries from the ~to_install~ variable.
 
 - Run ~$HOME/bin/bootstrap~.
 
 - Update [[https://wiki.archlinux.org/title/Greetd][greetd's]] command to: ~command="tuigreet --cmd Hyprland"~
 
-- Then run:
+- Install [[https://github.com/paullinuxthemer/Prof-Gnome][this theme]] and then run:
   #+begin_src shell
   gsettings set org.gnome.desktop.interface gtk-theme gnome-professional-solid-40.1
   gsettings set org.gnome.desktop.interface icon-theme kora
@@ -51,27 +49,39 @@
   gettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
   sudo loginctl enable-linger $USER
   #+end_src
-- Disable watchdogs by appending ~nowatchdog~ to the kernel parameters.
+- For Vi:
+  #+begin_src shell
+  # I'm assuming that you know what you're doing.
+  #+end_src
+- For Visual Code
+  #+begin_src shell
+  # I'm sorry ;-)
+  #+end_src
+- Disable watchdogs by appending ~nowatchdog~ to the [[https://wiki.archlinux.org/title/kernel_parameters][kernel parameters]].
 
 * Changing theme
-Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~ on an image in Thunar (this will call the same script).  Note that the script lives in a world where people are generally sensible and run Emacs in daemon mode.  It also assumes that they have installed the ~ewal-*~ themes.
+Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~ on an image in Thunar (this will call the same script).  Note that the script lives in a world where people are generally sensible and run Emacs in daemon mode.  It also assumes that they have installed the ~ewal-*~ themes because otherwise it breaks the whole effect :-(
 
 * Screenshots
 
+The mandatory ~neofetch~ shot:
+
 [[file:Pictures/info.png]]
+
+Actually doing something useful; building Emacs:
 
 [[file:Pictures/building_emacs.png]]
 
 
 * ToDo
-  * [ ] Un-fuck Emacs config.
-  * [ ] install (and configure) apparmour
-  * [ ] [[https://wiki.archlinux.org/title/General_recommendations#Optimization][Optimise 'stuff']].
-  * [ ] use lynis (there will be a "how-to" somewhere linking solutions -> problems) to plug holes.
+  * [ ] Use lynis (doh, the audit report itself tells you how to plug holes) to plug holes.
   * [ ] Get fecking clipboard history working again.
-  * [ ] Make paper choose a random file if no argument is given.
   * [ ] Add QT5 theme support (i.e. copy GTK2 thingie).
+  * [ ] Make paper choose a random file if no argument is given.
+  * [ ] Take some notes on apparmor, and look into enabling the Audit framework so can get notifications.
+  * [ ] [[https://wiki.archlinux.org/title/General_recommendations#Optimization][Optimise 'stuff']].
   * [ ] Make notification window thingie look nice.
+  * [X] Install (and configure) apparmor.
   * [X] Make Thunar use paper script when changing wallpaper.
   * [X] Make paper check if the bloody file exists before setting.
   * [X] Have paper just set by default, no prompt.
@@ -88,6 +98,7 @@ Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~
       * [ ] .zip files (also create from Thunar)
     * [ ] Networking (should be able to use Thunar to connect)
       * [ ] Can browse SAMBA shares.
+      * [ ] Can create a SAMBA share via Thunar
       * [ ] Can browse with AVAHI (i.e. ping hostname.local).
     * [ ] Firefox
       * [ ] Correctly displays Chinese/Korean/Japanese/Greek/Sanskrit/Arabic/Hebrew/Cryclic/Thai
@@ -99,6 +110,8 @@ Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~
       * [ ] Wifi is working, can browse and connect
       * [ ] Ditto for Bluetooth
       * [ ] Lid sleeps & locks
+    * [ ] Theming
+      * [ ] Can right-click in Thunar and set theme.
 
 
 Images in ~$HOME/Pictures/Wallpapers~ are copyright their respective owners, and were copied from ~https:/wallpaperaccess.com~.

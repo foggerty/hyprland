@@ -6,8 +6,9 @@ text/plain=userapp-emacsclient -c-CI0N31.desktop
 application/x-zerosize=userapp-emacsclient -c-CI0N31.desktop
 
 [Added Associations]
-application/zip=thunar.desktop;
+application/zip=engrampa.desktop;thunar.desktop;
 application/x-shellscript=emacsclient.desktop;userapp-emacsclient -c-CI0N31.desktop;
 audio/x-mod=userapp-emacsclient -c-CI0N31.desktop;
 application/x-zerosize=userapp-emacsclient -c-CI0N31.desktop;
 image/jpeg=feh.desktop;
+application/oebps-package+xml=emacsclient.desktop;
