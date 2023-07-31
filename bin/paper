@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function setWallpaper {
+    cp $1 ~/Pictures/Wallpapers/current
     pkill swaybg
     swaybg -i $1 &>/dev/null &
     wal -c
@@ -8,7 +9,7 @@ function setWallpaper {
     emacsclient -e "(load-theme 'ewal-doom-one t)"
     pkill waybar
     waybar -l off &>/dev/null &
-    cp $1 ~/Pictures/Wallpapers/current
+
 }
 
 if [ -z "$1" ]; then

@@ -2,6 +2,10 @@
 - Install [[https://archlinux.org][Arch Linux]] using the ~archinstall~ script - for audio, select ~Pipewire~.
 
 - Install [[https://github.com/Jguer/yay][yay]].
+
+- Set the default ~umask~ to 027.
+
+- Disable core dumps.
   
 - From your home directory run the following:
   #+begin_src shell
@@ -57,7 +61,7 @@
   #+begin_src shell
   # I'm sorry ;-)
   #+end_src
-- Disable watchdogs by appending ~nowatchdog~ to the [[https://wiki.archlinux.org/title/kernel_parameters][kernel parameters]].
+- Disable watchdog by appending ~nowatchdog~ to the [[https://wiki.archlinux.org/title/kernel_parameters][kernel parameters]].
 
 * Changing theme
 Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~ on an image in Thunar (this will call the same script).  Note that the script lives in a world where people are generally sensible and run Emacs in daemon mode.  It also assumes that they have installed the ~ewal-*~ themes because otherwise it breaks the whole effect :-(
@@ -74,13 +78,14 @@ Actually doing something useful; building Emacs:
 
 
 * ToDo
-  * [ ] Use lynis (doh, the audit report itself tells you how to plug holes) to plug holes.
-  * [ ] Get fecking clipboard history working again.
+  * [ ] ~.config/user-dirs.locale~ - should be able to automatically populate this?
+  * [ ] Look into what ~.config/fotconfig/fonts.conf~ does, and maybe update docs re setting it up correctly.
+  * [ ] Get fecking clipboard history working again (and cliphist).
   * [ ] Add QT5 theme support (i.e. copy GTK2 thingie).
-  * [ ] Make paper choose a random file if no argument is given.
   * [ ] Take some notes on apparmor, and look into enabling the Audit framework so can get notifications.
-  * [ ] [[https://wiki.archlinux.org/title/General_recommendations#Optimization][Optimise 'stuff']].
   * [ ] Make notification window thingie look nice.
+  * [X] Use lynis (doh, the audit report itself tells you how to plug holes) to plug holes.
+  * [X] [[https://wiki.archlinux.org/title/General_recommendations#Optimization][Optimise 'stuff']].
   * [X] Install (and configure) apparmor.
   * [X] Make Thunar use paper script when changing wallpaper.
   * [X] Make paper check if the bloody file exists before setting.
@@ -105,7 +110,7 @@ Actually doing something useful; building Emacs:
       * [ ] Firefox is using GPU.
       * [ ] Firefox is using libva for video rendering (should be on by default from V115+).
     * [ ] Security
-      * [ ] Passing score on lynis.
+      * [ ] Passing score (70%) on lynis.
     * [ ] Laptop (assuming drivers!)
       * [ ] Wifi is working, can browse and connect
       * [ ] Ditto for Bluetooth

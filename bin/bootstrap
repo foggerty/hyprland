@@ -9,7 +9,7 @@ desktop="xdg-desktop-portal-hyprland avahi network-manager-applet
 editor="emacs"
 file_manager="thunar thunar-archive-plugin thunar-volman gvfs gvfs-smb file-roller
               ffmpegthumbnailer tumbler nfe-utils"
-fonts="otf-font-awesome ttf-sourcecodepro-nerd noto-fonts oto-fonts-emoji ttf-linux-libertine"
+fonts="adobe-source-han-fonts otf-font-awesome ttf-sourcecodepro-nerd noto-fonts oto-fonts-emoji ttf-linux-libertine"
 greeter="greetd greetd-tuigreet"
 intel_hardware="intel-ucode libva-intel-driver vulkan-intel"
 amd_hardware="amd-ucode"
