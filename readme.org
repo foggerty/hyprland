@@ -78,10 +78,10 @@ Actually doing something useful; building Emacs:
 
 
 * ToDo
+  * [ ] Get fecking clipboard history working again (and cliphist).
   * [ ] ~.config/user-dirs.locale~ - should be able to automatically populate this?
   * [ ] Look into what ~.config/fotconfig/fonts.conf~ does, and maybe update docs re setting it up correctly.
-  * [ ] Get fecking clipboard history working again (and cliphist).
-  * [ ] Add QT5 theme support (i.e. copy GTK2 thingie).
+  * [ ] Add QT5 theme support (i.e. copy GTK2 thingie) - use copyq to test it.
   * [ ] Take some notes on apparmor, and look into enabling the Audit framework so can get notifications.
   * [ ] Make notification window thingie look nice.
   * [X] Use lynis (doh, the audit report itself tells you how to plug holes) to plug holes.
