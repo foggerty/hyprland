@@ -4,8 +4,8 @@ applications="galculator vlc foliate"
 basics="man linux-firmware base-devel apparmor ufw"
 browser="firefox"
 desktop="xdg-desktop-portal-hyprland avahi network-manager-applet
-         blueman brightnessctl pamixer gnome-system-monitor cliphist flatpak
-         hyprland waybar wlr-randr wlprop jq swayidle swaylock swaybg"
+         blueman brightnessctl pamixer gnome-system-monitor copyq flatpak
+         hyprland waybar wlr-randr swayidle swaylock swaybg"
 editor="emacs"
 file_manager="thunar thunar-archive-plugin thunar-volman gvfs gvfs-smb file-roller
               ffmpegthumbnailer tumbler nfe-utils"
