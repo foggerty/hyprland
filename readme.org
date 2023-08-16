@@ -95,6 +95,8 @@ Actually doing something useful; building Emacs:
   * [X] Polkit!
 
   * [ ] Checklist of everything that needs to be working post-install.
+    * [ ] Multi-monitor support
+      * [ ] Waybar only on primary monitor
     * [ ] Application support
       * [ ] Steam
       * [ ] Zoom - web

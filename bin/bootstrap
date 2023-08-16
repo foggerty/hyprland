@@ -20,7 +20,7 @@ theme="kora-icon-theme qt5ct qt6ct"
 screenshots="grim swappy"
 security="ufw gufu polkit lxpolkit-gtk3"
 terminal="alacritty bash-completion htop moar tldr"
-wal="python-pywal imagemagick feh"
+wal="python-pywal python-haishoku imagemagick feh"
 
 to_install="$applications $basics $browser $desktop $editor \
             $file_manager $fonts $greeter $intel_hardware $launcher \
