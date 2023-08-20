@@ -1,15 +1,23 @@
 #!/bin/bash
 
+# Stop on first error.
+set +e
+
+# Default wallpeper.
+wallpaper="$HOME/Pictures/Wallpapers/current"
+
 function setWallpaper {
-    cp $1 ~/Pictures/Wallpapers/current
-    pkill swaybg
-    swaybg -i $1 &>/dev/null &
     wal -c
     wal -i $1 --backend=haishoku
+    # if wal crashes because it cannot handle the file-type, just
+    # crash here too.  If wal isn't going to handle failure gracefuly
+    # then neither will I.  This is why we don't have nice things.
+    cp $1 $wallpaper
+    pkill swaybg
+    swaybg -i $wallpaper &>/dev/null &
     emacsclient -e "(load-theme 'ewal-doom-one t)"
     pkill waybar
     waybar -l off &>/dev/null &
-
 }
 
 if [ -z "$1" ]; then

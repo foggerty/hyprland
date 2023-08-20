@@ -1,4 +1,4 @@
- Installation
+* Installation
 - Install [[https://archlinux.org][Arch Linux]] using the ~archinstall~ script - for audio, select ~Pipewire~.
 
 - Install [[https://github.com/Jguer/yay][yay]].
@@ -76,14 +76,13 @@ Actually doing something useful; building Emacs:
 
 [[file:Pictures/building_emacs.png]]
 
-
 * ToDo
-  * [ ] Get fecking clipboard history working again - particularly with Emacs!
   * [ ] ~.config/user-dirs.locale~ - should be able to automatically populate this?
   * [ ] Look into what ~.config/fotconfig/fonts.conf~ does, and maybe update docs re setting it up correctly.
   * [ ] Take some notes on apparmor, and look into enabling the Audit framework so can get notifications.
   * [ ] Make notification window thingie look nice.
   * [ ] Get icons working in QT5.
+  * [X] Get fecking clipboard history working again - particularly with Emacs!
   * [X] Add QT5 theme support (i.e. copy GTK2 thingie) - use copyq to test it.
   * [X] Use lynis (doh, the audit report itself tells you how to plug holes) to plug holes.
   * [X] [[https://wiki.archlinux.org/title/General_recommendations#Optimization][Optimise 'stuff']].
@@ -95,6 +94,10 @@ Actually doing something useful; building Emacs:
   * [X] Polkit!
 
   * [ ] Checklist of everything that needs to be working post-install.
+    * [ ] General
+      * [ ] Desktop portal is running
+      * [ ] Notifications are working
+      * [ ] Clipboard helper
     * [ ] Multi-monitor support
       * [ ] Waybar only on primary monitor
     * [ ] Application support
