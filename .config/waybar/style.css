@@ -7,7 +7,7 @@
 
 window#waybar {
     background-color: @background;
-    opacity: 0.80;
+    opacity: 0.85;
     border: 1px solid rgba(156, 156, 156, 1.0);
     color: @foreground;
     transition-property: background-color;

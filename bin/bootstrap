@@ -1,11 +1,11 @@
 #!/bin/sh
 
-applications="galculator vlc foliate"
+applications="galculator vlc foliate "
 basics="man linux-firmware base-devel apparmor ufw"
 browser="firefox"
 desktop="xdg-desktop-portal-hyprland avahi network-manager-applet
          blueman brightnessctl pamixer gnome-system-monitor copyq flatpak
-         hyprland waybar wlr-randr swayidle swaylock swaybg"
+         hyprland waybar-hyprland wlr-randr swayidle swaylock swaybg"
 editor="emacs"
 file_manager="thunar thunar-archive-plugin thunar-volman gvfs gvfs-smb file-roller
               ffmpegthumbnailer tumbler nfe-utils"
@@ -18,8 +18,8 @@ locale="aspell aspell-en"
 power="acpid tlp lm_sensors thermald rrdtool"
 theme="kora-icon-theme qt5ct qt6ct"
 screenshots="grim swappy"
-security="ufw gufu polkit lxpolkit-gtk3"
-terminal="alacritty bash-completion htop moar tldr"
+security="ufw polkit lxpolkit-gtk3"
+terminal="alacritty bash-completion htop btop moar tldr"
 wal="python-pywal python-haishoku imagemagick feh"
 
 to_install="$applications $basics $browser $desktop $editor \

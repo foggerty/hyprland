@@ -49,7 +49,8 @@
 - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
 - See if there's anything specific for you [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
 - For Emacs:
-  #+begin_src conf
+  #+begin_src shell
+  # Note that this 
   gettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
   sudo loginctl enable-linger $USER
   #+end_src
@@ -62,6 +63,11 @@
   # I'm sorry ;-)
   #+end_src
 - Disable watchdog by appending ~nowatchdog~ to the [[https://wiki.archlinux.org/title/kernel_parameters][kernel parameters]].
+- Update the ~greetd.service~ file:
+  #+begin_src shell
+  [Unit]
+  After=multi-user.target
+  #+end_src
 
 * Changing theme
 Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~ on an image in Thunar (this will call the same script).  Note that the script lives in a world where people are generally sensible and run Emacs in daemon mode.  It also assumes that they have installed the ~ewal-*~ themes because otherwise it breaks the whole effect :-(
@@ -76,12 +82,13 @@ Actually doing something useful; building Emacs:
 
 [[file:Pictures/building_emacs.png]]
 
-* ToDo
-  * [ ] ~.config/user-dirs.locale~ - should be able to automatically populate this?
-  * [ ] Look into what ~.config/fotconfig/fonts.conf~ does, and maybe update docs re setting it up correctly.
+* TODO   ToDo
+  * [ ] ~.config/user-dirs.locale~ - should be able to automatically populate this
+  * [ ] Look into1 what ~.config/fotconfig/fonts.conf~ does, and maybe update docs re setting it up correctly.
   * [ ] Take some notes on apparmor, and look into enabling the Audit framework so can get notifications.
   * [ ] Make notification window thingie look nice.
-  * [ ] Get icons working in QT5.
+  * [X] Get icons working in QT5.
+  * [X] Make greetd run last so it's not covered by boot messages
   * [X] Get fecking clipboard history working again - particularly with Emacs!
   * [X] Add QT5 theme support (i.e. copy GTK2 thingie) - use copyq to test it.
   * [X] Use lynis (doh, the audit report itself tells you how to plug holes) to plug holes.
@@ -99,7 +106,7 @@ Actually doing something useful; building Emacs:
       * [ ] Notifications are working
       * [ ] Clipboard helper
     * [ ] Multi-monitor support
-      * [ ] Waybar only on primary monitor
+      * [ ] Waybar only on primary monitor?
     * [ ] Application support
       * [ ] Steam
       * [ ] Zoom - web
