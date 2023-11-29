@@ -3,9 +3,11 @@
 
 - Install [[https://github.com/Jguer/yay][yay]].
 
+- Install ~pacman-contrib~ and run ~rankmirrors~, or, if like you live in NZ, just delete all mirrors other than NZ and you should be good to go :-)
+
 - Set the default ~umask~ to 027.
 
-- Disable core dumps.
+- Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
   
 - From your home directory run the following:
   #+begin_src shell
@@ -83,23 +85,10 @@ Actually doing something useful; building Emacs:
 [[file:Pictures/building_emacs.png]]
 
 * TODO   ToDo
+  * [ ] Make notification window thingie look nice.
   * [ ] ~.config/user-dirs.locale~ - should be able to automatically populate this
   * [ ] Look into1 what ~.config/fotconfig/fonts.conf~ does, and maybe update docs re setting it up correctly.
   * [ ] Take some notes on apparmor, and look into enabling the Audit framework so can get notifications.
-  * [ ] Make notification window thingie look nice.
-  * [X] Get icons working in QT5.
-  * [X] Make greetd run last so it's not covered by boot messages
-  * [X] Get fecking clipboard history working again - particularly with Emacs!
-  * [X] Add QT5 theme support (i.e. copy GTK2 thingie) - use copyq to test it.
-  * [X] Use lynis (doh, the audit report itself tells you how to plug holes) to plug holes.
-  * [X] [[https://wiki.archlinux.org/title/General_recommendations#Optimization][Optimise 'stuff']].
-  * [X] Install (and configure) apparmor.
-  * [X] Make Thunar use paper script when changing wallpaper.
-  * [X] Make paper check if the bloody file exists before setting.
-  * [X] Have paper just set by default, no prompt.
-  * [X] Get Uncomplicated Firewall setup.
-  * [X] Polkit!
-
   * [ ] Checklist of everything that needs to be working post-install.
     * [ ] General
       * [ ] Desktop portal is running
@@ -114,6 +103,7 @@ Actually doing something useful; building Emacs:
       * [ ] Discord - is there a web client?
       * [ ] Steam - can local settings be saved? (e.g. use client for all titles)
       * [ ] .zip files (also create from Thunar)
+      * [ ] Flatpak - should be able to double-click and install.
     * [ ] Networking (should be able to use Thunar to connect)
       * [ ] Can browse SAMBA shares.
       * [ ] Can create a SAMBA share via Thunar
@@ -130,6 +120,8 @@ Actually doing something useful; building Emacs:
       * [ ] Lid sleeps & locks
     * [ ] Theming
       * [ ] Can right-click in Thunar and set theme.
+
+  * [X] Find a better clipboard manager.
 
 
 Images in ~$HOME/Pictures/Wallpapers~ are copyright their respective owners, and were copied from ~https:/wallpaperaccess.com~.
