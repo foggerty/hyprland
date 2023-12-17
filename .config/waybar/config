@@ -4,7 +4,7 @@
     "spacing": 12,
     "margin-left": 4,
     "margin-right": 4,
-    "margin-top": 4,
+    "margin-top": 3,
     "modules-left": ["memory", "cpu", "temperature"],
     "modules-center": ["clock"],
     "modules-right": ["hyprland/workspaces", "pulseaudio", "battery", "network", "tray"],
@@ -41,7 +41,7 @@
     },
 
     "temperature": {
-        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input",
         "format": "{temperatureC}°C",
     },
 
