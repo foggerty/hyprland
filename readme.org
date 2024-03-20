@@ -65,7 +65,7 @@
   # I'm sorry ;-)
   #+end_src
 - Disable watchdog by appending ~nowatchdog~ to the [[https://wiki.archlinux.org/title/kernel_parameters][kernel parameters]].
-- Update the ~greetd.service~ file:
+- Update the ~greetd.service~ file so that you (mostly) don't get bootup messages covering the login box:
   #+begin_src shell
   [Unit]
   After=multi-user.target
@@ -85,8 +85,9 @@ Actually doing something useful; building Emacs:
 [[file:Pictures/building_emacs.png]]
 
 * TODO   ToDo
+  * [ ] Try out the gesture plugin for Hyprland.
   * [ ] Make notification window thingie look nice.
-  * [ ] ~.config/user-dirs.locale~ - should be able to automatically populate this
+  * [ ] ~.config/user-dirs.locale~ - should be able to automatically populate this?
   * [ ] Look into1 what ~.config/fotconfig/fonts.conf~ does, and maybe update docs re setting it up correctly.
   * [ ] Take some notes on apparmor, and look into enabling the Audit framework so can get notifications.
   * [ ] Checklist of everything that needs to be working post-install.
