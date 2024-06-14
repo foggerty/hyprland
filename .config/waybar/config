@@ -32,12 +32,12 @@
     "cpu": {
         "format": "cpu: {usage}%",
         "tooltip": false,
-        "on-click": "alacritty -e atop"
+        "on-click": "alacritty -e gtop"
     },
 
     "memory": {
         "format": "memory: {}%",
-        "on-click": "gnome-system-monitor"
+        "on-click": "alacritty -e gtop"
     },
 
     "temperature": {

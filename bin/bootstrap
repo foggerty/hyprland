@@ -3,33 +3,35 @@
 applications="galculator vlc foliate "
 basics="man linux-firmware base-devel apparmor ufw"
 browser="firefox"
-desktop="xdg-desktop-portal-hyprland avahi network-manager-applet
-         blueman brightnessctl pamixer gnome-system-monitor copyq flatpak
-         hyprland wlr-randr swayidle swaylock swaybg"
+desktop="xdg-desktop-portal-hyprland avahi
+	 network-manager-applet  blueman pamixer
+         hyprland wlr-randr swayidle swaylock swaybg
+	 waybar"
 graphics_hardware="gflw-wayland"
-editor="emacs"
+editor="emacs libgccjit"
 file_manager="thunar thunar-archive-plugin thunar-volman gvfs gvfs-smb file-roller
-              ffmpegthumbnailer tumbler nfe-utils"
-fonts="adobe-source-han-fonts otf-font-awesome ttf-sourcecodepro-nerd noto-fonts oto-fonts-emoji ttf-linux-libertine"
+              ffmpegthumbnailer tumbler nfs-utils"
+fonts="adobe-source-han-fonts otf-font-awesome ttf-sourcecodepro-nerd noto-fonts noto-fonts-emoji ttf-linux-libertine"
 gaming="gamemode steam"
 greeter="greetd greetd-tuigreet"
 intel_hardware="intel-ucode libva-intel-driver vulkan-intel"
 amd_hardware="amd-ucode"
 launcher="rofi"
 locale="aspell aspell-en"
-power="acpid tlp lm_sensors thermald rrdtool"
+power="acpid tlp lm_sensors thermald brightnessctl"
 theme="kora-icon-theme qt5-wayland qt6-wayland qt5ct qt6ct"
 screenshots="grim swappy"
-security="ufw polkit lxpolkit-gtk3 fwupd"
-terminal="alacritty bash-completion htop btop moar tldr"
+security="polkit ufw"
+terminal="alacritty bash-completion gtop htop moar tldr"
 wal="python-pywal python-haishoku imagemagick feh"
 
 to_install="$applications $basics $browser $desktop $editor \
-            $file_manager $fonts $gaming $graphics_hatdware $greeter \
-            $intel_hardware m$launcher $locale $power $theme \
-            $screenshots $terminal $wal"
+            $file_manager $fonts $greeter $intel_hardware \
+            $launcher $locale $power $theme \
+            $screenshots $security $terminal $wal"
 
 services=(ufw apparmor thermald acpid avahi-daemon bluetooth fancontrol upower lm_sensors tlp)
+allowed_apps=()
 
 yay --needed -S $to_install
 
@@ -47,8 +49,6 @@ ufw enable
 for app in ${allowed_apps[@]}; do
     ufw allow $app
 done
-
-rm /usr/lib/thunax-3/thunar-wallpaper-plugin.so
 
 systemctl enable greetd
 systemctl start  greetd

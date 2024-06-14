@@ -5,6 +5,8 @@ audio/x-mod=userapp-emacsclient -c-CI0N31.desktop
 text/plain=userapp-emacsclient -c-CI0N31.desktop
 application/x-zerosize=userapp-emacsclient -c-CI0N31.desktop
 application/vnd.flatpak=com.github.tchx84.Flatseal.desktop
+text/x-scheme=userapp-emacsclient -c-GFFSO2.desktop
+application/xml=userapp-emacsclient -c-GFFSO2.desktop
 
 [Added Associations]
 application/zip=engrampa.desktop;thunar.desktop;
@@ -15,3 +17,5 @@ image/jpeg=feh.desktop;
 application/oebps-package+xml=emacsclient.desktop;
 application/vnd.flatpak.ref=xdg-desktop-portal-hyprland.desktop;com.github.tchx84.Flatseal.desktop;
 application/vnd.flatpak=xdg-desktop-portal-hyprland.desktop;gcr-prompter.desktop;com.github.tchx84.Flatseal.desktop;
+application/xml=userapp-emacsclient -c-GFFSO2.desktop;
+text/x-scheme=userapp-emacsclient -c-GFFSO2.desktop;

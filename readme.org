@@ -70,6 +70,10 @@
   [Unit]
   After=multi-user.target
   #+end_src
+- Tidy Thunar interface
+  #+begin_scr shell
+  rm /usr/lib/thunax-3/thunar-wallpaper-plugin.so
+  #+end_src
 
 * Changing theme
 Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~ on an image in Thunar (this will call the same script).  Note that the script lives in a world where people are generally sensible and run Emacs in daemon mode.  It also assumes that they have installed the ~ewal-*~ themes because otherwise it breaks the whole effect :-(
