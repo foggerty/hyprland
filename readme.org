@@ -9,13 +9,6 @@
 
 - Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
   
-- From your home directory run the following:
-  #+begin_src shell
-  git init
-  git remote add origin https://github.com/foggerty/hyprland
-  git pull origin master
-  #+end_src
-
 - Update ~$HOME/bin/bootstrap~ with the drivers for your machine.
   Note that the ~bootstrap~ script assumes that you're running it on a laptop, so there may be some applications you can remove/change, or just remove entries from the ~to_install~ variable.
 
@@ -31,45 +24,31 @@
 
   Note that you can also set ~cursor-theme~ and ~font-name~ if required.  This is because of a [[https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland][known GTK3 issue.]]
 
-- Optional, but will automatically setup your BASH environment for you based on what's been installed:
-  #+begin_src shell
-  git init
-  git remote add origin https://github.com/foggerty/hyprland
-  git pull origin master
-  mkdir ~/util
-  cd ~/util
-  git clone https://github.com/foggerty/dotgen
-  cd doten
-  ./dotgen.rb
-  #+end_src
 - Update ~/etc/systemd/logind.conf~ and set:
   #+begin_src conf
   HandleLidSwitch=suspend
   IdleAction=lock
   IdleActionSec=4min
   #+end_src
+
 - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
+
 - See if there's anything specific for you [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
+
 - For Emacs:
   #+begin_src shell
-  # Note that this 
   gettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
   sudo loginctl enable-linger $USER
   #+end_src
-- For Vi:
-  #+begin_src shell
-  # I'm assuming that you know what you're doing.
-  #+end_src
-- For Visual Code
-  #+begin_src shell
-  # I'm sorry ;-)
-  #+end_src
+
 - Disable watchdog by appending ~nowatchdog~ to the [[https://wiki.archlinux.org/title/kernel_parameters][kernel parameters]].
+
 - Update the ~greetd.service~ file so that you (mostly) don't get bootup messages covering the login box:
   #+begin_src shell
   [Unit]
   After=multi-user.target
   #+end_src
+
 - Tidy Thunar interface
   #+begin_scr shell
   rm /usr/lib/thunax-3/thunar-wallpaper-plugin.so
@@ -89,12 +68,10 @@ Actually doing something useful; building Emacs:
 [[file:Pictures/building_emacs.png]]
 
 * TODO   ToDo
-  * [ ] Try out the gesture plugin for Hyprland.
-  * [ ] Make notification window thingie look nice.
-  * [ ] ~.config/user-dirs.locale~ - should be able to automatically populate this?
-  * [ ] Look into1 what ~.config/fotconfig/fonts.conf~ does, and maybe update docs re setting it up correctly.
-  * [ ] Take some notes on apparmor, and look into enabling the Audit framework so can get notifications.
-  * [ ] Checklist of everything that needs to be working post-install.
+  - [ ] Make notification window thingie look nice.
+  - [ ] ~.config/user-dirs.locale~ - should be able to automatically populate this?
+  - [ ] Look into1 what ~.config/fotconfig/fonts.conf~ does, and maybe update docs re setting it up correctly.
+  - [ ] Checklist of everything that needs to be working post-install.
     * [ ] General
       * [ ] Desktop portal is running
       * [ ] Notifications are working
@@ -125,8 +102,8 @@ Actually doing something useful; building Emacs:
       * [ ] Lid sleeps & locks
     * [ ] Theming
       * [ ] Can right-click in Thunar and set theme.
-
-  * [X] Find a better clipboard manager.
+  - [X] Find a better clipboard manager.
+  - [X] Try out the gesture plugin for Hyprland.
 
 
 Images in ~$HOME/Pictures/Wallpapers~ are copyright their respective owners, and were copied from ~https:/wallpaperaccess.com~.

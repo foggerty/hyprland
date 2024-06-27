@@ -3,10 +3,9 @@
 applications="galculator vlc foliate "
 basics="man linux-firmware base-devel apparmor ufw"
 browser="firefox"
-desktop="xdg-desktop-portal-hyprland avahi
+desktop="xdg-desktop-portal-hyprland avahi copyq
 	 network-manager-applet  blueman pamixer
-         hyprland wlr-randr swayidle swaylock swaybg
-	 waybar"
+    hyprland wlr-randr swayidle swaylock swaybg waybar"
 graphics_hardware="gflw-wayland"
 editor="emacs libgccjit"
 file_manager="thunar thunar-archive-plugin thunar-volman gvfs gvfs-smb file-roller
@@ -15,13 +14,12 @@ fonts="adobe-source-han-fonts otf-font-awesome ttf-sourcecodepro-nerd noto-fonts
 gaming="gamemode steam"
 greeter="greetd greetd-tuigreet"
 intel_hardware="intel-ucode libva-intel-driver vulkan-intel"
-amd_hardware="amd-ucode"
 launcher="rofi"
 locale="aspell aspell-en"
 power="acpid tlp lm_sensors thermald brightnessctl"
 theme="kora-icon-theme qt5-wayland qt6-wayland qt5ct qt6ct"
 screenshots="grim swappy"
-security="polkit ufw"
+security="polkit opensnitch"
 terminal="alacritty bash-completion gtop htop moar tldr"
 wal="python-pywal python-haishoku imagemagick feh"
 
@@ -30,8 +28,11 @@ to_install="$applications $basics $browser $desktop $editor \
             $launcher $locale $power $theme \
             $screenshots $security $terminal $wal"
 
-services=(ufw apparmor thermald acpid avahi-daemon bluetooth fancontrol upower lm_sensors tlp)
-allowed_apps=()
+services=(acpid fancontrol lm_sensors \
+          avahi-daemon NetworkManager \
+          bluetooth \
+          opensnitchd \
+          thermald tlp upower)
 
 yay --needed -S $to_install
 
@@ -40,14 +41,6 @@ wal -i ~/Pictures/Wallpapers/current
 for service in ${services[@]}; do
     systemctl enable $service
     systemctl start $service
-done
-
-ufw default deny
-ufw allow from 192.168.0.0/24
-ufw enable
-
-for app in ${allowed_apps[@]}; do
-    ufw allow $app
 done
 
 systemctl enable greetd
