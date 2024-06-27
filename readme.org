@@ -38,7 +38,6 @@
 - For Emacs:
   #+begin_src shell
   gettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
-  sudo loginctl enable-linger $USER
   #+end_src
 
 - Disable watchdog by appending ~nowatchdog~ to the [[https://wiki.archlinux.org/title/kernel_parameters][kernel parameters]].
@@ -69,6 +68,7 @@ Actually doing something useful; building Emacs:
 
 * TODO   ToDo
   - [ ] Make notification window thingie look nice.
+  - [ ] Plug in a second monitor and (probably) fix issues with workspaces.
   - [ ] ~.config/user-dirs.locale~ - should be able to automatically populate this?
   - [ ] Look into1 what ~.config/fotconfig/fonts.conf~ does, and maybe update docs re setting it up correctly.
   - [ ] Checklist of everything that needs to be working post-install.

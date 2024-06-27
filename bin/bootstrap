@@ -5,7 +5,7 @@ basics="man linux-firmware base-devel apparmor ufw"
 browser="firefox"
 desktop="xdg-desktop-portal-hyprland avahi copyq
 	 network-manager-applet  blueman pamixer
-    hyprland wlr-randr swayidle swaylock swaybg waybar"
+    hyprland wlr-randr swayidle swaylock swaybg waybar swaync-client"
 graphics_hardware="gflw-wayland"
 editor="emacs libgccjit"
 file_manager="thunar thunar-archive-plugin thunar-volman gvfs gvfs-smb file-roller
