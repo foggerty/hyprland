@@ -32,7 +32,8 @@
     "cpu": {
         "format": "cpu: {usage}%",
         "tooltip": false,
-        "on-click": "alacritty -e gtop"
+        "on-click": "alacritty -e gtop",
+        "interval": 1
     },
 
     "memory": {

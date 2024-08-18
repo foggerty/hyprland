@@ -67,7 +67,6 @@ Actually doing something useful; building Emacs:
 [[file:Pictures/building_emacs.png]]
 
 * TODO   ToDo
-  - [ ] Make notification window thingie look nice.
   - [ ] Plug in a second monitor and (probably) fix issues with workspaces.
   - [ ] ~.config/user-dirs.locale~ - should be able to automatically populate this?
   - [ ] Look into1 what ~.config/fotconfig/fonts.conf~ does, and maybe update docs re setting it up correctly.
@@ -77,34 +76,27 @@ Actually doing something useful; building Emacs:
       * [ ] Notifications are working
       * [ ] Clipboard helper
     * [ ] Multi-monitor support
-      * [ ] Waybar only on primary monitor?
+      * [ ] Plugin another monitor (or two) and see if everything still works.
     * [ ] Application support
       * [ ] Steam
       * [ ] Zoom - web
       * [ ] Zoom - native
-      * [ ] Discord - is there a web client?
-      * [ ] Steam - can local settings be saved? (e.g. use client for all titles)
       * [ ] .zip files (also create from Thunar)
       * [ ] Flatpak - should be able to double-click and install.
     * [ ] Networking (should be able to use Thunar to connect)
       * [ ] Can browse SAMBA shares.
-      * [ ] Can create a SAMBA share via Thunar
       * [ ] Can browse with AVAHI (i.e. ping hostname.local).
     * [ ] Firefox
       * [ ] Correctly displays Chinese/Korean/Japanese/Greek/Sanskrit/Arabic/Hebrew/Cryclic/Thai
       * [ ] Firefox is using GPU.
-      * [ ] Firefox is using libva for video rendering (should be on by default from V115+).
     * [ ] Security
       * [ ] Passing score (70%) on lynis.
-    * [ ] Laptop (assuming drivers!)
+    * [ ] Laptop
       * [ ] Wifi is working, can browse and connect
       * [ ] Ditto for Bluetooth
       * [ ] Lid sleeps & locks
     * [ ] Theming
       * [ ] Can right-click in Thunar and set theme.
-  - [X] Find a better clipboard manager.
-  - [X] Try out the gesture plugin for Hyprland.
-
 
 Images in ~$HOME/Pictures/Wallpapers~ are copyright their respective owners, and were copied from ~https:/wallpaperaccess.com~.
 

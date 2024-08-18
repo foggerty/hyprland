@@ -3,7 +3,7 @@
 applications="galculator vlc foliate "
 basics="man linux-firmware base-devel apparmor ufw"
 browser="firefox"
-desktop="xdg-desktop-portal-hyprland avahi copyq
+desktop="xdg-desktop-portal-hyprland xdg-desktop-portal-gtk avahi copyq
 	 network-manager-applet  blueman pamixer
     hyprland wlr-randr swayidle swaylock swaybg waybar swaync-client"
 graphics_hardware="gflw-wayland"
@@ -43,5 +43,6 @@ for service in ${services[@]}; do
     systemctl start $service
 done
 
-systemctl enable greetd
-systemctl start  greetd
+# Don't enable/start this until you've updated the config to start Hyprland.
+# systemctl enable greetd
+# systemctl start  greetd
