@@ -12,9 +12,8 @@
 
     "hyprland/workspaces": {
         "format": "{id}",
-        "current-only": false,
         "on-click": "activate",
-        "persistent_workspaces": {
+        "persistent-workspaces": {
             "*": 4
         }
     },
@@ -43,7 +42,7 @@
     },
 
     "temperature": {
-        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input",
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon8/temp1_input",
         "format": "{temperatureC}°C",
     },
 
