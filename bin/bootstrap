@@ -1,48 +1,78 @@
 #!/bin/sh
 
+# Install min for 'bootstrap'
+sudo pacman --needed -S git base-devel 
+
+# Install Yay
+mkdir ~/dev
+pushd dev
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+popd
+
+# Packages to install
 applications="galculator vlc foliate "
 basics="man linux-firmware base-devel apparmor ufw"
 browser="firefox"
-desktop="xdg-desktop-portal-hyprland xdg-desktop-portal-gtk avahi copyq
-	 network-manager-applet  blueman pamixer
-    hyprland wlr-randr swayidle swaylock swaybg waybar swaync-client"
-graphics_hardware="gflw-wayland"
-editor="emacs libgccjit"
-file_manager="thunar thunar-archive-plugin thunar-volman gvfs gvfs-smb file-roller
-              ffmpegthumbnailer tumbler nfs-utils"
-fonts="adobe-source-han-fonts otf-font-awesome ttf-sourcecodepro-nerd noto-fonts noto-fonts-emoji ttf-linux-libertine"
+desktop="avahi blueman
+    hyprland hprpaper hyprlock hypridle
+    network-manager-applet pamixer
+    uwsm
+    waybar swaync
+    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk "
+editor="emacs libgccjit aspell aspell-en tree-sitter"
+file_manager="thunar thunar-archive-plugin thunar-volman
+    gvfs gvfs-smb
+    file-roller ffmpegthumbnailer ffmpegthumbs tumbler nfs-utils"
+fonts="adobe-source-han-fonts
+    otf-font-awesome
+    noto-fonts noto-fonts-emoji
+    ttf-sourcecodepro-nerd ttf-linux-libertine ttf-liberation"
 gaming="gamemode steam"
-greeter="greetd greetd-tuigreet"
-intel_hardware="intel-ucode libva-intel-driver vulkan-intel"
+graphics_drivers="ffmpeg gflw-wayland libvdpau-va-gl mesa"
+graphics_intel="intel-vulkan intel-media-driver"
+graphics_amd=""
 launcher="rofi"
-locale="aspell aspell-en"
 power="acpid tlp lm_sensors thermald brightnessctl"
-theme="kora-icon-theme qt5-wayland qt6-wayland qt5ct qt6ct"
-screenshots="grim swappy"
-security="polkit opensnitch"
+screenshots="flameshot"
+security="polkit"
 terminal="alacritty bash-completion gtop htop moar tldr"
-wal="python-pywal python-haishoku imagemagick feh"
+theme="kora-icon-theme prof-gnome-theme-git qt5-wayland qt6-wayland
+    python-pywal python-haishoku imagemagick"
 
-to_install="$applications $basics $browser $desktop $editor \
-            $file_manager $fonts $greeter $intel_hardware \
-            $launcher $locale $power $theme \
-            $screenshots $security $terminal $wal"
+to_install="$applications \
+            $basics \
+            $browser \
+            $desktop \
+            $editor \
+            $file_manager $fonts \
+            $graphics_drivers $graphics_intel \
+            $launcher $locale $power \
+            $screenshots $security $terminal \
+            $theme"
 
-services=(acpid fancontrol lm_sensors \
+yay --needed -Syu $to_install
+
+# List of services to enable/start
+services=(acpid 
           avahi-daemon NetworkManager \
           bluetooth \
-          opensnitchd \
-          thermald tlp upower)
-
-yay --needed -S $to_install
-
-wal -i ~/Pictures/Wallpapers/current
+          thermald)
 
 for service in ${services[@]}; do
-    systemctl enable $service
-    systemctl start $service
+    sudo systemctl enable $service
+    sudo systemctl start $service
 done
 
-# Don't enable/start this until you've updated the config to start Hyprland.
-# systemctl enable greetd
-# systemctl start  greetd
+# Set wallpaper and populate Wal's cache
+wal --backend=haishoku -i ~/Pictures/Wallpapers/current
+
+# Set GTK themes / keybindings
+gsettings set org.gnome.desktop.interface gtk-theme gnome-professional-solid-40.1
+gsettings set org.gnome.desktop.interface icon-theme kora
+gettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+
+# Remove Thunar's existing SetWallPaper menu item
+sudo rm /usr/lib/thunar-3/thunar-wallpaper-plugin.so

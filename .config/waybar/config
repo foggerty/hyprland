@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "exclusive": true,
-    "height": 38,
+    "height": 40,
     "spacing": 12,
     "margin-left": 4,
     "margin-right": 4,
@@ -42,7 +42,7 @@
     },
 
     "temperature": {
-        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon8/temp1_input",
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
         "format": "{temperatureC}°C",
     },
 
