@@ -39,7 +39,7 @@ The mandatory ~neofetch~ shot:
       * [ ] Can browse SAMBA shares.
       * [ ] Can browse with AVAHI (i.e. ping hostname.local).
     - [ ] Firefox
-      * [ ] Firefox is using GPU for video rendering
+      * [ ] Firefox is using GPU for video rendering (intel-gpu-tools/intel_gpu_top)
     - [ ] Security
       * [ ] Passing score (70%) on lynis.
     - [ ] Laptop
@@ -48,6 +48,7 @@ The mandatory ~neofetch~ shot:
       * [ ] Lid sleeps & locks
     - [ ] Theming
       * [ ] Can right-click in Thunar and set theme.
+    - [ ] USB is auto-mounted
 
 Images in ~$HOME/Pictures/Wallpapers~ are copyright their respective owners, and were nabbed/copied from ~https:/wallpaperaccess.com~.
 

@@ -24,6 +24,7 @@ desktop="avahi blueman
     hyprland hyprpaper hyprlock hypridle
     network-manager-applet pamixer
     uwsm
+    udiskie
     waybar swaync
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk "
 editor="emacs libgccjit aspell aspell-en tree-sitter"
