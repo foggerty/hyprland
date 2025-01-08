@@ -20,6 +20,7 @@ applications="galculator vlc foliate "
 basics="man linux-firmware base-devel fastfetch"
 browser="firefox"
 desktop="avahi blueman
+    gnome-system-monitor
     hyprland hyprpaper hyprlock hypridle
     network-manager-applet pamixer
     uwsm
@@ -34,7 +35,7 @@ fonts="adobe-source-han-fonts
     noto-fonts noto-fonts-cjk noto-fonts-emoji
     ttf-sourcecodepro-nerd ttf-linux-libertine ttf-liberation"
 gaming="gamemode steam"
-graphics_drivers="ffmpeg libvdpau-va-gl mesa"
+graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
 graphics_intel="vulkan-intel intel-media-driver"
 graphics_amd=""
 launcher="rofi"
