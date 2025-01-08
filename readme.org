@@ -4,6 +4,7 @@
 - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
 - See if there's anything specific for you [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
 - Disable watchdog by appending ~nowatchdog~ to the [[https://wiki.archlinux.org/title/kernel_parameters][kernel parameters]].
+- Set ~noatime~ in ~/etc/fstab~
 - Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
 - Set the default [[https://wiki.archlinux.org/title/Umask][umask to 027]].
 - Copy the file ~/.mozilla/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
