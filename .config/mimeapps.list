@@ -7,6 +7,7 @@ application/x-zerosize=userapp-emacsclient -c-CI0N31.desktop
 application/vnd.flatpak=com.github.tchx84.Flatseal.desktop
 text/x-scheme=userapp-emacsclient -c-GFFSO2.desktop
 application/xml=userapp-emacsclient -c-GFFSO2.desktop
+image/png=userapp-feh-S5WA02.desktop
 
 [Added Associations]
 application/zip=engrampa.desktop;thunar.desktop;
@@ -20,3 +21,4 @@ application/vnd.flatpak=xdg-desktop-portal-hyprland.desktop;gcr-prompter.desktop
 application/xml=userapp-emacsclient -c-GFFSO2.desktop;
 text/x-scheme=userapp-emacsclient -c-GFFSO2.desktop;
 text/org=emacsclient.desktop;
+image/png=userapp-feh-S5WA02.desktop;
