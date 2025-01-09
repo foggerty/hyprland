@@ -21,38 +21,38 @@ The mandatory ~neofetch~ shot:
 
 * TODO
   - [X] Setup the SystemD wrapper thingie
-  - [ ] Find a decent screenshot tool
+  - [X] Find a decent screenshot tool
+  - [X] Find out why Thunar isn't saving SMB passwords "forever"
   - [ ] Powersaving stuff
   - [ ] AppArmour
-  - [ ] Find out why Thunar isn't saving SMB passwords "forever"
-  - [ ] Checklist of everything that needs to be working post-install
-    - [ ] General
-      * [ ] Desktop portal is running
-      * [ ] Notifications are working
+  - [-] Checklist of everything that needs to be working post-install
+    - [-] General
+      * [X] Desktop portal is running
+      * [X] Notifications are working
       * [ ] Clipboard helper
-      * [ ] Screenshot tool
-      * [ ] All of the fonts [[https://www.cogsci.ed.ac.uk/~richard/unicode-sample.html][here]] are readable.
-    - [ ] Can build emacs with ~PGTK~, ~NativeCompilation~ and ~TreeSitter~
+      * [X] Screenshot tool
+      * [X] All of the fonts [[https://www.cogsci.ed.ac.uk/~richard/unicode-sample.html][here]] are readable.
+    - [X] Can build emacs with ~PGTK~, ~NativeCompilation~ and ~TreeSitter~
     - [ ] Plugin another monitor (or two) and see if everything still works
-    - [ ] Application support
+    - [-] Application support
       * [ ] Steam
       * [ ] Zoom - web
       * [ ] Zoom - native
-      * [ ] .zip, .rar, .7zip files (also create from Thunar)
-    - [ ] Networking (should be able to use Thunar to connect)
-      * [ ] Can browse SAMBA shares.
-      * [ ] Can browse with AVAHI (i.e. ping hostname.local).
-    - [ ] Firefox
-      * [ ] Firefox is using GPU for video rendering (intel-gpu-tools/intel_gpu_top)
+      * [X] .zip, .rar, .7zip files (also create from Thunar)
+    - [X] Networking (should be able to use Thunar to connect)
+      * [X] Can browse SAMBA shares.
+      * [X] Can browse with AVAHI (i.e. ping hostname.local).
+    - [X] Firefox
+      * [X] Firefox is using GPU for video rendering (intel-gpu-tools/intel_gpu_top)
     - [ ] Security
       * [ ] Passing score (70%) on lynis.
-    - [ ] Laptop
-      * [ ] Wifi is working, can browse and connect
-      * [ ] Ditto for Bluetooth
-      * [ ] Lid sleeps & locks
-    - [ ] Theming
-      * [ ] Can right-click in Thunar and set theme.
-    - [ ] USB is auto-mounted
+    - [X] Laptop
+      * [X] Wifi is working, can browse and connect
+      * [X] Ditto for Bluetooth
+      * [X] Lid sleeps & locks
+    - [X] Theming
+      * [X] Can right-click in Thunar and set theme.
+    - [X] USB is auto-mounted
 
 Images in ~$HOME/Pictures/Wallpapers~ are copyright their respective owners, and were nabbed/copied from ~https:/wallpaperaccess.com~.
 
