@@ -22,7 +22,7 @@ browser="firefox"
 desktop="avahi blueman
     gnome-system-monitor
     hyprland hyprpaper hyprlock hypridle
-    network-manager-applet pamixer
+    network-manager-applet pamixer pavucontrol
     uwsm
     udiskie
     waybar swaync
@@ -43,7 +43,7 @@ launcher="rofi"
 power="acpid tlp lm_sensors thermald brightnessctl"
 screenshots="flameshot"
 security="hyprpolkitagent"
-terminal="alacritty bash-completion gtop htop moar tldr"
+terminal="alacritty bash-completion htop moar tldr"
 theme="kora-icon-theme prof-gnome-theme-git qt5-wayland qt6-wayland
     python python-setuptools python-pywal python-haishoku imagemagick"
 

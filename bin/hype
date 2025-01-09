@@ -1,1 +1,2 @@
+systemctl --user enable --now hyprpolkitagent.service
 uwsm start Hyprland
