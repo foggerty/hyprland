@@ -426,7 +426,7 @@
   "bar.clock.format": "%a %b %d  %I:%M %p",
   "theme.bar.buttons.background_opacity": 100,
   "theme.bar.buttons.opacity": 100,
-  "menus.dashboard.shortcuts.enabled": false,
+  "menus.dashboard.shortcuts.enabled": true,
   "menus.dashboard.directories.enabled": false,
   "theme.bar.menus.border.size": "0.02em",
   "theme.bar.menus.border.radius": "1.2em",
