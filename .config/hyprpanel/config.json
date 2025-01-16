@@ -22,7 +22,7 @@
   "menus.media.displayTime": false,
   "theme.bar.scaling": 95,
   "theme.bar.buttons.dashboard.enableBorder": false,
-  "wallpaper.image": "/home/matt/Pictures/Wallpapers/Fightn.jpg",
+  "wallpaper.image": "/home/matt/Pictures/Wallpapers/PhutureCity.jpg",
   "theme.bar.menus.menu.volume.text": "#cdd6f4",
   "theme.bar.menus.menu.volume.card.color": "#1e1e2e",
   "theme.bar.menus.menu.notifications.scrollbar.color": "#b4befe",
@@ -430,5 +430,27 @@
   "menus.dashboard.directories.enabled": false,
   "theme.bar.menus.border.size": "0.02em",
   "theme.bar.menus.border.radius": "1.2em",
-  "theme.bar.menus.card_radius": "1.2em"
+  "theme.bar.menus.card_radius": "1.2em",
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "ram",
+        "cpu",
+        "cputemp"
+      ],
+      "middle": [
+        "clock"
+      ],
+      "right": [
+        "workspaces",
+        "volume",
+        "battery",
+        "network",
+        "bluetooth",
+        "systray",
+        "notifications"
+      ]
+    }
+  }
 }
