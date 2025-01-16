@@ -8,7 +8,7 @@ wallpaper="$HOME/Pictures/Wallpapers/current"
 
 function setWallpaper {
     wal -c
-    wal -i --backend=haishoku $1
+    wal --backend=haishoku -n -i $1
     # if wal crashes because it cannot handle the file-type, just
     # crash here too.  If wal isn't going to handle failure gracefuly
     # then neither will I.  This is why we don't have nice things.

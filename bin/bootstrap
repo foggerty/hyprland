@@ -27,6 +27,7 @@ desktop="avahi blueman copyq
     network-manager-applet pamixer pavucontrol
     uwsm udiskie
     swayimg
+    wev
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk "
 editor="emacs libgccjit aspell aspell-en tree-sitter"
 file_manager="thunar thunar-archive-plugin thunar-volman
