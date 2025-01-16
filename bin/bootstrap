@@ -23,9 +23,10 @@ desktop="avahi blueman copyq
     gnome-keyring
     gnome-system-monitor
     hyprland hyprpaper hyprlock hypridle
+    ags-hyprpanel-git
     network-manager-applet pamixer pavucontrol
     uwsm udiskie
-    waybar swaync swayimg
+    swayimg
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk "
 editor="emacs libgccjit aspell aspell-en tree-sitter"
 file_manager="thunar thunar-archive-plugin thunar-volman
