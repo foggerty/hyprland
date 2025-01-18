@@ -41,8 +41,9 @@ gaming="gamemode steam"
 graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
 graphics_intel="vulkan-intel intel-media-driver"
 graphics_amd=""
+languages="ruby janet"
 launcher="rofi"
-power="acpid tlp lm_sensors thermald brightnessctl psensor"
+power="acpid tlp tlpui lm_sensors thermald brightnessctl psensor"
 screenshots="hyprshot"
 security="hyprpolkitagent"
 terminal="alacritty bash-completion htop moar tldr"
@@ -60,6 +61,7 @@ to_install="$applications     \
             $graphics_drivers \
             $graphics_intel   \
             $launcher         \
+            $languages        \
             $locale           \
             $power            \
             $screenshots      \
