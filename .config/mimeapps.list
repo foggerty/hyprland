@@ -22,3 +22,4 @@ application/xml=userapp-emacsclient -c-GFFSO2.desktop;
 text/x-scheme=userapp-emacsclient -c-GFFSO2.desktop;
 text/org=emacsclient.desktop;
 image/png=swayimg.desktop;userapp-feh-S5WA02.desktop;
+application/pdf=libreoffice-draw.desktop;
