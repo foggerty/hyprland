@@ -7,8 +7,8 @@ set +e
 wallpaper="$HOME/Pictures/Wallpapers/current"
 
 function setWallpaper {
-    wallust run ~/Pictures/Wallpapers/current
     cp $1 $wallpaper
+    wallust run ~/Pictures/Wallpapers/current
     pkill hyprpaper
     hyprpaper &
     pgrep emacs && emacsclient -e "(load-theme 'ewal-doom-one t)"

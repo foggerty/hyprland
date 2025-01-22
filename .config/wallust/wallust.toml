@@ -64,3 +64,5 @@ waybar.target = '~/.config/waybar/colors.css'
 swaync.template = 'colors-swaync.css'
 swaync.target = '~/.config/swaync/colors.css'
 
+wal.template = 'colors-wal.json'
+wal.target = "~/.cache/wal/colors.json"
