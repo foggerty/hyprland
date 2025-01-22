@@ -18,12 +18,12 @@ alpha = 90
 #        Requires  more tweaking and more in depth testing but for the most part
 #        it just werks.
 
-backend = "kmeans"
+backend = "full"
 
 # What color space to use to produce and select the most prominent colors:
 # lab - labmixed - lch - lchmixed - labansi - lchansi
 
-color_space = "labmixed"
+color_space = "lch"
 
 # NOTE: All filters will fill 16 colors (from color0 to color15), 16 color
 #       variations are the 'ilusion' of more colors by opaquing color1 to color5.
@@ -49,7 +49,7 @@ palette = "dark16"
 #  11 - 49    Colors are more similar than opposite
 #  100        Colors are exact opposite
 
-threshold = 11
+threshold = 5
 
 [templates]
 hypr.template = 'colors-hyprland.conf'
