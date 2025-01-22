@@ -149,11 +149,7 @@ configuration {
     }
 }
 
-@import "~/.cache/wal/colors-rofi-dark.rasi"
-
-* {
-    background-color: transparent;
-}
+@theme "colors.rasi"
 
 element-icon {
     padding: 0px 12px;

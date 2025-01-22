@@ -16,24 +16,24 @@ sudo pacman --needed -S git base-devel
 which yay || installYay
 
 # Packages to install
-applications="galculator vlc foliate "
+applications="galculator vlc foliate libreoffice"
 basics="man linux-firmware base-devel fastfetch"
 browser="firefox"
-desktop="avahi blueman copyq
+desktop="avahi blueman
     gnome-keyring
     gnome-system-monitor
     hyprland hyprpaper hyprlock hypridle
-    ags-hyprpanel-git
     network-manager-applet pamixer pavucontrol
     uwsm udiskie
     swayimg
     wev
-    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk "
+    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
 editor="emacs libgccjit aspell aspell-en tree-sitter"
 file_manager="thunar thunar-archive-plugin thunar-volman
     gvfs gvfs-smb
     file-roller ffmpegthumbnailer ffmpegthumbs tumbler nfs-utils"
-fonts="adobe-source-han-fonts
+fonts="font-manager
+   adobe-source-han-fonts
     otf-font-awesome
     noto-fonts noto-fonts-cjk noto-fonts-emoji
     ttf-sourcecodepro-nerd ttf-linux-libertine ttf-liberation"
@@ -48,7 +48,7 @@ screenshots="hyprshot"
 security="hyprpolkitagent"
 terminal="alacritty bash-completion htop moar tldr"
 theme="kora-icon-theme prof-gnome-theme-git qt5-wayland qt6-wayland
-    python python-setuptools python-pywal python-haishoku imagemagick"
+    wallust"
 utilities="7zip unzip"
 
 to_install="$applications     \
@@ -83,8 +83,8 @@ for service in ${services[@]}; do
     sudo systemctl start $service
 done
 
-# Set wallpaper and populate Wal's cache
-wal --backend=haishoku -i ~/Pictures/Wallpapers/current
+# Populate color configs
+wallust run ~/Pictures/Wallpapers/current
 
 # Set GTK themes / keybindings
 gsettings set org.gnome.desktop.interface gtk-theme gnome-professional-solid-40.1
@@ -93,3 +93,6 @@ gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 
 # Remove Thunar's existing SetWallPaper menu item
 sudo rm /usr/lib/thunarx-3/thunar-wallpaper-plugin.so
+
+# Set standard XDG user directories
+xdg-user-dirs-update

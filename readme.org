@@ -23,38 +23,41 @@ The mandatory ~neofetch~ shot:
   - [X] Setup the SystemD wrapper thingie
   - [X] Find a decent screenshot tool
   - [X] Find out why Thunar isn't saving SMB passwords "forever"
-  - [ ] Powersaving stuff
+  - [X] Powersaving stuff (tlp)
+  - [ ] Mime types.  Use `xdg-mime default thunar.desktop inode/directory` etc so no need to include mimetypes in repo.
   - [ ] AppArmour
   - [-] Checklist of everything that needs to be working post-install
-    - [-] General
-      * [X] Desktop portal is running
-      * [X] Notifications are working
-      * [ ] Clipboard helper
-      * [X] Screenshot tool
+    - [-] General:
+      * [X] Desktop portal is running.
+      * [X] Notifications are working.
+      * [ ] Clipboard helper.
+      * [X] Screenshot tool.
       * [X] All of the fonts [[https://www.cogsci.ed.ac.uk/~richard/unicode-sample.html][here]] are readable.
-    - [X] Can build emacs with ~PGTK~, ~NativeCompilation~ and ~TreeSitter~
-    - [ ] Plugin another monitor (or two) and see if everything still works
-    - [-] Application support
-      * [ ] Steam
-      * [ ] Zoom - web
-      * [ ] Zoom - native
-      * [X] .zip, .rar, .7zip files (also create from Thunar)
-    - [X] Networking (should be able to use Thunar to connect)
-      * [X] Can browse SAMBA shares.
+    - [X] Can build emacs with ~PGTK~, ~NativeCompilation~ and ~TreeSitter.~
+    - [ ] Plugin another monitor (or two) and see if everything still works.
+    - [-] Application support:
+      * [ ] Steam.
+      * [ ] Zoom - web.
+      * [ ] Zoom - native.
+      * [X] Open/extract/create .zip, .rar, .7zip files from file-manager.
+    - [X] Networking:
+      * [X] Can browse SAMBA shares from file-manager.
       * [X] Can browse with AVAHI (i.e. ping hostname.local).
-    - [X] Firefox
-      * [X] Firefox is using GPU for video rendering (intel-gpu-tools/intel_gpu_top)
+    - [X] Firefox:
+      * [X] Firefox is using GPU for video rendering (intel-gpu-tools/intel_gpu_top).
     - [ ] Security
       * [ ] Passing score (70%) on lynis.
-    - [X] Laptop
+    - [X] Laptop:
       * [X] Wifi is working, can browse and connect
-      * [X] Ditto for Bluetooth
-      * [X] Lid sleeps & locks
+      * [X] Ditto for Bluetooth.
+      * [X] Lid sleeps & locks.
     - [X] Theming
-      * [X] Can right-click in Thunar and set theme.
-    - [X] USB is auto-mounted
+      * [X] Can right-click in file-manager and set theme.
+    - [X] USB drives are auto-mounted.
 
 Images in ~$HOME/Pictures/Wallpapers~ are copyright their respective owners, and were nabbed/copied from ~https:/wallpaperaccess.com~.
+
+Lots of theme ideas swiped from JaKoolLit's over-engineered but awesome [[https://github.com/JaKooLit/Arch-Hyprland][Hyprland setup :-)]]
 
 --------------------------------------------------------------------------------
 
