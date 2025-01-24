@@ -7,15 +7,14 @@
 - Disable watchdog by appending ~nowatchdog~ to the [[https://wiki.archlinux.org/title/kernel_parameters][kernel parameters]].
 - Set ~noatime~ in ~/etc/fstab~
 - Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
-- Set the default [[https://wiki.archlinux.org/title/Umask][umask to 027]].
-- Copy the file ~/.mozilla/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
+- - Copy the file ~/.mozilla/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
 
 * Changing theme
 Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~ on an image in Thunar (this will call the same script).
 
 * Screenshots
 
-The mandatory ~neofetch~ shot:
+The mandatory ~fastfetch~ shot:
 
 [[file:Pictures/info.png]]
 
@@ -24,13 +23,14 @@ The mandatory ~neofetch~ shot:
   - [X] Find a decent screenshot tool
   - [X] Find out why Thunar isn't saving SMB passwords "forever"
   - [X] Powersaving stuff (tlp)
+  - [ ] Finish theming swaync
   - [ ] Mime types.  Use `xdg-mime default thunar.desktop inode/directory` etc so no need to include mimetypes in repo.
   - [ ] AppArmour
   - [-] Checklist of everything that needs to be working post-install
-    - [-] General:
+    - [X] General:
       * [X] Desktop portal is running.
       * [X] Notifications are working.
-      * [ ] Clipboard helper.
+      * [X] Clipboard helper.
       * [X] Screenshot tool.
       * [X] All of the fonts [[https://www.cogsci.ed.ac.uk/~richard/unicode-sample.html][here]] are readable.
     - [X] Can build emacs with ~PGTK~, ~NativeCompilation~ and ~TreeSitter.~

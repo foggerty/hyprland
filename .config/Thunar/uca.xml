@@ -21,6 +21,7 @@
 	<description>Uses ~/bin/paper</description>
 	<range>*</range>
 	<patterns>*</patterns>
+	<startup-notify/>
 	<image-files/>
 </action>
 </actions>
