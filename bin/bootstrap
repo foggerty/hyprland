@@ -20,13 +20,13 @@ applications="galculator vlc foliate libreoffice"
 basics="man linux-firmware base-devel fastfetch"
 browser="firefox"
 desktop="avahi blueman
+    cliphist wl-clipboard
     gnome-keyring
     gnome-system-monitor
     hyprland hyprpaper hyprlock hypridle
     network-manager-applet pamixer pavucontrol
     uwsm udiskie
     swayimg
-    wev
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
 editor="emacs libgccjit aspell aspell-en tree-sitter"
 file_manager="thunar thunar-archive-plugin thunar-volman
