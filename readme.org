@@ -19,14 +19,7 @@ The mandatory ~fastfetch~ shot:
 [[file:Pictures/info.png]]
 
 * TODO
-  - [X] Setup the SystemD wrapper thingie
-  - [X] Find a decent screenshot tool
-  - [X] Find out why Thunar isn't saving SMB passwords "forever"
-  - [X] Powersaving stuff (tlp)
-  - [ ] Use pyprland for monocle mode?
-  - [ ] Use ~yad~ for wallpaper dialog?
   - [ ] Finish theming swaync
-  - [ ] Mime types.  Use `xdg-mime default thunar.desktop inode/directory` etc so no need to include mimetypes in repo.
   - [ ] AppArmour
   - [-] Checklist of everything that needs to be working post-install
     - [X] General:

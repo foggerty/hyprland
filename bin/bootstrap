@@ -74,9 +74,12 @@ yay --needed -Syu $to_install
 
 # List of services to enable/start
 services=(acpid 
-          avahi-daemon NetworkManager \
+          avahi-daemon \
           bluetooth \
-          thermald)
+          lm_sensors \
+          NetworkManager \
+          thermald \
+          tlp)
 
 for service in ${services[@]}; do
     sudo systemctl enable $service
@@ -96,3 +99,6 @@ sudo rm /usr/lib/thunarx-3/thunar-wallpaper-plugin.so
 
 # Set standard XDG user directories
 xdg-user-dirs-update
+
+# Setup default mime-types
+~/bin/set-mime-defaults.sh 

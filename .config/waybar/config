@@ -44,7 +44,8 @@
     "temperature": {
         "hwmon-path":
         [
-            "/sys/devices/virtual/thermal/thermal_zone1/temp"
+            "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon6/temp2_input",
+            "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon7/temp2_input",
         ],
         "format": "{temperatureC}°C",
         "on-click": "psensor"
