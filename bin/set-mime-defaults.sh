@@ -24,3 +24,5 @@ declare -A -r mimeTypes=(
 for mType in "${!mimeTypes[@]}"; do
     xdg-mime default ${mimeTypes[$mType]} $mType
 done
+
+echo $LANG | cut -f2 -d= | cut -f1 -d. > ~/.config/user-dirs.locale 

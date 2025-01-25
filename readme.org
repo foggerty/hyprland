@@ -52,8 +52,7 @@ The mandatory ~fastfetch~ shot:
 
 Images in ~$HOME/Pictures/Wallpapers~ are copyright their respective owners, and were nabbed/copied from ~https:/wallpaperaccess.com~.
 
-Lots of theme ideas swiped from JaKoolLit's over-engineered but awesome [[https://github.com/JaKooLit/Arch-Hyprland][Hyprland setup :-)]]
-
+Lots of theme ideas swiped from JaKoolLit's over-engineered but awesome [[https://github.com/JaKooLit/Arch-Hyprland][Hyprland setup]] :-)
 --------------------------------------------------------------------------------
 
        This program is free software: you can redistribute it and/or

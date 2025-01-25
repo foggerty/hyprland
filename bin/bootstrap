@@ -33,7 +33,7 @@ file_manager="thunar thunar-archive-plugin thunar-volman
     gvfs gvfs-smb
     file-roller ffmpegthumbnailer ffmpegthumbs tumbler nfs-utils"
 fonts="font-manager
-   adobe-source-han-fonts
+    adobe-source-han-fonts
     otf-font-awesome
     noto-fonts noto-fonts-cjk noto-fonts-emoji
     ttf-sourcecodepro-nerd ttf-linux-libertine ttf-liberation"
@@ -101,4 +101,7 @@ sudo rm /usr/lib/thunarx-3/thunar-wallpaper-plugin.so
 xdg-user-dirs-update
 
 # Setup default mime-types
-~/bin/set-mime-defaults.sh 
+~/bin/set-mime-defaults.sh
+
+# Setup locale
+echo $LANG | cut -f1 -d. > ~/.config/user-dirs.locale 

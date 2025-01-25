@@ -18,7 +18,7 @@
 	<submenu></submenu>
 	<unique-id>1690370923779211-1</unique-id>
 	<command>$HOME/bin/paper %f</command>
-	<description>Uses ~/bin/paper</description>
+	<description>Set theme with ~/bin/paper</description>
 	<range>*</range>
 	<patterns>*</patterns>
 	<startup-notify/>
