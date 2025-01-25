@@ -20,6 +20,7 @@ The mandatory ~fastfetch~ shot:
 
 * TODO
   - [ ] Finish theming swaync
+  - [ ] Fix bastard swaying so it can view other files, or find a replacement.
   - [ ] AppArmour
   - [-] Checklist of everything that needs to be working post-install
     - [X] General:
