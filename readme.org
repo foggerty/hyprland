@@ -21,6 +21,7 @@ The mandatory ~fastfetch~ shot:
 * TODO
   - [ ] Finish theming swaync
   - [ ] Fix bastard swaying so it can view other files, or find a replacement.
+  - [ ] Setup bindings for full-screen so the arrow keys always move to 'next/prev'
   - [ ] AppArmour
   - [-] Checklist of everything that needs to be working post-install
     - [X] General:
