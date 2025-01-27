@@ -18,7 +18,7 @@ alpha = 90
 #        Requires  more tweaking and more in depth testing but for the most part
 #        it just werks.
 
-backend = "full"
+backend = "wal"
 
 # What color space to use to produce and select the most prominent colors:
 # lab - labmixed - lch - lchmixed - labansi - lchansi
@@ -40,7 +40,7 @@ color_space = "lch"
 #  * softlight   - Light with soft pastel colors, counterpart of `harddark`
 #  * softlight16 - softlight with 16 color variation
 
-palette = "dark16"
+palette = "harddark16"
 
 # Difference between similar colors, used by the colorspace:
 #  1          Not perceptible by human eyes.
@@ -49,7 +49,9 @@ palette = "dark16"
 #  11 - 49    Colors are more similar than opposite
 #  100        Colors are exact opposite
 
-threshold = 5
+threshold = 20
+
+check_contrast = true
 
 [templates]
 hypr.template = 'colors-hyprland.conf'

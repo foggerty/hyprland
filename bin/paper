@@ -8,11 +8,12 @@ wallpaper="$HOME/Pictures/Wallpapers/current"
 
 function setWallpaper {
     cp $1 $wallpaper
-    wallust run ~/Pictures/Wallpapers/current
-    pkill hyprpaper || hyprpaper &
-    pgrep emacs && emacsclient -e "(load-theme 'ewal-doom-one t)"
+    pkill hyprpaper
     pkill waybar
+    wallust run ~/Pictures/Wallpapers/current
+    hyprpaper &
     waybar -l off &>/dev/null &
+    pgrep emacs && emacsclient -e "(load-theme 'ewal-doom-one t)"
 }
 
 if [ -z "$1" ]; then
