@@ -16,7 +16,7 @@ sudo pacman --needed -S git base-devel
 which yay || installYay
 
 # Packages to install
-applications="galculator vlc foliate libreoffice"
+applications="galculator vlc foliate"
 basics="man linux-firmware base-devel fastfetch"
 browser="firefox"
 desktop="avahi blueman
@@ -27,11 +27,13 @@ desktop="avahi blueman
     network-manager-applet pamixer pavucontrol
     uwsm udiskie
     swayimg
+    waybar
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
-editor="emacs libgccjit aspell aspell-en tree-sitter"
+# I build Emacs manually, so not included here.
+editor="libgccjit aspell aspell-en tree-sitter"
 file_manager="thunar thunar-archive-plugin thunar-volman
     gvfs gvfs-smb
-    file-roller ffmpegthumbnailer ffmpegthumbs tumbler nfs-utils"
+    file-roller tumbler nfs-utils"
 fonts="font-manager
     adobe-source-han-fonts
     otf-font-awesome
@@ -47,7 +49,9 @@ power="acpid tlp tlpui lm_sensors thermald brightnessctl psensor"
 screenshots="hyprshot"
 security="hyprpolkitagent"
 terminal="alacritty bash-completion htop moar tldr"
-theme="kora-icon-theme prof-gnome-theme-git qt5-wayland qt6-wayland
+theme="kora-icon-theme prof-gnome-theme-git 
+    imagemagick
+    qt5-wayland qt6-wayland
     wallust"
 utilities="7zip unzip"
 
