@@ -7,7 +7,8 @@
 - Disable watchdog by appending ~nowatchdog~ to the [[https://wiki.archlinux.org/title/kernel_parameters][kernel parameters]].
 - Set ~noatime~ in ~/etc/fstab~
 - Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
-- - Copy the file ~/.mozilla/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
+- Copy the file ~/.mozilla/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
+- Copy the file ~.config/tlp/tlp.conf~ to ~/etc~
 
 * Changing theme
 Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~ on an image in Thunar (this will call the same script).
@@ -22,7 +23,6 @@ The mandatory ~fastfetch~ shot:
   - [ ] Finish theming swaync.
   - [ ] Finish theming Rofi.
   - [ ] Fix bastard swaying so it can view other files, or find a replacement.
-  - [ ] Setup bindings for full-screen so the arrow keys always move to 'next/prev'
   - [ ] AppArmour
   - [-] Checklist of everything that needs to be working post-install
     - [X] General:
