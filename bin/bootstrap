@@ -28,7 +28,7 @@ desktop="avahi blueman
     hyprland hyprpaper hyprlock hypridle hyprshot
     network-manager-applet 
     uwsm udiskie
-    swayimg
+    swayimg swaync
     waybar
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
 # I build Emacs manually, so not included here.
