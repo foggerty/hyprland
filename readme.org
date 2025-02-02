@@ -4,7 +4,6 @@
 - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
 - See if there's anything specific for you [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
 - Setup [[https://wiki.archlinux.org/title/AppArmor][AppArmour]].
-- Disable watchdog by appending ~nowatchdog~ to the [[https://wiki.archlinux.org/title/kernel_parameters][kernel parameters]].
 - Set ~noatime~ in ~/etc/fstab~
 - Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
 - Copy the file ~/.mozilla/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
@@ -24,6 +23,7 @@ The mandatory ~fastfetch~ shot:
   - [ ] Finish theming Rofi.
   - [ ] Fix bastard swaying so it can view other files, or find a replacement.
   - [ ] AppArmour
+  - [ ] ufw
   - [-] Checklist of everything that needs to be working post-install
     - [X] General:
       * [X] Desktop portal is running.
