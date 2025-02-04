@@ -21,7 +21,7 @@ The mandatory ~fastfetch~ shot:
 * TODO
   - [ ] Finish theming swaync.
   - [ ] Finish theming Rofi.
-  - [ ] Fix bastard swaying so it can view other files, or find a replacement.
+  - [ ] Fix bastard swayimg so it can view other files, or find a replacement.
   - [ ] AppArmour
   - [ ] ufw
   - [-] Checklist of everything that needs to be working post-install

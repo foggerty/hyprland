@@ -4,8 +4,8 @@
 
 @import "colors.css";
 
-@define-color noti-border-color @color12;
-@define-color noti-bg rgba(0, 0, 0, 0.8);
+@define-color noti-border-color @border;
+@define-color noti-bg rgba(0, 0, 0, 0.9);
 @define-color noti-bg-alt #111111;
 @define-color noti-bg-hover @color11;
 @define-color text-color @foreground;
@@ -29,13 +29,14 @@
 }
 
 .notification {
-	border-radius: 10px;
+	 border-radius: 2px;
+    background: @background;
 }
 
 .notification-content{
-	color: @foreground;
-    background: @noti-bg;
-    padding: 3px 10px 3px 6px;
+	 color: @foreground;
+    background: @background;
+    padding: 10px 10px 10px 10px;
     border-radius: 10px;
     border: 1px solid @noti-border-color;
     margin: 0px;
@@ -48,7 +49,7 @@
 }
 
 .close-button {
-    background: #f7768e;
+    background: @button-background;
     color: @noti-bg;
     text-shadow: none;
     padding: 0;
@@ -59,7 +60,7 @@
 
 .close-button:hover {
     box-shadow: none;
-    background: #f7768e;
+    background: @button-background;
     transition: all .15s ease-in-out;
     border: none
 }
@@ -111,7 +112,7 @@
 }
 
 .inline-reply-button {
-	font-size: 0.5rem;
+	 font-size: 0.5rem;
     margin-left: 4px;
     background: @noti-bg;
     border: 1px solid @noti-border-color;
@@ -163,7 +164,7 @@
 .control-center {
     background: @noti-bg;
     border: 1.5px solid @noti-border-color;
-	color: @text-color;
+	 color: @text-color;
     border-radius: 10px;
 }
 
@@ -185,7 +186,7 @@
 
 .widget-title {
     color: @noti-border-color;
-    background: @noti-bg-alt;
+    background: @background;
     padding: 3px 6px;
     margin: 5px;
     font-size: 1rem;
@@ -196,12 +197,12 @@
     font-size: 0.75rem;
     color: @text-color;
     border-radius: 10px;
-	background: transparent;
-	border: 0.5px solid @noti-border-color;
+	 background: transparent;
+	 border: 0.5px solid @noti-border-color;
 }
 
 .widget-title>button:hover {
-    background: #f7768e;
+    background: @button-background;
     color: @noti-border-color;
 }
 
@@ -221,8 +222,8 @@
 }
 
 .widget-dnd>switch:checked {
-    background: #f7768e;
-    border: 1px solid #f7768e;
+    background: @button-background;
+    border: 1px solid @border;
 }
 
 .widget-dnd>switch slider {
@@ -272,7 +273,7 @@
 
 .widget-buttons-grid {
     font-size: large;
-	color: @noti-border-color;
+	 color: @noti-border-color;
     padding: 2px;
     margin: 5px;
     border-radius: 10px;
@@ -320,7 +321,7 @@
     padding: 4px 8px 8px;
     margin: 0 8px 8px;
     border-radius: 10px;
-	color: @text-color
+	 color: @text-color
 }
 
 .widget-backlight {
@@ -333,19 +334,19 @@
 }
 
 .low {
-  background: @text-color;
-  padding: 0px;
-  border-radius: 10px;
+    background: @text-color;
+    padding: 0px;
+    border-radius: 10px;
 }
 
 .normal {
-  background: @text-color;
-  padding: 0px;
-  border-radius: 10px;
+    background: @text-color;
+    padding: 0px;
+    border-radius: 10px;
 }
 
 .critical {
-  background: red;
-  padding: 0px;
-  border-radius: 10px;
+    background: @urgent;
+    padding: 0px;
+    border-radius: 10px;
 }

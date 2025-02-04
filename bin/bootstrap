@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# ToDo -replace nm-applet with something lighter?
+
+set -e
+
 function installYay {
     mkdir ~/dev
     pushd dev
@@ -13,13 +17,12 @@ function installYay {
 # Install min for 'bootstrap'
 sudo pacman --needed -S git base-devel 
 
-which yay || installYay
+which yay > /dev/null || installYay
 
 # Packages to install
 applications="galculator vlc foliate"
 basics="man linux-firmware base-devel fastfetch"
 browser="firefox"
-# Need a mixer - just find a lightweight paudio one.
 desktop="avahi blueman
     cliphist wl-clipboard
     pamixer pavucontrol
@@ -48,7 +51,8 @@ graphics_amd=""
 languages="ruby janet"
 launcher="rofi-wayland"
 power="acpid tlp lm_sensors thermald brightnessctl psensor"
-security="hyprpolkitagent"
+security="apparmor apparmor.d hyprpolkitagent
+    python-notify2 python-psutil"
 terminal="alacritty bash-completion htop moar starship tealdeer"
 theme="kora-icon-theme prof-gnome-theme-git 
     imagemagick
@@ -78,18 +82,37 @@ to_install="$applications     \
 yay --needed -Syu $to_install
 
 # List of services to enable/start
-services=(acpid 
+services=(acpid \ 
+          apparmor \
           avahi-daemon \
-              bluetooth \
-              lm_sensors \
-              NetworkManager \
-              thermald \
-              tlp)
+          bluetooth \
+          lm_sensors \
+          NetworkManager \
+          thermald \
+          tlp)
 
 for service in ${services[@]}; do
     sudo systemctl enable $service
     sudo systemctl start $service
 done
+
+# Apparmor caching
+sudo sed -i 's/#write-cache/write-cache/' /etc/apparmor/parser.conf 
+sudo sed -i 's/#Optimize=compress-fast/Optimize=compress-fast/' /etc/apparmor/parser.conf 
+
+# Apparmor group
+auditGroup=$(getent group audit > /dev/null)
+if ! [[ auditGroup =~ "audit" ]]; then
+    sudo groupadd -r audit
+fi
+
+userGroups=$(groups)
+if ! [[ userGroups =~ "audit" ]]; then
+    sudo gpasswd -a $USER audit
+fi
+
+# Apparmor audit setup
+sudo sed -zi '/log_group = audit/!s/$/log_group = audit/' /etc/audit/auditd.conf
 
 # Populate color configs
 wallust run ~/Pictures/Wallpapers/current
@@ -98,6 +121,9 @@ wallust run ~/Pictures/Wallpapers/current
 gsettings set org.gnome.desktop.interface gtk-theme gnome-professional-solid-40.1
 gsettings set org.gnome.desktop.interface icon-theme kora
 gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+gsettings set org.gnome.desktop.interface font-name "Cantarell"
+gsettings set org.gnome.desktop.interface document-font-name "Cantarell"
+gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro"
 
 # Remove Thunar's existing SetWallPaper menu item
 if [ -f /usr/lib/thunarx-3/thunar-wallpaper-plugin.so ]; then
@@ -115,3 +141,10 @@ echo $LANG | cut -f1 -d. > ~/.config/user-dirs.locale
 
 # Download tldr content
 tldr --update
+
+# Kernel updates
+echo
+echo
+echo "Still to do:"
+echo "Update kernel paramaters with:"
+echo "   lsm=landlock,lockdown,yama,integrity,apparmor,bpf"
