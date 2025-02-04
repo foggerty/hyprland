@@ -11,6 +11,7 @@
 @define-color text-color @foreground;
 @define-color text-color-alt @foreground;
 @define-color text-color-disabled rgba(150, 150, 150, 0.8);
+@define-color argh rgb(255, 0, 0);
 
 * {
     font-family: "Cantarel";
@@ -154,7 +155,7 @@
 }
 
 .body {
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: bold;
     background: transparent;
     color: @text-color;
@@ -194,7 +195,6 @@
 }
 
 .widget-title>button {
-    font-size: 0.75rem;
     color: @text-color;
     border-radius: 10px;
 	 background: transparent;
@@ -202,12 +202,12 @@
 }
 
 .widget-title>button:hover {
-    background: @button-background;
-    color: @noti-border-color;
+    background: @button-active;
+    color: @foreground;
 }
 
 .widget-dnd {
-    background: @noti-bg-alt;
+    background: @noti-bg;
     padding: 3px 6px;
     margin: 5px;
     border-radius: 10px;
@@ -217,22 +217,21 @@
 
 .widget-dnd>switch {
     border-radius: 10px;
-    /* border: 1px solid #7aa2f7; */
-    background: @noti-border-color;
+    background: @background;
 }
 
 .widget-dnd>switch:checked {
-    background: @button-background;
+    background: @border;
     border: 1px solid @border;
 }
 
 .widget-dnd>switch slider {
-    background: @noti-bg;
+    background: @button-active;
     border-radius: 10px
 }
 
 .widget-dnd>switch:checked slider {
-    background: @noti-bg;
+    background: @button-active;
     border-radius: 10px
 }
 
@@ -242,12 +241,12 @@
 
 .widget-label>label {
     font-size: 1rem;
-    color: @text-color;
+    color: @text;
 }
 
 .widget-mpris {
     color: @text-color;
-    background: @noti-bg-alt;
+    background: @border;
     padding: 3px 6px;
     margin: 5px;
     border-radius: 10px;
