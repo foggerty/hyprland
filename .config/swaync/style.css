@@ -4,14 +4,11 @@
 
 @import "colors.css";
 
-@define-color noti-border-color @border;
-@define-color noti-bg rgba(0, 0, 0, 0.9);
-@define-color noti-bg-alt #111111;
-@define-color noti-bg-hover @color11;
-@define-color text-color @foreground;
-@define-color text-color-alt @foreground;
+@define-color noti-bg @background;
+@define-color noti-bg-alt @background-alt;
+@define-color text-color @text;
+@define-color text-color-alt @text-alt;
 @define-color text-color-disabled rgba(150, 150, 150, 0.8);
-@define-color argh rgb(255, 0, 0);
 
 * {
     font-family: "Cantarel";
@@ -39,7 +36,7 @@
     background: @background;
     padding: 10px 10px 10px 10px;
     border-radius: 10px;
-    border: 1px solid @noti-border-color;
+    border: 1px solid @border;
     margin: 0px;
 }
 
@@ -108,7 +105,7 @@
     background: @noti-bg;
     color: @text-color;
     caret-color: @text-color;
-    border: 1px solid @noti-border-color;
+    border: 1px solid @border;
     border-radius: 10px
 }
 
@@ -116,7 +113,7 @@
 	 font-size: 0.5rem;
     margin-left: 4px;
     background: @noti-bg;
-    border: 1px solid @noti-border-color;
+    border: 1px solid @border;
     border-radius: 10px;
     color: @text-color
 }
@@ -128,7 +125,7 @@
 }
 
 .inline-reply-button:hover {
-    background: @noti-bg-hover
+    background: @hover
 }
 
 .body-image {
@@ -163,8 +160,8 @@
 }
 
 .control-center {
-    background: @noti-bg;
-    border: 1.5px solid @noti-border-color;
+    background: @background;
+    border: 1.5px solid @border;
 	 color: @text-color;
     border-radius: 10px;
 }
@@ -186,11 +183,11 @@
 }
 
 .widget-title {
-    color: @noti-border-color;
+    color: @border;
     background: @background;
     padding: 3px 6px;
     margin: 5px;
-    font-size: 1rem;
+    font-size: 2rem;
     border-radius: 10px;
 }
 
@@ -198,7 +195,7 @@
     color: @text-color;
     border-radius: 10px;
 	 background: transparent;
-	 border: 0.5px solid @noti-border-color;
+	 border: 0.5px solid @border;
 }
 
 .widget-title>button:hover {
@@ -207,12 +204,12 @@
 }
 
 .widget-dnd {
-    background: @noti-bg;
+    background: @background;
     padding: 3px 6px;
     margin: 5px;
     border-radius: 10px;
-    font-size: 1rem;
-    color: @noti-border-color;
+    font-size: 1.5rem;
+    color: @border;
 }
 
 .widget-dnd>switch {
@@ -262,7 +259,7 @@
 }
 
 .widget-mpris-title {
-    font-weight: 100;
+    font-weight: bold;
     font-size: 1rem
 }
 
@@ -272,7 +269,7 @@
 
 .widget-buttons-grid {
     font-size: large;
-	 color: @noti-border-color;
+	 color: @border;
     padding: 2px;
     margin: 5px;
     border-radius: 10px;
@@ -287,8 +284,8 @@
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-    background: @noti-border-color;
-    color: @noti-bg-hover
+    background: @border;
+    color: @hover
 }
 
 .widget-menubar>box>.menu-button-bar>button {
@@ -299,37 +296,6 @@
 .topbar-buttons>button {
     border: none;
     background: transparent
-}
-
-.widget-volume {
-    background: @noti-bg-alt;
-    padding: 2px;
-    margin: 10px 10px 5px 10px;
-    border-radius: 10px;
-    font-size: x-large;
-    color: @text-color
-}
-
-.widget-volume>box>button {
-    background: @noti-border-color;
-    border: none
-}
-
-.per-app-volume {
-    background-color: @noti-bg;
-    padding: 4px 8px 8px;
-    margin: 0 8px 8px;
-    border-radius: 10px;
-	 color: @text-color
-}
-
-.widget-backlight {
-    background: @noti-bg-alt;
-    padding: 5px;
-    margin: 10px 10px 5px 10px;
-    border-radius: 10px;
-    font-size: x-large;
-    color: @text-color
 }
 
 .low {

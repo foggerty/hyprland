@@ -2,8 +2,6 @@
 
 # ToDo -replace nm-applet with something lighter?
 
-set -e
-
 function installYay {
     mkdir ~/dev
     pushd dev
@@ -23,14 +21,15 @@ sudo pacman --needed -S git base-devel
 applications="galculator vlc foliate"
 basics="man linux-firmware base-devel fastfetch"
 browser="cachy-browser"
-desktop="avahi blueman
+desktop="avahi
+   blueman
     cliphist wl-clipboard
     pamixer pavucontrol
-    gnome-keyring
-    gnome-system-monitor
+    gnome-keyring gnome-system-monitor
     hyprland hyprpaper hyprlock hypridle hyprshot
     network-manager-applet 
-    uwsm udiskie
+    uwsm
+    udiskie
     swayimg swaync
     waybar
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
@@ -58,7 +57,7 @@ theme="kora-icon-theme prof-gnome-theme-git
     imagemagick
     qt5-wayland qt6-wayland
     wallust"
-utilities="7zip unzip"
+utilities="7zip unzip lsof"
 
 to_install="$applications     \
             $basics           \
@@ -84,7 +83,6 @@ paru --needed -Syu $to_install
 # List of services to enable/start
 services=(acpid \ 
           apparmor \
-          avahi-daemon \
           bluetooth \
           lm_sensors \
           NetworkManager \
@@ -147,4 +145,7 @@ echo
 echo
 echo "Still to do:"
 echo "Update kernel paramaters with:"
-echo "   apparmor=1 security=apparmor"
+echo "   lsm=landlock,lockdown,yama,integrity,apparmor,bpf"
+echo
+echo "Turn off multicast (mDNS) in /etc/systemd/resolvd.conf"
+echo "as it clashes with avahi's service."

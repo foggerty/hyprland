@@ -10,9 +10,11 @@ function setWallpaper {
     cp $1 $wallpaper
     pkill hyprpaper
     pkill waybar
+    pkill swaync
     wallust run ~/Pictures/Wallpapers/current
     hyprpaper &
     waybar -l off &>/dev/null &
+    swaync &
     pgrep emacs && emacsclient -e "(load-theme 'ewal-doom-one t)"
 }
 

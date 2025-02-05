@@ -45,9 +45,11 @@ The mandatory ~fastfetch~ shot:
       * [X] Firefox is using GPU for video rendering (intel-gpu-tools/intel_gpu_top).
     - [ ] Security
       * [ ] Passing score (70%) on lynis.
-    - [X] Laptop:
+    - [-] Laptop:
       * [X] Wifi is working, can browse and connect
-      * [X] Ditto for Bluetooth.
+      * [ ] Ditto for Bluetooth.
+        * [ ] Can connet a mouse
+        * [ ] Can connect headphones
       * [X] Lid sleeps & locks.
     - [X] Theming
       * [X] Can right-click in file-manager and set theme.
