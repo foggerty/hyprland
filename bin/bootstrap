@@ -17,12 +17,12 @@ function installYay {
 # Install min for 'bootstrap'
 sudo pacman --needed -S git base-devel 
 
-which yay > /dev/null || installYay
+#which yay > /dev/null || installYay
 
 # Packages to install
 applications="galculator vlc foliate"
 basics="man linux-firmware base-devel fastfetch"
-browser="firefox"
+browser="cachy-browser"
 desktop="avahi blueman
     cliphist wl-clipboard
     pamixer pavucontrol
@@ -79,7 +79,7 @@ to_install="$applications     \
             $theme            \
             $utilities"
 
-yay --needed -Syu $to_install
+paru --needed -Syu $to_install
 
 # List of services to enable/start
 services=(acpid \ 
@@ -147,4 +147,4 @@ echo
 echo
 echo "Still to do:"
 echo "Update kernel paramaters with:"
-echo "   lsm=landlock,lockdown,yama,integrity,apparmor,bpf"
+echo "   apparmor=1 security=apparmor"
