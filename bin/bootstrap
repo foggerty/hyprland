@@ -51,7 +51,7 @@ graphics_amd=""
 languages="ruby janet"
 launcher="rofi-wayland"
 power="acpid tlp lm_sensors thermald brightnessctl psensor"
-security="apparmor apparmor.d hyprpolkitagent
+security="apparmor apparmor.d-git hyprpolkitagent
     python-notify2 python-psutil"
 terminal="alacritty bash-completion htop moar starship tealdeer"
 theme="kora-icon-theme prof-gnome-theme-git 
