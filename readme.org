@@ -1,9 +1,8 @@
 * Installation
-- Install [[https://archlinux.org][Arch Linux]] using the ~archinstall~ script - for audio, select ~Pipewire~, for networking select ~NetworkManger~.
+- Install Arch (or derivitive) using the ~archinstall~ script - for audio, select ~Pipewire~, for networking select ~NetworkManger~.
 - Run ~$HOME/bin/bootstrap~.
 - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
 - See if there's anything specific for you [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
-- Setup [[https://wiki.archlinux.org/title/AppArmor][AppArmour]].
 - Set ~noatime~ in ~/etc/fstab~
 - Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
 - Copy the file ~/.mozilla/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)

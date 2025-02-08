@@ -1,5 +1,5 @@
 {
-    "layer": "top",
+    "layer": "bottom",
     "exclusive": true,
     "height": 40,
     "spacing": 12,
