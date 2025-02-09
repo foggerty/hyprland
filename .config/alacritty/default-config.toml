@@ -1,0 +1,63 @@
+[cursor]
+blink_interval = 250
+blink_timeout = 0
+style = { shape = "Beam", blinking = "Always" }
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 13
+
+[font.normal]
+family = "Source Code Pro"
+style = "Regular"
+
+[font.offset]
+y = 1
+
+[[keyboard.bindings]]
+chars = "\u001B[9;5u"
+key = "Tab"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[13;5u"
+key = "Return"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[44;5u"
+key = "Comma"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[45;7u"
+key = "Minus"
+mods = "Control|Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[61;7u"
+key = "Equals"
+mods = "Control|Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[90;6u"
+key = "Z"
+mods = "Control|Shift"
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+multiplier = 10
+
+[window]
+opacity = 0.9
+
+[window.padding]
+x = 6
+y = 6
+
+[general]
+live_config_reload = true

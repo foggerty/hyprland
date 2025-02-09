@@ -11,10 +11,11 @@ function setWallpaper {
     pkill hyprpaper
     pkill waybar
     pkill swaync
-    wallust run ~/Pictures/Wallpapers/current
-    hyprpaper &
+    wal --backend=haishoku -a 90 -i ~/Pictures/Wallpapers/current
+    cat ~/.config/alacritty/default-config.toml ~/.cache/wal/colors-alacritty.toml > alacritty.toml
+    hyprpaper &>/dev/null &
     waybar -l off &>/dev/null &
-    swaync &
+    swaync &>/dev/null &
     pgrep emacs && emacsclient -e "(load-theme 'ewal-doom-one t)"
 }
 

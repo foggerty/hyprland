@@ -55,7 +55,7 @@ terminal="alacritty bash-completion htop moar starship tealdeer"
 theme="kora-icon-theme prof-gnome-theme-git 
     imagemagick
     qt5-wayland qt6-wayland
-    wallust"
+    python-haishoku python-pwal16"
 utilities="7zip zip cvs lsof mv unrar unzip"
 
 to_install="$applications     \
