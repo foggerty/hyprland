@@ -2,12 +2,12 @@
 
 # ToDo -replace nm-applet with something lighter?
 
-function installYay {
+function installParu {
     mkdir ~/dev
     pushd dev
     sudo pacman -S --needed git base-devel
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
     makepkg -si
     popd
 }
@@ -15,14 +15,14 @@ function installYay {
 # Install min for 'bootstrap'
 sudo pacman --needed -S git base-devel 
 
-#which yay > /dev/null || installYay
+which paru > /dev/null || installParu
 
 # Packages to install
 applications="galculator vlc foliate"
 basics="man linux-firmware base-devel fastfetch"
 browser="cachy-browser"
 desktop="avahi
-   blueman
+    blueman
     cliphist wl-clipboard
     pamixer pavucontrol
     gnome-keyring gnome-system-monitor
@@ -35,7 +35,6 @@ desktop="avahi
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
 # I build Emacs manually, so not included here.
 editor="libgccjit aspell aspell-en tree-sitter"
-# Find out what tumbler-extra-thumbnailers adds.
 file_manager="thunar thunar-archive-plugin thunar-volman
     gvfs gvfs-smb
     file-roller tumbler nfs-utils"
@@ -57,7 +56,7 @@ theme="kora-icon-theme prof-gnome-theme-git
     imagemagick
     qt5-wayland qt6-wayland
     wallust"
-utilities="7zip unzip lsof"
+utilities="7zip zip cvs lsof mv unrar unzip"
 
 to_install="$applications     \
             $basics           \
@@ -82,7 +81,7 @@ paru --needed -Syu $to_install
 
 # List of services to enable/start
 services=(acpid \ 
-          auditd \
+          auditd
           bluetooth \
           lm_sensors \
           NetworkManager \
@@ -93,24 +92,6 @@ for service in ${services[@]}; do
     sudo systemctl enable $service
     sudo systemctl start $service
 done
-
-# Apparmor caching
-#sudo sed -i 's/#write-cache/write-cache/' /etc/apparmor/parser.conf 
-#sudo sed -i 's/#Optimize=compress-fast/Optimize=compress-fast/' /etc/apparmor/parser.conf 
-
-# Apparmor group
-#auditGroup=$(getent group audit > /dev/null)
-#if ! [[ auditGroup =~ "audit" ]]; then
-#    sudo groupadd -r audit
-#fi
-
-userGroups=$(groups)
-#if ! [[ userGroups =~ "audit" ]]; then
-#    sudo gpasswd -a $USER audit
-#fi
-
-# Apparmor audit setup
-#sudo sed -zi '/log_group = audit/!s/$/log_group = audit/' /etc/audit/auditd.conf
 
 # Populate color configs
 wallust run ~/Pictures/Wallpapers/current
@@ -142,11 +123,4 @@ sudo cp ~/.config/tlp/tlp.conf /etc
 
 # Download tldr content
 tldr --update
-
-# Print notices
-echo
-echo
-echo "Still to do:"
-echo "Update kernel paramaters with:"
-echo "   audit=1 lsm=landlock,lockdown,yama,integrity,apparmor,bpf"
 

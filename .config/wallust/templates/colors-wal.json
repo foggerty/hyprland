@@ -1,6 +1,6 @@
 {
   "wallpaper": "~/Pictures/Wallpapers/current",
-  "alpha": "100",
+  "alpha": "{{alpha}}",
 
   "special": {
     "background": "{{background}}",
