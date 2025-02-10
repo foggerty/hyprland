@@ -3,29 +3,51 @@
 # Stop on first error.
 set +e
 
+
 # Default wallpeper.
 wallpaper="$HOME/Pictures/Wallpapers/current"
 alacrittyConfig="~/.config/alacritty/default-config.toml"
 
-function setWallpaper {
-    cp $1 $wallpaper
-    pkill hyprpaper
-    pkill waybar
-    pkill swaync
-    wal -a 85 -i ~/Pictures/Wallpapers/current
-    cat  ~/.config/alacritty/default-config.toml ~/.cache/wal/colors-alacritty.toml > ~/.config/alacritty/alacritty.toml
-    hyprpaper &>/dev/null &
-    waybar -l off &>/dev/null &
-    swaync &>/dev/null &
-    pgrep emacs && emacsclient -e "(load-theme 'ewal-doom-one t)"
+image="$1"
+flag="$2"
+
+function killApps {
+    if [[ -z $flag ]]; then
+        pkill hyprpaper
+        pkill waybar
+        pkill swaync
+    fi
 }
 
-if [ -z "$1" ]; then
+function restartApps {
+    if [[ -z $flag ]]; then
+        hyprpaper &>/dev/null &
+        waybar -l off &>/dev/null &
+        swaync &>/dev/null &
+        pgrep emacs && emacsclient -e "(load-theme 'ewal-doom-one t)"
+    fi    
+}
+
+function setWallpaper {
+    killApps
+
+    cp $image $wallpaper
+
+    wal -a 85 -i ~/Pictures/Wallpapers/current
+
+    cat  ~/.config/alacritty/default-config.toml \
+         ~/.cache/wal/colors-alacritty.toml > \
+         ~/.config/alacritty/alacritty.toml
+
+    restartApps
+}
+
+if [ -z "$image" ]; then
     echo "Please specify an image file to use."
     exit -1
 fi
 
-if [ ! -s "$1" ]; then
+if [ ! -s "$image" ]; then
     echo "That's not a file.  Try again."
     exit -1
 fi
@@ -37,7 +59,7 @@ fileType=`file $1 | cut -d " " -f 2`
 for imageType in ${supported[@]}
 do
     if [ "$fileType" = "$imageType" ]; then
-        setWallpaper $1
+        setWallpaper $image
         exit 0
     fi
 done
