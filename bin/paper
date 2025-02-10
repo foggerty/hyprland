@@ -5,14 +5,15 @@ set +e
 
 # Default wallpeper.
 wallpaper="$HOME/Pictures/Wallpapers/current"
+alacrittyConfig="~/.config/alacritty/default-config.toml"
 
 function setWallpaper {
     cp $1 $wallpaper
     pkill hyprpaper
     pkill waybar
     pkill swaync
-    wal --backend=haishoku -a 90 -i ~/Pictures/Wallpapers/current
-    cat ~/.config/alacritty/default-config.toml ~/.cache/wal/colors-alacritty.toml > alacritty.toml
+    wal -a 85 -i ~/Pictures/Wallpapers/current
+    cat  ~/.config/alacritty/default-config.toml ~/.cache/wal/colors-alacritty.toml > ~/.config/alacritty/alacritty.toml
     hyprpaper &>/dev/null &
     waybar -l off &>/dev/null &
     swaync &>/dev/null &

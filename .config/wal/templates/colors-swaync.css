@@ -1,6 +1,6 @@
 @define-color text {foreground};
 @define-color text-alt {color14};
-@define-color background {background};
+@define-color background {background.rgba};
 @define-color background-alt {background};
 @define-color cursor {cursor};
 @define-color hovered {color12};

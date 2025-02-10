@@ -162,7 +162,7 @@
 
 .control-center {
     background-color: @noti-bg-alt;
-    border-color: red;
+    border-color: @border;
     border-width: 2px;
 }
 
@@ -204,7 +204,7 @@
 /* DND widget */
 .widget-dnd {
     margin: 8px;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .widget-dnd>switch {
