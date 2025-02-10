@@ -17,11 +17,6 @@ The mandatory ~fastfetch~ shot:
 [[file:Pictures/info.png]]
 
 * TODO
-  - [ ] Finish theming swaync.
-  - [ ] Finish theming Rofi.
-  - [ ] Fix bastard swayimg so it can view other files, or find a replacement.
-  - [ ] AppArmour
-  - [ ] ufw
   - [-] Checklist of everything that needs to be working post-install
     - [X] General:
       * [X] Desktop portal is running.
@@ -30,9 +25,9 @@ The mandatory ~fastfetch~ shot:
       * [X] Screenshot tool.
       * [X] All of the fonts [[https://www.cogsci.ed.ac.uk/~richard/unicode-sample.html][here]] are readable.
     - [X] Can build emacs with ~PGTK~, ~NativeCompilation~ and ~TreeSitter.~
-    - [ ] Plugin another monitor (or two) and see if everything still works.
+    - [X] Plugin another monitor (or two) and see if everything still works.
     - [-] Application support:
-      * [ ] Steam.
+      * [X] Steam.
       * [ ] Zoom - web.
       * [ ] Zoom - native.
       * [X] Open/extract/create .zip, .rar, .7zip files from file-manager.
