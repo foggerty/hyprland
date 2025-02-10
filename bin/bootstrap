@@ -47,7 +47,7 @@ gaming="gamemode steam"
 graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
 graphics_intel="vulkan-intel intel-media-driver"
 graphics_amd=""
-languages="ruby janet"
+languages="ruby janet-lang-bin"
 launcher="rofi-wayland"
 power="acpid tlp lm_sensors thermald brightnessctl psensor"
 security="hyprpolkitagent
@@ -115,6 +115,10 @@ fi
 
 # Set standard XDG user directories
 xdg-user-dirs-update
+
+# Not required as I'm unlikely to delete these directories.
+sudo systemctl --global disable xdg-user-dirs-update
+systemctl --user stop xdg-user-dirs-update
 
 # Setup default mime-types
 ~/bin/set-mime-defaults.sh
