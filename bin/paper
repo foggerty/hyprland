@@ -3,11 +3,10 @@
 # Stop on first error.
 set +e
 
-
 # Default wallpeper.
 wallpaper="$HOME/Pictures/Wallpapers/current"
-alacrittyConfig="~/.config/alacritty/default-config.toml"
 
+# Parameters
 image="$1"
 flag="$2"
 
@@ -35,6 +34,7 @@ function setWallpaper {
 
     wal -a 85 -i ~/Pictures/Wallpapers/current
 
+    # .toml files cannot reference other .toml files...
     cat  ~/.config/alacritty/default-config.toml \
          ~/.cache/wal/colors-alacritty.toml > \
          ~/.config/alacritty/alacritty.toml
