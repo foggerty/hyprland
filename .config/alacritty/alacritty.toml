@@ -1,3 +1,7 @@
+[general]
+import = ["~/.cache/wal/colors-alacritty.toml"]
+live_config_reload = true
+
 [cursor]
 blink_interval = 250
 blink_timeout = 0
@@ -14,7 +18,21 @@ family = "Source Code Pro"
 style = "Regular"
 
 [font.offset]
-y = 1
+y = 2
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+multiplier = 10
+
+[window.padding]
+x = 6
+y = 6
+
+[window.dimensions]
+columns = 120
+lines = 320 
 
 [[keyboard.bindings]]
 chars = "\u001B[9;5u"
@@ -46,81 +64,5 @@ chars = "\u001B[90;6u"
 key = "Z"
 mods = "Control|Shift"
 
-[mouse]
-hide_when_typing = true
-
-[scrolling]
-multiplier = 10
-
-[window.padding]
-x = 6
-y = 6
-
-[general]
-live_config_reload = true
 
 
-[window]
-opacity = 0.85
-
-[colors.primary]
-background = "#0F110C"
-foreground = "#c3c3c2"
-
-[colors.cursor]
-text = "#0F110C"
-cursor = "#c3c3c2"
-
-[colors.vi_mode_cursor]
-text = "#0F110C"
-cursor = "#c3c3c2"
-
-[colors.search.matches]
-foreground = "#0F110C"
-background = "#c3c3c2"
-
-[colors.search.focused_match]
-foreground = "CellBackground"
-background = "CellForeground"
-
-[colors.line_indicator]
-foreground = "None"
-background = "None"
-
-[colors.footer_bar]
-foreground = "#656c58"
-background = "#c3c3c2"
-
-[colors.selection]
-text = "CellBackground"
-background = "CellForeground"
-
-[colors.normal]
-black = "#0F110C"
-red = "#5D6351"
-green = "#B04F3B"
-yellow = "#65922F"
-blue = "#6E9A54"
-magenta = "#7CC348"
-cyan = "#96B54D"
-white = "#c3c3c2"
-
-[colors.bright]
-black = "#656c58"
-red = "#5D6351"
-green = "#B04F3B"
-yellow = "#65922F"
-blue = "#6E9A54"
-magenta = "#7CC348"
-cyan = "#96B54D"
-white = "#c3c3c2"
-
-[colors.dim]
-black = "#c3c3c2"
-red = "#5D6351"
-green = "#7CC348"
-yellow = "#65922F"
-blue = "#6E9A54"
-magenta = "#B04F3B"
-cyan = "#96B54D"
-white = "#656c58"

@@ -34,11 +34,6 @@ function setWallpaper {
 
     wal -a 85 -i ~/Pictures/Wallpapers/current
 
-    # .toml files cannot reference other .toml files...
-    cat  ~/.config/alacritty/default-config.toml \
-         ~/.cache/wal/colors-alacritty.toml > \
-         ~/.config/alacritty/alacritty.toml
-
     restartApps
 }
 
