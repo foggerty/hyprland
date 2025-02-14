@@ -20,12 +20,12 @@ configuration {
     background-color: @background;
     border: 1;
     border-color: @border-color;
-    padding: 2.5ch;
+    padding: 0;
 }
 
 #mainbox {
     border: 0;
-    padding: 0;
+    padding: 10px;
 }
 
 #message {

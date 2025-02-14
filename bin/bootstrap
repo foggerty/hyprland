@@ -26,8 +26,9 @@ desktop="avahi
     cliphist wl-clipboard
     pamixer pavucontrol
     feh
-    gnome-keyring gnome-system-monitor
+    gnome-keyring
     hyprland hyprpaper hyprlock hypridle hyprshot
+    mission-center
     network-manager-applet 
     uwsm
     udiskie
@@ -57,7 +58,7 @@ theme="kora-icon-theme prof-gnome-theme-git
     imagemagick
     qt5-wayland qt6-wayland
     python-pywal16"
-utilities="7zip zip cvs lsof mc unrar unzip"
+utilities="7zip zip cvs lshw lsof mc unrar unzip"
 
 to_install="$applications     \
             $basics           \
@@ -93,12 +94,11 @@ services=(acpid \
           tlp)
 
 for service in ${services[@]}; do
-    sudo systemctl enable $service
-    sudo systemctl start $service
+    sudo systemctl enable --now $service
 done
 
 # Populate color configs
-~/bin/paper ~/Pictures/Wallpapers/current noApps
+~/bin/paper ~/Pictures/Wallpapers/current noAppRestart
 
 # Set GTK themes / keybindings
 gsettings set org.gnome.desktop.interface gtk-theme gnome-professional-solid-40.1
@@ -116,7 +116,7 @@ fi
 # Set standard XDG user directories
 xdg-user-dirs-update
 
-# Not required as I'm unlikely to delete these directories.
+# Not required as I'm unlikely to delete these directories :-)
 sudo systemctl --global disable xdg-user-dirs-update
 systemctl --user stop xdg-user-dirs-update
 
