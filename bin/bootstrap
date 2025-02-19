@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# ToDo -replace nm-applet with something lighter?
-
 function installParu {
     mkdir ~/dev
     pushd dev
@@ -36,11 +34,12 @@ desktop="avahi
     waybar
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
 # I build Emacs manually, so not included here.
-editor="libgccjit aspell aspell-en tree-sitter"
+editor="aspell aspell-en tree-sitter"
 file_manager="thunar thunar-archive-plugin thunar-volman
     gvfs gvfs-smb
     file-roller tumbler nfs-utils"
 fonts="adobe-source-han-fonts
+    font-manager
     otf-font-awesome
     noto-fonts noto-fonts-cjk noto-fonts-emoji
     ttf-sourcecodepro-nerd ttf-linux-libertine ttf-liberation"
@@ -50,8 +49,10 @@ graphics_intel="vulkan-intel intel-media-driver"
 graphics_amd=""
 languages="ruby janet-lang-bin"
 launcher="rofi-wayland"
+libraries="libgccjit"
 power="acpid tlp lm_sensors thermald brightnessctl psensor"
-security="hyprpolkitagent
+security="apparmor audit
+    hyprpolkitagent
     python-notify2 python-psutil"
 terminal="alacritty bash-completion htop moar starship tealdeer"
 theme="kora-icon-theme prof-gnome-theme-git 
@@ -71,6 +72,7 @@ to_install="$applications     \
             $graphics_intel   \
             $launcher         \
             $languages        \
+            $libraries        \
             $locale           \
             $power            \
             $screenshots      \
@@ -86,7 +88,10 @@ if [[ $? -ne 0 ]]; then
 fi
 
 # List of services to enable/start
-services=(acpid \ 
+services=(acpid \
+          apparmor \
+          auditd \
+          avahi-daemon \
           bluetooth \
           lm_sensors \
           NetworkManager \

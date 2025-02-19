@@ -1,8 +1,3 @@
-Note: remove FireWire, VirtualBox, AMD, Microsoft, Surface, Macintosh, infiniband, ISDN, apple, ibm, raspberry, thrustmaster, toshiba, xfs, xen, eprom, lenovo, asus HP
-
-cpuFreq Govener,
-
-
 * Installation
 - Install Arch (or derivitive, tested on CachyOS) using the ~archinstall~ script - for audio, select ~Pipewire~, for networking select ~NetworkManger~.
 - Run ~$HOME/bin/bootstrap~.
@@ -24,7 +19,12 @@ The mandatory ~fastfetch~ shot:
 * VM Notes
 Add ~intel_iommu=on~ to kernel parameter.
 
+* AppArmor
+Add ~lsm=landlock,lockdown,yama,integrity,apparmor,bpf~ to the kernel boot parameters.
+Also add ~audit=1~ to enable auditing.
+
 * TODO
+  - [ ] Setup up [[https://github.com/bulletmark/libinput-gestures][libinput-gestures]] to open/close special workspace.
   - [-] Checklist of everything that needs to be working post-install
     - [X] General:
       * [X] Desktop portal is running.
@@ -48,9 +48,9 @@ Add ~intel_iommu=on~ to kernel parameter.
       * [ ] Passing score (70%) on lynis.
     - [-] Laptop:
       * [X] Wifi is working, can browse and connect
-      * [ ] Ditto for Bluetooth.
+      * [-] Ditto for Bluetooth.
         * [ ] Can connet a mouse
-        * [ ] Can connect headphones
+        * [X] Can connect headphones
       * [X] Lid sleeps & locks.
     - [X] Theming
       * [X] Can right-click in file-manager and set theme.

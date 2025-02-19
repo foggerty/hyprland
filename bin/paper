@@ -23,7 +23,7 @@ function restartApps {
         hyprpaper &>/dev/null &
         waybar -l off &>/dev/null &
         swaync &>/dev/null &
-        pgrep emacs && emacsclient -e "(load-theme 'ewal-doom-one t)"
+        pgrep emacs && emacsclient -e "(load-theme 'ewal-spacemacs-classic t)"
     fi    
 }
 
