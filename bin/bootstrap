@@ -90,7 +90,6 @@ fi
 
 # List of services to enable/start
 services=(acpid \
-          auditd \
           avahi-daemon \
           bluetooth \
           lm_sensors \
