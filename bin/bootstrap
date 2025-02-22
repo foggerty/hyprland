@@ -1,7 +1,7 @@
 #!/bin/sh
 
 function installParu {
-    mkdir ~/dev
+    mkdir ~/dev > /dev/null
     pushd dev
     sudo pacman -S --needed git base-devel
     git clone https://aur.archlinux.org/paru.git
@@ -11,7 +11,7 @@ function installParu {
 }
 
 # Install min for 'bootstrap'
-sudo pacman --needed -S git base-devel 
+sudo pacman --needed -S git base-devel
 
 which paru > /dev/null || installParu
 
@@ -27,12 +27,15 @@ desktop="avahi
     gnome-keyring
     hyprland hyprpaper hyprlock hypridle hyprshot
     mission-center
-    network-manager-applet 
+    network-manager-applet
     uwsm
     udiskie
     swaync
     waybar
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
+development="inotify-tools
+    janet-lang-bin
+    ruby"
 # I build Emacs manually, so not included here.
 editor="aspell aspell-en tree-sitter"
 file_manager="thunar thunar-archive-plugin thunar-volman
@@ -47,24 +50,22 @@ gaming="gamemode steam"
 graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
 graphics_intel="vulkan-intel intel-media-driver"
 graphics_amd=""
-languages="ruby janet-lang-bin"
 launcher="rofi-wayland"
 libraries="libgccjit"
 power="acpid tlp lm_sensors thermald brightnessctl psensor"
-security="apparmor audit
-    hyprpolkitagent
-    python-notify2 python-psutil"
+security="hyprpolkitagent"
 terminal="alacritty bash-completion htop moar starship tealdeer"
-theme="kora-icon-theme prof-gnome-theme-git 
+theme="kora-icon-theme prof-gnome-theme-git
     imagemagick
     qt5-wayland qt6-wayland
     python-pywal16"
-utilities="7zip zip cvs lshw lsof mc unrar unzip"
+utilities="7zip zip cvs lshw lsof mc tree unrar unzip"
 
 to_install="$applications     \
             $basics           \
             $browser          \
             $desktop          \
+            #development      \
             $editor           \
             $file_manager     \
             $fonts            \
@@ -89,7 +90,6 @@ fi
 
 # List of services to enable/start
 services=(acpid \
-          apparmor \
           auditd \
           avahi-daemon \
           bluetooth \
@@ -129,11 +129,10 @@ systemctl --user stop xdg-user-dirs-update
 ~/bin/set-mime-defaults.sh
 
 # Setup locale
-echo $LANG | cut -f1 -d. > ~/.config/user-dirs.locale 
+echo $LANG | cut -f1 -d. > ~/.config/user-dirs.locale
 
 # Update TLP config
 sudo cp ~/.config/tlp/tlp.conf /etc
 
 # Download tldr content
 tldr --update
-
