@@ -35,8 +35,7 @@ desktop="avahi
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
 development="inotify-tools
     janet-lang-bin
-    ruby"
-# I build Emacs manually, so not included here.
+    ruby rubygems ruby-irb ruby-stdlib"
 editor="aspell aspell-en tree-sitter"
 file_manager="thunar thunar-archive-plugin thunar-volman
     gvfs gvfs-smb
@@ -65,7 +64,7 @@ to_install="$applications     \
             $basics           \
             $browser          \
             $desktop          \
-            #development      \
+            $development      \
             $editor           \
             $file_manager     \
             $fonts            \
