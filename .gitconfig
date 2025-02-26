@@ -13,8 +13,6 @@
 	autoSetupRemote = true
 	followTags = true
 [fetch]
-	prune = true
-	pruneTags = true
 	all = true
 [help]
 	autocorrect = prompt
@@ -22,3 +20,6 @@
 	autoSquash = true
 	autoStash = true
 	updateRefs = true
+[user]
+	name = Foggerty
+	email = foggerty@gmail.com

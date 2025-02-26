@@ -1,12 +1,12 @@
 {
-    "layer": "bottom",
+    "layer": "top",
     "exclusive": true,
     "height": 40,
     "spacing": 12,
     "margin-left": 6,
     "margin-right": 6,
     "margin-top": 3,
-    "modules-left": ["memory", "cpu", "temperature"],
+    "modules-left": ["custom/power", "memory", "cpu", "temperature"],
     "modules-center": ["clock"],
     "modules-right": ["hyprland/workspaces", "pulseaudio", "battery", "network", "tray"],
 
@@ -18,15 +18,20 @@
         }
     },
 
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout"
+    },
+
     "tray": {
-        "icon-size": 16,    
+        "icon-size": 16,
         "spacing": 10
     },
 
     "clock": {
         "timezone": "Pacific/Auckland",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a %d - %H:%M}"
+        "format": "{:%a %d %b - %I:%M %p}"
     },
 
     "cpu": {
@@ -45,7 +50,7 @@
         "hwmon-path":
         [
             "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon6/temp2_input",
-            "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon7/temp2_input",
+            "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon7/temp2_input"
         ],
         "format": "{temperatureC}°C",
         "on-click": "psensor"
@@ -53,7 +58,7 @@
 
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
@@ -66,7 +71,6 @@
     },
 
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr}",
         "tooltip-format": "{ifname} via {gwaddr}",
@@ -77,12 +81,11 @@
     },
 
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "on-click": "pavucontrol",
         "format": "{volume}% {icon}",
         "format-muted": "",
         "format-icons": {
             "default": ["", "", ""]
-        },
+        }
     }
 }

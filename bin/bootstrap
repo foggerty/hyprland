@@ -33,13 +33,16 @@ desktop="avahi
     swaync
     waybar
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
-development="inotify-tools
+development="cpio
+    cmake make meson ninja
+    inotify-tools
     janet-lang-bin
     ruby rubygems ruby-irb ruby-stdlib"
 editor="aspell aspell-en tree-sitter"
-file_manager="thunar thunar-archive-plugin thunar-volman
+file_manager="file-roller
     gvfs gvfs-smb
-    file-roller tumbler nfs-utils"
+    nfs-utils
+    thunar thunar-archive-plugin thunar-volman tumbler"
 fonts="adobe-source-han-fonts
     font-manager
     otf-font-awesome
@@ -53,7 +56,7 @@ launcher="rofi-wayland"
 libraries="libgccjit"
 power="acpid tlp lm_sensors thermald brightnessctl psensor"
 security="hyprpolkitagent"
-terminal="alacritty bash-completion htop moar starship tealdeer"
+terminal="alacritty bash-completion fish htop moar starship tealdeer"
 theme="kora-icon-theme prof-gnome-theme-git
     imagemagick
     qt5-wayland qt6-wayland
@@ -89,12 +92,12 @@ fi
 
 # List of services to enable/start
 services=(acpid \
-          avahi-daemon \
-          bluetooth \
-          lm_sensors \
-          NetworkManager \
-          thermald \
-          tlp)
+              avahi-daemon \
+              bluetooth \
+              lm_sensors \
+              NetworkManager \
+              thermald \
+              tlp)
 
 for service in ${services[@]}; do
     sudo systemctl enable --now $service
@@ -134,3 +137,8 @@ sudo cp ~/.config/tlp/tlp.conf /etc
 
 # Download tldr content
 tldr --update
+
+# Hyprland plugins
+hyprpm add https://github.com/hyprwm/hyprland-plugins
+hyprpm update
+hyprpm enable hyprexpo

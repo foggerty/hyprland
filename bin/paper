@@ -13,7 +13,7 @@ flag="$2"
 function killApps {
     if [[ -z $flag ]]; then
         pkill hyprpaper
-        pkill waybar
+        #pkill waybar
         pkill swaync
     fi
 }
@@ -21,7 +21,8 @@ function killApps {
 function restartApps {
     if [[ -z $flag ]]; then
         hyprpaper &>/dev/null &
-        waybar -l off &>/dev/null &
+        killall -SIGUSR2 waybar
+        #waybar -l off &>/dev/null &
         swaync &>/dev/null &
         pgrep emacs && emacsclient -e "(load-theme 'ewal-spacemacs-classic t)"
     fi    

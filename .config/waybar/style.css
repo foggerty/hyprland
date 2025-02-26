@@ -46,6 +46,11 @@ button {
 #mode,
 #idle_inhibitor,
 #scratchpad,
+
+#custom-power {
+    padding-left: 20;
+}
+
 #mpd {
     padding: 0 10px;
     color: white;
