@@ -10,6 +10,11 @@ function installParu {
     popd
 }
 
+function setupDm {
+    sudo cp ~/Pictures/Wallpapers/TealBuddha.jpg /usr/share/pixmaps
+    sudo cp ~/.config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+}
+
 # Install min for 'bootstrap'
 sudo pacman --needed -S git base-devel
 
@@ -26,6 +31,7 @@ desktop="avahi
     feh
     gnome-keyring
     hyprland hyprpaper hyprlock hypridle hyprshot
+    lightdm lightdm-gtk-greeter
     mission-center
     network-manager-applet
     uwsm
@@ -35,6 +41,7 @@ desktop="avahi
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
 development="cpio
     cmake make meson ninja
+    elixir
     inotify-tools
     janet-lang-bin
     ruby rubygems ruby-irb ruby-stdlib"
@@ -94,6 +101,7 @@ fi
 services=(acpid \
               avahi-daemon \
               bluetooth \
+              ligthdm \
               lm_sensors \
               NetworkManager \
               thermald \
@@ -142,3 +150,6 @@ tldr --update
 #hyprpm add https://github.com/hyprwm/hyprland-plugins
 #hyprpm update
 #hyprpm enable hyprexpo
+
+# Lightdm setup
+setupDm
