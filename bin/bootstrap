@@ -139,6 +139,6 @@ sudo cp ~/.config/tlp/tlp.conf /etc
 tldr --update
 
 # Hyprland plugins
-hyprpm add https://github.com/hyprwm/hyprland-plugins
-hyprpm update
-hyprpm enable hyprexpo
+#hyprpm add https://github.com/hyprwm/hyprland-plugins
+#hyprpm update
+#hyprpm enable hyprexpo
