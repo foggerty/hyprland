@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -o errexit
+
+mkdir -p ~/dev
+
+pushd ~/dev
+
+git clone https://github.com/emacs-mirror/emacs --depth=1 --branch=emacs-30
+
+pushd emacs
+
+./autogen.sh && \
+./configure --with-pgtk --with-tree-sitter --with-sound=no --without-selinux
+make && \
+sudo make install
+
+popd
+popd
+
+systemctl --user enable emacs
