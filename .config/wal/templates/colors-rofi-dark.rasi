@@ -1,5 +1,5 @@
 * {{
-    active-background: {color2};
+    active-background: {background.rgba};
     active-foreground: @foreground;
     normal-background: @background;
     normal-foreground: @foreground;
@@ -20,7 +20,7 @@
     selected-urgent-background: {color3};
     selected-urgent-foreground: @foreground;
 
-    background-color: @background;
+    background-color: {background.rgba};
     background: {background.rgba};
     foreground: {foreground};
     border-color: {color4};

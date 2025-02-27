@@ -1,4 +1,4 @@
-@import "/home/matt/.cache/wal/colors-waybar.css";
+ @import "/home/matt/.cache/wal/colors-waybar.css";
 
 * {
     font-family: "Source Code Pro Nerd", FontAwesome, Arial, sans-serif;
@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-    background-color: rgba(10,3,1,0.75);
+    background-color: @background;
     border: 2px solid @color12;
     color: @foreground;
     transition-property: background-color;
