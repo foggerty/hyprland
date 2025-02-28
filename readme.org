@@ -1,27 +1,28 @@
 * Installation
-- Install Arch (or derivitive, tested on CachyOS) using the ~archinstall~ script - for audio, select ~Pipewire~, for networking select ~NetworkManger~.
-- Run ~$HOME/bin/bootstrap~.
+- Install Arch (or derivitive, tested on CachyOS) using the =Arrchinstall= script - for audio, select =Pipewire=, for networking select =NetworkManger=.
+- Run =$HOME/bin/bootstrap=.
 - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
 - See if there's anything specific for you [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
-- Set ~noatime~ in ~/etc/fstab~
+- Set =noatime= in =/etc/fstab=
 - Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
-- Copy the file ~/.mozilla/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
-
+- Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition,
+   add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.  May also need to add =module_blacklist==intel_hid= owing to a kernel bug if using an intel laptop.
+  
 * Changing theme
-Either use the script ~$HOME/bin/paper~ or right-click and select ~Set as Theme~ on an image in Thunar (this will call the same script).
+Either use the script =$HOME/bin/paper= or right-click and select =Set as Theme= on an image in Thunar (this will call the same script).
 
 * Screenshots
 
-The mandatory ~fastfetch~ shot:
+The mandatory =fastfetch= shot:
 
 [[file:Pictures/info.png]]
 
 * VM Notes
-Add ~intel_iommu=on~ to kernel parameter.
+Add =intel_iommu=on= to kernel parameter.
 
 * AppArmor
-Add ~lsm=landlock,lockdown,yama,integrity,apparmor,bpf~ to the kernel boot parameters.
-Also add ~audit=1~ to enable auditing.
+Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot parameters.
+Also add =audit=1= to enable auditing.
 
 * TODO
   - [ ] Setup up [[https://github.com/bulletmark/libinput-gestures][libinput-gestures]] to open/close special workspace.
@@ -31,8 +32,8 @@ Also add ~audit=1~ to enable auditing.
       * [X] Notifications are working.
       * [X] Clipboard helper.
       * [X] Screenshot tool.
-      * [X] All of the fonts [[https://www.cogsci.ed.ac.uk/~richard/unicode-sample.html][here]] are readable.
-    - [X] Can build emacs with ~PGTK~, ~NativeCompilation~ and ~TreeSitter.~
+      * [X] All of the fonts [[https://www.cogsci.ed.ac.uk/=richard/unicode-sample.html][here]] are readable.
+    - [X] Can build emacs with =PGTK=, =NativeCompilation= and =TreeSitter.=
     - [X] Plugin another monitor (or two) and see if everything still works.
     - [-] Application support:
       * [X] Steam.
@@ -56,7 +57,7 @@ Also add ~audit=1~ to enable auditing.
       * [X] Can right-click in file-manager and set theme.
     - [X] USB drives are auto-mounted.
 
-Images in ~$HOME/Pictures/Wallpapers~ are copyright their respective owners, and were nabbed/copied from ~https:/wallpaperaccess.com~.
+Images in =$HOME/Pictures/Wallpapers= are copyright their respective owners, and were nabbed/copied from =https:/wallpaperaccess.com=.
 
 Lots of theme ideas swiped from JaKoolLit's over-engineered but awesome [[https://github.com/JaKooLit/Arch-Hyprland][Hyprland setup]] :-)
 --------------------------------------------------------------------------------
