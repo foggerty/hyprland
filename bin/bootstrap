@@ -62,7 +62,13 @@ theme="kora-icon-theme prof-gnome-theme-git
     imagemagick
     qt5-wayland qt6-wayland
     python-pywal16"
-utilities="7zip zip cvs lshw lsof moar mc tree unrar unzip"
+utilities="7zip zip unrar unzip
+    bat bat-extras
+    fzf
+    lshw lsof
+    mc
+    ripgrep
+    tree"
 v_host="dnsmasq libvirt qemu-full virt-manager"
 
 to_install="$applications     \
