@@ -117,12 +117,12 @@ done
 ~/bin/paper ~/Pictures/Wallpapers/current noAppRestart
 
 # Set GTK themes / keybindings
-gsettings set org.gnome.desktop.interface gtk-theme Prof-GNome-Dark
-gsettings set org.gnome.desktop.interface icon-theme Kora
+gsettings set org.gnome.desktop.interface gtk-theme Prof-Gnome-Dark-DS
+gsettings set org.gnome.desktop.interface icon-theme kora
 gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
-gsettings set org.gnome.desktop.interface font-name "Cantarell"
-gsettings set org.gnome.desktop.interface document-font-name "Cantarell"
-gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro"
+gsettings set org.gnome.desktop.interface font-name "Cantarell 11"
+gsettings set org.gnome.desktop.interface document-font-name "Cantarell 11"
+gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 11"
 
 # Remove Thunar's existing SetWallPaper menu item
 if [ -f /usr/lib/thunarx-3/thunar-wallpaper-plugin.so ]; then
