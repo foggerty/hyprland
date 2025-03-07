@@ -65,6 +65,7 @@ theme="kora-icon-theme prof-gnome-theme-git
 utilities="7zip zip unrar unzip
     bat bat-extras
     fzf
+    git-delta
     lshw lsof
     mc
     ripgrep

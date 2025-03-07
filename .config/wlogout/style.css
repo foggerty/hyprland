@@ -15,7 +15,7 @@ button {
     border-color: black;
 	text-decoration-color: #FFFFFF;
     color: @foreground;
-	background-color: @color1;
+	background-color: @color8;
 	border-style: solid;
 	border-width: 1px;
 	background-repeat: no-repeat;

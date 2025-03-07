@@ -20,7 +20,8 @@
 
     "custom/power": {
         "format": "⏻",
-        "on-click": "wlogout"
+        "on-click": "wlogout",
+        "tooltip": "Power/Logout/Lock"
     },
 
     "tray": {
