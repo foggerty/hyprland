@@ -28,6 +28,7 @@ desktop="avahi
     hyprland hyprpaper hyprlock hypridle hyprshot
     lightdm lightdm-gtk-greeter
     mission-center
+    mpd
     network-manager-applet
     uwsm
     udiskie
@@ -37,8 +38,7 @@ desktop="avahi
 development="cpio
     cmake make meson ninja
     elixir
-    inotify-tools
-    janet-lang-bin
+    racket
     ruby rubygems ruby-irb ruby-stdlib"
 editor="aspell aspell-en tree-sitter"
 file_manager="file-roller
@@ -55,7 +55,7 @@ graphics_intel="vulkan-intel intel-media-driver"
 graphics_amd=""
 launcher="rofi-wayland"
 libraries="libgccjit"
-power="acpid tlp lm_sensors thermald brightnessctl psensor"
+power="acpid lm_sensors power-profiles-daemon thermald brightnessctl psensor"
 security="hyprpolkitagent"
 terminal="alacritty bash-completion fish htop starship tealdeer"
 theme="kora-icon-theme prof-gnome-theme-git
@@ -105,26 +105,34 @@ if [[ $? -ne 0 ]]; then
     exit
 fi
 
-# List of services to enable/start
-services=(acpid \
-              avahi-daemon \
-              bluetooth \
-              ligthdm \
-              lm_sensors \
-              NetworkManager \
-              thermald \
-              tlp \
-              libvirtd.socket)
+# List of system services to enable/start.
+services=(acpid
+          avahi-daemon \
+          bluetooth \
+          ligthdm \
+          lm_sensors \
+          power-profiles-daemon \
+          NetworkManager \
+          thermald \
+          libvirtd.socket)
+
+# List of user services to enable/start.
+user_services = "mpd"
 
 for service in ${services[@]}; do
     sudo systemctl enable --now $service
 done
 
+for service in ${user_services[@]}; do
+    systemctl --user enable --now $service
+done
+
+
 # Populate color configs
 ~/bin/paper ~/Pictures/Wallpapers/current noAppRestart
 
 # Set GTK themes / keybindings
-gsettings set org.gnome.desktop.interface gtk-theme Prof-Gnome-Dark-DS
+gsettings set org.gnome.desktop.interface gtk-theme Prof-Gnome-Light-DS
 gsettings set org.gnome.desktop.interface icon-theme kora
 gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 gsettings set org.gnome.desktop.interface font-name "Cantarell 11"
@@ -149,11 +157,12 @@ systemctl --user stop xdg-user-dirs-update
 # Setup locale
 echo $LANG | cut -f1 -d. > ~/.config/user-dirs.locale
 
-# Update TLP config
-sudo cp ~/.config/tlp/tlp.conf /etc
-
 # Download tldr content
 tldr --update
 
 # Lightdm setup
 setupDisplayManager
+
+# MPD setup
+mkdir -p ~/.config/mpd/state
+mkdir -p ~/.config/mpd/playlists

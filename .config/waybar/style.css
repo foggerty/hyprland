@@ -1,7 +1,7 @@
  @import "/home/matt/.cache/wal/colors-waybar.css";
 
 * {
-    font-family: "Source Code Pro Nerd";
+    font-family: "Sans Mono", "Font Awesome";
     font-size: 16px;
 }
 
@@ -68,4 +68,3 @@ button {
 #workspaces {
     margin: 4px 4px;
 }
-

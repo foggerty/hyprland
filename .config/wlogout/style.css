@@ -6,7 +6,7 @@
 }
 
 window {
-	background-color: @background;
+	background-color: rgba(0, 0, 0, .90);
 }
 
 button {
@@ -15,7 +15,7 @@ button {
     border-color: black;
 	text-decoration-color: #FFFFFF;
     color: @foreground;
-	background-color: @color8;
+	background-color: @background;
 	border-style: solid;
 	border-width: 1px;
 	background-repeat: no-repeat;
