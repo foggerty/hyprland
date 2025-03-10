@@ -52,8 +52,7 @@ button {
 }
 
 #mpd {
-    padding: 0 10px;
-    color: white;
+    padding-left: 20px;
 }
 
 #tray {

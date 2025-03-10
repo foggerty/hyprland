@@ -1,109 +1,130 @@
 {
-  "layer": "top",
-  "exclusive": true,
-  "height": 40,
-  "spacing": 12,
-  "margin-left": 6,
-  "margin-right": 6,
-  "margin-top": 3,
-  "modules-left": ["custom/power", "memory", "cpu", "temperature"],
-  "modules-center": ["clock"],
-  "modules-right": ["hyprland/workspaces",
-    "pulseaudio",
-    "battery",
-    "power-profiles-daemon",
-    "network",
-    "tray"],
+    "layer": "top",
+    "exclusive": true,
+    "height": 40,
+    "spacing": 12,
+    "margin-left": 6,
+    "margin-right": 6,
+    "margin-top": 3,
+    "modules-left": ["memory", "cpu", "temperature", "mpd"],
+    "modules-center": ["clock"],
+    "modules-right": ["hyprland/workspaces",
+                      "pulseaudio",
+                      "battery",
+                      "power-profiles-daemon",
+                      "network",
+                      "tray"],
 
-  "hyprland/workspaces": {
-    "format": "{id}",
-    "on-click": "activate",
-    "persistent-workspaces": {
-      "*": 4
-    }
-  },
-
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
-  },
-
-  "custom/power": {
-    "format": "",
-    "on-click": "wlogout",
-    "tooltip": "Power/Logout/Lock"
-  },
-
-  "tray": {
-    "icon-size": 16,
-    "spacing": 10
-  },
-
-  "clock": {
-    "timezone": "Pacific/Auckland",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%a %d %b - %I:%M %p}"
-  },
-
-  "cpu": {
-    "format": "cpu: {usage}%",
-    "tooltip": false,
-    "on-click": "gnome-system-monitor",
-    "interval": 1
-  },
-
-  "memory": {
-    "format": "mem: {}%",
-    "on-click": "alacritty -e gtop"
-  },
-
-  "temperature": {
-    "hwmon-path":
-            [
-              "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon6/temp2_input",
-              "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon7/temp2_input"
-            ],
-    "format": "{temperatureC}°C",
-    "on-click": "psensor"
-  },
-
-  "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 15
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "*": 4
+        }
     },
-    "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-full": "",
-    "format-icons": ["", "", "", "", ""],
-    "interval": 3,
-    "on-click": "tlpui"
-  },
 
-  "network": {
-    "format-wifi": "{essid} ({signalStrength}%)",
-    "format-ethernet": "{ipaddr}/{cidr}",
-    "tooltip-format": "{ifname} via {gwaddr}",
-    "format-linked": "{ifname} (No IP)",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "on-click-right": "gufw"
-  },
+    "mpd": {
+        "on-click": "rmpc togglepause",
+        "on-click-right": "pkill rmpc || hyprctl dispatch \"exec [float; size 80% 80%] alacritty -e rmpc\"",
 
-  "pulseaudio": {
-    "on-click": "pavucontrol",
-    "format": "{volume}% {icon}",
-    "format-muted": "",
-    "format-icons": {
-      "default": ["", "", ""]
+        "format": "{stateIcon}   {artist}/{title}",
+        "format-disconnected": "MPD - Disconnected",
+        "format-stopped": "{stateIcon}",
+        "interval": 10,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "",
+            "on": ""
+        },
+        "repeat-icons": {
+            "on": ""
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+    "clock": {
+        "timezone": "Pacific/Auckland",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a %d %b - %I:%M %p}"
+    },
+
+    "cpu": {
+        "format": "cpu: {usage}%",
+        "tooltip": false,
+        "on-click": "gnome-system-monitor",
+        "interval": 1
+    },
+
+    "memory": {
+        "format": "mem: {}%",
+        "on-click": "alacritty -e gtop"
+    },
+
+    "temperature": {
+        "hwmon-path":
+        [
+            "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon6/temp2_input",
+            "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon7/temp2_input"
+        ],
+        "format": "{temperatureC}°C",
+        "on-click": "psensor"
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-full": "",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 3,
+        "on-click": "tlpui"
+    },
+
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "gufw"
+    },
+
+    "pulseaudio": {
+        "on-click": "pavucontrol",
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        }
     }
-  }
 }

@@ -30,6 +30,7 @@ desktop="avahi
     mission-center
     mpd
     network-manager-applet
+    rmpc
     uwsm
     udiskie
     swaync
@@ -45,10 +46,12 @@ file_manager="file-roller
     gvfs gvfs-smb
     nfs-utils
     thunar thunar-archive-plugin thunar-volman tumbler"
-fonts="adobe-source-han-fonts
+fonts="adobe-source-code-pro-fonts
+    adobe-source-han-fonts
     font-manager
+    otf-font-awesome
     noto-fonts noto-fonts-cjk noto-fonts-emoji
-    ttf-sourcecodepro-nerd ttf-linux-libertine ttf-liberation"
+    ttf-linux-libertine ttf-liberation"
 gaming="gamemode steam"
 graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
 graphics_intel="vulkan-intel intel-media-driver"
@@ -58,7 +61,7 @@ libraries="libgccjit"
 power="acpid lm_sensors power-profiles-daemon thermald brightnessctl psensor"
 security="hyprpolkitagent"
 terminal="alacritty bash-completion fish htop starship tealdeer"
-theme="kora-icon-theme prof-gnome-theme-git
+theme="obsidian-icon-theme prof-gnome-theme-git
     imagemagick
     qt5-wayland qt6-wayland
     python-pywal16"
@@ -133,11 +136,11 @@ done
 
 # Set GTK themes / keybindings
 gsettings set org.gnome.desktop.interface gtk-theme Prof-Gnome-Light-DS
-gsettings set org.gnome.desktop.interface icon-theme kora
+gsettings set org.gnome.desktop.interface icon-theme Obsidian
 gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
-gsettings set org.gnome.desktop.interface font-name "Cantarell 11"
-gsettings set org.gnome.desktop.interface document-font-name "Cantarell 11"
-gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 11"
+gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
+gsettings set org.gnome.desktop.interface document-font-name "Cantarell 10"
+gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 10"
 
 # Remove Thunar's existing SetWallPaper menu item
 if [ -f /usr/lib/thunarx-3/thunar-wallpaper-plugin.so ]; then
