@@ -4,7 +4,7 @@
 (
     address: "127.0.0.1:6600",
     password: None,
-    theme: None,
+    theme: Some("default"),
     cache_dir: None,
     on_song_change: None,
     volume_step: 5,
@@ -64,7 +64,7 @@
             "<C-j>":     PaneDown,
             "<C-h>":     PaneLeft,
             "<C-l>":     PaneRight,
-            "<C-u>":     UpHalf,
+            "<PageUp>":   UpHalf,
             "N":         PreviousResult,
             "a":         Add,
             "A":         AddAll,
@@ -77,7 +77,7 @@
             "<CR>":      Confirm,
             "i":         FocusInput,
             "J":         MoveDown,
-            "<C-d>":     DownHalf,
+            "<PageDown>":     DownHalf,
             "/":         EnterSearch,
             "<C-c>":     Close,
             "<Esc>":     Close,
@@ -145,4 +145,3 @@
         ),
     ],
 )
-
