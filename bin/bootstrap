@@ -19,7 +19,8 @@ function setupDisplayManager {
 applications="galculator vlc foliate"
 basics="man linux-firmware base-devel fastfetch"
 browser="cachy-browser"
-desktop="avahi
+desktop="accountservice
+    avahi
     blueman
     cliphist wl-clipboard
     pamixer pavucontrol
@@ -27,6 +28,7 @@ desktop="avahi
     gnome-keyring
     hyprland hyprpaper hyprlock hypridle hyprshot
     lightdm lightdm-gtk-greeter
+    journalctl-desktop-notification
     mission-center
     mpd
     network-manager-applet

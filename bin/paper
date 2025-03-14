@@ -24,7 +24,7 @@ function restartApps {
         waybar -l off &>/dev/null &
         swaync &>/dev/null &
         pgrep emacs && emacsclient -e "(load-theme 'ewal-spacemacs-classic t)"
-    fi    
+    fi
 }
 
 function setWallpaper {
@@ -32,7 +32,7 @@ function setWallpaper {
 
     cp $image $wallpaper
 
-    wal -n -a 85 -i ~/Pictures/Wallpapers/current
+    wal --contrast 2.0 --cols16 lighten -n -a 85 -i ~/Pictures/Wallpapers/current
 
     restartApps
 }
@@ -61,4 +61,3 @@ done
 
 echo "Not a recognised file type."
 exit -1
-
