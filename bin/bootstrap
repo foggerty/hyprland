@@ -19,7 +19,7 @@ function setupDisplayManager {
 applications="galculator vlc foliate"
 basics="man linux-firmware base-devel fastfetch"
 browser="cachy-browser"
-desktop="accountservice
+desktop="accountsservice
     avahi
     blueman
     cliphist wl-clipboard
@@ -62,7 +62,7 @@ launcher="rofi-wayland"
 libraries="libgccjit"
 power="acpid lm_sensors power-profiles-daemon thermald brightnessctl psensor"
 security="hyprpolkitagent"
-terminal="alacritty bash-completion fish htop starship tealdeer"
+terminal="alacritty bash-completion htop starship tealdeer"
 theme="obsidian-icon-theme prof-gnome-theme-git
     imagemagick
     qt5-wayland qt6-wayland
@@ -114,7 +114,7 @@ fi
 services=(acpid
           avahi-daemon \
           bluetooth \
-          ligthdm \
+          lightdm \
           lm_sensors \
           power-profiles-daemon \
           NetworkManager \
@@ -134,7 +134,7 @@ done
 
 
 # Populate color configs
-~/bin/paper ~/Pictures/Wallpapers/current noAppRestart
+~/bin/paper both ~/Pictures/Wallpapers/current
 
 # Set GTK themes / keybindings
 gsettings set org.gnome.desktop.interface gtk-theme Prof-Gnome-Light-DS
