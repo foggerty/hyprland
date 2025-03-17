@@ -27,7 +27,7 @@
         "on-click": "rmpc togglepause",
         "on-click-right": "pkill rmpc || hyprctl dispatch \"exec [float; size 80% 80%] alacritty -e rmpc\"",
 
-        "format": "{stateIcon}   {artist}/{title}",
+        "format": "{stateIcon} : {artist}/{title}",
         "format-disconnected": "MPD - Disconnected",
         "format-stopped": "{stateIcon}",
         "interval": 10,

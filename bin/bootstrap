@@ -75,7 +75,7 @@ utilities="7zip zip unrar unzip
     mc
     ripgrep
     tree"
-v_host="dnsmasq libvirt qemu-full virt-manager"
+v_host="dmidecode dnsmasq libvirt qemu-full virt-manager"
 
 to_install="$applications     \
             $basics           \
@@ -145,6 +145,8 @@ gsettings set org.gnome.desktop.interface document-font-name "Cantarell 10"
 gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 10"
 
 # Remove Thunar's existing SetWallPaper menu item
+# Note, will need to add exclude to pacman.conf so it's
+# not replaced by updates.
 if [ -f /usr/lib/thunarx-3/thunar-wallpaper-plugin.so ]; then
     sudo rm /usr/lib/thunarx-3/thunar-wallpaper-plugin.so
 fi

@@ -7,7 +7,7 @@
 - Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
 - Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition,
    add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.  May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.
-  
+
 * Changing theme
 Either use the script =$HOME/bin/paper= or right-click and select =Set as Theme= on an image in Thunar (this will call the same script).
 
@@ -20,12 +20,27 @@ The mandatory =fastfetch= shot:
 * VM Notes
 Add =intel_iommu=on= to kernel parameter.
 
+To pin VM to given cores, use the following in the VM's XML:
+#+begin_src xml
+<cputune>
+    <vcpupin vcpu="0" cpuset="4"/>
+    <vcpupin vcpu="1" cpuset="5"/>
+    <vcpupin vcpu="2" cpuset="6"/>
+    <vcpupin vcpu="3" cpuset="7"/>
+  </cputune>
+#+end_src
+
+Can then add the following to =/etc/systemd/system.conf:=
+
+=CPUAffinity=0,1,2,3=
+
 * AppArmor
 Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot parameters.
 Also add =audit=1= to enable auditing.
 
 * TODO
   - [ ] Setup up [[https://github.com/bulletmark/libinput-gestures][libinput-gestures]] to open/close special workspace.
+  - [ ] Update theming - set wallpaper and set colors.
   - [-] Checklist of everything that needs to be working post-install
     - [X] General:
       * [X] Desktop portal is running.

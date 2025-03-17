@@ -1,63 +1,82 @@
-#!/bin/bash
+#!/usr/bin/env ruby
+# frozen_string_literal: true
 
-# Stop on first error.
-set +e
+@supported_file_types = %w[PNG XPM JPEG TIFF PNM RAS BMP]
+@wallpaper = '~/Pictures/Wallpapers/current'
 
-# Default wallpeper.
-wallpaper="$HOME/Pictures/Wallpapers/current"
+def valid_image?(file)
+  f_type = `file "#{file}" | cut -d " " -f 2`.strip!
 
-# Parameters
-image="$1"
-flag="$2"
+  @supported_file_types.include?(f_type) || false
+end
 
-function killApps {
-    if [[ -z $flag ]]; then
-        pkill hyprpaper
-        pkill waybar
-        pkill swaync
-    fi
-}
+def valid_flag?(flag)
+  %w[paper theme both].include?(flag) || false
+end
 
-function restartApps {
-    if [[ -z $flag ]]; then
-        hyprpaper &>/dev/null &
-        waybar -l off &>/dev/null &
-        swaync &>/dev/null &
-        pgrep emacs && emacsclient -e "(load-theme 'ewal-spacemacs-classic t)"
-    fi
-}
+def print_help
+  puts 'Usage: paper <paper|theme|both> <image>.'
+  puts '  paper: will set the wallpaper.'
+  puts '  theme: will set the colour theme.'
+  puts '  both: sets both.'
+end
 
-function setWallpaper {
-    killApps
+def apply_paper(paper)
+  `cp #{paper} #{@wallpaper}`
+end
 
-    cp $image $wallpaper
+def apply_theme(paper)
+  `wal --contrast 2.0 --cols16 lighten -n -a 85 -i #{paper}`
+end
 
-    wal --contrast 2.0 --cols16 lighten -n -a 85 -i ~/Pictures/Wallpapers/current
+def restart(app)
+  test = system("pgrep #{app}")
+  puts "Test is: #{test}"
+  return unless test
 
-    restartApps
-}
+  `pkill #{app}`
+  spawn(app)
+end
 
-if [ -z "$image" ]; then
-    echo "Please specify an image file to use."
-    exit -1
-fi
+################################################################################
+## Guard clauses
+#
 
-if [ ! -s "$image" ]; then
-    echo "That's not a file.  Try again."
-    exit -1
-fi
+if ARGV.length != 2
+  print_help
+  exit 1
+end
 
-supported=("PNG" "XPM" "JPEG" "TIFF" "PNM" "RAS" "BMP") # gdk-pixbuf
+unless valid_flag?(ARGV[0])
+  puts "Invalid flag: #{ARGV[0]}"
+  exit 1
+end
 
-fileType=`file $1 | cut -d " " -f 2`
+@paper_path = File.expand_path(ARGV[1])
 
-for imageType in ${supported[@]}
-do
-    if [ "$fileType" = "$imageType" ]; then
-        setWallpaper $image
-        exit 0
-    fi
-done
+unless valid_image?(@paper_path)
+  puts "Not a recognised image file format: #{@paper_path}"
+  exit 1
+end
 
-echo "Not a recognised file type."
-exit -1
+################################################################################
+## Set wallpaper/theme
+#
+
+if %w[paper both].include?(ARGV[0])
+  apply_paper(@paper_path)
+
+  restart('hyprpaper')
+end
+
+if %w[theme both].include?(ARGV[0])
+  apply_theme(@paper_path)
+
+  restart('waybar')
+  restart('swaync')
+
+  system('pgrep emacs') &&
+    `emacsclient -e "(load-theme 'ewal-spacemacs-classic t)"`
+end
+
+exit 0
