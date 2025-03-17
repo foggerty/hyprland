@@ -40,7 +40,7 @@ Also add =audit=1= to enable auditing.
 
 * TODO
   - [ ] Setup up [[https://github.com/bulletmark/libinput-gestures][libinput-gestures]] to open/close special workspace.
-  - [ ] Update theming - set wallpaper and set colors.
+  - [X] Update theming - set wallpaper and set colors.
   - [-] Checklist of everything that needs to be working post-install
     - [X] General:
       * [X] Desktop portal is running.

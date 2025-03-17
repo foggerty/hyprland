@@ -5,7 +5,7 @@
 @wallpaper = '~/Pictures/Wallpapers/current'
 
 def valid_image?(file)
-  f_type = `file "#{file}" | cut -d " " -f 2`.strip!
+  f_type = `file "#{file}" | cut -d " " -f 2`.strip
 
   @supported_file_types.include?(f_type) || false
 end
@@ -31,7 +31,6 @@ end
 
 def restart(app)
   test = system("pgrep #{app}")
-  puts "Test is: #{test}"
   return unless test
 
   `pkill #{app}`
