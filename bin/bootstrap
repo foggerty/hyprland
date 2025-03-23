@@ -47,7 +47,7 @@ desktop="accountsservice
     waybar
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
 development="cpio
-    cmake make meson ninja
+    cmake make
     elixir
     go
     racket
@@ -77,7 +77,7 @@ security="hyprpolkitagent"
 terminal="alacritty bash-completion htop starship tealdeer"
 theme="obsidian-icon-theme prof-gnome-theme-git
     imagemagick
-    qt5-wayland qt6-wayland
+    qt6-wayland
     python-pywal16"
 utilities="7zip zip unrar unzip
     bat bat-extras

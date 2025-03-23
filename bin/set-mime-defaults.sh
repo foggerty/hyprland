@@ -11,10 +11,10 @@ declare -A -r mimeTypes=(
     ["application/xml"]="emacsclient.desktop"
     ["application/xml"]="emacsclient.desktop"
 
-    ["image/png"]="swayimg.desktop"
-    ["image/jpeg"]="swayimg.desktop"
-    ["image/jpg"]="swayimg.desktop"
-    ["imagejgif"]="swayimg.desktop"
+    ["image/png"]="feh.desktop"
+    ["image/jpeg"]="feh.desktop"
+    ["image/jpg"]="feh.desktop"
+    ["imagejgif"]="feh.desktop"
 
     ["text/org"]="emacsclient.desktop"
     ["text/plain"]="emacsclient.desktop"
@@ -25,4 +25,4 @@ for mType in "${!mimeTypes[@]}"; do
     xdg-mime default ${mimeTypes[$mType]} $mType
 done
 
-echo $LANG | cut -f2 -d= | cut -f1 -d. > ~/.config/user-dirs.locale 
+echo $LANG | cut -f2 -d= | cut -f1 -d. > ~/.config/user-dirs.locale
