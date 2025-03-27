@@ -5,7 +5,7 @@
 - See if there's anything specific for you [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
 - Set =noatime= in =/etc/fstab=
 - Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
-- Copy the file ~/.mozilla/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
+- Copy the file ~/.config/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
 - Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition:
    add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.  May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.
 
