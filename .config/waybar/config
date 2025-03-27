@@ -27,9 +27,9 @@
         "on-click": "rmpc togglepause",
         "on-click-right": "pkill rmpc || hyprctl dispatch \"exec [float; size 80% 80%] alacritty -e rmpc\"",
 
-        "format": "{stateIcon} : {artist}/{title}",
+        "format": "{stateIcon}    {artist}/{title}",
         "format-disconnected": "MPD - Disconnected",
-        "format-stopped": "{stateIcon}",
+        "format-stopped": "MPD - Stopped",
         "interval": 10,
         "consume-icons": {
             "on": " "
@@ -55,10 +55,10 @@
         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
         "tooltip": true,
         "format-icons": {
-            "default": "",
-            "performance": "",
-            "balanced": "",
-            "power-saver": ""
+            "default": " ",
+            "performance": " ",
+            "balanced": " ",
+            "power-saver": " "
         }
     },
 
@@ -102,9 +102,9 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-full": "",
-        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{capacity}%  ",
+        "format-full": " ",
+        "format-icons": [" ", " ", " ", " ", " "],
         "interval": 3,
         "on-click": "tlpui"
     },

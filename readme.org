@@ -1,5 +1,5 @@
 * Installation
-- Install Arch (or derivitive, tested on CachyOS) using the =Arrchinstall= script - for audio, select =Pipewire=, for networking select =NetworkManger=.
+- Install Arch (or derivitive, tested on CachyOS) using the =Arrchinstall= script.  For audio, select =Pipewire=, for networking select =NetworkManger=.
 - Run =$HOME/bin/bootstrap=.
 - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
 - See if there's anything specific for you [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
@@ -10,7 +10,9 @@
    add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.  May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.
 
 * Changing theme
-Either use the script =$HOME/bin/paper= or right-click and select =Set as Theme= on an image in Thunar (this will call the same script).
+Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= or right-click and select =Theme= on an image in Thunar (this will call the same script).
+
+=paper= will set the wallpaper, =theme= will set the theme (based off of the image's colors) and =both= will do both.
 
 * Screenshots
 
@@ -31,7 +33,7 @@ To pin VM to given cores, use the following in the VM's XML:
   </cputune>
 #+end_src
 
-Can then add the following to =/etc/systemd/system.conf:=
+Can then add the following to =/etc/systemd/system.conf= so that the host OS doesn't use those cores.
 
 =CPUAffinity=0,1,2,3=
 

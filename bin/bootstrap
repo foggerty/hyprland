@@ -48,7 +48,8 @@ desktop="accountsservice
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
 development="cpio
     cmake make
-    elixir
+    elixir erlang-asn1 erlang-public_key erlang-ssl erlang-parsetools
+    erlang
     go
     racket
     ruby rubygems ruby-irb ruby-stdlib
@@ -58,6 +59,7 @@ editor="aspell aspell-en emacs-lsp-booster tree-sitter"
 file_manager="file-roller
     ffmpegthumbnailer
     gvfs gvfs-smb
+    libgepup libgsf libpoppler-glib librar
     nfs-utils
     thunar thunar-archive-plugin thunar-volman
     thunar-media-tags-plugin

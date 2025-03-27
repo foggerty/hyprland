@@ -7,11 +7,11 @@
 def valid_image?(file)
   f_type = `file "#{file}" | cut -d " " -f 2`.strip
 
-  @supported_file_types.include?(f_type) || false
+  @supported_file_types.include?(f_type)
 end
 
 def valid_flag?(flag)
-  %w[paper theme both].include?(flag) || false
+  %w[paper theme both].include?(flag)
 end
 
 def print_help

@@ -4,7 +4,7 @@ shell_patterns=true
 auto_save_setup=true
 preallocate_space=false
 auto_menu=false
-use_internal_view=true
+use_internal_view=false
 use_internal_edit=false
 clear_before_exec=false
 confirm_delete=true
@@ -62,7 +62,7 @@ editor_group_undo=false
 editor_state_full_filename=false
 editor_ask_filename_before_edit=false
 nice_rotating_dash=true
-shadows=false
+shadows=true
 mcview_remember_file_position=false
 auto_fill_mkdir_name=true
 copymove_persistent_attr=true
@@ -83,13 +83,13 @@ editor_backup_extension=~
 editor_filesize_threshold=64M
 editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
-skin=nicedark
+skin=modarin256-defbg-thin
 filepos_max_saved_entries=1024
 
 [Layout]
 output_lines=0
-left_panel_size=72
-top_panel_size=20
+left_panel_size=46
+top_panel_size=19
 message_visible=false
 keybar_visible=true
 xterm_title=true
@@ -97,7 +97,7 @@ command_prompt=true
 menubar_visible=false
 free_space=false
 horizontal_split=false
-vertical_equal=false
+vertical_equal=true
 horizontal_equal=true
 
 [Misc]
@@ -128,7 +128,7 @@ fast_reload_msg_shown=false
 mark_moves_down=true
 reverse_files_only=true
 auto_save_setup_panels=true
-navigate_with_arrows=false
+navigate_with_arrows=true
 panel_scroll_pages=true
 panel_scroll_center=false
 mouse_move_pages=true
@@ -143,7 +143,7 @@ simple_swap=false
 em=%filename
 
 [Panelize]
-Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
-Modified git files=git ls-files --modified
 Find *.orig after patching=find . -name \\*.orig -print
 Find rejects after patching=find . -name \\*.rej -print
+Modified git files=git ls-files --modified
+Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print

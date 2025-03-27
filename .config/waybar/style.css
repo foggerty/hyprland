@@ -1,13 +1,13 @@
  @import "/home/matt/.cache/wal/colors-waybar.css";
 
 * {
-    font-family: "Sans Mono", "Font Awesome";
+    font-family: "Sans Mono", "SauceCodePro Nerd";
     font-size: 16px;
 }
 
 window#waybar {
     background-color: @background;
-    border: 2px solid @color12;
+    border: 2px solid @color4;
     color: @foreground;
     transition-property: background-color;
     transition-duration: .5s;
