@@ -1,13 +1,22 @@
 #!/bin/bash
 
+GREEN="\033[0;32m"
+NO_COLOR="\033[0m"
+
+info() {
+    echo -e "$GREEN$1$NO_COLOR"
+}
+
 installParu() {
-    if [ ! -d "$HOME/dev" ]; then
+    info "Installing Paru."
+
+    if [[ ! -d "$HOME/dev" ]]; then
         mkdir ~/dev > /dev/null
     fi
 
     pushd "$HOME/dev" || exit 1
 
-    if [ ! -d "$HOME/dev/paru" ]; then
+    if [[ ! -d "$HOME/dev/paru" ]]; then
         git clone https://aur.archlinux.org/paru.git
     fi
 
@@ -35,16 +44,19 @@ desktop="accountsservice
     feh
     gnome-keyring
     hyprland hyprpaper hyprlock hypridle hyprshot
+    hyprland-qtutils
     lightdm lightdm-gtk-greeter
     journalctl-desktop-notification
     mission-center
     mpd
     network-manager-applet
+    qt6-wayland
     rmpc
     uwsm
     udiskie
-    swaync
+    swaylock swaync
     waybar
+    wlogout
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
 development="cpio
     cmake make
@@ -59,7 +71,7 @@ editor="aspell aspell-en emacs-lsp-booster tree-sitter"
 file_manager="file-roller
     ffmpegthumbnailer
     gvfs gvfs-smb
-    libgepup libgsf libpoppler-glib librar
+    libgsf poppler-glib
     nfs-utils
     thunar thunar-archive-plugin thunar-volman
     thunar-media-tags-plugin
@@ -69,19 +81,23 @@ fonts="adobe-source-code-pro-fonts
     font-manager
     otf-font-awesome
     noto-fonts noto-fonts-cjk noto-fonts-emoji
-    ttf-linux-libertine ttf-liberation"
+    ttf-linux-libertine ttf-liberation
+    ttf-sourcecodepro-nerd"
 graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
 graphics_intel="vulkan-intel intel-media-driver"
 launcher="rofi-wayland"
 libraries="libgccjit"
-power="acpid lm_sensors power-profiles-daemon thermald brightnessctl psensor"
+networking="iwd"
+power="brightnessctl
+    lm_sensors
+    power-profiles-daemon python-gobject
+    thermald "
 security="hyprpolkitagent"
 terminal="alacritty bash-completion htop starship tealdeer"
 theme="obsidian-icon-theme prof-gnome-theme-git
     imagemagick
-    qt6-wayland
     python-pywal16"
-utilities="7zip zip unrar unzip
+utilities="7zip zip unrar-free unzip
     bat bat-extras
     fzf
     git-delta
@@ -103,6 +119,7 @@ to_install="$applications     \
             $graphics_intel   \
             $launcher         \
             $libraries        \
+            $networking       \
             $power            \
             $security         \
             $terminal         \
@@ -111,10 +128,12 @@ to_install="$applications     \
             $v_host"
 
 # Install min for bootstrap
+info "Installing git and base-devel."
 sudo pacman --needed -S git base-devel
 which paru > /dev/null || installParu
 
 # Install packages
+info "Installing packages."
 paru --needed --skipreview -Syu $to_install
 
 if [[ "$?" -ne 0 ]]; then
@@ -123,8 +142,9 @@ fi
 
 # List of system services to enable/start.
 services=(acpid
-          avahi-daemon \
+          avahi-daemon
           bluetooth \
+          iwd \
           lightdm \
           lm_sensors \
           power-profiles-daemon \
@@ -135,18 +155,22 @@ services=(acpid
 # List of user services to enable/start.
 user_services="mpd"
 
+info "Enabling/stating system services."
 for service in "${services[@]}"; do
-    sudo systemctl enable --now $service
+    sudo systemctl enable --now "$service"
 done
 
+info "Enabling/starting user services."
 for service in "${user_services[@]}"; do
-    systemctl --user enable --now $service
+    systemctl --user enable --now "$service"
 done
 
 # Populate color configs
+info "Setting wallpaper and theme."
 ~/bin/paper both ~/Pictures/Wallpapers/current
 
 # Set GTK themes / keybindings
+info "Setting up GTK."
 gsettings set org.gnome.desktop.interface gtk-theme Prof-Gnome-Light-DS
 gsettings set org.gnome.desktop.interface icon-theme Obsidian
 gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
@@ -155,13 +179,15 @@ gsettings set org.gnome.desktop.interface document-font-name "Cantarell 10"
 gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 10"
 
 # Remove Thunar's existing SetWallPaper menu item
-# Note, will need to add exclude to pacman.conf so it's
+# Note, will need to add an exclude to pacman.conf so that it's
 # not replaced by updates.
-if [ -f /usr/lib/thunarx-3/thunar-wallpaper-plugin.so ]; then
+if [[ -f /usr/lib/thunarx-3/thunar-wallpaper-plugin.so ]]; then
+    info "Removing Thunar wallpaper plugin."
     sudo rm /usr/lib/thunarx-3/thunar-wallpaper-plugin.so
 fi
 
 # Set standard XDG user directories
+info "Upading XDG user directories."
 xdg-user-dirs-update
 
 # Not required as I'm unlikely to delete these directories :-)
@@ -169,17 +195,37 @@ sudo systemctl --global disable xdg-user-dirs-update
 systemctl --user stop xdg-user-dirs-update
 
 # Setup default mime-types
-~/bin/set-mime-defaults.sh
+info "Setting mime-type defaults."
+"$HOME"/bin/set-mime-defaults.sh
 
 # Setup locale
+info "Setting XDG locale."
 echo "$LANG" | cut -f1 -d. > ~/.config/user-dirs.locale
 
 # Download tldr content
+info "Updating tldr database."
 tldr --update
 
 # Lightdm setup
+info "Setting up LightDM."
 setupDisplayManager
 
 # MPD setup
+info "Setting up MDP".
 mkdir -p ~/.config/mpd/state
 mkdir -p ~/.config/mpd/playlists
+
+# Prefer iwd over wpa_supplicant- faster and less memory.
+# Canot uninstall wpa_supplicant as it is a dependency of NetworkManager.
+info "Replacing wpa_supplicant with iwd."
+sudo systemctl disable --now wpa_supplicant
+
+if [ -f /etc/NetworkManager/conf.d/iwd.conf ]; then
+    sudo rm /etc/NetworkManager/conf.d/iwd.conf
+fi
+
+sudo tee -a /etc/NetworkManager/conf.d/00-iwd.conf <<EOF
+[device]
+wifi.backend=iwd
+wifi.iwd.autoconnect=yes
+EOF
