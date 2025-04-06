@@ -33,7 +33,7 @@ setupDisplayManager() {
 }
 
 # Packages to install
-applications="galculator vlc foliate"
+applications="galculator vlc foliat okular"
 basics="man linux-firmware fastfetch"
 browser="cachy-browser"
 desktop="accountsservice
@@ -90,8 +90,8 @@ libraries="libgccjit"
 networking="iwd"
 power="brightnessctl
     lm_sensors
-    power-profiles-daemon python-gobject
-    thermald "
+    thermald
+    tlp"
 security="hyprpolkitagent"
 terminal="alacritty bash-completion htop starship tealdeer"
 theme="obsidian-icon-theme prof-gnome-theme-git
@@ -146,10 +146,10 @@ services=(acpid
           bluetooth \
           iwd \
           lightdm \
-          lm_sensors \
-          power-profiles-daemon \
+          lm_sensors          
           NetworkManager \
           thermald \
+          tlp \ 
           libvirtd.socket)
 
 # List of user services to enable/start.

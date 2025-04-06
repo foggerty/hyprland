@@ -1,7 +1,8 @@
 #!/bin/bash
 declare -A -r mimeTypes=(
     ["application/json"]="emacsclient.desktop"
-    ["application/pdf"]="com.github.johnfactotum.Foliate.desktop"
+    ["application/pdf"]="okularApplication_pdf.desktop"
+    ["application/epub+zip"]="com.github.johnfactotum.Foliate.desktop"
     ["application/zip"]="thunar.desktop"
     ["application/x-7z-compressed"]="thunar.desktop"
     ["application/gzip"]="thunar.desktop"

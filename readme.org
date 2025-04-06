@@ -8,6 +8,7 @@
 - Copy the file ~/.config/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
 - Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition:
    add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.  May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.
+- Copy =~/.config/tlp/10-grayarea.conf= to =/etc/tlp.d= 
 
 * Changing theme
 Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= or right-click and select =Theme= on an image in Thunar (this will call the same script).
@@ -44,6 +45,7 @@ Also add =audit=1= to enable auditing.
 * Still left to do
   - [ ] See if can replace acpid with [[https://wiki.archlinux.org/title/Power_management#ACPI_events][Systemd power setting]].
     - [ ] Get power-button working (should hibernate).
+  - [ ] Look into using TLP again, see if can setup a Waybar toggle so can override power-saving when not on AC.
   - [ ] Setup up [[https://github.com/bulletmark/libinput-gestures][libinput-gestures]] to open/close special workspace.
   - [X] Update theming - set wallpaper and set colors.
 
@@ -74,6 +76,7 @@ Also add =audit=1= to enable auditing.
       * [ ] Can connet a mouse
       * [X] Can connect headphones
     * [X] Lid sleeps & locks.
+    * [X] Can read from SD card.
   - [X] Theming
     * [X] Can right-click in file-manager and set theme.
   - [X] USB drives are auto-mounted.
