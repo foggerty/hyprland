@@ -21,6 +21,7 @@ configuration {
     border: 1;
     border-color: @border-color;
     padding: 0;
+    width: 30%;
 }
 
 #mainbox {
@@ -161,5 +162,3 @@ configuration {
     spacing: 0;
     text-color: @normal-foreground;
 }
-
-

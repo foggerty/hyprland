@@ -33,7 +33,7 @@ setupDisplayManager() {
 }
 
 # Packages to install
-applications="galculator vlc foliat okular"
+applications="galculator vlc foliate okular"
 basics="man linux-firmware fastfetch"
 browser="cachy-browser"
 desktop="accountsservice
@@ -146,10 +146,10 @@ services=(acpid
           bluetooth \
           iwd \
           lightdm \
-          lm_sensors          
+          lm_sensors
           NetworkManager \
           thermald \
-          tlp \ 
+          tlp \
           libvirtd.socket)
 
 # List of user services to enable/start.
@@ -229,3 +229,7 @@ sudo tee -a /etc/NetworkManager/conf.d/00-iwd.conf <<EOF
 wifi.backend=iwd
 wifi.iwd.autoconnect=yes
 EOF
+
+# Give gnome-keyring-daemon permission to tell the kernel not to store its
+# memory into swap, as it contains secrests and 'things'.
+sudo setcap cap_ipc_lock=+ep /usr/bin/gnome-keyring-daemon

@@ -26,7 +26,7 @@ def apply_paper(paper)
 end
 
 def apply_theme(paper)
-  `wal --contrast 2.0 --cols16 lighten -n -a 85 -i #{paper}`
+  `wal --contrast 2.0 --cols16 lighten -n -a 75 -i #{paper}`
 end
 
 def restart(app)
