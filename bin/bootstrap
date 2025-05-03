@@ -51,7 +51,6 @@ desktop="accountsservice
     network-manager-applet
     rmpc
     uwsm
-    udiskie
     swaylock swaync
     waybar
     wlogout
@@ -142,8 +141,8 @@ services=(avahi-daemon
           lightdm \
           NetworkManager \
           thermald \
-          tlp \
-          libvirtd.socket)
+          tlp)
+#          libvirtd.socket)
 
 # List of user services to enable/start.
 user_services="mpd"
