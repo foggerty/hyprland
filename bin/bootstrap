@@ -88,6 +88,7 @@ security="hyprpolkitagent"
 terminal="alacritty bash-completion htop starship tealdeer"
 theme="obsidian-icon-theme prof-gnome-theme-git
     imagemagick
+    plymouth-theme-glitch-git
     python-pywal16"
 utilities="7zip zip unrar-free unzip
     bat bat-extras
@@ -225,5 +226,8 @@ EOF
 # Give gnome-keyring-daemon permission to tell the kernel not to store its
 # memory into swap, as it contains secrests and 'things'.
 sudo setcap cap_ipc_lock=+ep /usr/bin/gnome-keyring-daemon
+
+# Setup plymouth theme
+sudo plymouth-set-default-theme -R glitch
 
 echo "Reboot recomnended to start all services."
