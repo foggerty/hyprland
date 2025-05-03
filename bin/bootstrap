@@ -44,13 +44,11 @@ desktop="accountsservice
     feh
     gnome-keyring
     hyprland hyprpaper hyprlock hypridle hyprshot
-    hyprland-qtutils
     lightdm lightdm-gtk-greeter
     journalctl-desktop-notification
     mission-center
     mpd
     network-manager-applet
-    qt6-wayland
     rmpc
     uwsm
     udiskie
@@ -58,15 +56,12 @@ desktop="accountsservice
     waybar
     wlogout
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
-development="cpio
-    cmake make
+development="cmake make
     elixir erlang-asn1 erlang-public_key erlang-ssl erlang-parsetools
     erlang
-    go
     racket
     ruby rubygems ruby-irb ruby-stdlib"
-# I build Emacs from source, so not included here.
-editor="aspell aspell-en emacs-lsp-booster tree-sitter"
+editor="aspell aspell-en emacs-wayland tree-sitter"
 file_manager="file-roller
     ffmpegthumbnailer
     gvfs gvfs-smb
@@ -101,9 +96,11 @@ utilities="7zip zip unrar-free unzip
     git-delta
     lshw lsof
     mc
+    pciutils
     ripgrep
+    util-linux
     tree"
-v_host="dmidecode dnsmasq libvirt qemu-full virt-manager"
+#v_host="dmidecode dnsmasq libvirt qemu-full virt-manager"
 
 to_install="$applications     \
             $basics           \
@@ -122,8 +119,8 @@ to_install="$applications     \
             $security         \
             $terminal         \
             $theme            \
-            $utilities        \
-            $v_host"
+            $utilities"
+#            $v_host"
 
 # Install min for bootstrap
 info "Installing git and base-devel."
@@ -153,12 +150,12 @@ user_services="mpd"
 
 info "Enabling/stating system services."
 for service in "${services[@]}"; do
-    sudo systemctl enable --now "$service"
+    sudo systemctl enable "$service"
 done
 
 info "Enabling/starting user services."
 for service in "${user_services[@]}"; do
-    systemctl --user enable --now "$service"
+    systemctl --user enable "$service"
 done
 
 # Populate color configs
@@ -229,3 +226,5 @@ EOF
 # Give gnome-keyring-daemon permission to tell the kernel not to store its
 # memory into swap, as it contains secrests and 'things'.
 sudo setcap cap_ipc_lock=+ep /usr/bin/gnome-keyring-daemon
+
+echo "Reboot recomnended to start all services."
