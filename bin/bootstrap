@@ -33,8 +33,8 @@ setupDisplayManager() {
 }
 
 # Packages to install
-applications="galculator vlc foliate okular"
-basics="man linux-firmware fastfetch"
+applications="galculator vlc foliate"
+basics="man linux-firmware"
 browser="cachy-browser"
 desktop="accountsservice
     avahi
