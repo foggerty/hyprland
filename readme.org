@@ -43,13 +43,13 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] See if can replace acpid with [[https://wiki.archlinux.org/title/Power_management#ACPI_events][Systemd power setting]].
-    - [ ] Get power-button working (should hibernate).
-  - [ ] Create a left-most menu to launch things like =lshw -X=, =mission-center=, logout/suspend power etc.
-  - [] Make WLogout theme more compact.
+  - [ ] Create a left-most menu to launch things like =mission-center=, logout/suspend power etc.
   - [ ] Use that man page viewer that lets you click on links in man-pages.
   - [ ] Setup a Waybar toggle so can override TLP when not on AC.
   - [ ] Setup up [[https://github.com/bulletmark/libinput-gestures][libinput-gestures]] to open/close special workspace.
+  - [ ] See if can replace acpid with [[https://wiki.archlinux.org/title/Power_management#ACPI_events][Systemd power setting]].
+    - [ ] Get power-button working (should hibernate).
+  - [X] Make WLogout theme more compact (doesn't want to play nice, just made it look nicer).
   - [X] Switch back to TLP.
   - [X] Update theming - set wallpaper and set colors.
 

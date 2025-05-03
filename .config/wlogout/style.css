@@ -7,7 +7,7 @@
 
 window {
     font-size: 20pt;
-    background-color: rgba(0, 0, 0, .60);
+    background-color: rgba(0, 0, 0, .75);
 }
 
 button {
@@ -17,9 +17,8 @@ button {
     border-radius: 20px;
     background-color: gray;
     color: @foreground;
-    margin: 8px;
+    margin: 20px;
     transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    outline-style: groove;
 }
 
 button:focus {
@@ -30,13 +29,11 @@ button:focus {
 button:active {
     color: black;
     background-color: @color1;
-    outline-style: groove;
 }
 
 button:hover {
     color: black;
     background-color: @color4;
-    outline-style: groove;
 }
 
 #lock {

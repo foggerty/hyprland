@@ -64,8 +64,7 @@ development="cpio
     erlang
     go
     racket
-    ruby rubygems ruby-irb ruby-stdlib
-    shellcheck"
+    ruby rubygems ruby-irb ruby-stdlib"
 # I build Emacs from source, so not included here.
 editor="aspell aspell-en emacs-lsp-booster tree-sitter"
 file_manager="file-roller
@@ -89,7 +88,6 @@ launcher="rofi-wayland"
 libraries="libgccjit"
 networking="iwd"
 power="brightnessctl
-    lm_sensors
     thermald
     tlp"
 security="hyprpolkitagent"
@@ -141,12 +139,10 @@ if [[ "$?" -ne 0 ]]; then
 fi
 
 # List of system services to enable/start.
-services=(acpid
-          avahi-daemon
+services=(avahi-daemon
           bluetooth \
           iwd \
           lightdm \
-          lm_sensors
           NetworkManager \
           thermald \
           tlp \
@@ -171,7 +167,7 @@ info "Setting wallpaper and theme."
 
 # Set GTK themes / keybindings
 info "Setting up GTK."
-gsettings set org.gnome.desktop.interface gtk-theme Prof-Gnome-Light-DS
+gsettings set org.gnome.desktop.interface gtk-theme Prof-Gnome-Dark
 gsettings set org.gnome.desktop.interface icon-theme Obsidian
 gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
