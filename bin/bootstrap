@@ -60,7 +60,9 @@ development="cmake make
     erlang
     racket
     ruby rubygems ruby-irb ruby-stdlib"
-editor="aspell aspell-en emacs-wayland tree-sitter"
+# I build Emacs manualy, so not included here.  The emacs-wayland package
+# however works well.
+editor="aspell aspell-en tree-sitter"
 file_manager="file-roller
     ffmpegthumbnailer
     gvfs gvfs-smb
@@ -96,10 +98,12 @@ utilities="7zip zip unrar-free unzip
     git-delta
     lshw lsof
     mc
+    pacman-contrib
     pciutils
     ripgrep
     util-linux
-    tree"
+    tree
+    xdot"
 #v_host="dmidecode dnsmasq libvirt qemu-full virt-manager"
 
 to_install="$applications     \
@@ -229,5 +233,8 @@ sudo setcap cap_ipc_lock=+ep /usr/bin/gnome-keyring-daemon
 
 # Setup plymouth theme
 sudo plymouth-set-default-theme -R glitch
+
+# Copy TLP configuration.
+sudo cp ~/.config/tlp/10-grayarea.conf /etc/tlp.d/
 
 echo "Reboot recomnended to start all services."
