@@ -41,9 +41,9 @@ desktop="accountsservice
     blueman
     cliphist wl-clipboard
     pamixer pavucontrol
-    feh
     gnome-keyring
     hyprland hyprpaper hyprlock hypridle hyprshot
+    imv
     lightdm lightdm-gtk-greeter
     journalctl-desktop-notification
     mission-center
@@ -51,7 +51,7 @@ desktop="accountsservice
     network-manager-applet
     rmpc
     uwsm
-    swaylock swaync
+    swaylock swaync swayimg
     waybar
     wlogout
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
