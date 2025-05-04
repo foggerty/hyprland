@@ -7,7 +7,7 @@
 - Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
 - Copy the file ~/.config/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
 - Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition:
-   add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.  May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.
+   add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.  May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop. WARNING: this will disable some multi-media keys, along with the power button (although long-press to power-off still works).
 
 * Changing theme
 Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= or right-click and select =Theme= on an image in Thunar (this will call the same script).
