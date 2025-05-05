@@ -1,7 +1,7 @@
 @import "/home/matt/.cache/wal/colors-waybar.css";
 
 * {
-    font-family: "Sans Mono", "SauceCodePro Nerd", "Font Awesome";
+    font-family: "Sans Mono";
     font-size: 16px;
 }
 
@@ -33,7 +33,6 @@ button {
 
 #hardware {
     margin-left: 12px;
-    margin-right: 0px;
     margin-top: 6px;
     margin-bottom: 6px;
     background-color: rgba(50, 50, 50, 0.4);

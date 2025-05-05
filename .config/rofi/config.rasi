@@ -1,6 +1,6 @@
 configuration {
     show-icons: true;
-    icon-theme: "kora;";
+    icon-theme: "Kora";
     font: "Cantarell 15";
 
     timeout {
@@ -54,7 +54,7 @@ configuration {
     fixed-height: 0;
     border: 0px 0px 0px;
     border-color: @border-color;
-    spacing: 2px;
+    spacing: 1px;
     scrollbar: true;
     padding: 20px 0px 0px;
 }
@@ -73,7 +73,7 @@ configuration {
     background-color: inherit;
     text-color:       inherit;
     padding: 0  10  10 0;
-    size: 2.25ch;
+    size: 3ch;
 }
 
 #element.normal.normal {

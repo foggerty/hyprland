@@ -89,7 +89,7 @@ power="acpid
     tlp"
 security="hyprpolkitagent"
 terminal="alacritty bash-completion htop starship tealdeer"
-theme="obsidian-icon-theme prof-gnome-theme-git
+theme="adwaita-icon-theme kora-icon-theme prof-gnome-theme-git
     imagemagick
     plymouth-theme-glitch-git
     python-pywal16"
@@ -170,7 +170,7 @@ info "Setting wallpaper and theme."
 
 # Set GTK themes / keybindings
 info "Setting up GTK."
-gsettings set org.gnome.desktop.interface gtk-theme Prof-Gnome-Dark
+gsettings set org.gnome.desktop.interface gtk-theme Kora
 gsettings set org.gnome.desktop.interface icon-theme Obsidian
 gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
