@@ -1,13 +1,15 @@
 * Installation
-- Install Arch (or derivitive, tested on CachyOS) using the =Arrchinstall= script.  For audio, select =Pipewire=, for networking select =NetworkManger=.
+- Install Arch (or derivitive, also works on tested on CachyOS) using the =Archinstall= script.  For audio, select =Pipewire=, for networking select =NetworkManger=.
 - Run =$HOME/bin/bootstrap=.
 - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
-- See if there's anything specific for you [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
+- See if there's anything specific for your [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
 - Set =noatime= in =/etc/fstab=
 - Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
 - Copy the file ~/.config/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
 - Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition:
-   add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.  May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop. WARNING: this will disable some multi-media keys, along with the power button (although long-press to power-off still works).
+   add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.  May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.
+
+   WARNING: this will disable some multi-media keys, along with the power button (although long-press to power-off still works).
 
 * Changing theme
 Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= or right-click and select =Theme= on an image in Thunar (this will call the same script).
@@ -42,9 +44,9 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Setup a Waybar toggle so can override TLP when not on AC.
   - [ ] Use that man page viewer that lets you click on links in man-pages.
-  - [ ] Create a left-most menu to launch things like =mission-center=, logout/suspend power etc.
+  - [X] Create a left-most menu to launch things like =mission-center=, logout/suspend power etc.
+  - [X] Setup a Waybar toggle so can override TLP when not on AC.
   - [ ] Setup up [[https://github.com/bulletmark/libinput-gestures][libinput-gestures]] to open/close special workspace.
   - [X] Get Swayimg working with Thunar.
   - [X] Doh, put Swaylock back!

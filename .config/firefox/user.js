@@ -4,7 +4,6 @@ user_pref("dom.security.https_only_mode_ever_enabled", true);
 
 user_pref("full-screen-api.warning.timeout", 0);
 
-user_pref("gfx.webrender.enabled", true);
 user_pref("gfx.webrender.compositor", true);
 
 user_pref("media.ffmpeg.vaapi.enabled", true);

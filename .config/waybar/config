@@ -36,13 +36,14 @@
     "modules": [
       "custom/tux",
       "custom/logout",
-      "custom/power"
+      "custom/power",
+      "custom/monitor"
     ]
   },
 
   "custom/tux": {
     "format": "   ",
-    "tooltip-format": ""
+    "tooltip-format": "Arch is the best!"
   },
 
   "custom/logout": {
@@ -53,10 +54,16 @@
 
   "custom/power": {
     "exec": "tlp-stat --mode",
-    "format": " 󰂄  ",
+    "format": " 󰂄 ",
     "interval": 5,
     "on-click": "~/bin/toggle-power",
-    "tooltip-format": "{}"
+    "tooltip-format": "Change power-profile.  Currently({})"
+  },
+
+  "custom/monitor": {
+    "format": "   ",
+    "on-click": "missioncenter",
+    "tooltip-format": "Open Mission Center"
   },
 
   "privacy": {
