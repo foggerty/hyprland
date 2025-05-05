@@ -33,7 +33,7 @@ button {
 
 #hardware {
     margin-left: 12px;
-    margin-right: 12px;
+    margin-right: 0px;
     margin-top: 6px;
     margin-bottom: 6px;
     background-color: rgba(50, 50, 50, 0.4);
@@ -48,22 +48,14 @@ button {
 #battery,
 #clock,
 #cpu,
-#custom-media,
 #disk,
-#idle_inhibitor,
 #memory,
-#mode,
 #mpd,
 #network,
 #pulseaudio,
-#scratchpad,
 #temperature,
 #tray,
 #wireplumber {
-    padding-left: 20px;
-}
-
-#mpd {
     padding-left: 20px;
 }
 
