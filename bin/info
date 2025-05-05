@@ -4,11 +4,18 @@ GREEN="\033[0;32m"
 NO_COLOR="\033[0m"
 
 info() {
-    echo -e -n "$GREEN$1$NO_COLOR\t$2\n"
+    echo -e -n "$GREEN"
+    printf "%-20s%s" "$1"
+    echo -e -n "$NO_COLOR"
+    echo "$2"
 }
 
+host=$(hostname)
+kernel=$(uname -r)
 packages=$(pacman -Q | wc -l)
 govener=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
 
-info "Packages:"    $packages
-info "CPU Govener:" $govener
+info "Host:"           $host
+info "Kernel Version:" $kernel
+info "Packages:"       $packages
+info "Govener:"        $govener
