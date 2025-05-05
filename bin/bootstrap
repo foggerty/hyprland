@@ -51,7 +51,7 @@ desktop="accountsservice
     network-manager-applet
     rmpc
     uwsm
-    swaylock swaync swayimg
+    swaylock swaync
     waybar
     wlogout
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
@@ -83,7 +83,8 @@ graphics_intel="vulkan-intel intel-media-driver"
 launcher="rofi-wayland"
 libraries="libgccjit"
 networking="iwd"
-power="brightnessctl
+power="acpid
+    brightnessctl
     thermald
     tlp"
 security="hyprpolkitagent"
@@ -104,7 +105,7 @@ utilities="7zip zip unrar-free unzip
     util-linux
     tree
     xdot"
-#v_host="dmidecode dnsmasq libvirt qemu-full virt-manager"
+v_host="dmidecode dnsmasq libvirt qemu-full virt-manager"
 
 to_install="$applications     \
             $basics           \
@@ -123,8 +124,8 @@ to_install="$applications     \
             $security         \
             $terminal         \
             $theme            \
-            $utilities"
-#            $v_host"
+            $utilities        \
+            $v_host"
 
 # Install min for bootstrap
 info "Installing git and base-devel."
@@ -140,14 +141,15 @@ if [[ "$?" -ne 0 ]]; then
 fi
 
 # List of system services to enable/start.
-services=(avahi-daemon
+services=(acpid
+          avahi-daemon
           bluetooth \
           iwd \
           lightdm \
           NetworkManager \
           thermald \
-          tlp)
-#          libvirtd.socket)
+          tlp \
+          libvirtd.socket)
 
 # List of user services to enable/start.
 user_services="emacs mpd"

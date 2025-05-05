@@ -1,7 +1,7 @@
- @import "/home/matt/.cache/wal/colors-waybar.css";
+@import "/home/matt/.cache/wal/colors-waybar.css";
 
 * {
-    font-family: "Sans Mono", "SauceCodePro Nerd";
+    font-family: "Sans Mono", "SauceCodePro Nerd", "Font Awesome";
     font-size: 16px;
 }
 
@@ -28,26 +28,38 @@ button {
 
 #workspaces button:hover {
     outline: none;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
+#hardware {
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: rgba(50, 50, 50, 0.4);
+    border-radius: 18px;
+}
+
+#custom-tux {
+    font-size: 22px
+}
+
 #backlight,
+#battery,
+#clock,
+#cpu,
+#custom-media,
+#disk,
+#idle_inhibitor,
+#memory,
+#mode,
+#mpd,
 #network,
 #pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
 #scratchpad,
-
-#custom-power {
+#temperature,
+#tray,
+#wireplumber {
     padding-left: 20px;
 }
 
@@ -57,13 +69,4 @@ button {
 
 #tray {
     padding-right: 15px;
-}
-
-#memory {
-    padding-left: 15px;
-}
-
-#window,
-#workspaces {
-    margin: 4px 4px;
 }
