@@ -22,7 +22,7 @@
     "hyprland/workspaces",
     "pulseaudio",
     "battery",
-    "Network",
+    "network",
     "tray"
   ],
 

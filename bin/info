@@ -10,12 +10,25 @@ info() {
     echo "$2"
 }
 
+diskUsage() {
+    size=$(df "$1" -h --output=size | tail -n1 | xargs)
+    used=$(df "$1" -h --output=pcent | tail -n1 | xargs)
+    available=$(df "$1" -h --output=avail | tail -n1 | xargs)
+    echo "$size - Used: $used, available: $available"
+}
+
 host=$(hostname)
+uptime=$(uptime -p | cut -d " " -f 2-)
 kernel=$(uname -r)
 packages=$(pacman -Q | wc -l)
 govener=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
+diskUsageRoot=$(diskUsage /)
+ip=$(ip route get 1 | cut -d " " -f 7)
 
-info "Host:"           $host
-info "Kernel Version:" $kernel
-info "Packages:"       $packages
-info "Govener:"        $govener
+info "Host:"           "$host"
+info "Uptime:"         "$uptime"
+info "Kernel Version:" "$kernel"
+info "Packages:"       "$packages"
+info "Govener:"        "$govener"
+info "Disk usage (/):" "$diskUsageRoot"
+info "IP:"             "$ip"
