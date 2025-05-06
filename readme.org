@@ -45,6 +45,8 @@ Also add =audit=1= to enable auditing.
 
 * Still left to do
   - [ ] Use that man page viewer that lets you click on links in man-pages.
+  - [ ] Swipe gestures to change desktop.
+  - [ ] Ensure that nwg-displays changes are persisted, may need a display section in config?
   - [X] Create a left-most menu to launch things like =mission-center=, logout/suspend power etc.
   - [X] Setup a Waybar toggle so can override TLP when not on AC.
   - [ ] Setup up [[https://github.com/bulletmark/libinput-gestures][libinput-gestures]] to open/close special workspace.

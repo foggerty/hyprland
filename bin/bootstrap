@@ -30,8 +30,8 @@ installParu() {
 setTheme() {
     # Set GTK themes / keybindings.
     info "Setting up GTK."
-    gsettings set org.gnome.desktop.interface gtk-theme Kora
-    gsettings set org.gnome.desktop.interface icon-theme Obsidian
+    gsettings set org.gnome.desktop.interface gtk-theme vimix-dark-compact-doder
+    gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
     gsettings set org.gnome.desktop.interface document-font-name "Cantarell 10"
@@ -64,9 +64,9 @@ desktop="accountsservice
     lightdm lightdm-gtk-greeter
     journalctl-desktop-notification
     mission-center
-    mpd
+    mpd rmpc
     network-manager-applet
-    rmpc
+    nwg-displays
     uwsm
     swaylock swaync
     waybar
@@ -106,7 +106,7 @@ power="acpid
     tlp"
 security="hyprpolkitagent"
 terminal="alacritty bash-completion htop starship tealdeer"
-theme="adwaita-icon-theme kora-icon-theme prof-gnome-theme-git
+theme="kora-icon-theme morewaita-icon-theme vimix-gtk-themes
     imagemagick
     plymouth-theme-glitch-git
     python-pywal16"

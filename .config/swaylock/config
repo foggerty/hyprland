@@ -4,4 +4,22 @@ indicator-thickness=10
 indicator-x-position=80
 indicator-y-position=80
 
+bs-hl-color=00aaaa40
+key-hl-color=00dddd80
+
+inside-clear-color=00000000
 inside-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+
+line-clear-color=00008040
+line-color=00008040
+line-ver-color=00008040
+line-wrong-color=00008040
+
+ring-clear-color=00aaee40
+ring-color=00aaee40
+ring-ver-color=00aaee40
+ring-wrong-color=ff000080
+
+separator-color=00aaaaff
