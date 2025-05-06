@@ -16,12 +16,65 @@ configuration {
 
 @theme "~/.cache/wal/colors-rofi-dark.rasi"
 
+window {
+    /* properties for window widget */
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       1000px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    border-radius:               15px;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    background-color:            @background;
+    orientation:                 horizontal;
+    children:                    [ "imagebox", "listbox" ];
+}
+
+imagebox {
+    padding:                     20px;
+    background-color:            transparent;
+    background-image:            url("/home/matt/Pictures/Wallpapers/current", height);
+    orientation:                 vertical;
+    children:                    [ "inputbar" ];
+}
+
+dummy {
+    background-color:            transparent;
+}
+
+inputbar {
+    enabled:                     true;
+    border-radius:               10px;
+    background-color:            @background;
+    text-color:                  @foreground;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+
+listbox {
+    spacing:                     0%;
+    padding:                     0%;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "message", "listview" ];
+}
+
 #window {
     background-color: @background;
     border: 1;
     border-color: @border-color;
     padding: 0;
-    width: 30%;
+
 }
 
 #mainbox {

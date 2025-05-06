@@ -98,7 +98,7 @@ fonts="adobe-source-code-pro-fonts
 graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
 graphics_intel="vulkan-intel intel-media-driver"
 launcher="rofi-wayland"
-libraries="libgccjit"
+libraries="libgccjit libinput-gestures"
 networking="iwd"
 power="acpid
     brightnessctl
