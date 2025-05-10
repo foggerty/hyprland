@@ -1,3 +1,5 @@
+/*-*- mode: css; -*-*/
+
 configuration {
     show-icons: true;
     icon-theme: "Kora";
@@ -21,7 +23,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       1000px;
+    width:                       45%;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -44,7 +46,7 @@ mainbox {
 imagebox {
     padding:                     20px;
     background-color:            transparent;
-    background-image:            url("/home/matt/Pictures/Wallpapers/current", height);
+    background-image:            url("./splash.jpg", height);
     orientation:                 vertical;
     children:                    [ "inputbar" ];
 }
@@ -98,7 +100,7 @@ listbox {
 
 #textbox-prompt-colon {
     expand: false;
-    str: ":";
+    str: "";
     margin: 0px 0.3em 0em 0em;
     text-color: @normal-foreground;
 }

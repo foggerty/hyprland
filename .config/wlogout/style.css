@@ -15,10 +15,9 @@ button {
     background-position: center;
     background-size: 20%;
     border-radius: 20px;
-    background-color: gray;
     color: @foreground;
-    margin: 20px;
-    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    margin: 12px;
+    transition: box-shadow 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 
 button:focus {

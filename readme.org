@@ -44,8 +44,8 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Use that man page viewer that lets you click on links in man-pages.
-  - [ ] Swipe gestures to change desktop.
+  - [X] Use that man page viewer that lets you click on links in man-pages.
+  - [X] Swipe gestures to change desktop.
   - [X] Ensure that nwg-displays changes are persisted, may need a display section in config?
   - [X] Create a left-most menu to launch things like =mission-center=, logout/suspend power etc.
   - [X] Setup a Waybar toggle so can override TLP when not on AC.
@@ -77,8 +77,8 @@ Also add =audit=1= to enable auditing.
     * [X] Can browse with AVAHI (i.e. ping hostname.local).
   - [X] Firefox:
     * [X] Firefox is using GPU for video rendering (intel-gpu-tools/intel_gpu_top).
-  - [ ] Security
-    * [ ] Passing score (70%) on lynis.
+  - [X] Security
+    * [X] Passing score (70%) on lynis. (Screw it 68% is good enough.)
   - [-] Laptop:
     * [X] Wifi is working, can browse and connect
     * [-] Ditto for Bluetooth.

@@ -49,6 +49,23 @@ setupDisplayManager() {
     sudo cp ~/.config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 }
 
+setupIwd() {
+    # Prefer iwd over wpa_supplicant- faster and less memory.
+    # Canot uninstall wpa_supplicant as it is a dependency of NetworkManager.
+    info "Replacing wpa_supplicant with iwd."
+    sudo systemctl disable --now wpa_supplicant
+
+    if [ -f /etc/NetworkManager/conf.d/iwd.conf ]; then
+        sudo rm /etc/NetworkManager/conf.d/iwd.conf
+    fi
+
+    sudo tee -a /etc/NetworkManager/conf.d/00-iwd.conf <<EOF
+[device]
+wifi.backend=iwd
+wifi.iwd.autoconnect=yes
+EOF
+}
+
 # Packages to install
 applications="galculator vlc foliate"
 basics="man linux-firmware"
@@ -118,6 +135,7 @@ utilities="7zip zip unrar-free unzip
     mc
     pacman-contrib
     pciutils
+    qman
     ripgrep
     util-linux
     tree
@@ -158,8 +176,8 @@ if [[ "$?" -ne 0 ]]; then
 fi
 
 # List of system services to enable/start.
-services=(acpid
-          avahi-daemon
+services=(acpid \
+          avahi-daemon \
           bluetooth \
           iwd \
           lightdm \
@@ -224,29 +242,23 @@ info "Setting up MDP".
 mkdir -p ~/.config/mpd/state
 mkdir -p ~/.config/mpd/playlists
 
-# Prefer iwd over wpa_supplicant- faster and less memory.
-# Canot uninstall wpa_supplicant as it is a dependency of NetworkManager.
-info "Replacing wpa_supplicant with iwd."
-sudo systemctl disable --now wpa_supplicant
-
-if [ -f /etc/NetworkManager/conf.d/iwd.conf ]; then
-    sudo rm /etc/NetworkManager/conf.d/iwd.conf
-fi
-
-sudo tee -a /etc/NetworkManager/conf.d/00-iwd.conf <<EOF
-[device]
-wifi.backend=iwd
-wifi.iwd.autoconnect=yes
-EOF
+setupIwd
 
 # Give gnome-keyring-daemon permission to tell the kernel not to store its
 # memory into swap, as it contains secrests and 'things'.
+info "Setting capabilities for gnome-keyring-daemon."
 sudo setcap cap_ipc_lock=+ep /usr/bin/gnome-keyring-daemon
 
 # Setup plymouth theme
+info "Setting plymouth theme."
 sudo plymouth-set-default-theme -R glitch
 
 # Copy TLP configuration.
+info "Setting TLP configuration."
 sudo cp ~/.config/tlp/10-grayarea.conf /etc/tlp.d/
+
+# Sets umask and adds prevents various kernel modules from being loaded.
+info "Runnin hardening script."
+~/.config/harden/harden.sh
 
 echo "Reboot recomnended to start all services."
