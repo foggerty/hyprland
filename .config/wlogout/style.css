@@ -2,6 +2,7 @@
 
 * {
     background-image: none;
+    border: none;
     box-shadow: none;
 }
 
@@ -15,8 +16,9 @@ button {
     background-position: center;
     background-size: 20%;
     border-radius: 20px;
-    color: @foreground;
-    margin: 12px;
+    outline: none;
+    border: none;
+    margin: 10px;
     transition: box-shadow 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 

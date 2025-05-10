@@ -36,6 +36,7 @@ setTheme() {
     gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
     gsettings set org.gnome.desktop.interface document-font-name "Cantarell 10"
     gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 10"
+    #gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
     # Update kora icon theme to use MoreWaita as a fallback.
     info "Adding MoreWaita as fallback to Kora icons."
