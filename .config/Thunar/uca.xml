@@ -25,7 +25,7 @@
 	<image-files/>
 </action>
 <action>
-	<icon>applications-astronomy</icon>
+	<icon>preferences-desktop-wallpaper</icon>
 	<name>Set Wallpaper</name>
 	<submenu>Theming</submenu>
 	<unique-id>1690370923779211-1</unique-id>

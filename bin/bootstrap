@@ -27,25 +27,42 @@ installParu() {
     popd || exit 1
 }
 
-setTheme() {
+setupTheme() {
+    # Remove Thunar's existing SetWallPaper menu item
+    # Note, will need to add an exclude to pacman.conf so that it's
+    # not replaced by updates.
+    if [[ -f /usr/lib/thunarx-3/thunar-wallpaper-plugin.so ]]; then
+        info "Removing Thunar wallpaper plugin."
+        sudo rm /usr/lib/thunarx-3/thunar-wallpaper-plugin.so
+    fi
+
+    # Populate color configs
+    info "Setting wallpaper and theme."
+    ~/bin/paper both ~/Pictures/Wallpapers/current
+
     # Set GTK themes / keybindings.
     info "Setting up GTK."
     gsettings set org.gnome.desktop.interface gtk-theme vimix-dark-compact-doder
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
-    gsettings set org.gnome.desktop.interface document-font-name "Cantarell 10"
-    gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 10"
-    #gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+    gsettings set org.gnome.desktop.interface document-font-name "Cantarell 12"
+    gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 12"
+    gsettings set org.gnome.desktop.interface color-scheme prefer-light
 
     # Update kora icon theme to use MoreWaita as a fallback.
-    info "Adding MoreWaita as fallback to Kora icons."
     if [[ ! $(grep "morewaita" /usr/share/icons/kora/index.theme) ]]; then
+        info "Adding MoreWaita as fallback to Kora icons."
         sudo sed -i -r 's/^Inherits=.*$/Inherits=morewaita/' /usr/share/icons/kora/index.theme
     fi
+
+    # Setup plymouth theme
+    info "Setting plymouth theme."
+    sudo plymouth-set-default-theme -R cyanide
 }
 
 setupDisplayManager() {
+    info "Setting up LightDM."
     sudo cp ~/Pictures/Wallpapers/TealBuddha.jpg /usr/share/pixmaps
     sudo cp ~/.config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 }
@@ -65,6 +82,61 @@ setupIwd() {
 wifi.backend=iwd
 wifi.iwd.autoconnect=yes
 EOF
+}
+
+setupServices() {
+    # List of system services to enable/start.
+    services=(acpid \
+              avahi-daemon \
+              bluetooth \
+              iwd \
+              lightdm \
+              NetworkManager \
+              thermald \
+              tlp \
+              libvirtd.socket)
+
+    # List of user services to enable/start.
+    user_services=(emacs mpd)
+
+    info "Enabling system services."
+    for service in "${services[@]}"; do
+        sudo systemctl enable "$service"
+    done
+
+    info "Enabling user services."
+    for service in "${user_services[@]}"; do
+        systemctl --user enable "$service"
+    done
+}
+
+setupEnvironment() {
+    # Set standard XDG user directories
+    info "Upading XDG user directories."
+    xdg-user-dirs-update
+    sudo systemctl --global disable xdg-user-dirs-update
+    systemctl --user stop xdg-user-dirs-update
+
+    # Setup default mime-types
+    info "Setting mime-type defaults."
+    "$HOME"/bin/set-mime-defaults.sh
+
+    # Setup locale
+    info "Setting XDG locale."
+    echo "$LANG" | cut -f1 -d. > ~/.config/user-dirs.locale
+
+    # Download tldr content
+    info "Updating tldr database."
+    tldr --update
+
+    # Give gnome-keyring-daemon permission to tell the kernel not to store its
+    # memory into swap, as it contains secrests and 'things'.
+    info "Setting capabilities for gnome-keyring-daemon."
+    sudo setcap cap_ipc_lock=+ep /usr/bin/gnome-keyring-daemon
+
+    # Copy TLP configuration.
+    info "Setting TLP configuration."
+    sudo cp ~/.config/tlp/10-grayarea.conf /etc/tlp.d/
 }
 
 # Packages to install
@@ -126,7 +198,7 @@ security="hyprpolkitagent"
 terminal="alacritty bash-completion htop starship tealdeer"
 theme="kora-icon-theme morewaita-icon-theme vimix-gtk-themes
     imagemagick
-    plymouth-theme-glitch-git
+    plymouth-theme-cyanide-git
     python-pywal16"
 utilities="7zip zip unrar-free unzip
     bat bat-extras
@@ -163,7 +235,7 @@ to_install="$applications     \
             $utilities        \
             $v_host"
 
-# Install min for bootstrap
+# Install requirements for bootstrap
 info "Installing git and base-devel."
 sudo pacman --needed -S git base-devel
 which paru > /dev/null || installParu
@@ -176,89 +248,13 @@ if [[ "$?" -ne 0 ]]; then
     exit
 fi
 
-# List of system services to enable/start.
-services=(acpid \
-          avahi-daemon \
-          bluetooth \
-          iwd \
-          lightdm \
-          NetworkManager \
-          thermald \
-          tlp \
-          libvirtd.socket)
-
-# List of user services to enable/start.
-user_services="emacs mpd"
-
-info "Enabling/stating system services."
-for service in "${services[@]}"; do
-    sudo systemctl enable "$service"
-done
-
-info "Enabling/starting user services."
-for service in "${user_services[@]}"; do
-    systemctl --user enable "$service"
-done
-
-# Populate color configs
-info "Setting wallpaper and theme."
-~/bin/paper both ~/Pictures/Wallpapers/current
-
-setheme
-
-# Remove Thunar's existing SetWallPaper menu item
-# Note, will need to add an exclude to pacman.conf so that it's
-# not replaced by updates.
-if [[ -f /usr/lib/thunarx-3/thunar-wallpaper-plugin.so ]]; then
-    info "Removing Thunar wallpaper plugin."
-    sudo rm /usr/lib/thunarx-3/thunar-wallpaper-plugin.so
-fi
-
-# Set standard XDG user directories
-info "Upading XDG user directories."
-xdg-user-dirs-update
-
-# Not required as I'm unlikely to delete these directories :-)
-sudo systemctl --global disable xdg-user-dirs-update
-systemctl --user stop xdg-user-dirs-update
-
-# Setup default mime-types
-info "Setting mime-type defaults."
-"$HOME"/bin/set-mime-defaults.sh
-
-# Setup locale
-info "Setting XDG locale."
-echo "$LANG" | cut -f1 -d. > ~/.config/user-dirs.locale
-
-# Download tldr content
-info "Updating tldr database."
-tldr --update
-
-# Lightdm setup
-info "Setting up LightDM."
+setupServices
+setupTheme
 setupDisplayManager
-
-# MPD setup
-info "Setting up MDP".
-mkdir -p ~/.config/mpd/state
-mkdir -p ~/.config/mpd/playlists
-
 setupIwd
+setupEnvironment
 
-# Give gnome-keyring-daemon permission to tell the kernel not to store its
-# memory into swap, as it contains secrests and 'things'.
-info "Setting capabilities for gnome-keyring-daemon."
-sudo setcap cap_ipc_lock=+ep /usr/bin/gnome-keyring-daemon
-
-# Setup plymouth theme
-info "Setting plymouth theme."
-sudo plymouth-set-default-theme -R glitch
-
-# Copy TLP configuration.
-info "Setting TLP configuration."
-sudo cp ~/.config/tlp/10-grayarea.conf /etc/tlp.d/
-
-# Sets umask and adds prevents various kernel modules from being loaded.
+# Sets umask and prevents various kernel modules from being loaded.
 info "Runnin hardening script."
 ~/.config/harden/harden.sh
 
