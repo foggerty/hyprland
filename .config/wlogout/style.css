@@ -8,14 +8,16 @@
 
 window {
     font-size: 20pt;
-    background-color: rgba(0, 0, 0, .75);
+    background-color: @background;
 }
 
 button {
+    background-color: grey;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20%;
     border-radius: 20px;
+    color: white;
     outline: none;
     border: none;
     margin: 10px;

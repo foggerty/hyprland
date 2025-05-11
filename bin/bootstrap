@@ -68,30 +68,16 @@ setupDisplayManager() {
 }
 
 setupIwd() {
-    # Prefer iwd over wpa_supplicant- faster and less memory.
-    # Canot uninstall wpa_supplicant as it is a dependency of NetworkManager.
-    info "Replacing wpa_supplicant with iwd."
-    sudo systemctl disable --now wpa_supplicant
-
-    if [ -f /etc/NetworkManager/conf.d/iwd.conf ]; then
-        sudo rm /etc/NetworkManager/conf.d/iwd.conf
-    fi
-
-    sudo tee -a /etc/NetworkManager/conf.d/00-iwd.conf <<EOF
-[device]
-wifi.backend=iwd
-wifi.iwd.autoconnect=yes
-EOF
+    info "Configuring iwd."
+    sudo cp ~/.config/iwd/main.conf /etc/iwd
 }
 
 setupServices() {
     # List of system services to enable/start.
-    services=(acpid \
-              avahi-daemon \
+    services=(avahi-daemon \
               bluetooth \
               iwd \
               lightdm \
-              NetworkManager \
               thermald \
               tlp \
               libvirtd.socket)
@@ -155,7 +141,6 @@ desktop="accountsservice
     journalctl-desktop-notification
     mission-center
     mpd rmpc
-    network-manager-applet
     nwg-displays
     uwsm
     swaylock swaync
@@ -189,9 +174,8 @@ graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
 graphics_intel="vulkan-intel intel-media-driver"
 launcher="rofi-wayland"
 libraries="libgccjit libinput-gestures"
-networking="iwd"
-power="acpid
-    brightnessctl
+networking="iwd iwdgtk"
+power="brightnessctl
     thermald
     tlp"
 security="hyprpolkitagent"

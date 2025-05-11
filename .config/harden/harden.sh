@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Changing umask to 027..."
-sudo sed -i -r 's/^UMASK.*$/UMASK\t\t027/' /etc/login.defs
+#echo "Changing umask to 027..."
+#sudo sed -i -r 's/^UMASK.*$/UMASK\t\t022/' /etc/login.defs
 
 echo "Diabling various modules..."
 sudo cp ~/.config/harden/modules-blacklist.conf /etc/modules-load.d/

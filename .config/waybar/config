@@ -22,8 +22,8 @@
     "hyprland/workspaces",
     "pulseaudio",
     "battery",
-    "network",
-    "tray"
+    "tray",
+    "network"
   ],
 
   "group/hardware": {
@@ -128,82 +128,82 @@
       "paused": "",
       "playing": ""
     },
-    },
+  },
 
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": " ",
-        "performance": " ",
-        "balanced": " ",
-        "power-saver": " "
-      }
-    },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": " ",
+      "performance": " ",
+      "balanced": " ",
+      "power-saver": " "
+    }
+  },
 
-    "tray": {
-      "icon-size": 16,
-      "spacing": 10
-    },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
 
-    "clock": {
-      "timezone": "Pacific/Auckland",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format": "{:%a %d %b - %I:%M %p}"
-    },
+  "clock": {
+    "timezone": "Pacific/Auckland",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%a %d %b - %I:%M %p}"
+  },
 
-    "cpu": {
-      "format": "cpu: {usage}%",
-      "tooltip": false,
-      "on-click": "gnome-system-monitor",
-      "interval": 1
-    },
+  "cpu": {
+    "format": "cpu: {usage}%",
+    "tooltip": false,
+    "on-click": "gnome-system-monitor",
+    "interval": 1
+  },
 
-    "memory": {
-      "format": "mem: {}%",
-      "on-click": "alacritty -e gtop"
-    },
+  "memory": {
+    "format": "mem: {}%",
+    "on-click": "alacritty -e gtop"
+  },
 
-    "temperature": {
-      "hwmon-path":
+  "temperature": {
+    "hwmon-path":
         [
           "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon6/temp2_input",
           "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon7/temp2_input"
         ],
-      "format": "{temperatureC}°C",
-    },
+    "format": "{temperatureC}°C",
+  },
 
-    "battery": {
-      "states": {
-        "good": 95,
-        "warning": 30,
-        "critical": 15
-      },
-      "format": "{capacity}% {icon}",
-      "format-charging": "{capacity}%  ",
-      "format-full": " ",
-      "format-icons": [" ", " ", " ", " ", " "],
-      "interval": 3,
-      "on-click": "tlpui"
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
     },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}%  ",
+    "format-full": " ",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "interval": 3,
+    "on-click": "tlpui"
+  },
 
-    "network": {
-      "format-wifi": "{essid} ({signalStrength}%)",
-      "format-ethernet": "{ipaddr}/{cidr}",
-      "tooltip-format": "{ifname} via {gwaddr}",
-      "format-linked": "{ifname} (No IP)",
-      "format-disconnected": "Disconnected ⚠",
-      "format-alt": "{ifname}: {ipaddr}/{cidr}",
-      "on-click-right": "gufw"
-    },
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%)",
+    "format-ethernet": "{ipaddr}/{cidr}",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "on-click-right": "iwgtk"
+  },
 
-    "pulseaudio": {
-      "on-click": "pavucontrol",
-      "format": "{volume}% {icon}",
-      "format-muted": "",
-      "format-icons": {
-        "default": [" ", " ", " "]
-      }
+  "pulseaudio": {
+    "on-click": "pavucontrol",
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "default": [" ", " ", " "]
     }
   }
+}
