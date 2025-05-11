@@ -42,7 +42,7 @@ setupTheme() {
 
     # Set GTK themes / keybindings.
     info "Setting up GTK."
-    gsettings set org.gnome.desktop.interface gtk-theme vimix-dark-compact-doder
+    gsettings set org.gnome.desktop.interface gtk-theme Prof-Gnome-Light-DS
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
@@ -180,7 +180,7 @@ power="brightnessctl
     tlp"
 security="hyprpolkitagent"
 terminal="alacritty bash-completion htop starship tealdeer"
-theme="kora-icon-theme morewaita-icon-theme vimix-gtk-themes
+theme="kora-icon-theme morewaita-icon-theme prof-gnome-theme-git
     imagemagick
     plymouth-theme-cyanide-git
     python-pywal16"
