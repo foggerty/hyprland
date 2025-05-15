@@ -13,6 +13,11 @@ This setup is intended for an intel laptop, using WiFi only.
 
    May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.  WARNING: this will disable some multi-media keys, along with the power button (although long-press to power-off still works).
 
+   Finally, [[https://discuss.cachyos.org/t/zswap-not-enabled-despite-kernel-parameter-being-set/6942][it may be disabled by config]] in Cachy, so create this file:
+   #+begin_src shell
+   sudo touch /etc/tmpfiles.d/disable-zswap.conf
+   #+end_src
+
 * Changing theme
 Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= or right-click and select =Theme= on an image in Thunar (this will call the same script).
 
@@ -47,6 +52,7 @@ Also add =audit=1= to enable auditing.
 
 * Still left to do
   - [ ] Look into Tailscale!
+  - [ ] Take the good stuff from [[https://github.com/CachyOS/CachyOS-Browser-Settings/blob/master/cachyos.cfg][here]] and [[https://github.com/CachyOS/CachyOS-Browser-Settings/blob/master/ublock-config-8.txt][here]].
   - [X] Use that man page viewer that lets you click on links in man-pages.
   - [X] Swipe gestures to change desktop.
   - [X] Ensure that nwg-displays changes are persisted, may need a display section in config?

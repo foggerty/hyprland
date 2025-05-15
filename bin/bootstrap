@@ -147,7 +147,8 @@ desktop="accountsservice
     waybar
     wlogout
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
-development="cmake make
+development="bash-language-server
+    cmake make
     elixir erlang-asn1 erlang-public_key erlang-ssl erlang-parsetools
     erlang
     racket
