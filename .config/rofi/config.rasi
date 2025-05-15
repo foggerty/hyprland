@@ -46,7 +46,7 @@ mainbox {
 imagebox {
     padding:                     20px;
     background-color:            transparent;
-    background-image:            url("./splash.jpg", height);
+    background-image:            url("splash.png", height);
     orientation:                 vertical;
     children:                    [ "inputbar" ];
 }

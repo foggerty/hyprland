@@ -51,6 +51,7 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
+  - [ ] Fix emacs saving temp files everywhere.
   - [ ] Look into Tailscale!
   - [ ] Take the good stuff from [[https://github.com/CachyOS/CachyOS-Browser-Settings/blob/master/cachyos.cfg][here]] and [[https://github.com/CachyOS/CachyOS-Browser-Settings/blob/master/ublock-config-8.txt][here]].
   - [X] Use that man page viewer that lets you click on links in man-pages.
