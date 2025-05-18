@@ -138,6 +138,7 @@ desktop="accountsservice
     hyprland hyprpaper hyprlock hypridle hyprshot
     imv
     lightdm lightdm-gtk-greeter
+    okular
     journalctl-desktop-notification
     mission-center
     mpd rmpc
