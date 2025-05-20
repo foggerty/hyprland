@@ -133,6 +133,13 @@ setupEnvironment() {
     # Copy TLP configuration.
     info "Setting TLP configuration."
     sudo cp ~/.config/tlp/10-grayarea.conf /etc/tlp.d/
+
+    # Setup lm_sensors
+    sudo sensors-detect --auto
+
+    # Sets umask and prevents various kernel modules from being loaded.
+    info "Runnin hardening script."
+    ~/.config/harden/harden.sh
 }
 
 # Packages to install
@@ -249,10 +256,6 @@ setupTheme
 setupDisplayManager
 setupIwd
 setupEnvironment
-
-# Sets umask and prevents various kernel modules from being loaded.
-info "Runnin hardening script."
-~/.config/harden/harden.sh
 
 if [[ $(uname -r) == *"cachyos"* ]]; then
     cachyTweaks
