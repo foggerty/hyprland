@@ -27,6 +27,12 @@ installParu() {
     popd || exit 1
 }
 
+cachyTweaks() {
+    # CachyOS specific - zswap is disabled
+    # https://discuss.cachyos.org/t/zswap-not-enabled-despite-kernel-parameter-being-set
+    sudo touch /etc/tmpfiles.d/disable-zswap.conf
+}
+
 setupTheme() {
     # Remove Thunar's existing SetWallPaper menu item
     # Note, will need to add an exclude to pacman.conf so that it's
@@ -68,8 +74,11 @@ setupDisplayManager() {
 }
 
 setupIwd() {
-    info "Configuring iwd."
+    info "Configuring iwd".
     sudo cp ~/.config/iwd/main.conf /etc/iwd
+
+    sudo systemctl disable NetworkManager
+    sudo systemctl disable wpa_suplicant
 }
 
 setupServices() {
@@ -78,7 +87,8 @@ setupServices() {
               bluetooth \
               iwd \
               lightdm \
-              thermald \
+              lm_sensors
+              thermald
               tlp \
               libvirtd.socket)
 
@@ -128,17 +138,16 @@ setupEnvironment() {
 # Packages to install
 applications="galculator vlc foliate"
 basics="man linux-firmware"
-browser="cachy-browser"
-desktop="accountsservice
-    avahi
+browser="librewolf-bin"
+desktop="avahi
     blueman
     cliphist wl-clipboard
     pamixer pavucontrol
-    gnome-keyring
     hyprland hyprpaper hyprlock hypridle hyprshot
     imv
     lightdm lightdm-gtk-greeter
     okular
+    pipewire pipewire-pulse wireplumber
     journalctl-desktop-notification
     mission-center
     mpd rmpc
@@ -176,8 +185,9 @@ graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
 graphics_intel="vulkan-intel intel-media-driver"
 launcher="rofi-wayland"
 libraries="libgccjit libinput-gestures"
-networking="iwd iwdgtk"
+networking="iwd"
 power="brightnessctl
+    lm_sensors
     thermald
     tlp"
 security="hyprpolkitagent"
@@ -243,5 +253,9 @@ setupEnvironment
 # Sets umask and prevents various kernel modules from being loaded.
 info "Runnin hardening script."
 ~/.config/harden/harden.sh
+
+if [[ $(uname -r) == *"cachyos"* ]]; then
+    cachyTweaks
+fi
 
 echo "Reboot recomnended to start all services."

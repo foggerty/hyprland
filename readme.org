@@ -1,7 +1,7 @@
 * Installation
 This setup is intended for an intel laptop, using WiFi only.
 
-- Install Arch (or derivitive, also works/tested on CachyOS) using the =Archinstall= script.  For audio, select =Pipewire=, for networking select =iwd=.
+- Install Arch (or derivitive, also works/tested on CachyOS) using the =Archinstall= script.
 - Run =$HOME/bin/bootstrap=.
 - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
 - See if there's anything specific for your [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
@@ -51,6 +51,7 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
+  - [ ] Add runing sensors etc to script.
   - [ ] Fix emacs saving temp files everywhere.
   - [ ] Look into Tailscale!
   - [ ] Take the good stuff from [[https://github.com/CachyOS/CachyOS-Browser-Settings/blob/master/cachyos.cfg][here]] and [[https://github.com/CachyOS/CachyOS-Browser-Settings/blob/master/ublock-config-8.txt][here]].
