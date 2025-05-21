@@ -17,6 +17,19 @@ diskUsage() {
     echo "$size - Used: $used, available: $available"
 }
 
+scheduler() {
+    if which scxctl &> /dev/null; then
+        sched=$(scxctl get)
+        if [[ $(cut -d " " -f 1 <<< $sched) == "no" ]]; then
+            echo "$sched"
+        else
+            echo $(cut -d " " -f 2- <<< $sched)
+        fi
+    else
+        echo "SCX not detected."
+    fi
+}
+
 host=$(hostname)
 uptime=$(uptime -p | cut -d " " -f 2-)
 kernel=$(uname -r)
@@ -24,11 +37,13 @@ packages=$(pacman -Q | wc -l)
 govener=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
 diskUsageRoot=$(diskUsage /)
 ip=$(ip route get 1 | cut -d " " -f 7)
+sched=$(scheduler)
 
 info "Host:"           "$host"
-info "Uptime:"         "$uptime"
 info "Kernel Version:" "$kernel"
-info "Packages:"       "$packages"
 info "Govener:"        "$govener"
+info "SCX Scheduler:"  "$sched"
 info "Disk usage (/):" "$diskUsageRoot"
 info "IP:"             "$ip"
+info "Packages:"       "$packages"
+info "Uptime:"         "$uptime"
