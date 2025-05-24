@@ -22,8 +22,8 @@
     "hyprland/workspaces",
     "pulseaudio",
     "battery",
-    "tray",
-    "network"
+    "network",
+    "tray"
   ],
 
   "group/hardware": {
@@ -49,7 +49,7 @@
 
   "custom/logout": {
     "format": "   ",
-    "on-click": "wlogout",
+    "on-click": "wlogout -b 6 -T 400px -B 400px",
     "tooltip-format": "Session management."
   },
 

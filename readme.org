@@ -51,10 +51,16 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Add runing sensors etc to script.
-  - [ ] Fix emacs saving temp files everywhere.
+  - [ ] Get a minimal install for qemu/livirt, so don't need to install everything that's in qemu-full.
+  - [ ]  Recopy Windoze VM, and get new lookingglass(?) working, if possible - try our wormhole.
+  - [ ] Back to maing wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).  Also, blur the background.
+  - [ ] Fix highlighted messages in SwayNC.
   - [ ] Look into Tailscale!
   - [ ] Take the good stuff from [[https://github.com/CachyOS/CachyOS-Browser-Settings/blob/master/cachyos.cfg][here]] and [[https://github.com/CachyOS/CachyOS-Browser-Settings/blob/master/ublock-config-8.txt][here]].
+  - [X] Find a sway only dm, so can get rid of xorg dependencies.
+  - [X] Color qman.
+  - [X] Add runing sensors etc to script.
+  - [X] Fix emacs saving temp files everywhere.
   - [X] Use that man page viewer that lets you click on links in man-pages.
   - [X] Swipe gestures to change desktop.
   - [X] Ensure that nwg-displays changes are persisted, may need a display section in config?
@@ -103,7 +109,6 @@ Also add =audit=1= to enable auditing.
 
 Images in =$HOME/Pictures/Wallpapers= are copyright their respective owners, and were nabbed/copied from =https:/wallpaperaccess.com=.
 
-Lots of theme ideas swiped from JaKoolLit's over-engineered but awesome [[https://github.com/JaKooLit/Arch-Hyprland][Hyprland setup]] :-)
 --------------------------------------------------------------------------------
 
        This program is free software: you can redistribute it and/or

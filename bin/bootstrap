@@ -27,12 +27,6 @@ installParu() {
     popd || exit 1
 }
 
-cachyTweaks() {
-    # CachyOS specific - zswap is disabled
-    # https://discuss.cachyos.org/t/zswap-not-enabled-despite-kernel-parameter-being-set
-    sudo touch /etc/tmpfiles.d/disable-zswap.conf
-}
-
 setupTheme() {
     # Remove Thunar's existing SetWallPaper menu item
     # Note, will need to add an exclude to pacman.conf so that it's
@@ -44,7 +38,7 @@ setupTheme() {
 
     # Populate color configs
     info "Setting wallpaper and theme."
-    ~/bin/paper both ~/Pictures/Wallpapers/current
+    ~/bin/paper both ~/Pictures/Wallpapers/current > /dev/null
 
     # Set GTK themes / keybindings.
     info "Setting up GTK."
@@ -68,13 +62,14 @@ setupTheme() {
 }
 
 setupDisplayManager() {
-    info "Setting up LightDM."
-    sudo cp ~/Pictures/Wallpapers/TealBuddha.jpg /usr/share/pixmaps
-    sudo cp ~/.config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+    info "Setting up Greet/"
+    sudo mkdir -p /etc/geetd
+    sudo cp ~/.config/greetd/config.toml /etc/greetd/
 }
 
 setupIwd() {
     info "Configuring iwd".
+    sudo mkdir -p /etc/iwd
     sudo cp ~/.config/iwd/main.conf /etc/iwd
 
     sudo systemctl disable NetworkManager
@@ -84,13 +79,13 @@ setupIwd() {
 setupServices() {
     # List of system services to enable/start.
     services=(avahi-daemon \
-              bluetooth \
-              iwd \
-              lightdm \
-              lm_sensors
+                  bluetooth \
+                  iwd \
+                  lightdm \
+                  lm_sensors
               thermald
               tlp \
-              libvirtd.socket)
+                  libvirtd.socket)
 
     # List of user services to enable/start.
     user_services=(emacs mpd)
@@ -138,127 +133,155 @@ setupEnvironment() {
     sudo sensors-detect --auto
 
     # Sets umask and prevents various kernel modules from being loaded.
-    info "Runnin hardening script."
+    info "Running hardening script."
     ~/.config/harden/harden.sh
 }
 
-# Packages to install
-applications="galculator vlc foliate"
-basics="man linux-firmware"
-browser="librewolf-bin"
-desktop="avahi
-    blueman
-    cliphist wl-clipboard
-    pamixer pavucontrol
-    hyprland hyprpaper hyprlock hypridle hyprshot
-    imv
-    lightdm lightdm-gtk-greeter
-    okular
-    pipewire pipewire-pulse wireplumber
-    journalctl-desktop-notification
-    mission-center
-    mpd rmpc
-    nwg-displays
-    uwsm
-    swaylock swaync
-    waybar
-    wlogout
-    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
-development="bash-language-server
-    cmake make
-    elixir erlang-asn1 erlang-public_key erlang-ssl erlang-parsetools
-    erlang
-    racket
-    ruby rubygems ruby-irb ruby-stdlib"
-# I build Emacs manualy, so not included here.  The emacs-wayland package
-# however works well.
-editor="aspell aspell-en tree-sitter"
-file_manager="file-roller
-    ffmpegthumbnailer
-    gvfs gvfs-smb
-    libgsf poppler-glib
-    nfs-utils
-    thunar thunar-archive-plugin thunar-volman
-    thunar-media-tags-plugin
-    tumbler tumbler-extra-thumbnailers"
-fonts="adobe-source-code-pro-fonts
-    adobe-source-han-fonts
-    font-manager
-    otf-font-awesome
-    noto-fonts noto-fonts-cjk noto-fonts-emoji
-    ttf-linux-libertine ttf-liberation
-    ttf-sourcecodepro-nerd"
-graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
-graphics_intel="vulkan-intel intel-media-driver"
-launcher="rofi-wayland"
-libraries="libgccjit libinput-gestures"
-networking="iwd"
-power="brightnessctl
-    lm_sensors
-    thermald
-    tlp"
-security="hyprpolkitagent"
-terminal="alacritty bash-completion htop starship tealdeer"
-theme="kora-icon-theme morewaita-icon-theme prof-gnome-theme-git
-    imagemagick
-    plymouth-theme-cyanide-git
-    python-pywal16"
-utilities="7zip zip unrar-free unzip
-    bat bat-extras
-    fzf
-    git-delta
-    lshw lsof
-    mc
-    pacman-contrib
-    pciutils
-    qman
-    ripgrep
-    util-linux
-    tree
-    xdot"
-v_host="dmidecode dnsmasq libvirt qemu-full virt-manager"
+setupVirtManager() {
+    info "Installing virt-manager and qemu."
+    paru -S --needed dnsmasq libvirt virt-manager qemu-desktop
+    info "Added current user to libcirt grroup."
+    sudo usermod -aG libvirt $USER
+}
 
-to_install="$applications     \
-            $basics           \
-            $browser          \
-            $desktop          \
-            $development      \
-            $editor           \
-            $file_manager     \
-            $fonts            \
-            $graphics_drivers \
-            $graphics_intel   \
-            $launcher         \
-            $libraries        \
-            $networking       \
-            $power            \
-            $security         \
-            $terminal         \
-            $theme            \
-            $utilities        \
-            $v_host"
+installPackages() {
+    # Packages to install
+    applications="galculator vlc foliate"
+    basics="man linux-firmware"
+    browser="librewolf-bin"
+    desktop="avahi \
+         blueman \
+         cliphist wl-clipboard \
+         pamixer pavucontrol \
+         hyprland hyprpaper hyprlock hypridle hyprshot \
+         imv \
+         lightdm lightdm-gtk-greeter \
+         okular \
+         pipewire pipewire-pulse wireplumber \
+         journalctl-desktop-notification \
+         mission-center \
+         mpd rmpc \
+         nwg-displays \
+         uwsm \
+         swaylock swaync \
+         waybar \
+         wlogout \
+         xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
+    development="cmake make \
+         elixir erlang-asn1 erlang-public_key erlang-ssl erlang-parsetools \
+         erlang \
+         racket \
+         ruby rubygems ruby-irb ruby-stdlib"
+    # I build Emacs manualy, so not included here.  The emacs-wayland package
+    # however works well.
+    editor="aspell aspell-en tree-sitter"
+    file_manager="file-roller \
+         ffmpegthumbnailer \
+         gvfs gvfs-smb \
+         libgsf poppler-glib \
+         nfs-utils \
+         thunar thunar-archive-plugin thunar-volman \
+         thunar-media-tags-plugin \
+         tumbler tumbler-extra-thumbnailers"
+    fonts="adobe-source-code-pro-fonts \
+         adobe-source-han-fonts \
+         font-manager \
+         otf-font-awesome \
+         noto-fonts noto-fonts-cjk noto-fonts-emoji \
+         ttf-linux-libertine ttf-liberation \
+         ttf-sourcecodepro-nerd"
+    graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
+    graphics_intel="vulkan-intel intel-media-driver"
+    launcher="rofi-wayland"
+    libraries="libgccjit libinput-gestures"
+    networking="iwd"
+    power="brightnessctl \
+         lm_sensors \
+         thermald \
+         tlp"
+    security="hyprpolkitagent"
+    terminal="alacritty bash-completion htop starship tealdeer"
+    theme="kora-icon-theme morewaita-icon-theme prof-gnome-theme-git \
+         imagemagick \
+         plymouth-theme-cyanide-git \
+         python-pywal16"
+    utilities="7zip zip unrar-free unzip \
+         bat bat-extras \
+         fzf \
+         git-delta \
+         lshw lsof \
+         mc \
+         ncdu \
+         pacman-contrib \
+         pciutils \
+         qman \
+         ripgrep \
+         util-linux \
+         tree"
 
-# Install requirements for bootstrap
-info "Installing git and base-devel."
-sudo pacman --needed -S git base-devel
+    to_install="$applications \
+         $basics           \
+         $browser          \
+         $desktop          \
+         $development      \
+         $editor           \
+         $file_manager     \
+         $fonts            \
+         $graphics_drivers \
+         $graphics_intel   \
+         $launcher         \
+         $libraries        \
+         $networking       \
+         $power            \
+         $security         \
+         $terminal         \
+         $theme            \
+         $utilities"
+
+    # Install requirements for bootstrap
+    info "Installing git and base-devel."
+    sudo pacman --needed -S git base-devel
+
+    # Install packages
+    info "Installing packages."
+    paru --needed --skipreview -Syu $to_install
+
+    if [[ "$?" -ne 0 ]]; then
+        exit
+    fi
+}
+
+setupCachy() {
+    if [[ $(uname -r) == *"cachyos"* ]]; then
+        # https://discuss.cachyos.org/t/zswap-not-enabled-despite-kernel-parameter-being-set
+        sudo touch /etc/tmpfiles.d/disable-zswap.conf
+    fi
+}
+
+run() {
+    while true; do
+        read -p "$1" yn
+        case $yn in
+            [Yy] )
+                $2; break;;
+            [Nn] )
+                break;;
+        esac
+    done
+}
+
+# Install paru if missing.
 which paru > /dev/null || installParu
 
-# Install packages
-info "Installing packages."
-paru --needed --skipreview -Syu $to_install
+run "Install packages? " installPackages
+run "Setup theme? " setupTheme
+run "Setup displaymanager? " setupDisplayManager
+run "Setup IWD? " setupIwd
+run "Setup environment? " setupEnvironment
+run "Setup Virt-Manager? " setupVirtManager
+run "Setup services? " setupServices
 
-if [[ "$?" -ne 0 ]]; then
-    exit
-fi
-
-setupServices
-setupTheme
-setupDisplayManager
-setupIwd
-setupEnvironment
-
-if [[ $(uname -r) == *"cachyos"* ]]; then
-    cachyTweaks
-fi
+# Cachy-specfific tweaks.
+setupCachy
 
 echo "Reboot recomnended to start all services."
