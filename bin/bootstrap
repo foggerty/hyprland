@@ -78,14 +78,14 @@ setupIwd() {
 
 setupServices() {
     # List of system services to enable/start.
-    services=(avahi-daemon \
-                  bluetooth \
-                  iwd \
-                  lightdm \
-                  lm_sensors
+    services=(avahi-daemon
+              bluetooth \
+              iwd \
+              lightdm \
+              lm_sensors
               thermald
               tlp \
-                  libvirtd.socket)
+              libvirtd)
 
     # List of user services to enable/start.
     user_services=(emacs mpd)
