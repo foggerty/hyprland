@@ -34,46 +34,39 @@ Add =intel_iommu=on= to kernel parameter.
 
 To pin VM to given cores, use the following in the VM's XML:
 #+begin_src xml
+<vcpu placement="static">4</vcpu>
 <cputune>
-    <vcpupin vcpu="0" cpuset="4"/>
-    <vcpupin vcpu="1" cpuset="5"/>
-    <vcpupin vcpu="2" cpuset="6"/>
-    <vcpupin vcpu="3" cpuset="7"/>
-  </cputune>
+  <vcpupin vcpu="0" cpuset="2"/>
+  <vcpupin vcpu="1" cpuset="6"/>
+  <vcpupin vcpu="2" cpuset="3"/>
+  <vcpupin vcpu="3" cpuset="7"/>
+</cputune>
 #+end_src
 
 Can then add the following to =/etc/systemd/system.conf= so that the host OS doesn't use those cores.
 
-=CPUAffinity=0,1,2,3=
+=CPUAffinity=0,4,1,5=
+
+Note that the odd-looking numbering is because Intel number their virtual core like so:
+
+|---------------+--------+-------|
+| Physical Core | V Core | VCore |
+|---------------+--------+-------|
+|             1 |      0 |     4 |
+|             2 |      1 |     5 |
+|             3 |      2 |     6 |
+|             4 |      2 |     7 |
+|---------------+--------+-------|
 
 * AppArmor
 Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot parameters.
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Get a minimal install for qemu/livirt, so don't need to install everything that's in qemu-full.
-  - [ ]  Recopy Windoze VM, and get new lookingglass(?) working, if possible - try our wormhole.
+  - [ ] Find out why Emacs has stopped saving the desktop....
+  - [ ]  Recopy Windoze VM, and get new lookingglass(?) working, if possible - try out wormhole.
   - [ ] Back to maing wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).  Also, blur the background.
-  - [ ] Fix highlighted messages in SwayNC.
   - [ ] Look into Tailscale!
-  - [ ] Take the good stuff from [[https://github.com/CachyOS/CachyOS-Browser-Settings/blob/master/cachyos.cfg][here]] and [[https://github.com/CachyOS/CachyOS-Browser-Settings/blob/master/ublock-config-8.txt][here]].
-  - [X] Find a sway only dm, so can get rid of xorg dependencies.
-  - [X] Color qman.
-  - [X] Add runing sensors etc to script.
-  - [X] Fix emacs saving temp files everywhere.
-  - [X] Use that man page viewer that lets you click on links in man-pages.
-  - [X] Swipe gestures to change desktop.
-  - [X] Ensure that nwg-displays changes are persisted, may need a display section in config?
-  - [X] Create a left-most menu to launch things like =mission-center=, logout/suspend power etc.
-  - [X] Setup a Waybar toggle so can override TLP when not on AC.
-  - [X] Get Swayimg working with Thunar.
-  - [X] Doh, put Swaylock back!
-  - [X] Recreate TLP config and copy in bootstrap.
-  - [X] See if can replace acpid with [[https://wiki.archlinux.org/title/Power_management#ACPI_events][Systemd power setting]].
-    - [X] Get power-button working (should hibernate).
-  - [X] Make WLogout theme more compact (doesn't want to play nice, just made it look nicer).
-  - [X] Switch back to TLP.
-  - [X] Update theming - set wallpaper and set colors.
 
 * The "is it done" checklist of doom
   - [X] General:

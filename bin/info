@@ -30,7 +30,16 @@ scheduler() {
     fi
 }
 
-host=$(hostname)
+displayHostname() {
+    if which figlet > /dev/null 2>&1; then
+        figlet $(hostname) -f small -W
+        echo #\n
+    else
+        echo #\n
+        info "Hostname:" $(echo $(hostname))
+    fi
+}
+
 uptime=$(uptime -p | cut -d " " -f 2-)
 kernel=$(uname -r)
 packages=$(pacman -Q | wc -l)
@@ -39,7 +48,8 @@ diskUsageRoot=$(diskUsage /)
 ip=$(ip route get 1 | cut -d " " -f 7)
 sched=$(scheduler)
 
-info "Host:"           "$host"
+displayHostname
+
 info "Kernel Version:" "$kernel"
 info "Govener:"        "$govener"
 info "SCX Scheduler:"  "$sched"

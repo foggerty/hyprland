@@ -207,6 +207,7 @@ installPackages() {
          python-pywal16"
     utilities="7zip zip unrar-free unzip \
          bat bat-extras \
+         figlet \
          fzf \
          git-delta \
          lshw lsof \
