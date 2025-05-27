@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+status=tlp-status -m
+
+if [[ $status=="AC" ]]; then
+    pkexec tlp bat
+else
+    pkexec tlp ac
+fi

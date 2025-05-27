@@ -69,7 +69,8 @@
 
   "custom/display": {
     "format": " 󰍹  ",
-    "on-click": "nwg-displays"
+    "on-click": "nwg-displays",
+    "tooltip-format": "Configure display(s)"
   },
 
   "privacy": {
