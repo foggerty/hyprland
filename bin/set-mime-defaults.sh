@@ -19,6 +19,7 @@ declare -A -r mimeTypes=(
 
     ["text/org"]="emacsclient.desktop"
     ["text/plain"]="emacsclient.desktop"
+    ["text/markdown"]="emacsclient.desktop"
 )
 
 

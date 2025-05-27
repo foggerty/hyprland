@@ -65,6 +65,7 @@ Also add =audit=1= to enable auditing.
 * Still left to do
   - [ ] Test that =zswap= works with the encrypted partition - seems to be automatically unlocked?
   - [ ] Find out why Emacs has stopped saving the desktop....
+  - [ ] Look into meld - file/VC comparision.
   - [ ]  Recopy Windoze VM, and get new lookingglass(?) working, if possible.
   - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).  Also, blur the background.
   - [ ] Look into Tailscale!
