@@ -43,32 +43,32 @@
   },
 
   "custom/tux": {
-    "format": "   ",
+    "format": "",
     "tooltip-format": "BTW...."
   },
 
   "custom/logout": {
-    "format": "   ",
+    "format": "",
     "on-click": "wlogout -b 6 -T 400px -B 400px",
     "tooltip-format": "Session management."
   },
 
   "custom/power": {
     "exec": "tlp-stat --mode",
-    "format": " 󰂄 ",
+    "format": "󰂄",
     "interval": 5,
     "on-click": "~/bin/toggle-power",
     "tooltip-format": "Change power-profile.  Currently({})"
   },
 
   "custom/monitor": {
-    "format": "   ",
+    "format": "",
     "on-click": "missioncenter",
     "tooltip-format": "Open Mission Center"
   },
 
   "custom/display": {
-    "format": " 󰍹  ",
+    "format": "󰍹",
     "on-click": "nwg-displays",
     "tooltip-format": "Configure display(s)"
   },

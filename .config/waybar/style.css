@@ -1,7 +1,7 @@
 @import "/home/matt/.cache/wal/colors-waybar.css";
 
 * {
-    font-family: "Sans Mono";
+    font-family: "Cantarell";
     font-size: 16px;
 }
 
@@ -46,8 +46,35 @@ button {
 }
 
 #custom-tux {
+    margin-left: 10px;
+    margin-right: 18px;
     font-size: 22px
 }
+
+#custom-power {
+    margin-left: 10px;
+    margin-right: 18px;
+    font-size: 20px
+}
+
+#custom-monitor {
+    margin-left: 10px;
+    margin-right: 18px;
+    font-size: 20px
+}
+
+#custom-display {
+    margin-left: 10px;
+    margin-right: 18px;
+    font-size: 20px
+}
+
+#custom-logout {
+    margin-left: 10px;
+    margin-right: 18px;
+    font-size: 20px
+}
+
 
 #backlight,
 #battery,
