@@ -38,6 +38,11 @@ def restart(app)
   spawn(app)
 end
 
+def restart_panel
+  `pkill nwg-drawer`
+  spawn('startnwg')
+end
+
 ################################################################################
 ## Guard clauses
 #
@@ -74,6 +79,7 @@ if %w[theme both].include?(ARGV[0])
 
   restart('waybar')
   restart('swaync')
+  restart_panel
 
   system('pgrep emacs') &&
     `emacsclient -e "(load-theme 'ewal-spacemacs-classic t)"`

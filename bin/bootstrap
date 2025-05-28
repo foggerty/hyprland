@@ -62,7 +62,7 @@ setupTheme() {
 }
 
 setupDisplayManager() {
-    info "Setting up Greet/"
+    info "Setting up Greetd/"
     sudo mkdir -p /etc/geetd
     sudo cp ~/.config/greetd/config.toml /etc/greetd/
 }
@@ -81,7 +81,7 @@ setupServices() {
     services=(avahi-daemon
               bluetooth \
               iwd \
-              lightdm \
+              greetd \
               lm_sensors
               thermald
               tlp \
@@ -155,13 +155,12 @@ installPackages() {
          pamixer pavucontrol \
          hyprland hyprpaper hyprlock hypridle hyprshot \
          imv \
-         lightdm lightdm-gtk-greeter \
          okular \
          pipewire pipewire-pulse wireplumber \
          journalctl-desktop-notification \
          mission-center \
          mpd rmpc \
-         nwg-displays \
+         nwg-displays nwg-drawer \
          uwsm \
          swaylock swaync \
          waybar \
@@ -192,7 +191,7 @@ installPackages() {
          ttf-sourcecodepro-nerd"
     graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
     graphics_intel="vulkan-intel intel-media-driver"
-    launcher="rofi-wayland"
+    greeter="greetd tuigreet"
     libraries="libgccjit libinput-gestures"
     networking="iwd"
     power="brightnessctl \
@@ -230,7 +229,7 @@ installPackages() {
          $fonts            \
          $graphics_drivers \
          $graphics_intel   \
-         $launcher         \
+         $greeter          \
          $libraries        \
          $networking       \
          $power            \

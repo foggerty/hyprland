@@ -1,0 +1,54 @@
+@import "/home/matt/.cache/wal/colors-waybar.css";
+
+window {
+    background-color: @background;
+    color: white;
+    border-color: @color2;
+    border-radius: 15px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 150px;
+    font-size: 16px;
+}
+
+/* search entry */
+entry {
+    background-color: @background;
+    border-color: @color2;
+    font-size: 16pt;
+    margin-top: 15px;
+    padding: 6px;
+}
+
+button, image {
+    background: none;
+    border: none
+}
+
+button:hover {
+    background-color: @color9;
+    color: black;
+}
+
+/* in case you wanted to give category buttons a different look */
+#category-button {
+    margin: 0 10px 0 10px
+}
+
+#pinned-box {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+#files-box {
+    padding: 5px;
+    border: 2px solid @color2;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+/* math operation result label */
+#math-label {
+    font-weight: bold;
+    font-size: 16px
+}

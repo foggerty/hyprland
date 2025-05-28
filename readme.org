@@ -64,11 +64,14 @@ Also add =audit=1= to enable auditing.
 
 * Still left to do
   - [ ] Test that =zswap= works with the encrypted partition - seems to be automatically unlocked?
-  - [ ] Find out why Emacs has stopped saving the desktop....
-  - [ ] Look into meld - file/VC comparision.
-  - [ ]  Recopy Windoze VM, and get new lookingglass(?) working, if possible.
-  - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).  Also, blur the background.
+  - [ ] Look into meld - file/VC comparison.
+  - [ ] Find out why the bloody spacing in WayBar and the Arch button is so fucked.
+  - [ ] See if get lookingglass working.
+  - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).
   - [ ] Look into Tailscale!
+  - [X] Recopy Windoze VM.
+  - [X] Find out why Emacs has stopped saving the desktop....
+  - [X] Try out =nwg-drawer- as an alternative launcher.
 
 * The "is it done" checklist of doom
   - [X] General:
