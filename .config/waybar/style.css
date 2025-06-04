@@ -1,7 +1,7 @@
 @import "/home/matt/.cache/wal/colors-waybar.css";
 
 * {
-    font-family: "Cantarell";
+    font-family: "Proportional";
     font-size: 16px;
 }
 
@@ -48,7 +48,7 @@ button {
 #custom-tux {
     margin-left: 10px;
     margin-right: 18px;
-    font-size: 22px
+    font-size: 20px
 }
 
 #custom-power {

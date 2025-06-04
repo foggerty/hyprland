@@ -3,6 +3,8 @@
 GREEN="\033[0;32m"
 NO_COLOR="\033[0m"
 
+testMountFound=-109
+
 info() {
     echo -e -n "$GREEN"
     printf "%-20s%s" "$1"
@@ -11,10 +13,14 @@ info() {
 }
 
 diskUsage() {
-    size=$(df "$1" -h --output=size | tail -n1 | xargs)
-    used=$(df "$1" -h --output=pcent | tail -n1 | xargs)
-    available=$(df "$1" -h --output=avail | tail -n1 | xargs)
-    echo "$size - Used: $used, available: $available"
+    if ! $(df | awk '{print $6}' | grep -E "^$1$" > /dev/null); then
+        echo "Mount point not found."
+    else
+        size=$(df "$1" -h --output=size | tail -n1 | xargs)
+        used=$(df "$1" -h --output=pcent | tail -n1 | xargs)
+        available=$(df "$1" -h --output=avail | tail -n1 | xargs)
+        echo "$size - Used: $used, available: $available"
+    fi
 }
 
 scheduler() {
@@ -31,8 +37,10 @@ scheduler() {
 }
 
 displayHostname() {
-    if which figlet > /dev/null 2>&1; then
+    if which figlet &> /dev/null; then
+        echo -e -n "$GREEN"
         figlet $(hostname) -f small -W
+        echo -e -n "$NO_COLOR"
         echo #\n
     else
         echo #\n
@@ -45,15 +53,17 @@ kernel=$(uname -r)
 packages=$(pacman -Q | wc -l)
 govener=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
 diskUsageRoot=$(diskUsage /)
+diskUsageBoot=$(diskUsage /boot)
 ip=$(ip route get 1 | cut -d " " -f 7)
 sched=$(scheduler)
 
 displayHostname
 
-info "Kernel Version:" "$kernel"
-info "Govener:"        "$govener"
-info "SCX Scheduler:"  "$sched"
-info "Disk usage (/):" "$diskUsageRoot"
-info "IP:"             "$ip"
-info "Packages:"       "$packages"
-info "Uptime:"         "$uptime"
+info "Kernel Version:"     "$kernel"
+info "Govener:"            "$govener"
+info "SCX Scheduler:"      "$sched"
+info "Disk usage (/):"     "$diskUsageRoot"
+info "Disk usage (/boot):" "$diskUsageBoot"
+info "IP:"                 "$ip"
+info "Packages:"           "$packages"
+info "Uptime:"             "$uptime"
