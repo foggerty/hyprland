@@ -74,15 +74,15 @@ setupIwd() {
 
     sudo systemctl disable NetworkManager
     sudo systemctl disable wpa_suplicant
+    sudo systemctl enable iwd
 }
 
 setupServices() {
     # List of system services to enable/start.
     services=(avahi-daemon
               bluetooth \
-              iwd \
-              greetd \
-              lm_sensors
+                  greetd \
+                  lm_sensors
               thermald
               tlp \
               libvirtd)
