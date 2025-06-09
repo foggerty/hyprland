@@ -37,14 +37,16 @@ scheduler() {
 }
 
 displayHostname() {
+    host=$(hostnamectl hostname)
+
     if which figlet &> /dev/null; then
         echo -e -n "$GREEN"
-        figlet $(hostname) -f small -W
+        figlet $host -f small -W
         echo -e -n "$NO_COLOR"
         echo #\n
     else
         echo #\n
-        info "Hostname:" $(echo $(hostname))
+        info "Hostname:" $(echo $host)
     fi
 }
 

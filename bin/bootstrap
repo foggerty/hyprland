@@ -170,7 +170,7 @@ installPackages() {
          elixir erlang-asn1 erlang-public_key erlang-ssl erlang-parsetools \
          erlang \
          racket \
-         ruby rubygems ruby-irb ruby-stdlib solargrah"
+         ruby rubygems ruby-irb ruby-stdlib ruby-solargraph"
     # I build Emacs manualy, so not included here.  The emacs-wayland package
     # however works well.
     editor="aspell aspell-en tree-sitter"
@@ -191,7 +191,7 @@ installPackages() {
          ttf-sourcecodepro-nerd"
     graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
     graphics_intel="vulkan-intel intel-media-driver"
-    greeter="greetd tuigreet"
+    greeter="greetd greetd-tuigreet"
     libraries="libgccjit libinput-gestures"
     networking="iwd"
     power="brightnessctl \
