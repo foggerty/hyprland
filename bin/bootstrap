@@ -192,7 +192,7 @@ installPackages() {
     graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
     graphics_intel="vulkan-intel intel-media-driver"
     greeter="greetd greetd-tuigreet"
-    libraries="libgccjit libinput-gestures"
+    libraries="libgccjit libinput-gestures lua-luv"
     networking="iwd"
     power="brightnessctl \
          lm_sensors \
