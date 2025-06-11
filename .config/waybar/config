@@ -63,7 +63,7 @@
 
   "custom/monitor": {
     "format": "",
-    "on-click": "missioncenter",
+    "on-click": "stacer",
     "tooltip-format": "Open Mission Center"
   },
 

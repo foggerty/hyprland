@@ -86,9 +86,12 @@ button {
 #network,
 #pulseaudio,
 #temperature,
-#tray,
 #wireplumber {
     padding-left: 20px;
+}
+
+#tray {
+    padding-right: 20px;
 }
 
 #network {

@@ -7,7 +7,8 @@ This setup is intended for an intel laptop, using WiFi only.
 - See if there's anything specific for your [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
 - Set =noatime= in =/etc/fstab=
 - Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
-- Copy the file ~/.config/firefox/user.js~ to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
+- Copy the file =/.config/firefox/user.js= to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
+- Add the line =FONT=sun12x22= to =/etc/vconsole.conf= to have a readable font in the TTY (and then re-run =mkinitcpio -P=).  A list of available fonts is in =/usr/share/kbd/consolefonts=.
 - Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition:
    add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.
 
@@ -49,26 +50,28 @@ Can then add the following to =/etc/systemd/system.conf= so that the host OS doe
 
 Note that the odd-looking numbering is because Intel number their virtual core like so:
 
-|---------------+--------+-------|
-| Physical Core | V Core | VCore |
-|---------------+--------+-------|
-|             1 |      0 |     4 |
-|             2 |      1 |     5 |
-|             3 |      2 |     6 |
-|             4 |      2 |     7 |
-|---------------+--------+-------|
+|---------------+----------+---------|
+| Physical Core | V Core 1 | VCore 2 |
+|---------------+----------+---------|
+|             1 |        0 |       4 |
+|             2 |        1 |       5 |
+|             3 |        2 |       6 |
+|             4 |        2 |       7 |
+|---------------+----------+---------|
 
 * AppArmor
 Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot parameters.
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Test that =zswap= works with the encrypted partition - seems to be automatically unlocked?
+  - [ ] Go through =cachyos-settings= and understand what's ging on before applynig them.
+  - [ ] Do the same with =cachyos-sysctl-manager=.
   - [ ] Install and try out [[https://mergiraf.org/usage.html][Mergiraf]] and [[https://github.com/Wilfred/difftastic?tab=readme-ov-file#basic-example][disstastic.]]
   - [ ] Look into meld - file/VC comparison.
-  - [ ] See if can get lookingglass working.
   - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).
   - [ ] Look into Tailscale!
+  - [X] See if zswap will work with a swapfile.
+  - [X] Setup swapfile and zswap.
   - [X] Find out why the bloody spacing in WayBar and the Arch button is so fucked.
   - [X] Recopy Windoze VM.
   - [X] Find out why Emacs has stopped saving the desktop....

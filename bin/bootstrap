@@ -158,10 +158,10 @@ installPackages() {
          okular \
          pipewire pipewire-pulse wireplumber \
          journalctl-desktop-notification \
-         mission-center \
          mpd rmpc \
          nwg-displays nwg-drawer \
          uwsm \
+         stacer \
          swaylock swaync \
          waybar \
          wlogout \
@@ -193,7 +193,7 @@ installPackages() {
     graphics_intel="vulkan-intel intel-media-driver"
     greeter="greetd greetd-tuigreet"
     libraries="libgccjit libinput-gestures lua-luv"
-    networking="iwd"
+    networking="iwd iwgtk"
     power="brightnessctl \
          lm_sensors \
          thermald \
