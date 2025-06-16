@@ -14,7 +14,7 @@ window {
 /* search entry */
 entry {
     background-color: @background;
-    border-color: @color2;
+    border-color: @color1;
     font-size: 16pt;
     margin-top: 15px;
     padding: 6px;

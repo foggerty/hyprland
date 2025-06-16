@@ -64,18 +64,10 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Go through =cachyos-settings= and understand what's ging on before applynig them.
-  - [ ] Do the same with =cachyos-sysctl-manager=.
   - [ ] Install and try out [[https://mergiraf.org/usage.html][Mergiraf]] and [[https://github.com/Wilfred/difftastic?tab=readme-ov-file#basic-example][disstastic.]]
   - [ ] Look into meld - file/VC comparison.
   - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).
   - [ ] Look into Tailscale!
-  - [X] See if zswap will work with a swapfile.
-  - [X] Setup swapfile and zswap.
-  - [X] Find out why the bloody spacing in WayBar and the Arch button is so fucked.
-  - [X] Recopy Windoze VM.
-  - [X] Find out why Emacs has stopped saving the desktop....
-  - [X] Try out =nwg-drawer- as an alternative launcher.
 
 * The "is it done" checklist of doom
   - [X] General:

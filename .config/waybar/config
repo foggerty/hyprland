@@ -20,6 +20,7 @@
   ],
   "modules-right": [
     "hyprland/workspaces",
+    "niri/workspaces",
     "pulseaudio",
     "battery",
     "network",
@@ -102,6 +103,10 @@
     "persistent-workspaces": {
       "*": 4
     }
+  },
+
+  "niri/workspaces": {
+    "format": "{value}"
   },
 
   "mpd": {
