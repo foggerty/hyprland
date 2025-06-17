@@ -147,7 +147,7 @@ setupVirtManager() {
 installPackages() {
     # Packages to install
     applications="galculator vlc foliate"
-    basics="man linux-firmware"
+    basics="man linux-firmware openssh"
     browser="librewolf-bin"
     desktop="avahi \
          blueman \
@@ -192,7 +192,7 @@ installPackages() {
     graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
     graphics_intel="vulkan-intel intel-media-driver"
     greeter="greetd greetd-tuigreet"
-    libraries="libgccjit libinput-gestures lua-luv"
+    libraries="libgccjit lua-luv"
     networking="iwd iwgtk"
     power="brightnessctl \
          lm_sensors \
