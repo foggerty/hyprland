@@ -27,7 +27,7 @@ end
 
 def apply_theme(paper)
   `wal -c`
-  `wal -b 000000 --contrast 2.0 --cols16 -n -a 80 -i #{paper}`
+  `wal -b 000000 --contrast 2.0 --cols16 -n -a 65 -i #{paper}`
 end
 
 def restart(app)

@@ -155,7 +155,7 @@ installPackages() {
          pamixer pavucontrol \
          hyprland hyprpaper hyprlock hypridle hyprshot \
          imv \
-         okular \
+         evince \
          pipewire pipewire-pulse wireplumber \
          journalctl-desktop-notification \
          mpd rmpc \
@@ -199,7 +199,7 @@ installPackages() {
          thermald \
          tlp"
     security="hyprpolkitagent"
-    terminal="alacritty bash-completion htop starship tealdeer"
+    terminal="ghostty bash-completion htop starship tealdeer"
     theme="kora-icon-theme morewaita-icon-theme prof-gnome-theme-git \
          imagemagick \
          plymouth-theme-cyanide-git \
