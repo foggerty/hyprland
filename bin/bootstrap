@@ -163,6 +163,7 @@ installPackages() {
          uwsm \
          stacer \
          swaylock swaync \
+         swww \ 
          waybar \
          wlogout \
          xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"

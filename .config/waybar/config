@@ -5,7 +5,7 @@
   "spacing": 12,
   "margin-left": 6,
   "margin-right": 6,
-  "margin-top": 3,
+  "margin-top": 6,
   "reload-style-on-change": true,
   "modules-left": [
     "group/hardware",

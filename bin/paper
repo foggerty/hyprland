@@ -23,6 +23,7 @@ end
 
 def apply_paper(paper)
   `cp #{paper} #{@wallpaper}`
+  `swww img ~/Pictures/Wallpapers/current --transition-duration 1 -t grow`
 end
 
 def apply_theme(paper)
@@ -70,8 +71,6 @@ end
 
 if %w[paper both].include?(ARGV[0])
   apply_paper(@paper_path)
-
-  restart('hyprpaper')
 end
 
 if %w[theme both].include?(ARGV[0])
