@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+lsmod | \
+  tail -n +2 | \
+  awk '{print $1}' | \
+  xargs modinfo | \
+  awk '$1=="description:" || $1=="name:" { print }'

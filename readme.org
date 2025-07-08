@@ -6,9 +6,10 @@ This setup is intended for an intel laptop, using WiFi only.
 - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
 - See if there's anything specific for your [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
 - Set =noatime= in =/etc/fstab=
-- Disable [[https://wiki.archlinux.org/title/Core_dump][core dump]].
 - Copy the file =/.config/firefox/user.js= to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
 - Add the line =FONT=sun12x22= to =/etc/vconsole.conf= to have a readable font in the TTY (and then re-run =mkinitcpio -P=).  A list of available fonts is in =/usr/share/kbd/consolefonts=.
+- If using an intel GPU, add =i915_enable_rc6=1 i915_enable_fbc=1= to the kernel cmd line for extra power-saving.
+- Test if wifi Wake On Lan is enabled with =iw phy0 wowlan show= (use =iw list= to get name of adaptor).  Not sure how to disable it permanently, but it's disabled by default on my laptop so I stopped looking :-)
 - Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition:
    add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.
 
@@ -64,6 +65,7 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
+  - [ ] See if can get a keyring daemon working that unlocks when I log in, so don't have to re-enter github ssh passwords all of the time.
   - [ ] Install and try out [[https://mergiraf.org/usage.html][Mergiraf]] and [[https://github.com/Wilfred/difftastic?tab=readme-ov-file#basic-example][disstastic.]]
   - [ ] Look into meld - file/VC comparison.
   - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).
