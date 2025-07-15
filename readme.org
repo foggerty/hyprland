@@ -7,7 +7,7 @@ This setup is intended for an intel laptop, using WiFi only.
 - See if there's anything specific for your [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
 - Set =noatime= in =/etc/fstab=
 - Copy the file =/.config/firefox/user.js= to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
-- Add the line =FONT=sun12x22= to =/etc/vconsole.conf= to have a readable font in the TTY (and then re-run =mkinitcpio -P=).  A list of available fonts is in =/usr/share/kbd/consolefonts=.
+- Add the line =FONT=ter-220b= to =/etc/vconsole.conf= to have a readable font in the TTY (and then re-run =mkinitcpio -P=).  A list of available fonts is in =/usr/share/kbd/consolefonts=.
 - If using an intel GPU, add =i915_enable_rc6=1 i915_enable_fbc=1= to the kernel cmd line for extra power-saving.
 - Test if wifi Wake On Lan is enabled with =iw phy0 wowlan show= (use =iw list= to get name of adaptor).  Not sure how to disable it permanently, but it's disabled by default on my laptop so I stopped looking :-)
 - Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition:
@@ -69,6 +69,7 @@ Also add =audit=1= to enable auditing.
   - [ ] Install and try out [[https://mergiraf.org/usage.html][Mergiraf]] and [[https://github.com/Wilfred/difftastic?tab=readme-ov-file#basic-example][disstastic.]]
   - [ ] Look into meld - file/VC comparison.
   - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).
+  - [ ] Have =bootstrap= setup =systemd-resolved= to handle mDNS, and do away with =avahi=.
   - [ ] Look into Tailscale!
 
 * The "is it done" checklist of doom

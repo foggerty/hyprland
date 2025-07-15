@@ -102,6 +102,9 @@ setupServices() {
 }
 
 setupEnvironment() {
+    # Readable font in the TTY
+    setfont ter-220b
+
     # Set standard XDG user directories
     info "Upading XDG user directories."
     xdg-user-dirs-update
@@ -147,7 +150,7 @@ setupVirtManager() {
 installPackages() {
     # Packages to install
     applications="galculator vlc foliate"
-    basics="man linux-firmware openssh"
+    basics="man linux-firmware openssh terminus-font"
     browser="librewolf-bin"
     desktop="avahi \
          blueman \
@@ -163,7 +166,7 @@ installPackages() {
          uwsm \
          stacer \
          swaylock swaync \
-         swww \ 
+         swww \
          waybar \
          wlogout \
          xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
