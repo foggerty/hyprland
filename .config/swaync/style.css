@@ -1,9 +1,12 @@
 @import "/home/matt/.cache/wal/colors-swaync.css";
 
+@define-color text-alt #02AED4;
+
+
 @define-color noti-border-color @border;
 @define-color noti-bg @background;
-@define-color noti-bg-alt @background;
-@define-color noti-fg @foreground;
+@define-color noti-bg-alt @background-alt;
+@define-color noti-fg @text;
 @define-color noti-bg-hover @hovered;
 @define-color noti-bg-focus @urgent;
 @define-color noti-close-bg @button-background;
@@ -22,7 +25,7 @@
 
 .notification-row:focus,
 .notification-row:hover {
-    background: @noti-bg-focus;
+    background: transparent;
 }
 
 .notification {
@@ -91,8 +94,7 @@
 
 .notification-default-action:hover,
 .notification-action:hover {
-    -gtk-icon-effect: none;
-    background: gray;
+    background: @noti-bg-hover;
 }
 
 .notification-default-action {
@@ -132,8 +134,8 @@
 .summary {
     font-size: 16px;
     font-weight: bold;
-    background: transparent;
-    color: white;
+    background: noti-bg;
+    color: noti-fg;
     text-shadow: none;
 }
 
@@ -150,7 +152,7 @@
     font-size: 15px;
     font-weight: normal;
     background: transparent;
-    color: white;
+    color: @noti-fg;
     text-shadow: none;
 }
 
@@ -171,6 +173,10 @@
 }
 
 .floating-notifications {
+    background: transparent;
+}
+
+.overlay-indicator {
     background: transparent;
 }
 
