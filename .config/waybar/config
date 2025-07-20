@@ -3,9 +3,9 @@
   "exclusive": true,
   "height": 40,
   "spacing": 12,
-  "margin-left": 6,
-  "margin-right": 6,
-  "margin-top": 6,
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-top": 0,
   "reload-style-on-change": true,
   "modules-left": [
     "group/hardware",
