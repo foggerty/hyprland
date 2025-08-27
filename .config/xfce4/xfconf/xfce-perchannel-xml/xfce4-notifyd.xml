@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<channel name="xfce4-notifyd" version="1.0">
+  <property name="log-max-size-enabled" type="bool" value="true"/>
+  <property name="date-time-custom-format" type="string" value="%a %H:%M:%S"/>
+  <property name="theme" type="string" value="Smoke"/>
+  <property name="applications" type="empty">
+    <property name="known_applications" type="array">
+      <value type="string" value="notify-send"/>
+      <value type="string" value="Xfce4-notifyd settings"/>
+    </property>
+  </property>
+  <property name="show-notifications-on" type="string" value="primary-monitor"/>
+  <property name="do-slideout" type="bool" value="true"/>
+  <property name="notify-location" type="string" value="top-right"/>
+  <property name="expire-timeout-enabled" type="bool" value="false"/>
+  <property name="expire-timeout-allow-override" type="bool" value="false"/>
+  <property name="show-text-with-gauge" type="bool" value="true"/>
+  <property name="notification-log" type="bool" value="true"/>
+</channel>

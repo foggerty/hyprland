@@ -165,11 +165,12 @@ installPackages() {
          nwg-displays nwg-drawer \
          uwsm \
          stacer \
-         swaylock swaync \
+         swaylock \
          swww \
          waybar \
          wlogout \
-         xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs"
+         xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-user-dirs \
+         xfce4-notifyd"
     development="cmake make \
          elixir erlang-asn1 erlang-public_key erlang-ssl erlang-parsetools \
          erlang \

@@ -65,7 +65,9 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Get everything from the taskbar into rofi, see if it can be replaced.
+  - [ ] Once and for fucking all, un-fuck =wnotify='s colors.
+  - [ ] Get everything from the taskbar into rofi, see if it can be replaced, or maybe Walker?  Try nwg-drawer again, as its the only one that searches the Documents directory
+  - [ ] Install =copyparty= onto pi.
   - [ ] See if can get a keyring daemon working that unlocks when I log in, so don't have to re-enter github ssh passwords all of the time.
   - [ ] Install and try out [[https://mergiraf.org/usage.html][Mergiraf]] and [[https://github.com/Wilfred/difftastic?tab=readme-ov-file#basic-example][disstastic.]]
   - [ ] Look into meld - file/VC comparison.
