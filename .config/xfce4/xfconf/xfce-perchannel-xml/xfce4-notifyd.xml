@@ -8,6 +8,7 @@
     <property name="known_applications" type="array">
       <value type="string" value="Cachy-Update"/>
       <value type="string" value="CachyOS Update"/>
+      <value type="string" value="LibreWolf"/>
       <value type="string" value="notify-send"/>
       <value type="string" value="System Notice"/>
       <value type="string" value="Xfce4-notifyd settings"/>
