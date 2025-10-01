@@ -78,12 +78,13 @@ setupIwd() {
 }
 
 setupServices() {
+    # ToDo - only start libvirtd if virtd was selected.
     # List of system services to enable/start.
     services=(avahi-daemon
               bluetooth \
-                  greetd \
-                  lm_sensors
-              thermald
+              greetd \
+              lm_sensors \
+              thermald \
               tlp \
               libvirtd)
 
@@ -143,7 +144,7 @@ setupEnvironment() {
 setupVirtManager() {
     info "Installing virt-manager and qemu."
     paru -S --needed dnsmasq libvirt virt-manager qemu-desktop
-    info "Added current user to libcirt grroup."
+    info "Adding current user to libvirt grroup."
     sudo usermod -aG libvirt $USER
 }
 
