@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 GREEN="\033[0;32m"
 NO_COLOR="\033[0m"
@@ -67,12 +67,14 @@ setupDisplayManager() {
     sudo cp ~/.config/greetd/config.toml /etc/greetd/
 }
 
-setupIwd() {
-    info "Configuring iwd".
+setupNetworkManager() {
+    info "Configuring network-manager (using iwd as wireless backend)".
     sudo mkdir -p /etc/iwd
-    sudo cp ~/.config/iwd/main.conf /etc/iwd
+    sudo cp ~/.config/networking/iwd_main.conf /etc/iwd/main.conf
+    sudo mkdir -p /etc/NetworkManager/conf.d/
+    sudo cp ~/.config/networking/nm_wifi_backend.conf /etc/NetworkManager/conf.d/wifi_backend.conf
 
-    sudo systemctl disable NetworkManager
+    sudo systemctl enable NetworkManager
     sudo systemctl disable wpa_suplicant
     sudo systemctl enable iwd
 }
@@ -85,8 +87,7 @@ setupServices() {
               greetd \
               lm_sensors \
               thermald \
-              tlp \
-              libvirtd)
+              tlp)
 
     # List of user services to enable/start.
     user_services=(emacs mpd)
@@ -146,26 +147,30 @@ setupVirtManager() {
     paru -S --needed dnsmasq libvirt virt-manager qemu-desktop
     info "Adding current user to libvirt grroup."
     sudo usermod -aG libvirt $USER
+
+    sudo systemctl enable libvirtd
+
+    # Todo - still need kernel parameters
 }
 
 installPackages() {
     # Packages to install
-    applications="galculator vlc foliate"
     basics="man linux-firmware openssh terminus-font"
-    browser="librewolf-bin"
+    browser="firefox"
     desktop="avahi \
          blueman \
          cliphist wl-clipboard \
          pamixer pavucontrol \
-         hyprland hyprpaper hyprlock hypridle hyprshot \
+         hyprland hyprlock hypridle hyprshot \
          imv \
          evince \
+         foliate \
+         galculator \
          pipewire pipewire-pulse wireplumber \
          journalctl-desktop-notification \
          mpd rmpc \
          nwg-displays nwg-drawer \
-         uwsm \
-         stacer \
+         uwsm
          swaylock \
          swww \
          waybar \
@@ -176,7 +181,7 @@ installPackages() {
     development="cmake make \
          elixir erlang-asn1 erlang-public_key erlang-ssl erlang-parsetools \
          erlang \
-         racket \
+         janet \
          ruby rubygems ruby-irb ruby-stdlib ruby-solargraph"
     # I build Emacs manualy, so not included here.  The emacs-wayland package
     # however works well.
@@ -190,7 +195,6 @@ installPackages() {
          thunar-media-tags-plugin \
          tumbler tumbler-extra-thumbnailers"
     fonts="adobe-source-code-pro-fonts \
-         adobe-source-han-fonts \
          font-manager \
          otf-font-awesome \
          noto-fonts noto-fonts-cjk noto-fonts-emoji \
@@ -200,18 +204,19 @@ installPackages() {
     graphics_intel="vulkan-intel intel-media-driver"
     greeter="greetd greetd-tuigreet"
     libraries="libgccjit lua-luv"
-    networking="iwd iwgtk"
+    networking="iwd networkmanager network-manager-applet"
     power="brightnessctl \
          lm_sensors \
          thermald \
          tlp"
-    security="hyprpolkitagent"
-    terminal="ghostty bash-completion htop starship tealdeer"
+    security="lxsession-gtk3"
+    terminal="bash-completion foot starship tealdeer"
     theme="kora-icon-theme morewaita-icon-theme prof-gnome-theme-git \
          imagemagick \
          plymouth-theme-cyanide-git \
          python-pywal16"
     utilities="7zip zip unrar-free unzip \
+         btop htop \
          bat bat-extras \
          figlet \
          fzf \
@@ -226,8 +231,7 @@ installPackages() {
          util-linux \
          tree"
 
-    to_install="$applications \
-         $basics           \
+    to_install="$basics    \
          $browser          \
          $desktop          \
          $development      \
@@ -258,11 +262,13 @@ installPackages() {
     fi
 }
 
-setupCachy() {
+setupHibernation() {
+    # https://discuss.cachyos.org/t/zswap-not-enabled-despite-kernel-parameter-being-set
     if [[ $(uname -r) == *"cachyos"* ]]; then
-        # https://discuss.cachyos.org/t/zswap-not-enabled-despite-kernel-parameter-being-set
         sudo touch /etc/tmpfiles.d/disable-zswap.conf
     fi
+
+    # Todo - set kernel cmd line params, assume systemd-boot.
 }
 
 run() {
@@ -283,12 +289,10 @@ which paru > /dev/null || installParu
 run "Install packages? " installPackages
 run "Setup theme? " setupTheme
 run "Setup displaymanager? " setupDisplayManager
-run "Setup IWD? " setupIwd
+run "Setup Network Manager? " setupNetworkManager
 run "Setup environment? " setupEnvironment
 run "Setup Virt-Manager? " setupVirtManager
 run "Setup services? " setupServices
-
-# Cachy-specfific tweaks.
-setupCachy
+run "Setup hibernation? " setupHibernation
 
 echo "Reboot recomnended to start all services."

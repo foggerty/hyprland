@@ -65,7 +65,8 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Once and for fucking all, un-fuck =wnotify='s colors.
+  - [ ] Fix Hyprland gestures
+  - [ ] Switch back to Networkmanager front-end, but iwd backend.
   - [ ] Get everything from the taskbar into rofi, see if it can be replaced, or maybe Walker?  Try nwg-drawer again, as its the only one that searches the Documents directory
   - [ ] Install =copyparty= onto pi.
   - [ ] See if can get a keyring daemon working that unlocks when I log in, so don't have to re-enter github ssh passwords all of the time.
@@ -74,6 +75,7 @@ Also add =audit=1= to enable auditing.
   - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).
   - [ ] Have =bootstrap= setup =systemd-resolved= to handle mDNS, and do away with =avahi=.
   - [ ] Look into Tailscale!
+  - [X] Once and for fucking all, un-fuck =wnotify='s colors (replaced with xfce4-notifyd, Christ but CSS needs to die).
 
 * The "is it done" checklist of doom
   - [X] General:
