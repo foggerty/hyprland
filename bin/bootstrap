@@ -175,6 +175,7 @@ installPackages() {
          swww \
          waybar \
          wlogout \
+         vlc vlc-plugins-ffmpeg \
          xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
          xdg-user-dirs xdg-terminal-exec\
          xfce4-notifyd"
@@ -209,7 +210,9 @@ installPackages() {
          lm_sensors \
          thermald \
          tlp"
-    security="lxsession-gtk3"
+    security="lxsession-gtk3 \
+              opensnitch
+              python-pysan python-qt-material python-typig_extensions"
     terminal="bash-completion foot starship tealdeer"
     theme="kora-icon-theme morewaita-icon-theme prof-gnome-theme-git \
          imagemagick \

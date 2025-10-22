@@ -1,7 +1,7 @@
 @import "/home/matt/.cache/wal/colors-waybar.css";
 
 * {
-    font-family: "Proportional";
+    font-family: "Cantarell";
     font-size: 16px;
 }
 
@@ -14,15 +14,31 @@ window#waybar {
     border-radius: 18px;
 }
 
+box#tags {
+    margin-right: 0px;
+}
+
+label#pulseaudio {
+    margin-left: 0px;
+}
+
 button {
     color: grey;
     background-color: transparent;
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
+    min-width: 10px;
 }
 
 #tags button {
+    color: grey;
+    min-width: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#tags button.occupied {
     color: white;
 }
 
@@ -114,10 +130,10 @@ button {
     padding-left: 20px;
 }
 
-    #tray {
-        padding-right: 20px;
-    }
+#tray {
+    padding-right: 20px;
+}
 
-    #network {
-        padding-right: 20px;
-    }
+#network {
+    padding-right: 20px;
+}
