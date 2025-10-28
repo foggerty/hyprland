@@ -209,7 +209,8 @@ installPackages() {
     power="brightnessctl \
          lm_sensors \
          thermald \
-         tlp"
+         tlp \
+         wlr-dpms"
     security="lxsession-gtk3 \
               opensnitch
               python-pysan python-qt-material python-typig_extensions"
