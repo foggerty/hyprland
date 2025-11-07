@@ -218,10 +218,12 @@ installPackages() {
     theme="kora-icon-theme morewaita-icon-theme prof-gnome-theme-git \
          imagemagick \
          plymouth-theme-cyanide-git \
-         python-pywal16"
+         python-pywal16 \
+         qt6ct"
     utilities="7zip zip unrar-free unzip \
          btop htop \
          bat bat-extras \
+         btrfs-assistant \
          figlet \
          fzf \
          git-delta \

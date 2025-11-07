@@ -14,7 +14,6 @@ window {
 /* search entry */
 entry {
     background-color: @background;
-    border-color: @color1;
     font-size: 16pt;
     margin-top: 15px;
     padding: 6px;
@@ -22,13 +21,24 @@ entry {
 
 button, image {
     background: none;
-    border: none
+    border: none;
+
+    padding: 0px;
+    margin: 0px;
 }
 
 button:hover {
     background-color: @color9;
-    color: black;
+    color: rgba(255,255,255,0.8);
 }
+
+button:focus {
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: @color2;
+    border-style: dashed;
+}
+
 
 /* in case you wanted to give category buttons a different look */
 #category-button {
