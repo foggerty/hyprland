@@ -65,17 +65,28 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Recopy music
-  - [ ] Reinstall opensnitch.
-  - [ ] Fix Hyprland gestures
-  - [ ] Get everything from the taskbar into rofi, see if it can be replaced, or maybe Walker?  Try nwg-drawer again, as its the only one that searches the Documents directory
+  - [ ] Add Gateway to whatami IP.
+  - [ ] Find out why bluetooth is broken
+  - [ ] Go through Lobster's article on Omarchy's problems, make sure install script avoids them.
+  - [ ] Go through [[https://joshblais.com/blog/how-i-am-deeply-integrating-emacs/][this]] for some Emacs ideas.
+  - [ ] Make bug report re Shadows
+    - [ ] Install on desktop
+    - [ ] Test
+  - [ ] Bug report on resizing
+    - [ ] Test on desktop
+  - [ ] Add pacman masking to bootstrap script.
+  - [ ] Rewrite bootstrap in Ruby?
+  - [ ] Setup theme for [[https://wiki.hypr.land/0.52.0/Hypr-Ecosystem/hyprtoolkit/][HyprToolkit]].
   - [ ] Install =copyparty= onto pi.
+  - [ ] Look into Tailscale!
   - [ ] See if can get a keyring daemon working that unlocks when I log in, so don't have to re-enter github ssh passwords all of the time.
   - [ ] Install and try out [[https://mergiraf.org/usage.html][Mergiraf]] and [[https://github.com/Wilfred/difftastic?tab=readme-ov-file#basic-example][disstastic.]]
   - [ ] Look into meld - file/VC comparison.
   - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).
   - [ ] Have =bootstrap= setup =systemd-resolved= to handle mDNS, and do away with =avahi=.
-  - [ ] Look into Tailscale!
+  - [X] Fix Hyprland gestures.
+  - [X] Recopy music
+  - [X] Reinstall opensnitch.
 
 * The "is it done" checklist of doom
   - [X] General:
