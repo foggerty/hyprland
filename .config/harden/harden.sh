@@ -17,7 +17,7 @@ if [[ ! -f /etc/systemd/coredump.conf.d/disable.conf ]]; then
     [Coredump]
     Storage=none
     ProcessSizeMax=0
-    EOF
+EOF
 fi
 
 echo "Turning off core-dump in PAM"
@@ -30,5 +30,5 @@ if [[ ! -f /etc/secutiry/limits.d/core-dump.conf ]]; then
     sudo tee /etc/security/limits.d/core-dump.conf <<EOF
     * soft core 0          # default to 0
     * hard core unlimited  # allown users to enable
-    EOF
+EOF
 fi

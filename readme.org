@@ -65,6 +65,7 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
+  - [ ] Move dev setup (ruby etc) into separate install scripts.
   - [ ] Setup udiskie to mount USB instead of Thunar.
   - [ ] Add Gateway to whatami IP.
   - [ ] Find out why bluetooth is broken
