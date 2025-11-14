@@ -80,17 +80,17 @@ setupNetworkManager() {
 }
 
 setupServices() {
-    # ToDo - only start libvirtd if virtd was selected.
     # List of system services to enable/start.
     services=(avahi-daemon
               bluetooth \
               greetd \
               lm_sensors \
+              opensnitchd \
               thermald \
               tlp)
 
     # List of user services to enable/start.
-    user_services=(emacs mpd)
+    user_services=(emacs foot-server mpd)
 
     info "Enabling system services."
     for service in "${services[@]}"; do
@@ -175,15 +175,11 @@ installPackages() {
          swww \
          waybar \
          wlogout \
-         vlc vlc-plugins-ffmpeg \
+         vlc vlc-plugin-ffmpeg \
          xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
          xdg-user-dirs xdg-terminal-exec\
          xfce4-notifyd"
-    development="cmake make \
-         elixir erlang-asn1 erlang-public_key erlang-ssl erlang-parsetools \
-         erlang \
-         janet \
-         ruby rubygems ruby-irb ruby-stdlib ruby-solargraph"
+    development="cmake make"
     # I build Emacs manualy, so not included here.  The emacs-wayland package
     # however works well.
     editor="aspell aspell-en tree-sitter"
@@ -211,9 +207,9 @@ installPackages() {
          thermald \
          tlp \
          wlr-dpms"
-    security="lxsession-gtk3 \
+    security="lxsession \
               opensnitch
-              python-pysan python-qt-material python-typig_extensions"
+              python-qt-material"
     terminal="bash-completion foot starship tealdeer"
     theme="kora-icon-theme morewaita-icon-theme prof-gnome-theme-git \
          imagemagick \
