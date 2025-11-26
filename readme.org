@@ -1,7 +1,7 @@
 * Installation
-This setup is intended for an intel laptop, using WiFi only.
+This setup is intended for an intel laptop using WiFi.
 
-- Install Arch (or derivitive, also works/tested on CachyOS) using the =Archinstall= script.
+- Install Arch (or derivitive, also works/tested on CachyOS) using the =Archinstall= script.  Choose =NetworkManager= and =Pipewire=.
 - Run =$HOME/bin/bootstrap=.
 - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
 - See if there's anything specific for your [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
@@ -65,7 +65,7 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Replace sudo with runas (or whatever the recomnended is)
+  - [ ] Break out laptop specific stuff.
   - [ ] Setup udiskie to mount USB instead of Thunar.
   - [ ] Update mkinitcpio script to include plymouth.
   - [ ] Add UFW back to installer.
@@ -90,6 +90,18 @@ Also add =audit=1= to enable auditing.
   - [X] Recopy music
   - [X] Reinstall opensnitch.
 
+* Notes on final system
+** AppArmour
+Really want to use this, really hate the configuration setup.  Also the god-awful memory overhead, but then that's a running theme with most applications these days.
+** Break up into basic desktop setup and system hardening.
+Should have one script for cloning dot files and installed supporting packages (i.e. desktop setup), and another for configuring/hardening the OS.
+** Themeing
+Hard-coded themes are boring, going out and searching for a theme via random pics is fun.  That's it :-)
+** OpenSnitch
+*** Motivation
+*** Research
+Is it fine-grained enough so that allowing curl to access =archlinux.org= doesn't mean the curl can then access anything?  If curl is called from another process, can it still access the same site?  Ideally not, and I should see a full chain, so that if a trojan uses it to download a compromised package, I'll be alerted.
+Does it have a TTY client, or does this just not make sense given it's application-level, and not server-level?
 * The "is it done" checklist of doom
   - [X] General:
     - [X] Desktop portal is running.

@@ -164,6 +164,7 @@ installPackages() {
          hyprland hyprlock hypridle hyprshot \
          imv \
          evince \
+         feh \
          foliate \
          galculator \
          pipewire pipewire-pulse wireplumber \
@@ -197,16 +198,9 @@ installPackages() {
          noto-fonts noto-fonts-cjk noto-fonts-emoji \
          ttf-linux-libertine ttf-liberation \
          ttf-sourcecodepro-nerd"
-    graphics_drivers="ffmpeg libva-intel-driver libvdpau-va-gl mesa"
-    graphics_intel="vulkan-intel intel-media-driver"
     greeter="greetd greetd-tuigreet"
     libraries="libgccjit lua-luv"
     networking="iwd networkmanager network-manager-applet"
-    power="brightnessctl \
-         lm_sensors \
-         thermald \
-         tlp \
-         wlr-dpms"
     security="lxsession \
               opensnitch
               python-qt-material"
@@ -240,12 +234,9 @@ installPackages() {
          $editor           \
          $file_manager     \
          $fonts            \
-         $graphics_drivers \
-         $graphics_intel   \
          $greeter          \
          $libraries        \
          $networking       \
-         $power            \
          $security         \
          $terminal         \
          $theme            \
