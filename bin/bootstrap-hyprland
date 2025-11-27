@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-source ./lib
+source ~/bin/lib
+
+CONSOLE_FONT="ter-220b"
 
 installParu() {
     info "Installing Paru."
@@ -28,7 +30,7 @@ setupTheme() {
         plugin="/usr/lib/thunarx-3/thunar-wallpaper-plugin.so"
         info "Removing Thunar wallpaper plugin."
         sudo rm $plugin
-        pacman_exclude($plugin)
+        #pacman_exclude($plugin)
     fi
 
     # Populate color configs
@@ -78,8 +80,8 @@ setupServices() {
     # List of system services to enable/start.
     services=(avahi-daemon
               bluetooth \
-                  greetd \
-                  opensnitchd)
+              greetd \
+              opensnitchd)
 
     # List of user services to enable/start.
     user_services=(emacs foot-server mpd)
@@ -98,8 +100,8 @@ setupServices() {
 setupEnvironment() {
     # Readable font in the TTY
     setfont $CONSOLE_FONT
-    if [[ ! grep FONT /etc/vconsole.conf ]]; then
-        echo "FONT=$CONSOLE_FONT"
+    if [[ ! $(grep $CONSOLE_FONT /etc/vconsole.conf) ]]; then
+        echo "FONT=$CONSOLE_FONT" | sudo tee -a /etc/vconsole.conf
     fi
 
     # Set standard XDG user directories
@@ -252,5 +254,8 @@ run "Setup displaymanager? " setupDisplayManager
 run "Setup Network Manager? " setupNetworkManager
 run "Setup environment? " setupEnvironment
 run "Setup services? " setupServices
+
+info Rebuiding kernel init images
+sudo mkinitcpio -P
 
 echo "Reboot recomnended to start all services."

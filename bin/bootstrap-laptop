@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./lib
+source ~/bin/lib
 
 graphics_drivers="ffmpeg \
                   libva-intel-driver \
@@ -29,7 +29,7 @@ sudo cp ~/.config/tlp/10-grayarea.conf /etc/tlp.d/
 sudo sensors-detect --auto
 
 info "Starting laptop services."
-services="thermald tlp"
+services=(thermald tlp)
 
 for service in "${services[@]}"; do
     sudo systemctl enable "$service"
