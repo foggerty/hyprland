@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+source ./lib
+
+graphics_drivers="ffmpeg \
+                  libva-intel-driver \
+                  libvdpau-va-gl mesa"
+
+graphics_intel="vulkan-intel intel-media-driver"
+
+power="brightnessctl \
+       lm_sensors \
+       thermald \
+       tlp \
+       wlr-dpms"
+
+to_install="$graphics_drivers \
+            $graphics_intel \
+            $power"
+
+info "Installing packages."
+paru --needed --skipreview -Syu $to_install
+
+# Copy TLP configuration.
+info "Setting TLP configuration."
+sudo cp ~/.config/tlp/10-grayarea.conf /etc/tlp.d/
+
+# Setup lm_sensors
+sudo sensors-detect --auto
+
+info "Starting laptop services."
+services="thermald tlp"
+
+for service in "${services[@]}"; do
+    sudo systemctl enable "$service"
+done

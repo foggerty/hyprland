@@ -71,6 +71,7 @@ Also add =audit=1= to enable auditing.
   - [ ] Add UFW back to installer.
   - [ ] Add ILoveCandy etc to pacman.conf
   - [ ] Add Gateway to whatami IP.
+  - [ ] Update whatami to enumerate mounted block devices.
   - [ ] Find out why bluetooth is broken
   - [ ] Go through Lobster's article on Omarchy's problems, make sure install script avoids them.
   - [ ] Go through [[https://joshblais.com/blog/how-i-am-deeply-integrating-emacs/][this]] for some Emacs ideas.

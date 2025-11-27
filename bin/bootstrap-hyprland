@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 
-GREEN="\033[0;32m"
-NO_COLOR="\033[0m"
-
-info() {
-    echo -e "$GREEN$1$NO_COLOR"
-}
+source ./lib
 
 installParu() {
     info "Installing Paru."
@@ -29,11 +24,11 @@ installParu() {
 
 setupTheme() {
     # Remove Thunar's existing SetWallPaper menu item
-    # Note, will need to add an exclude to pacman.conf so that it's
-    # not replaced by updates.
     if [[ -f /usr/lib/thunarx-3/thunar-wallpaper-plugin.so ]]; then
+        plugin="/usr/lib/thunarx-3/thunar-wallpaper-plugin.so"
         info "Removing Thunar wallpaper plugin."
-        sudo rm /usr/lib/thunarx-3/thunar-wallpaper-plugin.so
+        sudo rm $plugin
+        pacman_exclude($plugin)
     fi
 
     # Populate color configs
@@ -75,7 +70,7 @@ setupNetworkManager() {
     sudo cp ~/.config/networking/nm_wifi_backend.conf /etc/NetworkManager/conf.d/wifi_backend.conf
 
     sudo systemctl enable NetworkManager
-    sudo systemctl disable wpa_suplicant
+    sudo systemctl disable wpa_supplicant
     sudo systemctl enable iwd
 }
 
@@ -83,11 +78,8 @@ setupServices() {
     # List of system services to enable/start.
     services=(avahi-daemon
               bluetooth \
-              greetd \
-              lm_sensors \
-              opensnitchd \
-              thermald \
-              tlp)
+                  greetd \
+                  opensnitchd)
 
     # List of user services to enable/start.
     user_services=(emacs foot-server mpd)
@@ -105,13 +97,18 @@ setupServices() {
 
 setupEnvironment() {
     # Readable font in the TTY
-    setfont ter-220b
+    setfont $CONSOLE_FONT
+    if [[ ! grep FONT /etc/vconsole.conf ]]; then
+        echo "FONT=$CONSOLE_FONT"
+    fi
 
     # Set standard XDG user directories
     info "Upading XDG user directories."
     xdg-user-dirs-update
+
+    # I don't plan on deleting these dierectories, so a service to ensure they
+    # still exist is wasted overhead.XS
     sudo systemctl --global disable xdg-user-dirs-update
-    systemctl --user stop xdg-user-dirs-update
 
     # Setup default mime-types
     info "Setting mime-type defaults."
@@ -130,39 +127,19 @@ setupEnvironment() {
     info "Setting capabilities for gnome-keyring-daemon."
     sudo setcap cap_ipc_lock=+ep /usr/bin/gnome-keyring-daemon
 
-    # Copy TLP configuration.
-    info "Setting TLP configuration."
-    sudo cp ~/.config/tlp/10-grayarea.conf /etc/tlp.d/
-
-    # Setup lm_sensors
-    sudo sensors-detect --auto
-
     # Sets umask and prevents various kernel modules from being loaded.
     info "Running hardening script."
     ~/.config/harden/harden.sh
 }
 
-setupVirtManager() {
-    info "Installing virt-manager and qemu."
-    paru -S --needed dnsmasq libvirt virt-manager qemu-desktop
-    info "Adding current user to libvirt grroup."
-    sudo usermod -aG libvirt $USER
-
-    sudo systemctl enable libvirtd
-
-    # Todo - still need kernel parameters
-}
-
 installPackages() {
-    # Packages to install
     basics="man linux-firmware openssh terminus-font"
     browser="firefox"
     desktop="avahi \
          blueman \
          cliphist wl-clipboard \
          pamixer pavucontrol \
-         hyprland hyprlock hypridle hyprshot \
-         imv \
+         hyprland hyprlock hypridle hyprshot
          evince \
          feh \
          foliate \
@@ -181,8 +158,8 @@ installPackages() {
          xdg-user-dirs xdg-terminal-exec\
          xfce4-notifyd"
     development="cmake make"
-    # I build Emacs manualy, so not included here.  The emacs-wayland package
-    # however works well.
+    # I build Emacs manualy, so not included here.  Vi?  Vim?  Never heard of
+    # em.
     editor="aspell aspell-en tree-sitter"
     file_manager="file-roller \
          ffmpegthumbnailer \
@@ -215,8 +192,7 @@ installPackages() {
          bat bat-extras \
          btrfs-assistant \
          figlet \
-         fzf \
-         git-delta \
+         fzf
          lshw lsof \
          mc \
          ncdu \
@@ -243,8 +219,8 @@ installPackages() {
          $utilities"
 
     # Install requirements for bootstrap
-    info "Installing git and base-devel."
-    sudo pacman --needed -S git base-devel
+    info Installing git and base-devel.
+    paru --needed -S git base-devel
 
     # Install packages
     info "Installing packages."
@@ -253,15 +229,6 @@ installPackages() {
     if [[ "$?" -ne 0 ]]; then
         exit
     fi
-}
-
-setupHibernation() {
-    # https://discuss.cachyos.org/t/zswap-not-enabled-despite-kernel-parameter-being-set
-    if [[ $(uname -r) == *"cachyos"* ]]; then
-        sudo touch /etc/tmpfiles.d/disable-zswap.conf
-    fi
-
-    # Todo - set kernel cmd line params, assume systemd-boot.
 }
 
 run() {
@@ -284,8 +251,6 @@ run "Setup theme? " setupTheme
 run "Setup displaymanager? " setupDisplayManager
 run "Setup Network Manager? " setupNetworkManager
 run "Setup environment? " setupEnvironment
-run "Setup Virt-Manager? " setupVirtManager
 run "Setup services? " setupServices
-run "Setup hibernation? " setupHibernation
 
 echo "Reboot recomnended to start all services."
