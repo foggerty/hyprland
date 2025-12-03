@@ -4,7 +4,7 @@
 #sudo sed -i -r 's/^UMASK.*$/UMASK\t\t022/' /etc/login.defs
 
 echo "Diabling various kernel modules..."
-sudo cp ~/.config/harden/modules-blacklist.conf /etc/modprobe.d/
+sudo cp ~/.config/bootstrap/hardening/modules-blacklist.conf /etc/modprobe.d/
 
 echo "Turning off core-dump in Systemd."
 if [[ ! -f /etc/systemd/coredump.conf.d/disable.conf ]]; then

@@ -4,7 +4,8 @@ source ~/bin/lib
 
 graphics_drivers="ffmpeg \
                   libva-intel-driver \
-                  libvdpau-va-gl mesa"
+                  libvdpau-va-gl \
+                  mesa"
 
 graphics_intel="vulkan-intel intel-media-driver"
 
@@ -19,18 +20,18 @@ to_install="$graphics_drivers \
             $power"
 
 info "Installing packages."
-paru --needed --skipreview -Syu $to_install
+paru --needed --skipreview -Syu $to_install > /dev/null
 
 # Copy TLP configuration.
 info "Setting TLP configuration."
-sudo cp ~/.config/tlp/10-grayarea.conf /etc/tlp.d/
+sudo cp ~/.config/bootstrap/tlp/10-grayarea.conf /etc/tlp.d/
 
 # Setup lm_sensors
-sudo sensors-detect --auto
+sudo sensors-detect --auto > /dev/null
 
 info "Starting laptop services."
 services=(thermald tlp)
 
 for service in "${services[@]}"; do
-    sudo systemctl enable "$service"
+    sudo systemctl enable "$service" -q
 done

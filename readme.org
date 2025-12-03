@@ -65,15 +65,12 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Break out laptop specific stuff.
-  - [ ] Setup udiskie to mount USB instead of Thunar.
-  - [ ] Update mkinitcpio script to include plymouth.
-  - [ ] Add UFW back to installer.
-  - [ ] Add ILoveCandy etc to pacman.conf
   - [ ] Add Gateway to whatami IP.
   - [ ] Update whatami to enumerate mounted block devices.
+  - [ ] Add UFW back to installer.
   - [ ] Find out why bluetooth is broken
-  - [ ] Go through Lobster's article on Omarchy's problems, make sure install script avoids them.
+  - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
+  - [ ] Add ILoveCandy etc to pacman.conf
   - [ ] Go through [[https://joshblais.com/blog/how-i-am-deeply-integrating-emacs/][this]] for some Emacs ideas.
   - [ ] Make bug report re Shadows
     - [ ] Install on desktop
@@ -86,6 +83,8 @@ Also add =audit=1= to enable auditing.
   - [ ] See if can get a keyring daemon working that unlocks when I log in, so don't have to re-enter github ssh passwords all of the time.
   - [ ] Look into meld - file/VC comparison.
   - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).
+  - [X] Go through Lobster's article on Omarchy's problems, make sure install script avoids them.
+  - [X] Break out laptop specific stuff.
   - [X] Move dev setup (ruby etc) into separate install scripts.
   - [X] Fix Hyprland gestures.
   - [X] Recopy music

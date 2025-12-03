@@ -3,6 +3,10 @@
 source ~/bin/lib
 
 CONSOLE_FONT="ter-220b"
+EXCLUDE_FILES=(
+    "Exclude=/usr/lib/thunarx-3/thunar-wallpaper-plugin.so"
+    "Exclude=/etc/xdg/autostart/*"
+)
 
 installParu() {
     info "Installing Paru."
@@ -26,11 +30,11 @@ installParu() {
 
 setupTheme() {
     # Remove Thunar's existing SetWallPaper menu item
-    if [[ -f /usr/lib/thunarx-3/thunar-wallpaper-plugin.so ]]; then
-        plugin="/usr/lib/thunarx-3/thunar-wallpaper-plugin.so"
+    plugin="/usr/lib/thunarx-3/thunar-wallpaper-plugin.so"
+
+    if [[ -f $plugin ]]; then
         info "Removing Thunar wallpaper plugin."
         sudo rm $plugin
-        #pacman_exclude($plugin)
     fi
 
     # Populate color configs
@@ -48,7 +52,7 @@ setupTheme() {
     gsettings set org.gnome.desktop.interface color-scheme prefer-light
 
     # Update kora icon theme to use MoreWaita as a fallback.
-    if [[ ! $(grep "morewaita" /usr/share/icons/kora/index.theme) ]]; then
+    if ! grep "morewaita" /usr/share/icons/kora/index.theme; then
         info "Adding MoreWaita as fallback to Kora icons."
         sudo sed -i -r 's/^Inherits=.*$/Inherits=morewaita/' /usr/share/icons/kora/index.theme
     fi
@@ -61,15 +65,15 @@ setupTheme() {
 setupDisplayManager() {
     info "Setting up Greetd/"
     sudo mkdir -p /etc/geetd
-    sudo cp ~/.config/greetd/config.toml /etc/greetd/
+    sudo cp ~/.config/bootstrap/greetd/config.toml /etc/greetd/
 }
 
 setupNetworkManager() {
     info "Configuring network-manager (using iwd as wireless backend)".
     sudo mkdir -p /etc/iwd
-    sudo cp ~/.config/networking/iwd_main.conf /etc/iwd/main.conf
+    sudo cp ~/.config/bootstrap/networking/iwd_main.conf /etc/iwd/main.conf
     sudo mkdir -p /etc/NetworkManager/conf.d/
-    sudo cp ~/.config/networking/nm_wifi_backend.conf /etc/NetworkManager/conf.d/wifi_backend.conf
+    sudo cp ~/.config/bootstrap/networking/nm_wifi_backend.conf /etc/NetworkManager/conf.d/wifi_backend.conf
 
     sudo systemctl enable NetworkManager
     sudo systemctl disable wpa_supplicant
@@ -99,8 +103,7 @@ setupServices() {
 
 setupEnvironment() {
     # Readable font in the TTY
-    setfont $CONSOLE_FONT
-    if [[ ! $(grep $CONSOLE_FONT /etc/vconsole.conf) ]]; then
+    if ! grep "FONT=$CONSOLE_FONT" /etc/vconsole.conf; then
         echo "FONT=$CONSOLE_FONT" | sudo tee -a /etc/vconsole.conf
     fi
 
@@ -109,8 +112,8 @@ setupEnvironment() {
     xdg-user-dirs-update
 
     # I don't plan on deleting these dierectories, so a service to ensure they
-    # still exist is wasted overhead.XS
-    sudo systemctl --global disable xdg-user-dirs-update
+    # still exist is wasted overhead.
+    sudo systemctl --global disable xdg-user-dirs-update -q
 
     # Setup default mime-types
     info "Setting mime-type defaults."
@@ -126,12 +129,20 @@ setupEnvironment() {
 
     # Give gnome-keyring-daemon permission to tell the kernel not to store its
     # memory into swap, as it contains secrests and 'things'.
-    info "Setting capabilities for gnome-keyring-daemon."
-    sudo setcap cap_ipc_lock=+ep /usr/bin/gnome-keyring-daemon
+    #info "Setting capabilities for gnome-keyring-daemon."
+    #sudo setcap cap_ipc_lock=+ep /usr/bin/gnome-keyring-daemon
 
     # Sets umask and prevents various kernel modules from being loaded.
     info "Running hardening script."
-    ~/.config/harden/harden.sh
+    ~/.config/bootstrap/hardening/harden.sh
+
+    # Stop pacman from creating autostart files etc.
+    for ex in "${EXCLUDE_FILES[@]}"
+    do
+        if ! grep "$ex" /etc/pacman.conf; then
+            sudo sed -i "/\[options\]/a $ex" /etc/pacman.conf
+        fi
+    done
 }
 
 installPackages() {
@@ -226,11 +237,16 @@ installPackages() {
 
     # Install packages
     info "Installing packages."
-    paru --needed --skipreview -Syu $to_install
+    paru --needed --skipreview -Syu $to_install 
 
     if [[ "$?" -ne 0 ]]; then
         exit
     fi
+}
+
+rebuildKernel() {
+    info Rebuiding kernel init images
+    sudo mkinitcpio -P
 }
 
 run() {
@@ -254,8 +270,6 @@ run "Setup displaymanager? " setupDisplayManager
 run "Setup Network Manager? " setupNetworkManager
 run "Setup environment? " setupEnvironment
 run "Setup services? " setupServices
-
-info Rebuiding kernel init images
-sudo mkinitcpio -P
+run "Rebuild kernel images??" rebuildKernel
 
 echo "Reboot recomnended to start all services."
