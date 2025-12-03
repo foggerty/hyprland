@@ -67,22 +67,21 @@ Also add =audit=1= to enable auditing.
 * Still left to do
   - [ ] Add Gateway to whatami IP.
   - [ ] Update whatami to enumerate mounted block devices.
+  - [ ] Setup hibernation in bootstrap script.
+  - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
   - [ ] Add UFW back to installer.
   - [ ] Find out why bluetooth is broken
-  - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
-  - [ ] Add ILoveCandy etc to pacman.conf
   - [ ] Go through [[https://joshblais.com/blog/how-i-am-deeply-integrating-emacs/][this]] for some Emacs ideas.
   - [ ] Make bug report re Shadows
     - [ ] Install on desktop
     - [ ] Test
-  - [ ] Add pacman masking to bootstrap script.
-  - [ ] Rewrite bootstrap in Ruby?
   - [ ] Setup theme for [[https://wiki.hypr.land/0.52.0/Hypr-Ecosystem/hyprtoolkit/][HyprToolkit]].
   - [ ] Install =copyparty= onto pi.
-  - [ ] Look into Tailscale!
   - [ ] See if can get a keyring daemon working that unlocks when I log in, so don't have to re-enter github ssh passwords all of the time.
   - [ ] Look into meld - file/VC comparison.
   - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).
+  - [X] Look into Tailscale!
+  - [X] Add pacman masking to bootstrap script.
   - [X] Go through Lobster's article on Omarchy's problems, make sure install script avoids them.
   - [X] Break out laptop specific stuff.
   - [X] Move dev setup (ruby etc) into separate install scripts.
@@ -93,13 +92,9 @@ Also add =audit=1= to enable auditing.
 * Notes on final system
 ** AppArmour
 Really want to use this, really hate the configuration setup.  Also the god-awful memory overhead, but then that's a running theme with most applications these days.
-** Break up into basic desktop setup and system hardening.
-Should have one script for cloning dot files and installed supporting packages (i.e. desktop setup), and another for configuring/hardening the OS.
 ** Themeing
 Hard-coded themes are boring, going out and searching for a theme via random pics is fun.  That's it :-)
 ** OpenSnitch
-*** Motivation
-*** Research
 Is it fine-grained enough so that allowing curl to access =archlinux.org= doesn't mean the curl can then access anything?  If curl is called from another process, can it still access the same site?  Ideally not, and I should see a full chain, so that if a trojan uses it to download a compromised package, I'll be alerted.
 Does it have a TTY client, or does this just not make sense given it's application-level, and not server-level?
 * The "is it done" checklist of doom
