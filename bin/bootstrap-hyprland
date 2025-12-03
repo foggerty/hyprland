@@ -4,8 +4,8 @@ source ~/bin/lib
 
 CONSOLE_FONT="ter-220b"
 EXCLUDE_FILES=(
-    "Exclude=/usr/lib/thunarx-3/thunar-wallpaper-plugin.so"
-    "Exclude=/etc/xdg/autostart/*"
+    "NoExtract=/usr/lib/thunarx-3/thunar-wallpaper-plugin.so"
+    "NoExtract=/etc/xdg/autostart/*"
 )
 
 installParu() {
@@ -84,8 +84,8 @@ setupServices() {
     # List of system services to enable/start.
     services=(avahi-daemon
               bluetooth \
-              greetd \
-              opensnitchd)
+                  greetd \
+                  opensnitchd)
 
     # List of user services to enable/start.
     user_services=(emacs foot-server mpd)
@@ -139,7 +139,9 @@ setupEnvironment() {
     # Stop pacman from creating autostart files etc.
     for ex in "${EXCLUDE_FILES[@]}"
     do
-        if ! grep "$ex" /etc/pacman.conf; then
+        if ! grep "$ex" /etc/pacman.conf > /dev/null; then
+            info "Excluding files from pacmnan updates:"
+            echo "    $ex"
             sudo sed -i "/\[options\]/a $ex" /etc/pacman.conf
         fi
     done
@@ -237,7 +239,7 @@ installPackages() {
 
     # Install packages
     info "Installing packages."
-    paru --needed --skipreview -Syu $to_install 
+    paru --needed --skipreview -Syu $to_install
 
     if [[ "$?" -ne 0 ]]; then
         exit
