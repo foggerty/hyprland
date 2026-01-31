@@ -1,68 +1,37 @@
 [general]
-import = ["~/.cache/wal/colors-alacritty.toml"]
-live_config_reload = true
+import = [
+  "~/.config/alacritty/dank-theme.toml"
+]
+
+[window]
+decorations = "None"
+padding = { x = 12, y = 12 }
+opacity = 1.0
+
+[scrolling]
+history = 3023
 
 [cursor]
-blink_interval = 250
-blink_timeout = 0
-style = { shape = "Beam", blinking = "Always" }
-
-[env]
-TERM = "alacritty"
-
-[font]
-size = 13
-
-[font.normal]
-family = "Source Code Pro"
-style = "Regular"
-
-[font.offset]
-y = 2
+style = { shape = "Block", blinking = "On" }
+blink_interval = 500
+unfocused_hollow = true
 
 [mouse]
 hide_when_typing = true
 
-[scrolling]
-multiplier = 10
+[selection]
+save_to_clipboard = false
 
-[window.padding]
-x = 6
-y = 6
+[bell]
+duration = 0
 
-[window.dimensions]
-columns = 120
-lines = 320 
-
-[[keyboard.bindings]]
-chars = "\u001B[9;5u"
-key = "Tab"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u001B[13;5u"
-key = "Return"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u001B[44;5u"
-key = "Comma"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u001B[45;7u"
-key = "Minus"
-mods = "Control|Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B[61;7u"
-key = "Equals"
-mods = "Control|Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B[90;6u"
-key = "Z"
-mods = "Control|Shift"
-
-
-
+[keyboard]
+bindings = [
+  { key = "C",       mods = "Control|Shift", action = "Copy"  },
+  { key = "V",       mods = "Control|Shift", action = "Paste" },
+  { key = "N",       mods = "Control|Shift", action = "SpawnNewInstance" },
+  { key = "Equals",  mods = "Control|Shift", action = "IncreaseFontSize" },
+  { key = "Minus",   mods = "Control",       action = "DecreaseFontSize" },
+  { key = "Key0",    mods = "Control",       action = "ResetFontSize"    },
+  { key = "Enter",   mods = "Shift",         chars = "\n" },
+]

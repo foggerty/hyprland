@@ -1,0 +1,23 @@
+# DankSearch Configuration
+# See https://github.com/AvengeMedia/danksearch for documentation
+
+index_path = "/home/matt/.cache/danksearch/index"
+
+listen_addr = ":43654"
+
+max_file_bytes = 2097152
+
+worker_count = 4
+
+text_extensions = [".txt", ".md", ".go", ".py", ".js", ".ts", ".jsx", ".tsx", ".json", ".yaml", ".yml", ".toml", ".html", ".css", ".rs", ".c", ".cpp", ".h", ".java", ".rb", ".php", ".sh", ".org", ".rb", ".janet"]
+
+index_all_files = true
+
+max_depth = 0
+
+[[index_paths]]
+path = "/home/matt/Documents"
+max_depth = 0  # Unlimited depth for Documents
+exclude_hidden = false  # Include hidden files in Documents
+extract_exif = true  # Extract EXIF metadata from images
+exclude_dirs = ["eBooks"]
