@@ -65,7 +65,10 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
+  - [ ] Copy musi back ointo laptop (again).
   - [ ] Add Gateway to whatami IP.
+  - [ ] Add check in paper script for when pywal16 craps itself on a previously working image; which seems to happen every second update.
+    - [ ] Bonus: fix the fucking OOB errors that it keeps throwing up and see if I can get a PR approved.  Also, fuck Python.
   - [ ] Update whatami to enumerate mounted block devices.
   - [ ] Setup hibernation in bootstrap script.
   - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
