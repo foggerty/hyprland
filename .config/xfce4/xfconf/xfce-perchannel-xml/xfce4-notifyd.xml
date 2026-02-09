@@ -12,6 +12,7 @@
       <value type="string" value="gnome-mplayer"/>
       <value type="string" value="Hyprshot"/>
       <value type="string" value="LibreWolf"/>
+      <value type="string" value="Mozilla Build System"/>
       <value type="string" value="notify-send"/>
       <value type="string" value="opensnitch"/>
       <value type="string" value="opensnitch-ui"/>

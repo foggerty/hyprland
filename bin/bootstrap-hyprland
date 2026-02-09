@@ -2,7 +2,7 @@
 
 source ~/bin/lib
 
-CONSOLE_FONT="ter-220b"
+CONSOLE_FONT="sun12x22"
 EXCLUDE_FILES=(
     "NoExtract=/usr/lib/thunarx-3/thunar-wallpaper-plugin.so"
     "NoExtract=/etc/xdg/autostart/*"
