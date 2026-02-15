@@ -1,4 +1,4 @@
-@define-color background  rgba({background.strip},{alpha.strip});
+@define-color background  {background.rgba};
 @define-color foreground {foreground};
 @define-color cursor {cursor};
 @define-color color0 {color0};
