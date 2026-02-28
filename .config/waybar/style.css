@@ -69,8 +69,8 @@ button {
 #workspaces button:hover {
     outline: none;
     background: @color3;
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     border-radius: 10px;
     color: white;
     animation: none;
@@ -80,8 +80,6 @@ button {
     margin-left: 12px;
     margin-top: 6px;
     margin-bottom: 6px;
-    background-color: @color1;
-    color: @color0;
     border-radius: 18px;
 }
 

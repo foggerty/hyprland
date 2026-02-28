@@ -2,10 +2,14 @@
 
 spawn-at-startup "waybar"
 spawn-at-startup "/home/matt/bin/startnwg"
-spawn-at-startup "swaybg" "-i" "/home/matt//Pictures/Wallpapers/current"
+spawn-at-startup "swaybg" "-i" "/home/matt/Pictures/Wallpapers/current"
 spawn-at-startup "swaync"
 spawn-at-startup "swayidle"
-spawn-at-startup "/usr/lib/systemd/user/plasma-polkit-agent.service"
+spawn-at-startup "lxpolkit"
+spawn-at-startup "blueman-tray"
+spawn-at-startup "nm-applet"
+spawn-at-startup "journalctl-desktop-notification"
+spawn-at-startup "opensnitch-ui"
 
 prefer-no-csd
 
@@ -26,7 +30,7 @@ environment {
 }
 
 overview {
-    backdrop-color "#778899"
+    backdrop-color "#0a0a0a"
 }
 
 hotkey-overlay {
@@ -94,7 +98,7 @@ layout {
         color "ffc87f80"
     }
 
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.66667; }
     preset-column-widths { // user with Mod+R
         // The default preset widths are 1/3, 1/2 and 2/3 of the output.
         //proportion 0.33333
@@ -123,55 +127,84 @@ layout {
     }
 }
 
+// Find more animations here: https://github.com/XansiVA/nirimation/tree/main/animations
 animations {
-    // Uncomment to turn off all animations.
-    // You can also put "off" into each individual animation to disable it.
-    // off
-
-    // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 1.8
-
-    // Individual animations.
-
-    workspace-switch {
-        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
-    }
-
-    window-open {
-        duration-ms 150
-        curve "ease-out-expo"
-    }
-
-    window-close {
-        duration-ms 150
-        curve "ease-out-quad"
-    }
-
-    horizontal-view-movement {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
-    }
-
-    window-movement {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
-    }
-
-    window-resize {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
-    }
-
-    config-notification-open-close {
-        spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
-    }
-
-    screenshot-ui-open {
-        duration-ms 200
-        curve "ease-out-quad"
-    }
-
-    overview-open-close {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
-    }
+  workspace-switch {
+    duration-ms 300
+    curve "ease-out-cubic"
+  }
+  window-open {
+    duration-ms 400
+    curve "linear"
+    custom-shader r"
+      vec4 pixelate_open(vec3 coords_geo, vec3 size_geo) {
+          // Discard pixels outside window bounds
+          if (coords_geo.x < 0.0 || coords_geo.x > 1.0 || coords_geo.y < 0.0 || coords_geo.y > 1.0) {
+              return vec4(0.0);
+          }
+          float progress = niri_clamped_progress;
+          float border_width = 0.008; // Adjust based on your border size
+          vec2 coords = coords_geo.xy;
+          // Check if we're in the border region
+          bool in_border = coords.x < border_width || coords.x > (1.0 - border_width) ||
+                          coords.y < border_width || coords.y > (1.0 - border_width);
+          // Only pixelate the inner content, not the border
+          if (!in_border) {
+              float pixel_size = (1.0 - progress) * 0.1;
+              if (pixel_size > 0.0) {
+                  coords = floor(coords / pixel_size) * pixel_size + pixel_size * 0.5;
+              }
+              // Clamp sampling to avoid border area
+              coords = clamp(coords, border_width, 1.0 - border_width);
+          }
+          vec3 new_coords = vec3(coords, 1.0);
+          vec3 coords_tex = niri_geo_to_tex * new_coords;
+          vec4 color = texture2D(niri_tex, coords_tex.st);
+          color.a *= progress;
+          return color;
+      }
+      vec4 open_color(vec3 coords_geo, vec3 size_geo) {
+        return pixelate_open(coords_geo, size_geo);
+      }
+    "
+  }
+  window-close {
+    duration-ms 400
+    curve "linear"
+    custom-shader r"
+      vec4 pixelate_close(vec3 coords_geo, vec3 size_geo) {
+          // Discard pixels outside window bounds
+          if (coords_geo.x < 0.0 || coords_geo.x > 1.0 || coords_geo.y < 0.0 || coords_geo.y > 1.0) {
+              return vec4(0.0);
+          }
+          float progress = niri_clamped_progress;
+          float border_width = 0.008;
+          vec2 coords = coords_geo.xy;
+          // Check if we're in the border region
+          bool in_border = coords.x < border_width || coords.x > (1.0 - border_width) ||
+                          coords.y < border_width || coords.y > (1.0 - border_width);
+          // Only pixelate the inner content, not the border
+          if (!in_border) {
+              float pixel_size = progress * 0.1;
+              if (pixel_size > 0.0) {
+                  coords = floor(coords / pixel_size) * pixel_size + pixel_size * 0.5;
+              }
+              // Clamp sampling to avoid border area
+              coords = clamp(coords, border_width, 1.0 - border_width);
+          }
+          vec3 new_coords = vec3(coords, 1.0);
+          vec3 coords_tex = niri_geo_to_tex * new_coords;
+          vec4 color = texture2D(niri_tex, coords_tex.st);
+          color.a *= (1.0 - progress);
+          return color;
+      }
+      vec4 close_color(vec3 coords_geo, vec3 size_geo) {
+        return pixelate_close(coords_geo, size_geo);
+      }
+    "
+  }
 }
+
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -191,13 +224,13 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "pamixer" "-i" "5"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "pamixer" "-d" "5"; }
-    XF86AudioMute        allow-when-locked=true { spawn "pamixer" "-t"; }
-    XF86MonBrightnessDown { spawn "brightnessctl" "set" "10%-"; }
-    XF86MonBrightnessUp   { spawn "brightnessctl" "set" "+10%"; }
-    XF86Search            { spawn "swaync-client" "--toggle-panel"; }
-    
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn "pamixer" "-i" "5"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn "pamixer" "-d" "5"; }
+    XF86AudioMute         allow-when-locked=true { spawn "pamixer" "-t"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "10%-"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "+10%"; }
+    XF86Search            allow-when-locked=true { spawn "swaync-client" "--toggle-panel"; }
+
     Mod+O repeat=false { toggle-overview; }
     Mod+W { close-window; }
 
@@ -351,11 +384,11 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Mod+B hotkey-overlay-title="Web Browser" { spawn "librewolf"; }
+    Mod+B hotkey-overlay-title="Web Browser" { spawn "firefox"; }
     Mod+H hotkey-overlay-title="File Browser: Thunar" { spawn "thunar"; }
     Mod+E hotkey-overlay-title="Emacs" { spawn "emacsclient" "-c"; }
     Mod+T hotkey-overlay-title="Show/hide status bar" { spawn "killall" "-SIGUSR1" "waybar"; }
-    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "footclient"; }
     Mod+Space hotkey-overlay-title="Run an Application." { spawn "pkill" "-USR2" "nwg-drawer"; }
-    Super+L hotkey-overlay-title="Screenlock/session management." { spawn "sh" "-c" "pkill wlogout || wlogout -b 6 -T 400px -B 400px"; }
+    Super+L hotkey-overlay-title="Screenlock/session management." { spawn "sh" "-c" "pkill wlogout || wlogout -b 5 -T 400px -B 400px"; }
 }
