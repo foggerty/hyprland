@@ -86,7 +86,7 @@ output "eDP-1" {
 layout {
     gaps 8
     always-center-single-column
-    center-focused-column "never" // never, always, on-overflow
+    center-focused-column "on-overflow" // never, always, on-overflow
 
     tab-indicator {
         place-within-column
@@ -117,6 +117,15 @@ layout {
         width 1
         active-color "#7fc8ff"
         inactive-color "#505050"
+    }
+
+    shadow {
+           on
+           softness 60
+           spread   10
+           offset x=25 y=5
+           draw-behind-window false
+           color "#000000a0"
     }
 
     struts {
