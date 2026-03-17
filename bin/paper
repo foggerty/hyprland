@@ -27,8 +27,7 @@ def apply_paper(paper)
 end
 
 def apply_theme(paper)
-  `wal -c`
-  `wal -b 000000 --contrast 2.0 --cols16 -n -a 60 -i #{paper} -q`
+  `matugen #{@wallpaper} contrast --.5`
 end
 
 def restart(app)
@@ -42,6 +41,10 @@ end
 def restart_panel
   `pkill nwg-drawer`
   spawn('startnwg')
+end
+
+def kill(app)
+  `pkill #{app}`
 end
 
 ################################################################################
@@ -69,16 +72,18 @@ end
 ## Set wallpaper/theme
 #
 
-if %w[paper both].include?(ARGV[0])
+if %w["paper" "both"].include?(ARGV[0])
   apply_paper(@paper_path)
 end
 
-if %w[theme both].include?(ARGV[0])
+if %w["theme" "both"].include?(ARGV[0])
   apply_theme(@paper_path)
 
   restart('waybar')
   restart('swaync')
   restart_panel
+  kill('foot')
+  kill('swww-daemon')
 
   system('pgrep emacs') &&
     `emacsclient -e "(load-theme 'ewal-spacemacs-classic t)"`

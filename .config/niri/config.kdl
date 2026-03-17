@@ -2,7 +2,6 @@
 
 spawn-at-startup "waybar"
 spawn-at-startup "/home/matt/bin/startnwg"
-spawn-at-startup "swaybg" "-i" "/home/matt/Pictures/Wallpapers/current"
 spawn-at-startup "swaync"
 spawn-at-startup "swayidle"
 spawn-at-startup "lxpolkit"
@@ -10,6 +9,7 @@ spawn-at-startup "blueman-applet"
 spawn-at-startup "nm-applet"
 spawn-at-startup "journalctl-desktop-notification"
 spawn-at-startup "opensnitch-ui"
+spawn-at-startup "swww-daemon"
 
 prefer-no-csd
 
@@ -72,7 +72,7 @@ input {
         // scroll-method "no-scroll"
     }
 
-    warp-mouse-to-focus
+    // warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="95%"
 }
 

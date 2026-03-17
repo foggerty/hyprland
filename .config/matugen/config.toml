@@ -1,0 +1,40 @@
+[config]
+version_check = false
+fallback_color = "#ffbf9b"
+caching = false
+expr_prefix = "{{"
+expr_postfix = "}}"
+block_prefix = "<*"
+block_postfix = "*>"
+
+[templates.foot]
+input_path = "./foot-colors.ini"
+output_path = "~/.config/foot/colors.ini"
+
+[templates.hyprland]
+input_path = "./hyprland-colors.conf"
+output_path = "~/.cache/wal/colors-hyprland.conf"
+
+[templates.waybar]
+input_path = "./waybar-colors.css"
+output_path = "~/.cache/wal/colors-waybar.css"
+
+[template.wlogout]
+input_path="./waybar-colors.css"
+output-path="~/.config/wlogout/colors.css"
+
+[template.gtk3]
+input_path = "./gtk3-colors.css"
+output_path = "CONFIG_DIR/gtk-3.0/colors.css"
+
+[templates.dmsqt5ct]
+input_path = "qtct-colors.conf"
+output_path = '~/.config/qt5ct/colors/matugen.conf'
+
+[templates.dmsqt6ct]
+input_path = "qtct-colors.conf"
+output_path = '~/.config/qt6ct/colors/matugen.conf'
+
+# [templates.emacs]
+# input_path = "./emacs-colors.el"
+# output_path = "~/.emacs/colors.el"
