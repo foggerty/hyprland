@@ -27,7 +27,7 @@ def apply_paper(paper)
 end
 
 def apply_theme(paper)
-  `matugen #{@wallpaper} contrast --.5`
+  `matugen #{@wallpaper} --contrast 0.5`
 end
 
 def restart(app)

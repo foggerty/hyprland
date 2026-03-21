@@ -35,6 +35,6 @@ output_path = '~/.config/qt5ct/colors/matugen.conf'
 input_path = "qtct-colors.conf"
 output_path = '~/.config/qt6ct/colors/matugen.conf'
 
-# [templates.emacs]
-# input_path = "./emacs-colors.el"
-# output_path = "~/.emacs/colors.el"
+[templates.emacs]
+input_path = '~/.config/matugen/colors.css'
+output_path = '~/.emacs.d/colors.css'
