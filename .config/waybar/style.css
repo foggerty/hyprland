@@ -1,4 +1,4 @@
-@import "/home/matt/.cache/wal/colors-waybar.css";
+@import "/home/matt/.config/waybar/colors.css";
 
 * {
     font-family: "Cantarell";
@@ -7,8 +7,8 @@
 
 window#waybar {
     background-color: @background;
-    border: 1px solid @color4;
-    color: @foreground;
+    border: 1px solid @primary_fixed;
+    color: @primary;
     transition-property: background-color;
     transition-duration: .2s;
     border-radius: 18px;

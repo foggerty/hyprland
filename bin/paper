@@ -79,7 +79,7 @@ end
 if %w["theme" "both"].include?(ARGV[0])
   apply_theme(@paper_path)
 
-  restart('waybar')
+  `swww img #{@wallpaper}`
   restart('swaync')
   restart_panel
   kill('foot')

@@ -8,33 +8,39 @@ block_prefix = "<*"
 block_postfix = "*>"
 
 [templates.foot]
-input_path = "./foot-colors.ini"
+input_path = "./templates/foot-colors.ini"
 output_path = "~/.config/foot/colors.ini"
 
 [templates.hyprland]
-input_path = "./hyprland-colors.conf"
-output_path = "~/.cache/wal/colors-hyprland.conf"
+input_path = "./templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/colors.conf"
 
 [templates.waybar]
-input_path = "./waybar-colors.css"
-output_path = "~/.cache/wal/colors-waybar.css"
+input_path = "./templates/waybar-colors.css"
+output_path = "~/.config/waybar/colors.css"
+post_hook = 'pkill -SIGUSR2 waybar'
 
 [template.wlogout]
-input_path="./waybar-colors.css"
+input_path="./templates/gtk-colors.css"
 output-path="~/.config/wlogout/colors.css"
 
-[template.gtk3]
-input_path = "./gtk3-colors.css"
-output_path = "CONFIG_DIR/gtk-3.0/colors.css"
+[templates.gtk3]
+input_path = './templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = './templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
 
 [templates.dmsqt5ct]
-input_path = "qtct-colors.conf"
+input_path = "templates/qtct-colors.conf"
 output_path = '~/.config/qt5ct/colors/matugen.conf'
 
 [templates.dmsqt6ct]
-input_path = "qtct-colors.conf"
+input_path = "./templates/qtct-colors.conf"
 output_path = '~/.config/qt6ct/colors/matugen.conf'
 
 [templates.emacs]
-input_path = '~/.config/matugen/colors.css'
+input_path = './templates/colors.css'
 output_path = '~/.emacs.d/colors.css'
