@@ -27,7 +27,7 @@ def apply_paper(paper)
 end
 
 def apply_theme(paper)
-  `matugen #{paper} --contrast 1`
+  `matugen image #{paper} --type=scheme-content`
 end
 
 def restart(app)
@@ -72,8 +72,8 @@ end
 ## Set wallpaper/theme
 #
 
-if %w[paper both].include?('paper')
-    apply_paper(@paper_path)
+if %w[paper both].include?(ARGV[0])
+  apply_paper(@paper_path)
 end
 
 if %w[theme both].include?(ARGV[0])
@@ -83,7 +83,7 @@ if %w[theme both].include?(ARGV[0])
   restart_panel
 
   system('pgrep emacs') &&
-    `emacsclient -e "(load-theme 'matuegn t)"`
+    `emacsclient -e "(load-theme 'matugen t)"`
 
   puts 'Terminal cient may need to be restarted to see change.'
 end

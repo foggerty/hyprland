@@ -7,6 +7,10 @@ expr_postfix = "}}"
 block_prefix = "<*"
 block_postfix = "*>"
 
+[templates.matugen]
+input_path = './templates/colors.css'
+output_path = '/dev/null'
+
 [templates.emacs]
 input_path = './templates/colors.css'
 output_path = '~/.emacs.d/colors.css'
@@ -20,17 +24,13 @@ input_path = "./templates/hyprland-colors.conf"
 output_path = "~/.config/hypr/colors.conf"
 
 [templates.waybar]
-input_path = "./templates/waybar-colors.css"
+input_path = "./templates/colors.css"
 output_path = "~/.config/waybar/colors.css"
 post_hook = 'pkill -SIGUSR2 waybar'
 
 [template.wlogout]
-input_path="./templates/gtk-colors.css"
-output-path="~/.config/wlogout/colors.css"
-
-
-
-
+input_path = "./templates/colors.css"
+output_path = "~/.config/wlogout/colors.css"
 
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'
