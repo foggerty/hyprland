@@ -23,11 +23,11 @@ end
 
 def apply_paper(paper)
   `cp #{paper} #{@wallpaper}`
-  `swww img ~/Pictures/Wallpapers/current --transition-duration 1 -t grow`
+  `swww img #{@wallpaper} --transition-duration 2 -t grow`
 end
 
 def apply_theme(paper)
-  `matugen #{@wallpaper} --contrast 0.5`
+  `matugen #{paper} --contrast 1`
 end
 
 def restart(app)
@@ -72,21 +72,20 @@ end
 ## Set wallpaper/theme
 #
 
-if %w["paper" "both"].include?(ARGV[0])
-  apply_paper(@paper_path)
+if %w[paper both].include?('paper')
+    apply_paper(@paper_path)
 end
 
-if %w["theme" "both"].include?(ARGV[0])
+if %w[theme both].include?(ARGV[0])
   apply_theme(@paper_path)
 
-  `swww img #{@wallpaper}`
   restart('swaync')
   restart_panel
-  kill('foot')
-  kill('swww-daemon')
 
   system('pgrep emacs') &&
-    `emacsclient -e "(load-theme 'ewal-spacemacs-classic t)"`
+    `emacsclient -e "(load-theme 'matuegn t)"`
+
+  puts 'Terminal cient may need to be restarted to see change.'
 end
 
 exit 0

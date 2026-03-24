@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-    background-color: @background;
+    background-color: @background-transparent;
     border: 1px solid @primary_fixed;
     color: @primary;
     transition-property: background-color;

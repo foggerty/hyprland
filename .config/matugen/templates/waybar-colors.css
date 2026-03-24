@@ -2,6 +2,8 @@
 * Css Colors
 * Generated with Matugen
 */
+@define-color background-transparent rgba({{base16.base00.default.red}}, {{base16.base00.default.green}}, {{base16.base00.default.blue}}, 0.6);
+
 <* for name, value in colors *>
     @define-color {{name}} {{value.default.hex}};
 <* endfor *>

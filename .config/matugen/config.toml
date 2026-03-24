@@ -7,6 +7,10 @@ expr_postfix = "}}"
 block_prefix = "<*"
 block_postfix = "*>"
 
+[templates.emacs]
+input_path = './templates/colors.css'
+output_path = '~/.emacs.d/colors.css'
+
 [templates.foot]
 input_path = "./templates/foot-colors.ini"
 output_path = "~/.config/foot/colors.ini"
@@ -24,6 +28,10 @@ post_hook = 'pkill -SIGUSR2 waybar'
 input_path="./templates/gtk-colors.css"
 output-path="~/.config/wlogout/colors.css"
 
+
+
+
+
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'
 output_path = '~/.config/gtk-3.0/colors.css'
@@ -40,7 +48,3 @@ output_path = '~/.config/qt5ct/colors/matugen.conf'
 [templates.dmsqt6ct]
 input_path = "./templates/qtct-colors.conf"
 output_path = '~/.config/qt6ct/colors/matugen.conf'
-
-[templates.emacs]
-input_path = './templates/colors.css'
-output_path = '~/.emacs.d/colors.css'
