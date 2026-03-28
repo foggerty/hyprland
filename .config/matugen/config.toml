@@ -16,12 +16,20 @@ input_path = './templates/colors.css'
 output_path = '~/.emacs.d/colors.css'
 
 [templates.foot]
-input_path = "./templates/foot-colors.ini"
-output_path = "~/.config/foot/colors.ini"
+input_path = './templates/foot-colors.ini'
+output_path = '~/.config/foot/colors.ini'
 
 [templates.hyprland]
 input_path = "./templates/hyprland-colors.conf"
 output_path = "~/.config/hypr/colors.conf"
+
+[templates.kitty]
+input_path = './templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors.conf'
+
+[templates.nwg-drawer]
+input_path = "./templates/colors.css"
+output_path= "~/.config/nwg-drawer/colors.css"
 
 [templates.waybar]
 input_path = "./templates/colors.css"

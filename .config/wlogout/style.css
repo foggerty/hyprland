@@ -8,7 +8,7 @@
 
 window {
     font-size: 20pt;
-    background-color: @background;
+    background-color: @background-transparent;
 }
 
 button {

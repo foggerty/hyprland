@@ -14,21 +14,25 @@ def valid_flag?(flag)
   %w[paper theme both].include?(flag)
 end
 
+def valid_file?(file)
+  File.exist?(file)
+end
+
 def print_help
   puts 'Usage: paper <paper|theme|both> <image>.'
   puts '  paper: will set the wallpaper.'
   puts '  theme: will set the colour theme.'
   puts '  both: sets both.'
-end
+  end
 
 def apply_paper(paper)
   `cp #{paper} #{@wallpaper}`
-  `swww img #{@wallpaper} --transition-duration 2 -t grow`
-end
+  `awww img #{@wallpaper} --transition-duration 2 -t grow`
+  end
 
 def apply_theme(paper)
-  `matugen image #{paper} --type=scheme-content`
-end
+  `matugen image #{paper} --type=scheme-rainbow`
+  end
 
 def restart(app)
   test = system("pgrep #{app}")
@@ -60,6 +64,12 @@ unless valid_flag?(ARGV[0])
   puts "Invalid flag: #{ARGV[0]}"
   exit 1
 end
+
+unless valid_file?(ARGV[1])
+  puts "'#{ARGV[1]}' is not a file.\n(Probably, doesn't look like one to me anyway.)"
+  exit 1
+end
+
 
 @paper_path = File.expand_path(ARGV[1])
 
