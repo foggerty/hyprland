@@ -23,16 +23,16 @@ def print_help
   puts '  paper: will set the wallpaper.'
   puts '  theme: will set the colour theme.'
   puts '  both: sets both.'
-  end
+end
 
 def apply_paper(paper)
   `cp #{paper} #{@wallpaper}`
   `awww img #{@wallpaper} --transition-duration 2 -t grow`
-  end
+end
 
 def apply_theme(paper)
   `matugen image #{paper} --type=scheme-rainbow`
-  end
+end
 
 def restart(app)
   test = system("pgrep #{app}")
