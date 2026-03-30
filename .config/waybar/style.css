@@ -7,7 +7,7 @@
 
 window#waybar {
     background-color: @background-transparent;
-    border: 1px solid @primary_fixed;
+    border: 1px solid @primary;
     color: white;
     transition-property: background-color;
     transition-duration: .2s;
@@ -44,7 +44,7 @@ button {
 
 #tags button.focused {
     outline: none;
-    background: @color3;
+    background: @background-transparent;
     margin-top: 6px;
     margin-bottom: 6px;
     border-radius: 10px;
@@ -54,11 +54,11 @@ button {
 
 #tags button:hover {
     outline: none;
-    background: @color4;
+    background: @on-tertiary-container;
     margin-top: 6px;
     margin-bottom: 6px;
     border-radius: 10px;
-    color: white;
+    color: @on_tertiary;
     animation: none;
 }
 

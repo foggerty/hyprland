@@ -26,10 +26,11 @@ output_path = "~/.config/hypr/colors.conf"
 [templates.kitty]
 input_path = './templates/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
+post_hook = 'kill -SIGUSR1 $KITTY_PID'
 
 [templates.nwg-drawer]
-input_path = "./templates/colors.css"
-output_path= "~/.config/nwg-drawer/colors.css"
+input_path = "./templates/nwg-drawer.css"
+output_path= "~/.config/nwg-drawer/drawer.css"
 
 [templates.waybar]
 input_path = "./templates/colors.css"

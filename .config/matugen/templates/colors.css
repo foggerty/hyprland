@@ -2,8 +2,7 @@
 * Css Colors
 * Generated with Matugen
 */
-@define-color background-transparent {{colors.surface.default.rgba | set_alpha: 0.6}};
-@define-color background8-transparent {{colors.surface.default.rgba | set_alpha: 0.6}};
+@define-color background-transparent {{colors.surface.default.rgba | set_alpha: 0.7}};
 
 <* for name, value in colors *>
     @define-color {{name}} {{value.default.hex}};

@@ -1,45 +1,21 @@
-@import "/home/matt/.config/nwg-drawer/colors.css";
-
 window {
-    background-color: @background;
-    color: white;
-    border-color: @color2;
-    border-radius: 15px;
-    border-width: 2px;
-    border-style: solid;
-    padding: 150px;
-    font-size: 16px;
+    background-color: rgba(36, 47, 79, 0.95);
+    color: #eeeeee
 }
 
 /* search entry */
 entry {
-    background-color: @background;
-    font-size: 16pt;
-    margin-top: 15px;
-    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.2)
 }
 
 button, image {
     background: none;
-    border: none;
-
-    padding: 0px;
-    margin: 0px;
+    border: none
 }
 
 button:hover {
-    background-color: @color9;
-    color: rgba(255,255,255,0.8);
+    background-color: rgba(255, 255, 255, 0.1)
 }
-
-button:focus {
-    border-radius: 10px;
-    border-width: 2px;
-    border-color: @color2;
-    border-style: ridge;
-    background-color: @color10;
-}
-
 
 /* in case you wanted to give category buttons a different look */
 #category-button {
@@ -47,15 +23,14 @@ button:focus {
 }
 
 #pinned-box {
-    padding-bottom: 15px;
-    padding-top: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted gray
 }
 
 #files-box {
     padding: 5px;
-    border: 2px solid @color2;
-    border-radius: 15px;
-    font-size: 16px;
+    border: 1px dotted gray;
+    border-radius: 15px
 }
 
 /* math operation result label */

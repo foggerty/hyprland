@@ -43,7 +43,7 @@ setupTheme() {
 
     # Set GTK themes / keybindings.
     info "Setting up GTK."
-    gsettings set org.gnome.desktop.interface gtk-theme Prof-Gnome-Light-DS
+    gsettings set org.gnome.desktop.interface gtk-theme qdw-gtk3
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
@@ -197,7 +197,8 @@ installPackages() {
               opensnitch
               python-qt-material"
     terminal="bash-completion foot starship tealdeer"
-    theme="kora-icon-theme morewaita-icon-theme prof-gnome-theme-git \
+    theme="adw-gtk
+         kora-icon-theme morewaita-icon-theme prof-gnome-theme-git \
          imagemagick \
          plymouth-theme-cyanide-git \
          python-pywal16 \

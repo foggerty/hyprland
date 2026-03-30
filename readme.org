@@ -69,6 +69,7 @@ Also add =audit=1= to enable auditing.
   - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
   - [ ] Add Gateway to whatami IP.
   - [ ] Update whatami to enumerate mounted block devices.
+  - [ ] Try to move as many matugen templates to centralised colors.css template.
   - [ ] Setup hibernation in bootstrap script.
   - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
   - [ ] Add UFW back to installer.
@@ -81,14 +82,6 @@ Also add =audit=1= to enable auditing.
   - [ ] See if can get a keyring daemon working that unlocks when I log in, so don't have to re-enter github ssh passwords all of the time.
   - [ ] Look into meld - file/VC comparison.
   - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).
-  - [X] Look into Tailscale!
-  - [X] Add pacman masking to bootstrap script.
-  - [X] Go through Lobster's article on Omarchy's problems, make sure install script avoids them.
-  - [X] Break out laptop specific stuff.
-  - [X] Move dev setup (ruby etc) into separate install scripts.
-  - [X] Fix Hyprland gestures.
-  - [X] Recopy music
-  - [X] Reinstall opensnitch.
 
 * Notes on final system
 ** AppArmour
