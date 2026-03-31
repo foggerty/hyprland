@@ -65,11 +65,14 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Copy music back ointo laptop (again).
+  - [ ] Fix wlogout colours.
+  - [ ] Move back to wofi.
+  - [ ] Backup documents etc and re-install with automatic snapshots.
+  - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
+  - [ ] Copy music back onto laptop (again).
   - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
   - [ ] Add Gateway to whatami IP.
   - [ ] Update whatami to enumerate mounted block devices.
-  - [ ] Try to move as many matugen templates to centralised colors.css template.
   - [ ] Setup hibernation in bootstrap script.
   - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
   - [ ] Add UFW back to installer.

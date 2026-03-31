@@ -37,9 +37,9 @@ input_path = "./templates/colors.css"
 output_path = "~/.config/waybar/colors.css"
 post_hook = 'pkill -SIGUSR2 waybar'
 
-[template.wlogout]
-input_path = "./templates/colors.css"
-output_path = "~/.config/wlogout/colors.css"
+[templates.wlogout]
+input_path = './templates/colors.css'
+output_path = '~/.config/wlogout/colors.css'
 
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'

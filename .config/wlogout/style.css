@@ -12,12 +12,12 @@ window {
 }
 
 button {
-    background-color: grey;
+    background-color: @background-transparent;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40%;
     border-radius: 20px;
-    color: white;
+    color: @primary;
     outline: none;
     border: none;
     margin: 10px;
@@ -25,18 +25,17 @@ button {
 }
 
 button:focus {
-    color: black;
-    background-color: @color1;
+    color: @primary;
 }
 
 button:active {
-    color: black;
-    background-color: @color1;
+    color: @secondary;
+
 }
 
 button:hover {
-    color: black;
-    background-color: @color4;
+    color: @on_tertiary_container;
+    background-color: @on_primary
 }
 
 #lock {
