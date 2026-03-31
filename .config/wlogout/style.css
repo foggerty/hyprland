@@ -24,17 +24,7 @@ button {
     transition: 600ms cubic-bezier(0.05, 0.7, 0.1, 1);
 }
 
-button:focus {
-    color: @primary;
-}
-
-button:active {
-    color: @secondary;
-
-}
-
 button:hover {
-    color: @on_tertiary_container;
     background-color: @on_primary
 }
 

@@ -7,6 +7,9 @@ expr_postfix = "}}"
 block_prefix = "<*"
 block_postfix = "*>"
 
+[config.wallpaper]
+set = false
+
 [templates.matugen]
 input_path = './templates/colors.css'
 output_path = '/dev/null'
@@ -26,7 +29,7 @@ output_path = "~/.config/hypr/colors.conf"
 [templates.kitty]
 input_path = './templates/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
-post_hook = 'kill -SIGUSR1 $KITTY_PID'
+post_hook = "kitty +kitten themes --reload-in=all Matugen"
 
 [templates.nwg-drawer]
 input_path = "./templates/nwg-drawer.css"
