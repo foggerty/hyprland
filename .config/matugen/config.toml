@@ -7,8 +7,10 @@ expr_postfix = "}}"
 block_prefix = "<*"
 block_postfix = "*>"
 
-[config.wallpaper]
-set = false
+################################################################################
+### Application themes
+##
+#
 
 [templates.matugen]
 input_path = './templates/colors.css'
@@ -35,6 +37,10 @@ post_hook = "kitty +kitten themes --reload-in=all Matugen"
 input_path = "./templates/nwg-drawer.css"
 output_path= "~/.config/nwg-drawer/drawer.css"
 
+[templates.rofi]
+input_path = './templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
 [templates.waybar]
 input_path = "./templates/colors.css"
 output_path = "~/.config/waybar/colors.css"
@@ -43,6 +49,12 @@ post_hook = 'pkill -SIGUSR2 waybar'
 [templates.wlogout]
 input_path = './templates/colors.css'
 output_path = '~/.config/wlogout/colors.css'
+
+
+################################################################################
+### Toolkit themesm
+##
+#
 
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'

@@ -16,7 +16,7 @@ configuration {
     }
 }
 
-@theme "~/.cache/wal/colors-rofi-dark.rasi"
+@theme "~/.config/rofi/colors.rasi"
 
 window {
     /* properties for window widget */
@@ -31,14 +31,15 @@ window {
     enabled:                     true;
     border-radius:               15px;
     cursor:                      "default";
-    background-color:            @background;
+    background-color:            @background-transparent;
 }
 
 
 mainbox {
     enabled:                     true;
     spacing:                     10px;
-    background-color:            @background;
+    background-color:            @background-transparent;
+    border-color:                @outline;
     orientation:                 horizontal;
     children:                    [ "imagebox", "listbox" ];
 }
@@ -58,8 +59,7 @@ dummy {
 inputbar {
     enabled:                     true;
     border-radius:               10px;
-    background-color:            @background;
-    text-color:                  @foreground;
+    background-color:            @background-transparent;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
 
@@ -72,9 +72,9 @@ listbox {
 }
 
 #window {
-    background-color: @background;
+    background-color: @background-transparent;
     border: 1;
-    border-color: @border-color;
+    border-color: @outline;
     padding: 0;
 
 }
@@ -86,12 +86,12 @@ listbox {
 
 #message {
     border: 2px 0px 0px;
-    border-color: @border-color;
+    border-color: @outline;
     padding: 1px;
 }
 
 #textbox {
-    text-color: @foreground;
+    text-color: @primary;
 }
 
 #inputbar {
@@ -102,21 +102,25 @@ listbox {
     expand: false;
     str: "";
     margin: 0px 0.3em 0em 0em;
-    text-color: @normal-foreground;
+    text-color: @on-surface;
 }
 
 #listview {
     fixed-height: 0;
     border: 0px 0px 0px;
-    border-color: @border-color;
+    border-color: @outline;
     spacing: 1px;
     scrollbar: true;
     padding: 20px 0px 0px;
+    background-color: @background-transparent;
+    text-color: @on-surface;
 }
 
 #element {
     border: 0;
     padding: 3px;
+    background-color: @background-transparent;
+    text-color: @on-surface;
 }
 
 #element-text {
@@ -132,48 +136,33 @@ listbox {
 }
 
 #element.normal.normal {
-    background-color: @normal-background;
-    text-color: @normal-foreground;
-}
-
-#element.normal.urgent {
-    background-color: @urgent-background;
-    text-color: @urgent-foreground;
+    background-color: inherit;
+    text-color: @on-surface;
 }
 
 #element.normal.active {
-    background-color: @active-background;
-    text-color: @active-foreground;
+    background-color: inherit;
+    text-color: @on-surface;
 }
 
 #element.selected.normal {
-    background-color: @selected-normal-background;
-    text-color: @selected-normal-foreground;
-}
-
-#element.selected.urgent {
-    background-color: @selected-urgent-background;
-    text-color: @selected-urgent-foreground;
+    background-color: @tertiary;
+    text-color: @on-tertiary;
 }
 
 #element.selected.active {
-    background-color: @selected-active-background;
-    text-color: @selected-active-foreground;
+    background-color: @secondary;
+    text-color: @on-secondary;
 }
 
 #element.alternate.normal {
-    background-color: @alternate-normal-background;
-    text-color: @alternate-normal-foreground;
-}
-
-#element.alternate.urgent {
-    background-color: @alternate-urgent-background;
-    text-color: @alternate-urgent-foreground;
+    background-color: inherit;
+    text-color: @on-surface;
 }
 
 #element.alternate.active {
-    background-color: @alternate-active-background;
-    text-color: @alternate-active-foreground;
+    background-color: inherit;
+    text-color: @on-surface;
 }
 
 #scrollbar {
@@ -183,17 +172,18 @@ listbox {
 }
 
 #sidebar {
+    border-color: @outline;
     border: 2px 0px 0px;
-    border-color: @border-color;
 }
 
 #button {
-    text-color: @normal-foreground;
+    background-color: @background-transparent;
+    text-color: @on-surface;
 }
 
 #button.selected {
-    background-color: @selected-normal-background;
-    text-color: @selected-normal-foreground;
+    background-color: @surface;
+    text-color: @on-surface;
 }
 
 #inputbar {
@@ -201,19 +191,21 @@ listbox {
     border: 0;
     padding: 3px;
     margin-bottom: 10px;
+    background-color: @surface;
 }
 
 #case-indicator {
     spacing: 0;
-    text-color: @normal-foreground;
+    text-color: @primary;
 }
 
 #entry {
     spacing: 0;
-    text-color: @normal-foreground;
+    text-color: @primary;
+    background-color: @background-transparent;
 }
 
 #prompt {
     spacing: 0;
-    text-color: @normal-foreground;
+    text-color: @primary;
 }
