@@ -12,10 +12,10 @@ declare -A -r mimeTypes=(
     ["application/xml"]="emacsclient.desktop"
     ["application/xml"]="emacsclient.desktop"
 
-    ["image/png"]="feh.desktop"
-    ["image/jpeg"]="feh.desktop"
-    ["image/jpg"]="feh.desktop"
-    ["imagejgif"]="feh.desktop"
+    ["image/png"]="org.xfce.ristretto.desktop"
+    ["image/jpeg"]="org.xfce.ristretto.desktop"
+    ["image/jpg"]="org.xfce.ristretto.desktop"
+    ["imagejgif"]="org.xfce.ristretto.desktop"
 
     ["text/org"]="emacsclient.desktop"
     ["text/plain"]="emacsclient.desktop"

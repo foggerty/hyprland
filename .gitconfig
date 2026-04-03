@@ -41,3 +41,7 @@
         keepTemporaries = false
 [mergetool "kdiff3"]
         path = /usr/bin/kdiff3
+[gui]
+	fontdiff = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	fontui = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	matchtrackingbranch = true

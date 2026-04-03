@@ -65,26 +65,35 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
+  - [X] Replace pwaudio thingie with hyprpwmanager.
+  - [X] Try again, to find a wayland replacement for feh.
+  - [X] Add info button to waybar, and hyprinfo to bootstrap-desktop.
+  - [X] Get bloody hyprlock working.
+  - [X] look into hyprlauncher, and then hyprbar.
+  - [X] See if can get pacdiff configured to use a good diff tool.
+
+  - [X] Fix Kitty colours.
+  - [X] Fix waybar colours.
+  - [X] Fix hyprland colours.
+  - [ ] Fix rofi colours.
   - [ ] Fix wlogout colours.
-  - [ ] Move back to wofi.
-  - [ ] Backup documents etc and re-install with automatic snapshots.
+  - [ ] Fix hyprtoolkit colors?
+
+  - [ ] See if [[https://github.com/end-4/dots-hyprland/blob/main/dots-extra/emacs/material-theme.el][this]] looks better in emacs.
   - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
-  - [ ] Copy music back onto laptop (again).
-  - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
-  - [ ] Add Gateway to whatami IP.
-  - [ ] Update whatami to enumerate mounted block devices.
-  - [ ] Setup hibernation in bootstrap script.
   - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
   - [ ] Add UFW back to installer.
+  - [ ] Add Gateway to whatami IP.
+  - [ ] Update whatami to enumerate mounted block devices.
   - [ ] Go through [[https://joshblais.com/blog/how-i-am-deeply-integrating-emacs/][this]] for some Emacs ideas.
-  - [ ] Make bug report re Shadows
-    - [ ] Install on desktop
-    - [ ] Test
-  - [ ] Setup theme for [[https://wiki.hypr.land/0.52.0/Hypr-Ecosystem/hyprtoolkit/][HyprToolkit]].
   - [ ] Install =copyparty= onto pi.
-  - [ ] See if can get a keyring daemon working that unlocks when I log in, so don't have to re-enter github ssh passwords all of the time.
   - [ ] Look into meld - file/VC comparison.
-  - [ ] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).
+  - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
+  - [X] Back to making wlogout look pretty: `wlogout -b 6`, and add a CSS "glow" (i.e. nick it from someone else's config, I've seen it somewhere....).
+  - [X] Add adw-gtk3 theme to bootstrap-desktop
+  - [X] Add hyprshutdown.
+  - [X] Move back to wofi.
+  - [X] Fix wlogout colours.
 
 * Notes on final system
 ** AppArmour

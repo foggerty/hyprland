@@ -39,7 +39,7 @@ mainbox {
     enabled:                     true;
     spacing:                     10px;
     background-color:            @background-transparent;
-    border-color:                @outline;
+    border-color:                @color2;
     orientation:                 horizontal;
     children:                    [ "imagebox", "listbox" ];
 }
@@ -74,7 +74,7 @@ listbox {
 #window {
     background-color: @background-transparent;
     border: 1;
-    border-color: @outline;
+    border-color: @color2;
     padding: 0;
 
 }
@@ -86,12 +86,12 @@ listbox {
 
 #message {
     border: 2px 0px 0px;
-    border-color: @outline;
+    border-color: @color2;
     padding: 1px;
 }
 
 #textbox {
-    text-color: @primary;
+    text-color: @foreground;
 }
 
 #inputbar {
@@ -102,25 +102,25 @@ listbox {
     expand: false;
     str: "";
     margin: 0px 0.3em 0em 0em;
-    text-color: @on-surface;
+    text-color: @foreground;
 }
 
 #listview {
     fixed-height: 0;
     border: 0px 0px 0px;
-    border-color: @outline;
+    border-color: @color2;
     spacing: 1px;
     scrollbar: true;
     padding: 20px 0px 0px;
     background-color: @background-transparent;
-    text-color: @on-surface;
+    text-color: @foreground;
 }
 
 #element {
     border: 0;
     padding: 3px;
     background-color: @background-transparent;
-    text-color: @on-surface;
+    text-color: @foreground;
 }
 
 #element-text {
@@ -137,32 +137,32 @@ listbox {
 
 #element.normal.normal {
     background-color: inherit;
-    text-color: @on-surface;
+    text-color: @foreground;
 }
 
 #element.normal.active {
     background-color: inherit;
-    text-color: @on-surface;
+    text-color: @foreground;
 }
 
 #element.selected.normal {
-    background-color: @tertiary;
-    text-color: @on-tertiary;
+    background-color: @background;
+    text-color: @foreground;
 }
 
 #element.selected.active {
-    background-color: @secondary;
-    text-color: @on-secondary;
+    background-color: @background;
+    text-color: @background;
 }
 
 #element.alternate.normal {
     background-color: inherit;
-    text-color: @on-surface;
+    text-color: @foreground;
 }
 
 #element.alternate.active {
     background-color: inherit;
-    text-color: @on-surface;
+    text-color: @foreground;
 }
 
 #scrollbar {
@@ -172,18 +172,18 @@ listbox {
 }
 
 #sidebar {
-    border-color: @outline;
+    border-color: @color2;
     border: 2px 0px 0px;
 }
 
 #button {
     background-color: @background-transparent;
-    text-color: @on-surface;
+    text-color: @foreground;
 }
 
 #button.selected {
-    background-color: @surface;
-    text-color: @on-surface;
+    background-color: @background;
+    text-color: @foreground;
 }
 
 #inputbar {
@@ -191,21 +191,21 @@ listbox {
     border: 0;
     padding: 3px;
     margin-bottom: 10px;
-    background-color: @surface;
+    background-color: @background;
 }
 
 #case-indicator {
     spacing: 0;
-    text-color: @primary;
+    text-color: @foreground;
 }
 
 #entry {
     spacing: 0;
-    text-color: @primary;
+    text-color: @foreground;
     background-color: @background-transparent;
 }
 
 #prompt {
     spacing: 0;
-    text-color: @primary;
+    text-color: @foreground;
 }

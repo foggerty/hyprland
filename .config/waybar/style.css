@@ -7,7 +7,7 @@
 
 window#waybar {
     background-color: @background-transparent;
-    border: 1px solid @primary;
+    border: 2px solid @color2;
     color: white;
     transition-property: background-color;
     transition-duration: .2s;
@@ -54,7 +54,7 @@ button {
 
 #tags button:hover {
     outline: none;
-    background: @on-tertiary-container;
+    background: @color3;
     margin-top: 6px;
     margin-bottom: 6px;
     border-radius: 10px;
@@ -81,38 +81,19 @@ button {
     margin-top: 6px;
     margin-bottom: 6px;
     border-radius: 18px;
+    background: @color4;
 }
 
-#custom-tux {
+#custom-tux,
+#custom-power,
+#custom-monitor,
+#custom-display,
+#custom-logout,
+#custom-info {
     margin-left: 10px;
     margin-right: 18px;
     font-size: 20px
 }
-
-#custom-power {
-    margin-left: 10px;
-    margin-right: 18px;
-    font-size: 20px
-}
-
-#custom-monitor {
-    margin-left: 10px;
-    margin-right: 18px;
-    font-size: 20px
-}
-
-#custom-display {
-    margin-left: 10px;
-    margin-right: 18px;
-    font-size: 20px
-}
-
-#custom-logout {
-    margin-left: 10px;
-    margin-right: 18px;
-    font-size: 20px
-}
-
 
 #backlight,
 #battery,
@@ -124,15 +105,12 @@ button {
 #network,
 #pulseaudio,
 #temperature,
-#wireplumber {
-    padding-left: 20px;
-}
-
+#wireplumber
 #tray {
-    padding-right: 20px;
     padding-left: 20px;
 }
 
-#network {
+#network,
+#tray {
     padding-right: 20px;
 }

@@ -26,7 +26,7 @@ output_path = '~/.config/foot/colors.ini'
 
 [templates.hyprland]
 input_path = "./templates/hyprland-colors.conf"
-output_path = "~/.config/hypr/colors.conf"
+output_path = "~/.config/hypr/colors-hyprland.conf"
 
 [templates.kitty]
 input_path = './templates/kitty-colors.conf'

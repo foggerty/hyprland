@@ -1,18 +1,18 @@
 {
   "label" : "lock",
-  "action" : "swaylock"
+  "action" : "hyprlock"
   "keybind" : "l",
   "circular" : true
 }
 {
   "label" : "logout",
-  "action" : "loginctl terminate-user $USER",
+  "action" : "hyprshutdown",
   "keybind" : "e",
   "circular": true
 }
 {
   "label" : "shutdown",
-  "action" : "systemctl poweroff",
+  "action" : "hyprshutdown -p 'systemctl poweroff'",
   "keybind" : "s",
   "circular": true
 }

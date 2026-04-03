@@ -43,13 +43,13 @@ setupTheme() {
 
     # Set GTK themes / keybindings.
     info "Setting up GTK."
-    gsettings set org.gnome.desktop.interface gtk-theme qdw-gtk3
+    gsettings set org.gnome.desktop.interface gtk-theme qdw-gtk3-dark
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
-    gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
+    gsettings set org.gnome.desktop.interface font-name "Cantarell 12"
     gsettings set org.gnome.desktop.interface document-font-name "Cantarell 12"
     gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 12"
-    gsettings set org.gnome.desktop.interface color-scheme prefer-light
+    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
     # Update kora icon theme to use MoreWaita as a fallback.
     if ! grep "morewaita" /usr/share/icons/kora/index.theme; then
@@ -154,7 +154,7 @@ installPackages() {
          blueman \
          cliphist wl-clipboard \
          pamixer pavucontrol \
-         hyprland hyprlock hypridle hyprshot
+         hyprland hyprlock hypridle hyprshot hyprshutdown \
          evince \
          feh \
          foliate \
@@ -191,10 +191,10 @@ installPackages() {
          ttf-linux-libertine ttf-liberation \
          ttf-sourcecodepro-nerd"
     greeter="greetd greetd-tuigreet"
-    libraries="libgccjit lua-luv"
+    libraries="libgccjit lua-luv libappindicator-gtk3"
     networking="iwd networkmanager network-manager-applet"
-    security="lxsession \
-              opensnitch
+    security="hyprpolkitagent \
+              opensnitch \
               python-qt-material"
     terminal="bash-completion foot starship tealdeer"
     theme="adw-gtk

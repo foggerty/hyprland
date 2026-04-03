@@ -31,7 +31,7 @@ def apply_paper(paper)
 end
 
 def apply_theme(paper)
-  `matugen image #{paper} --type=scheme-rainbow`
+  `wallust run #{paper} -a 70`
 end
 
 def restart(app)
@@ -40,15 +40,6 @@ def restart(app)
 
   `pkill #{app}`
   spawn(app)
-end
-
-def restart_panel
-  `pkill nwg-drawer`
-  spawn('startnwg')
-end
-
-def kill(app)
-  `pkill #{app}`
 end
 
 ################################################################################
@@ -89,8 +80,7 @@ end
 if %w[theme both].include?(ARGV[0])
   apply_theme(@paper_path)
 
-  restart('swaync')
-  restart_panel
+  #restart('swaync')
 
   system('pgrep emacs') &&
     `emacsclient -e "(load-theme 'matugen t)"`

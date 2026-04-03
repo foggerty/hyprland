@@ -1,7 +1,7 @@
 {
   "layer": "bottom",
   "exclusive": true,
-  "height": 40,
+  "height": 42,
   "spacing": 12,
   "margin-left": 6,
   "margin-right": 6,
@@ -39,7 +39,8 @@
       "custom/logout",
       "custom/power",
       "custom/monitor",
-      "custom/display"
+      "custom/display",
+      "custom/info"
     ]
   },
 
@@ -72,6 +73,11 @@
     "format": "󰍹",
     "on-click": "nwg-displays",
     "tooltip-format": "Configure display(s)"
+  },
+
+  "custom/info": {
+    "format": "",
+    "on-click": "hyprsysteminfo"
   },
 
   "privacy": {
@@ -136,18 +142,6 @@
     },
   },
 
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": " ",
-      "performance": " ",
-      "balanced": " ",
-      "power-saver": " "
-    }
-  },
-
   "tray": {
     "icon-size": 16,
     "spacing": 10
@@ -205,7 +199,7 @@
   },
 
   "pulseaudio": {
-    "on-click": "pavucontrol",
+    "on-click": "hyprpwcenter",
     "format": "{volume}% {icon}",
     "format-muted": "",
     "format-icons": {
