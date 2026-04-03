@@ -7,7 +7,7 @@
 
 window#waybar {
     background-color: @background-transparent;
-    border: 2px solid @color2;
+    border: 2px solid @color13;
     color: white;
     transition-property: background-color;
     transition-duration: .2s;

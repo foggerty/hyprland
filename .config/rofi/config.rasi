@@ -12,7 +12,7 @@ configuration {
 
     filebrowser {
         directories-first: true;
-        sorting-method:    "name";
+        sorting-method: "name";
     }
 }
 
@@ -99,10 +99,12 @@ listbox {
 }
 
 #textbox-prompt-colon {
+    enabled: false;
     expand: false;
-    str: "";
+    str: "FUCK";
     margin: 0px 0.3em 0em 0em;
-    text-color: @foreground;
+    color: @background-transparent;
+    background: @background-transparent;
 }
 
 #listview {
@@ -146,12 +148,12 @@ listbox {
 }
 
 #element.selected.normal {
-    background-color: @background;
+    background-color: @color3;
     text-color: @foreground;
 }
 
 #element.selected.active {
-    background-color: @background;
+    background-color: @color4;
     text-color: @background;
 }
 

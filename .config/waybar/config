@@ -38,7 +38,6 @@
       "custom/tux",
       "custom/logout",
       "custom/power",
-      "custom/monitor",
       "custom/display",
       "custom/info"
     ]
@@ -77,7 +76,8 @@
 
   "custom/info": {
     "format": "",
-    "on-click": "hyprsysteminfo"
+    "on-click": "~/bin/toggle hyprsysteminfo",
+    "tooltip-format": ""
   },
 
   "privacy": {

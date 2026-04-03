@@ -1,0 +1,8 @@
+@define-color background-transparent rgba({{background | rgb}},0.{{alpha}});
+@define-color foreground {{foreground}};
+@define-color background {{background}};
+@define-color border {{color2}};
+@define-color button-hover {{color3}};
+
+@define color1 {{color1}};
+@define color4 {{color4}};

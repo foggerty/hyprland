@@ -1,6 +1,6 @@
 # How the image is parse, in order to get the colors:
 # full - resized - wal - thumb -  fastresize - kmeans
-backend = "fastresize"
+backend = "wal"
 
 # What color space to use to produce and select the most prominent colors:
 # lab - labmixed - lch - lchmixed
@@ -12,17 +12,17 @@ color_space = "lch"
 # harddark - harddark16 - harddarkcomp - harddarkcomp16
 # softdark - softdark16 - softdarkcomp - softdarkcomp16
 # softlight - softlight16 - softlightcomp - softlightcomp16
-palette = "dark"
+palette = "dark16"
 
 # Ensures a "readable contrast" (OPTIONAL, disabled by default)
 # Should only be enabled when you notice an unreadable contrast frequently happening
 # with your images. The reference color for the contrast is the background color.
-#check_contrast = true
+check_contrast = true
 
 # Color saturation, between [1% and 100%] (OPTIONAL, disabled by default)
 # usually something higher than 50 increases the saturation and below
 # decreases it (on a scheme with strong and vivid colors)
-#saturation = 35
+#saturation = 50
 
 # Alpha value for templating, by default 100 (no other use whatsoever)
 #alpha = 100
@@ -45,3 +45,6 @@ swaync.target = '~/.config/swaync/colors.css'
 
 waybar.template = 'colors-waybar.css'
 waybar.target = '~/.config/waybar/colors.css'
+
+wlogout.template = 'colors-wlogout.css'
+wlogout.target = '~/.config/wlogout/colors.css'

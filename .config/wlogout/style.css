@@ -1,4 +1,4 @@
-@import "./colors.css";
+/* @import '/home/matt/.config/wlogout/colors.css' */
 
 * {
     background-image: none;
@@ -8,16 +8,17 @@
 
 window {
     font-size: 20pt;
-    background-color: @background-transparent;
+    background-color: rgba(20, 20, 20, 0.7);
+    background-size: cover;
 }
 
 button {
-    background-color: @background-transparent;
+    background-color: rgb(60, 60, 60);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40%;
     border-radius: 20px;
-    color: @primary;
+    color: grey;
     outline: none;
     border: none;
     margin: 10px;
@@ -25,7 +26,8 @@ button {
 }
 
 button:hover {
-    background-color: @on_primary
+    background-color: rgb(200,200,200);
+    color: black;
 }
 
 #lock {
