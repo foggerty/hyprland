@@ -2,11 +2,9 @@
 # full - resized - wal - thumb -  fastresize - kmeans
 backend = "wal"
 
-# What color space to use to produce and select the most prominent colors:
 # lab - labmixed - lch - lchmixed
 color_space = "lch"
 
-# Use the most prominent colors in a way that makes sense, a scheme color palette:
 # dark - dark16 - darkcomp - darkcomp16
 # light - light16 - lightcomp - lightcomp16
 # harddark - harddark16 - harddarkcomp - harddarkcomp16
@@ -14,37 +12,35 @@ color_space = "lch"
 # softlight - softlight16 - softlightcomp - softlightcomp16
 palette = "dark16"
 
-# Ensures a "readable contrast" (OPTIONAL, disabled by default)
-# Should only be enabled when you notice an unreadable contrast frequently happening
-# with your images. The reference color for the contrast is the background color.
 check_contrast = true
 
-# Color saturation, between [1% and 100%] (OPTIONAL, disabled by default)
-# usually something higher than 50 increases the saturation and below
-# decreases it (on a scheme with strong and vivid colors)
 #saturation = 50
 
-# Alpha value for templating, by default 100 (no other use whatsoever)
-#alpha = 100
 
 [templates]
-hypr.template = 'colors-hyprland.conf'
+emacs.target = '~/.cache/wal/colors.json'
+emacs.template = 'colors-emacs.json'
+
+foot.target = '~/.config/foot/colors.ini'
+foot.template = 'colors-foot.ini'
+
 hypr.target = '~/.config/hypr/colors-hyprland.conf'
+hypr.template = 'colors-hyprland.conf'
 
-hyprtoolkit.template = 'colors-hyprtoolkit.conf'
 hyprtoolkit.target = '~/.config/hypr/colors-toolkit.conf'
+hyprtoolkit.template = 'colors-hyprtoolkit.conf'
 
-kitty.template = 'colors-kitty.conf'
 kitty.target = '~/.config/kitty/colors.conf'
+kitty.template = 'colors-kitty.conf'
 
-rofi.template = 'colors-rofi.rasi'
 rofi.target = '~/.config/rofi/colors.rasi'
+rofi.template = 'colors-rofi.rasi'
 
-swaync.template = 'colors-swaync.css'
 swaync.target = '~/.config/swaync/colors.css'
+swaync.template = 'colors-swaync.css'
 
-waybar.template = 'colors-waybar.css'
 waybar.target = '~/.config/waybar/colors.css'
+waybar.template = 'colors-waybar.css'
 
-wlogout.template = 'colors-wlogout.css'
 wlogout.target = '~/.config/wlogout/colors.css'
+wlogout.template = 'colors-wlogout.css'

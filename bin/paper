@@ -83,7 +83,7 @@ if %w[theme both].include?(ARGV[0])
   #restart('swaync')
 
   system('pgrep emacs') &&
-    `emacsclient -e "(load-theme 'matugen t)"`
+    `emacsclient -e "(load-theme 'ewal-spacemacs-classic t)"`
 
   puts 'Terminal cient may need to be restarted to see change.'
 end

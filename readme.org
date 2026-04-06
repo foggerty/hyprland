@@ -76,6 +76,8 @@ Also add =audit=1= to enable auditing.
   - [ ] Install =copyparty= onto pi.
   - [ ] Look into meld - file/VC comparison.
   - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
+  - [X] Make foot default (again).
+  - [X] Fix foot theme.
 
 * Notes on final system
 ** AppArmour
