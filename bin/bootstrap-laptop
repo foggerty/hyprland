@@ -44,11 +44,7 @@ enableServices() {
     done
 }
 
-setupSwap() {
-    
-}
-
 run "Install packages? " installPackages
 run "Setup TLP? " setupTLP
-run "Run detect senrors? " detectSensors
+run "Run detect sensors? " detectSensors
 run "Enable services? " enableServices

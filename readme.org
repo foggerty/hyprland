@@ -65,6 +65,8 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
+  - [ ] Swear at Hyprland until Waybar gets blur back.
+  - [ ] Add GTK/QT theming.
   - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
   - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
   - [ ] Add UFW back to installer.
