@@ -4,5 +4,60 @@
 @define-color border {{color2}};
 @define-color button-hover {{color3}};
 
-@define color1 {{color1}};
-@define color4 {{color4}};
+@define-color color1 {{color1}};
+@define-color color4 {{color4}};
+
+* {
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+window {
+    font-size: 20pt;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-size: cover;
+}
+
+button {
+    background-color: @color1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+    border-radius: 20px;
+    border-color: @border;
+    color: @foreground;
+    outline: none;
+    border: solid;
+    border-width: 2px;
+    margin: 10px;
+    transition: 600ms cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+button:hover {
+    background-color: @color4;
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}

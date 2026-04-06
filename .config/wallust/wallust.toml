@@ -42,5 +42,5 @@ swaync.template = 'colors-swaync.css'
 waybar.target = '~/.config/waybar/colors.css'
 waybar.template = 'colors-waybar.css'
 
-wlogout.target = '~/.config/wlogout/colors.css'
+wlogout.target = '~/.config/wlogout/style.css'
 wlogout.template = 'colors-wlogout.css'

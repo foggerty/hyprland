@@ -65,7 +65,6 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Fix Emacs theme - check [[https://github.com/end-4/dots-hyprland/blob/main/dots-extra/emacs/material-theme.el][this]]
   - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
   - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
   - [ ] Add UFW back to installer.
@@ -76,8 +75,6 @@ Also add =audit=1= to enable auditing.
   - [ ] Install =copyparty= onto pi.
   - [ ] Look into meld - file/VC comparison.
   - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
-  - [X] Make foot default (again).
-  - [X] Fix foot theme.
 
 * Notes on final system
 ** AppArmour
