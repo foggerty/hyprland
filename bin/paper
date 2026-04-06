@@ -82,6 +82,9 @@ if %w[theme both].include?(ARGV[0])
 
   #restart('swaync')
 
+  system('pgrep waybar') &&
+    `kill -s sigusr2 waybar`
+
   system('pgrep emacs') &&
     `emacsclient -e "(load-theme 'ewal-spacemacs-classic t)"`
 
