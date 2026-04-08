@@ -82,6 +82,7 @@ button {
     margin-bottom: 6px;
     border-radius: 18px;
     background: @color4;
+    color: @color0;
 }
 
 #custom-tux,
@@ -90,14 +91,24 @@ button {
 #custom-display,
 #custom-logout,
 #custom-info {
+    color:@color0;
     margin-left: 10px;
     margin-right: 18px;
     font-size: 20px
 }
 
+#custom-tux:hover,
+#custom-power:hover,
+#custom-monitor:hover,
+#custom-display:hover,
+#custom-logout:hover,
+#custom-info:hover {
+    color: @color13;
+}
+
 #backlight,
-#battery,
 #clock,
+#batteryv
 #cpu,
 #disk,
 #memory,
@@ -111,6 +122,7 @@ button {
 }
 
 #network,
+#pulseaudio,
 #tray {
     padding-right: 20px;
 }

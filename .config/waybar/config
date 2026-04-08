@@ -20,7 +20,6 @@
   ],
   "modules-right": [
     "hyprland/workspaces",
-    "niri/workspaces",
     "pulseaudio",
     "battery",
     "network",
@@ -181,11 +180,10 @@
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}%  ",
+    "format-charging": "{capacity}%(󰚥) {icon}",
     "format-full": " ",
     "format-icons": [" ", " ", " ", " ", " "],
     "interval": 3,
-    "on-click": "tlpui"
   },
 
   "network": {

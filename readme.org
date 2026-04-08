@@ -57,7 +57,7 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 |             1 |        0 |       4 |
 |             2 |        1 |       5 |
 |             3 |        2 |       6 |
-|             4 |        2 |       7 |
+|             4 |        3 |       7 |
 |---------------+----------+---------|
 
 * AppArmor
@@ -66,14 +66,16 @@ Also add =audit=1= to enable auditing.
 
 * Still left to do
   - [ ] Swear at Hyprland until Waybar gets blur back.
+  - [ ] Add UFW back to installer.
   - [ ] Add GTK/QT theming.
+  - [ ] Set background Arch icon when hovered, to something else (with animation).
+  - [ ] Thunar isn't remembering size or position.  Fix.  Check if it does in Niri.
   - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
   - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
-  - [ ] Add UFW back to installer.
   - [ ] Add Gateway to whatami IP.
   - [ ] Update whatami to enumerate mounted block devices.
-  - [ ] Fix wlogout colours.
-  - [ ] Go through [[https://joshblais.com/blog/how-i-am-deeply-integrating-emacs/][this]] for some Emacs ideas.
+  - [X] Go through [[https://joshblais.com/blog/how-i-am-deeply-integrating-emacs/][th
+    is]] for some Emacs ideas.
   - [ ] Install =copyparty= onto pi.
   - [ ] Look into meld - file/VC comparison.
   - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
