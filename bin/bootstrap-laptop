@@ -37,13 +37,22 @@ detectSensors() {
 
 enableServices() {
     info "Enabling laptop services."
-    services=(thermald tlp)
+    services=(thermald tlp ufw)
 
     for service in "${services[@]}"; do
         sudo systemctl enable --now "$service" -q
     done
 }
 
+enableUfw() {
+    sudo ufw default deny
+    sudo ufw allow from 192.168.0.0/24
+    sudo ufw allow Deluge
+
+    sudo ufw enable
+}
+
+run "Enable UFW? " enableUfw
 run "Install packages? " installPackages
 run "Setup TLP? " setupTLP
 run "Run detect sensors? " detectSensors

@@ -156,17 +156,17 @@ installPackages() {
          pamixer pavucontrol \
          hyprland hyprlock hypridle hyprshot hyprshutdown \
          evince \
-         feh \
          foliate \
          galculator \
          pipewire pipewire-pulse wireplumber \
          journalctl-desktop-notification \
          mpd rmpc \
-         nwg-displays nwg-drawer \
-         uwsm
+         nwg-displays \
+         ristretto \
          swaylock \
          swww \
          waybar \
+         uwsm \
          wlogout \
          vlc vlc-plugin-ffmpeg \
          xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
@@ -193,9 +193,10 @@ installPackages() {
     greeter="greetd greetd-tuigreet"
     libraries="libgccjit lua-luv libappindicator-gtk3"
     networking="iwd networkmanager network-manager-applet"
-    security="hyprpolkitagent \
+    security="lxsession
               opensnitch \
-              python-qt-material"
+              python-qt-material \
+              ufw"
     terminal="bash-completion foot starship tealdeer"
     theme="adw-gtk
          kora-icon-theme morewaita-icon-theme prof-gnome-theme-git \

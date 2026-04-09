@@ -66,7 +66,6 @@ Also add =audit=1= to enable auditing.
 
 * Still left to do
   - [ ] Improve Emacs sart-up speed.
-  - [ ] Add UFW back to installer.
   - [ ] Add GTK/QT theming.
   - [ ] Set background Arch icon when hovered, to something else (with animation).
   - [ ] Thunar isn't remembering size or position.  Fix.  Check if it does in Niri.
@@ -77,8 +76,7 @@ Also add =audit=1= to enable auditing.
   - [ ] Install =copyparty= onto pi.
   - [ ] Look into meld - file/VC comparison.
   - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
-  - [X] Go through [[https://joshblais.com/blog/how-i-am-deeply-integrating-emacs/][this]] for some Emacs ideas.
-  - [X] Swear at Hyprland until Waybar gets blur back.
+  - [X] Add UFW back to installer.
 
 * Notes on final system
 ** AppArmour
