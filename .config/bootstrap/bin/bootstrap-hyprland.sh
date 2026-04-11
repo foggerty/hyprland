@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/bin/lib
+source ~/.config/bootstrap/bin/lib.sh
 
 CONSOLE_FONT="sun12x22"
 EXCLUDE_FILES=(
@@ -43,7 +43,7 @@ setupTheme() {
 
     # Set GTK themes / keybindings.
     info "Setting up GTK."
-    gsettings set org.gnome.desktop.interface gtk-theme qdw-gtk3-dark
+    gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "Cantarell 12"
@@ -82,10 +82,10 @@ setupNetworkManager() {
 
 setupServices() {
     # List of system services to enable/start.
-    services=(avahi-daemon
+    services=(avahi-daemon \
               bluetooth \
-                  greetd \
-                  opensnitchd)
+              greetd \
+              opensnitchd)
 
     # List of user services to enable/start.
     user_services=(emacs foot-server mpd)
@@ -117,7 +117,7 @@ setupEnvironment() {
 
     # Setup default mime-types
     info "Setting mime-type defaults."
-    "$HOME"/bin/set-mime-defaults.sh
+    "$HOME"/.config/bootstrap/bin/set-mime-defaults.sh
 
     # Setup locale
     info "Setting XDG locale."
@@ -145,6 +145,11 @@ setupEnvironment() {
             sudo sed -i "/\[options\]/a $ex" /etc/pacman.conf
         fi
     done
+
+    # Set defaults for udisks
+    info "Setting up udisks/udiskie"
+    sudo mkdir -p /etc/udisks2
+    sudo cp "$HOME/.config/bootstrap/usb/mount_options.conf" /etc/udisks2
 }
 
 installPackages() {
@@ -153,7 +158,6 @@ installPackages() {
     desktop="avahi \
          blueman \
          cliphist wl-clipboard \
-         pamixer pavucontrol \
          hyprland hyprlock hypridle hyprshot hyprshutdown \
          evince \
          foliate \
@@ -161,16 +165,16 @@ installPackages() {
          pipewire pipewire-pulse wireplumber \
          journalctl-desktop-notification \
          mpd rmpc \
+         pamixer \
          nwg-displays \
          ristretto \
-         swaylock \
          swww \
          waybar \
          uwsm \
          wlogout \
          vlc vlc-plugin-ffmpeg \
          xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
-         xdg-user-dirs xdg-terminal-exec\
+         xdg-terminal-exec\
          xfce4-notifyd"
     development="cmake make"
     # I build Emacs manualy, so not included here.  Vi?  Vim?  Never heard of
@@ -198,8 +202,8 @@ installPackages() {
               python-qt-material \
               ufw"
     terminal="bash-completion foot starship tealdeer"
-    theme="adw-gtk
-         kora-icon-theme morewaita-icon-theme prof-gnome-theme-git \
+    theme="adw-gtk-theme
+         kora-icon-theme morewaita-icon-theme \
          imagemagick \
          plymouth-theme-cyanide-git \
          python-pywal16 \

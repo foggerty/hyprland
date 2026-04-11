@@ -1,6 +1,13 @@
+################################################################################
+#
+# This is for bootstrapping MY laptop (Dell XPS 13 9380) for MY use.
+# Use at your peril.
+#
+#
+
 #!/usr/bin/env bash
 
-source ~/bin/lib
+source "$HOME/.config/bootstrap/bin/lib.sh"
 
 installPackages() {
     graphics_drivers="ffmpeg \

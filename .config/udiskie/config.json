@@ -1,0 +1,12 @@
+{
+  "program_options": {
+    "tray": true,
+    "menu": "flat"
+  },
+
+  "file_manager": "thunar",
+
+  "automount": true,
+
+  "terminal": "thunar"
+}

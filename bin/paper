@@ -31,7 +31,7 @@ def apply_paper(paper)
 end
 
 def apply_theme(paper)
-  `wallust run #{paper} -a 80`
+  `wallust run #{paper} -a 65`
 end
 
 def restart(app)

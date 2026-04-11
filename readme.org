@@ -65,9 +65,11 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Improve Emacs sart-up speed.
   - [ ] Add GTK/QT theming.
-  - [ ] Set background Arch icon when hovered, to something else (with animation).
+  - [ ] Add SwayNC
+  - [ ] Theme SwayNC
+  - [ ] Get udiskie to open in Thunar (may require un-fucking xdg-open)
+  - [ ] Improve Emacs sart-up speed.
   - [ ] Thunar isn't remembering size or position.  Fix.  Check if it does in Niri.
   - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
   - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)

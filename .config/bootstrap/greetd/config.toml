@@ -1,3 +1,5 @@
+# Will be overwritten next time bootstrap-hyprland is run.
+
 [terminal]
 # The VT to run the greeter on. Can be "next", "current" or a number.
 vt = next
