@@ -1,24 +1,30 @@
+Some theming has been ruthlessly stolen from such great projects as:
+ - [[https://github.com/JaKooLit/Hyprland-Dots][JaKoolLit]]
+ - [[https://ml4w.com/][ML4W]]
+
+Why?  Because fuck CSS, that's why. 
+
 * Installation
 This setup is intended for an intel laptop using WiFi.
 
-- Install Arch (or derivitive, also works/tested on CachyOS) using the =Archinstall= script.  Choose =NetworkManager= and =Pipewire=.
-- Run =$HOME/bin/bootstrap=.
-- Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
-- See if there's anything specific for your [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
-- Set =noatime= in =/etc/fstab=
-- Copy the file =/.config/firefox/user.js= to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
-- Add the line =FONT=ter-220b= to =/etc/vconsole.conf= to have a readable font in the TTY (and then re-run =mkinitcpio -P=).  A list of available fonts is in =/usr/share/kbd/consolefonts=.
-- If using an intel GPU, add =i915_enable_rc6=1 i915_enable_fbc=1= to the kernel cmd line for extra power-saving.
-- Test if wifi Wake On Lan is enabled with =iw phy0 wowlan show= (use =iw list= to get name of adaptor).  Not sure how to disable it permanently, but it's disabled by default on my laptop so I stopped looking :-)
-- Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition:
-   add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.
+ - Install Arch (or derivitive, also works/tested on CachyOS) using the =Archinstall= script.  Choose =NetworkManager= and =Pipewire=.
+ - Run =$HOME/bin/bootstrap=.
+ - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
+ - See if there's anything specific for your [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
+ - Set =noatime= in =/etc/fstab= (pretty sire Cachy does this for you).
+ - Copy the file =/.config/firefox/user.js= to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
+ - Add the line =FONT=ter-220b= to =/etc/vconsole.conf= to have a readable font in the TTY (and then re-run =mkinitcpio -P=).  A list of available fonts is in =/usr/share/kbd/consolefonts=.
+ - If using an intel GPU, add =i915_enable_rc6=1 i915_enable_fbc=1= to the kernel cmd line for extra power-saving.
+ - Test if wifi Wake On Lan is enabled with =iw phy0 wowlan show= (use =iw list= to get name of adaptor).  Not sure how to disable it permanently, but it's disabled by default on my laptop so I stopped looking :-)
+ - Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition:
+    add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.
 
-   May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.  WARNING: this will disable some multi-media keys, along with the power button (although long-press to power-off still works).
+    May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.  WARNING: this will disable some multi-media keys, along with the power button (although long-press to power-off still works).
 
-   Finally, [[https://discuss.cachyos.org/t/zswap-not-enabled-despite-kernel-parameter-being-set/6942][it may be disabled by config]] in Cachy, so create this file:
-   #+begin_src shell
-   sudo touch /etc/tmpfiles.d/disable-zswap.conf
-   #+end_src
+    Finally, [[https://discuss.cachyos.org/t/zswap-not-enabled-despite-kernel-parameter-being-set/6942][it may be disabled by config]] in Cachy, so create this file:
+    #+begin_src shell
+    sudo touch /etc/tmpfiles.d/disable-zswap.conf
+    #+end_src
 
 * Changing theme
 Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= or right-click and select =Theme= on an image in Thunar (this will call the same script).
@@ -65,12 +71,12 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
+  - [ ] Find out why hypridle isn't honouring full-screen video.
   - [ ] Add GTK/QT theming.
-  - [ ] Add SwayNC
-  - [ ] Theme SwayNC
-  - [ ] Get udiskie to open in Thunar (may require un-fucking xdg-open)
+  - [ ] Add SwayNC.
+  - [ ] Theme SwayNC.
+  - [ ] Get udiskie to open folders in Thunar (may require un-fucking xdg-open?).
   - [ ] Improve Emacs sart-up speed.
-  - [ ] Thunar isn't remembering size or position.  Fix.  Check if it does in Niri.
   - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
   - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
   - [ ] Add Gateway to whatami IP.
@@ -78,16 +84,10 @@ Also add =audit=1= to enable auditing.
   - [ ] Install =copyparty= onto pi.
   - [ ] Look into meld - file/VC comparison.
   - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
+  - [X] Thunar isn't remembering size or position.  Fix.  Check if it does in Niri.
+  - [X] Setup Cider in Emacs.
   - [X] Add UFW back to installer.
 
-* Notes on final system
-** AppArmour
-Really want to use this, really hate the configuration setup.  Also the god-awful memory overhead, but then that's a running theme with most applications these days.
-** Themeing
-Hard-coded themes are boring, going out and searching for a theme via random pics is fun.  That's it :-)
-** OpenSnitch
-Is it fine-grained enough so that allowing curl to access =archlinux.org= doesn't mean the curl can then access anything?  If curl is called from another process, can it still access the same site?  Ideally not, and I should see a full chain, so that if a trojan uses it to download a compromised package, I'll be alerted.
-Does it have a TTY client, or does this just not make sense given it's application-level, and not server-level?
 * The "is it done" checklist of doom
   - [X] General:
     - [X] Desktop portal is running.

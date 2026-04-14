@@ -223,6 +223,11 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id=r#"thunar"#
+    open-floating true
+}
+
 // Rule for all windows - rounded corners.
 window-rule {
     geometry-corner-radius 12
