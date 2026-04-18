@@ -30,7 +30,8 @@
   <property name="do-slideout" type="bool" value="true"/>
   <property name="notify-location" type="string" value="top-right"/>
   <property name="expire-timeout-enabled" type="bool" value="false"/>
-  <property name="expire-timeout-allow-override" type="bool" value="false"/>
+  <property name="expire-timeout-allow-override" type="bool" value="true"/>
   <property name="show-text-with-gauge" type="bool" value="true"/>
   <property name="notification-log" type="bool" value="true"/>
+  <property name="initial-opacity" type="double" value="0.79000000000000004"/>
 </channel>

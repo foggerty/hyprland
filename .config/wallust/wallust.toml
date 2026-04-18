@@ -21,6 +21,9 @@ check_contrast = true
 emacs.target = '~/.cache/wal/colors.json'
 emacs.template = 'colors-emacs.json'
 
+emacs2.target = '~/.emacs.d/themes/doom-wallust-dark-theme.el'
+emacs2.template = 'doom-wallust-dark-theme.el'
+
 foot.target = '~/.config/foot/colors.ini'
 foot.template = 'colors-foot.ini'
 
@@ -29,6 +32,9 @@ hypr.template = 'colors-hyprland.conf'
 
 hyprtoolkit.target = '~/.config/hypr/colors-toolkit.conf'
 hyprtoolkit.template = 'colors-hyprtoolkit.conf'
+
+gtk3.target = '~/.config/gtk-3.0/colors.css'
+gtk3.template = 'colors-gtk.css'
 
 kitty.target = '~/.config/kitty/colors.conf'
 kitty.template = 'colors-kitty.conf'

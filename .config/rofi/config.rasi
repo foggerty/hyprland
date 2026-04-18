@@ -1,7 +1,7 @@
 configuration {
     show-icons: true;
     icon-theme: "kora;";
-    font: "Cantarell 15";
+    font: "Cantarell 18";
 
     timeout {
         action: "kb-cancel";

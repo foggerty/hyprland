@@ -43,7 +43,8 @@ setupTheme() {
 
     # Set GTK themes / keybindings.
     info "Setting up GTK."
-    gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
+    #gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
+    gsettings set org.gnome.desktop.interface gtk-theme Prof-Gnome-Light-DS
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "Cantarell 12"
@@ -203,10 +204,9 @@ installPackages() {
               ufw"
     terminal="bash-completion foot starship tealdeer"
     theme="adw-gtk-theme
-         kora-icon-theme morewaita-icon-theme \
+         kora-icon-theme morewaita-icon-theme prof-gnome-theme-git \
          imagemagick \
          plymouth-theme-cyanide-git \
-         python-pywal16 \
          qt6ct"
     utilities="7zip zip unrar-free unzip \
          btop htop \

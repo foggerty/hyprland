@@ -31,7 +31,7 @@ def apply_paper(paper)
 end
 
 def apply_theme(paper)
-  `wallust run #{paper} -a 65`
+  `wallust run #{paper} -a 75`
 end
 
 def restart(app)
@@ -86,7 +86,7 @@ if %w[theme both].include?(ARGV[0])
     `kill -s sigusr2 waybar`
 
   system('pgrep emacs') &&
-    `emacsclient -e "(load-theme 'ewal-spacemacs-classic t)"`
+    `emacsclient -e "(load-theme 'doom-wallust-dark t)"`
 
   puts 'Terminal cient may need to be restarted to see change.'
 end

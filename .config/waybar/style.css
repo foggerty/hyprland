@@ -12,6 +12,7 @@ window#waybar {
     transition-property: background-color;
     transition-duration: .2s;
     border-radius: 18px;
+    /* box-shadow: 10px 10px rgba(00, 00, 00, 20); */
 }
 
 box#tags {

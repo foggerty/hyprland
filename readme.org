@@ -2,7 +2,7 @@ Some theming has been ruthlessly stolen from such great projects as:
  - [[https://github.com/JaKooLit/Hyprland-Dots][JaKoolLit]]
  - [[https://ml4w.com/][ML4W]]
 
-Why?  Because fuck CSS, that's why. 
+Why?  Because fuck CSS, that's why.
 
 * Installation
 This setup is intended for an intel laptop using WiFi.
@@ -71,22 +71,27 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Find out why hypridle isn't honouring full-screen video.
-  - [ ] Add GTK/QT theming.
-  - [ ] Add SwayNC.
+  - [ ] Fix GTK colors.
   - [ ] Theme SwayNC.
   - [ ] Get udiskie to open folders in Thunar (may require un-fucking xdg-open?).
-  - [ ] Improve Emacs sart-up speed.
   - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
   - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
   - [ ] Add Gateway to whatami IP.
   - [ ] Update whatami to enumerate mounted block devices.
-  - [ ] Install =copyparty= onto pi.
+  - [ ] Fix emacs colors - mostly deleting.
+  - [ ] Improve Emacs sart-up speed.
+  - [ ] Find out why  can never see cdn77.
   - [ ] Look into meld - file/VC comparison.
+  - [ ] Install =copyparty= onto pi.
+  - [X] Fix Emacs config - org blocks and checkboxes.
   - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
+  - [X] Add SwayNC.
+  - [X] Find out why hypridle isn't honouring full-screen video.
   - [X] Thunar isn't remembering size or position.  Fix.  Check if it does in Niri.
   - [X] Setup Cider in Emacs.
+  - [X] Add GTK/QT theming.
   - [X] Add UFW back to installer.
+  - [X] Check out the wallust emacs theme [[https://codeberg.org/explosion-mental/wallust-templates/src/branch/master/doom-wallust-dark-theme.el][here.]]
 
 * The "is it done" checklist of doom
   - [X] General:
