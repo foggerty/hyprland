@@ -74,8 +74,8 @@ Also add =audit=1= to enable auditing.
   - [ ] Fix emacs colors - nothing shows when using client in the terminal.
   - [ ] Improve Emacs sart-up speed.
   - [ ] Find out why  can never see cdn77.
-  - [ ] Look into meld - file/VC comparison.
   - [ ] Install =copyparty= onto pi.
+  - [X] Look into meld - file/VC comparison.
   - [X] Fix Emacs config - org blocks and checkboxes.
   - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
   - [X] Add SwayNC.
