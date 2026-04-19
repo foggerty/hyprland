@@ -7,24 +7,17 @@ Why?  Because fuck CSS, that's why.
 * Installation
 This setup is intended for an intel laptop using WiFi.
 
- - Install Arch (or derivitive, also works/tested on CachyOS) using the =Archinstall= script.  Choose =NetworkManager= and =Pipewire=.
- - Run =$HOME/bin/bootstrap=.
+ - Install Cachy (mannually setting up BTRFS snapshot support is a pain, hence Cachy, but will still work 100% with vanilla Arch).  Make sure =NetworkManager= and =Pipewire= are installed.
+ - Ensure all of your drivers are installed (Cachy installer should detect/install what you need, otherwise consult the Arch Wiki).  For an example of the kinds of drivers you need, look [[file:.config/bootstrap/bin/bootstrap-laptop.sh][here]].
+ - Run =$HOME/bin/bootstrap=-hyprland.
  - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
  - See if there's anything specific for your [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
- - Set =noatime= in =/etc/fstab= (pretty sire Cachy does this for you).
- - Copy the file =/.config/firefox/user.js= to the [[http://kb.mozillazine.org/Profile_folder][profile directory]] (after running Firefox to first create the profile!)
- - Add the line =FONT=ter-220b= to =/etc/vconsole.conf= to have a readable font in the TTY (and then re-run =mkinitcpio -P=).  A list of available fonts is in =/usr/share/kbd/consolefonts=.
  - If using an intel GPU, add =i915_enable_rc6=1 i915_enable_fbc=1= to the kernel cmd line for extra power-saving.
  - Test if wifi Wake On Lan is enabled with =iw phy0 wowlan show= (use =iw list= to get name of adaptor).  Not sure how to disable it permanently, but it's disabled by default on my laptop so I stopped looking :-)
  - Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition:
-    add =zswap.enabled=1= and =systemd.zram=0= to the kernel parameters.
+    Enable zswap as detailed [[https://wiki.cachyos.org/configuration/general_system_tweaks/#switching-from-zram-to-zswap][here]].  For vanilla Arch, check the [[https://wiki.archlinux.org/title/Zswap][Wiki]].
 
     May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.  WARNING: this will disable some multi-media keys, along with the power button (although long-press to power-off still works).
-
-    Finally, [[https://discuss.cachyos.org/t/zswap-not-enabled-despite-kernel-parameter-being-set/6942][it may be disabled by config]] in Cachy, so create this file:
-    #+begin_src shell
-    sudo touch /etc/tmpfiles.d/disable-zswap.conf
-    #+end_src
 
 * Changing theme
 Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= or right-click and select =Theme= on an image in Thunar (this will call the same script).
@@ -71,14 +64,14 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Fix GTK colors.
   - [ ] Theme SwayNC.
   - [ ] Get udiskie to open folders in Thunar (may require un-fucking xdg-open?).
-  - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
-  - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
+  - [ ] Nice to have
+    - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
+    - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
   - [ ] Add Gateway to whatami IP.
   - [ ] Update whatami to enumerate mounted block devices.
-  - [ ] Fix emacs colors - mostly deleting.
+  - [ ] Fix emacs colors - nothing shows when using client in the terminal.
   - [ ] Improve Emacs sart-up speed.
   - [ ] Find out why  can never see cdn77.
   - [ ] Look into meld - file/VC comparison.
