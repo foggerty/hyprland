@@ -16,11 +16,7 @@ check_contrast = true
 
 #saturation = 50
 
-
 [templates]
-emacs.target = '~/.cache/wal/colors.json'
-emacs.template = 'colors-emacs.json'
-
 emacs2.target = '~/.emacs.d/themes/doom-wallust-dark-theme.el'
 emacs2.template = 'doom-wallust-dark-theme.el'
 

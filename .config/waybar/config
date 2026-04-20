@@ -49,7 +49,7 @@
 
   "custom/logout": {
     "format": "",
-    "on-click": "wlogout -b 6 -T 400px -B 400px",
+    "on-click": "wlogout -b 5 -T 400px -B 400px -p layer-shell",
     "tooltip-format": "Session management."
   },
 

@@ -1,4 +1,4 @@
-Some theming has been ruthlessly stolen from such great projects as:
+Some theming has been ruthlessly stolen from great projects, such as:
  - [[https://github.com/JaKooLit/Hyprland-Dots][JaKoolLit]]
  - [[https://ml4w.com/][ML4W]]
 
@@ -64,9 +64,10 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
+  - [ ] Fix emacs theming.
   - [ ] Theme SwayNC.
-  - [ ] Get udiskie to open folders in Thunar (may require un-fucking xdg-open?).
   - [ ] Nice to have
+    - [ ] GTK theming
     - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
     - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
   - [ ] Add Gateway to whatami IP.
@@ -78,13 +79,14 @@ Also add =audit=1= to enable auditing.
   - [X] Look into meld - file/VC comparison.
   - [X] Fix Emacs config - org blocks and checkboxes.
   - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
+  - [X] Get udiskie to open folders in Thunar (may require un-fucking xdg-open?).
   - [X] Add SwayNC.
   - [X] Find out why hypridle isn't honouring full-screen video.
   - [X] Thunar isn't remembering size or position.  Fix.  Check if it does in Niri.
   - [X] Setup Cider in Emacs.
   - [X] Add GTK/QT theming.
   - [X] Add UFW back to installer.
-  - [X] Check out the wallust emacs theme [[https://codeberg.org/explosion-mental/wallust-templates/src/branch/master/doom-wallust-dark-theme.el][here.]]
+  - [ ] Check out the wallust emacs theme [[https://codeberg.org/explosion-mental/wallust-templates/src/branch/master/doom-wallust-dark-theme.el][here]].
 
 * The "is it done" checklist of doom
   - [X] General:

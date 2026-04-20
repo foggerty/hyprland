@@ -23,9 +23,12 @@ installPackages() {
        tlp \
        wlr-dpms"
 
+    security="ufw"
+
     to_install="$graphics_drivers \
             $graphics_intel \
-            $power"
+            $power \
+            $security"
 
     info "Installing packages."
     paru --needed --skipreview -Syu $to_install > /dev/null
@@ -59,8 +62,8 @@ enableUfw() {
     sudo ufw enable
 }
 
-run "Enable UFW? " enableUfw
 run "Install packages? " installPackages
+run "Enable UFW? " enableUfw
 run "Setup TLP? " setupTLP
 run "Run detect sensors? " detectSensors
 run "Enable services? " enableServices

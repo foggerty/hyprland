@@ -147,6 +147,8 @@ setupEnvironment() {
         fi
     done
 
+    # TODO! - Recreate this - think it was something from power-saving?
+
     # Set defaults for udisks
     info "Setting up udisks/udiskie"
     sudo mkdir -p /etc/udisks2
@@ -159,7 +161,7 @@ installPackages() {
     desktop="avahi \
          blueman \
          cliphist wl-clipboard \
-         hyprland hyprlock hypridle hyprshot hyprshutdown \
+         hyprland hyprlock hypridle hyprshot hyprshutdown hyprpwcenter \
          evince \
          foliate \
          galculator \
@@ -168,15 +170,16 @@ installPackages() {
          mpd rmpc \
          pamixer \
          nwg-displays \
+         rofi \
          ristretto \
+         swaync \
          swww \
          waybar \
          uwsm \
          wlogout \
          vlc vlc-plugin-ffmpeg \
          xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
-         xdg-terminal-exec\
-         xfce4-notifyd"
+         xdg-terminal-exec"
     development="cmake make"
     # I build Emacs manualy, so not included here.  Vi?  Vim?  Never heard of
     # em.
@@ -208,7 +211,8 @@ installPackages() {
          kora-icon-theme morewaita-icon-theme \
          imagemagick \
          plymouth-theme-cyanide-git \
-         qt6ct"
+         qt6ct \
+	 wallust"
     utilities="7zip zip unrar-free unzip \
          btop htop \
          bat bat-extras \
