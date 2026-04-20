@@ -8,5 +8,5 @@
 
   "automount": true,
 
-  "terminal": "thunar"
+  "terminal": "footclient"
 }
