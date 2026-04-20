@@ -172,7 +172,7 @@ installPackages() {
          nwg-displays \
          rofi \
          ristretto \
-         swaync \
+         swaync swaylock swayidle \
          swww \
          waybar \
          uwsm \
@@ -193,6 +193,7 @@ installPackages() {
          thunar-media-tags-plugin \
          tumbler tumbler-extra-thumbnailers"
     fonts="adobe-source-code-pro-fonts \
+         cantarell-fonts \
          font-manager \
          otf-font-awesome \
          noto-fonts noto-fonts-cjk noto-fonts-emoji \

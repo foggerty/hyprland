@@ -65,6 +65,7 @@ Also add =audit=1= to enable auditing.
 
 * Still left to do
   - [ ] Fix emacs theming.
+  - [ ] Fix TLP
   - [ ] Theme SwayNC.
   - [ ] Nice to have
     - [ ] GTK theming
