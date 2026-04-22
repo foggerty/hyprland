@@ -16,6 +16,21 @@
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 ;;; Code:
 
+;; Corfu's popup isn't detected as such by hyprland, so turn off transparency
+;; because it's not being blurred.
+(defun on-frame-open (&optional _)
+  "Set default frame alpha and font.  Tweaks for running in client in TTY."
+  (if (display-graphic-p)
+      (progn
+        (set-frame-font "SauceCodePro Nerd Font Mono-13" nil t t)
+        (let ((alpha (if (frame-parent) 0.0 0.{{alpha}})))
+          (modify-frame-parameters nil `((alpha-background . ,alpha)))))
+    (progn
+      (set-face-background 'default "unspecified-bg" (selected-frame))
+      (set-face-background 'font-lock-comment-face "unspecified-bg" (selected-frame)))))
+
+(add-hook 'server-after-make-frame-hook #'on-frame-open)
+
 (use-package doom-themes)
 (require 'doom-themes)
 
@@ -114,7 +129,7 @@ Can be an integer to determine the exact padding."
    (vc-deleted     red)
 
    ;; Custom categories
-   (modeline-fg                fg)
+   (modeline-fg              fg)
    (modeline-fg-alt          base5)
    (modeline-bg              (if doom-wallust-dark-brighter-modeline
                                  (doom-darken blue 0.45)

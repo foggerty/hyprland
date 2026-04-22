@@ -64,19 +64,20 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Fix emacs theming.
-  - [ ] Fix TLP
   - [ ] Theme SwayNC.
+  - [ ] Fix emacs theming - fucking again.
+  - [ ] Fix whatami's power governer thingie.
   - [ ] Nice to have
     - [ ] GTK theming
     - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
     - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
   - [ ] Add Gateway to whatami IP.
   - [ ] Update whatami to enumerate mounted block devices.
-  - [ ] Fix emacs colors - nothing shows when using client in the terminal.
+  - [ ] Unfuck Emacs theming.  Maybe go back to ewal.
   - [ ] Improve Emacs sart-up speed.
   - [ ] Find out why  can never see cdn77.
   - [ ] Install =copyparty= onto pi.
+  - [X] Swap out TLP for whatever Cachy defaults to.
   - [X] Look into meld - file/VC comparison.
   - [X] Fix Emacs config - org blocks and checkboxes.
   - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.

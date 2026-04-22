@@ -166,12 +166,14 @@ installPackages() {
          foliate \
          galculator \
          pipewire pipewire-pulse wireplumber \
+         power-profiles-daemon \
          journalctl-desktop-notification \
          mpd rmpc \
          pamixer \
          nwg-displays \
          rofi \
          ristretto \
+         starship \
          swaync swaylock swayidle \
          swww \
          waybar \

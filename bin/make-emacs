@@ -21,7 +21,6 @@ if [[ ! -d "emacs" ]]; then
                 --without-gsettings \
                 --without-xinput2 \
                 --disable-gc-mark-trace \
-                --without-toolit-scroll-bars \
                 --without-xaw3d \
                 --without-xim \
                 --without-xdbe \

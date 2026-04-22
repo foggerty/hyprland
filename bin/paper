@@ -3,6 +3,7 @@
 
 @supported_file_types = %w[PNG XPM JPEG TIFF PNM RAS BMP]
 @wallpaper = '~/Pictures/Wallpapers/current'
+@alpha = 6
 
 def valid_image?(file)
   f_type = `file "#{file}" | cut -d " " -f 2`.strip
@@ -31,7 +32,7 @@ def apply_paper(paper)
 end
 
 def apply_theme(paper)
-  `wallust run #{paper} -a 75`
+  `wallust run #{paper} -a #{@alpha}`
 end
 
 def restart(app)
