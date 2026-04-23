@@ -161,7 +161,7 @@ installPackages() {
     desktop="avahi \
          blueman \
          cliphist wl-clipboard \
-         hyprland hyprlock hypridle hyprshot hyprshutdown hyprpwcenter \
+         hyprland hyprlock hypridle hyprshot hyprshutdown hyprsysteminfo hyprhyprpwcenter \
          evince \
          foliate \
          galculator \
@@ -185,7 +185,7 @@ installPackages() {
     development="cmake make"
     # I build Emacs manualy, so not included here.  Vi?  Vim?  Never heard of
     # em.
-    editor="aspell aspell-en tree-sitter"
+    editor="aspell aspell-en meld tree-sitter"
     file_manager="file-roller \
          ffmpegthumbnailer \
          gvfs gvfs-smb \

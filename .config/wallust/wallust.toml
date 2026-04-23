@@ -17,8 +17,8 @@ check_contrast = true
 #saturation = 50
 
 [templates]
-emacs2.target = '~/.emacs.d/themes/doom-wallust-dark-theme.el'
-emacs2.template = 'doom-wallust-dark-theme.el'
+emacs.target = '~/.emacs.d/themes/doom-wallust-dark.el'
+emacs.template = 'doom-wallust-dark.el'
 
 foot.target = '~/.config/foot/colors.ini'
 foot.template = 'colors-foot.ini'

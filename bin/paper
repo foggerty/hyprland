@@ -3,7 +3,7 @@
 
 @supported_file_types = %w[PNG XPM JPEG TIFF PNM RAS BMP]
 @wallpaper = '~/Pictures/Wallpapers/current'
-@alpha = 6
+@alpha = 60
 
 def valid_image?(file)
   f_type = `file "#{file}" | cut -d " " -f 2`.strip
