@@ -37,9 +37,7 @@
     "modules": [
       "custom/tux",
       "custom/logout",
-      "custom/power",
       "custom/display",
-      "custom/info"
     ]
   },
 

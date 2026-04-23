@@ -15,10 +15,6 @@ window#waybar {
     /* box-shadow: 10px 10px rgba(00, 00, 00, 20); */
 }
 
-box#tags {
-    margin-right: 0px;
-}
-
 label#pulseaudio {
     margin-left: 0px;
 }
@@ -32,35 +28,10 @@ button {
     min-width: 10px;
 }
 
-#tags button {
+#workspaces button {
+    background-color: transparent;
     color: grey;
     min-width: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-#tags button.occupied {
-    color: white;
-}
-
-#tags button.focused {
-    outline: none;
-    background: @background-transparent;
-    margin-top: 6px;
-    margin-bottom: 6px;
-    border-radius: 10px;
-    color: white;
-    animation: none;
-}
-
-#tags button:hover {
-    outline: none;
-    background: @color3;
-    margin-top: 6px;
-    margin-bottom: 6px;
-    border-radius: 10px;
-    color: @on_tertiary;
-    animation: none;
 }
 
 #workspaces button.active {
@@ -68,22 +39,18 @@ button {
 }
 
 #workspaces button:hover {
-    outline: none;
-    background: @color3;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 10px;
     color: white;
-    animation: none;
+    background: @color3;
+    border-radius: 3px;
 }
 
 #hardware {
+    background: @color4;
+    border-radius: 18px;
+    color: @color0;
+    margin-bottom: 6px;
     margin-left: 12px;
     margin-top: 6px;
-    margin-bottom: 6px;
-    border-radius: 18px;
-    background: @color4;
-    color: @color0;
 }
 
 #custom-tux,

@@ -66,7 +66,7 @@ Also add =audit=1= to enable auditing.
 * Still left to do
   - [ ] Theme SwayNC.
   - [ ] Fix emacs theming - fucking again.
-  - [ ] Fix whatami's power governer thingie.
+  - [ ] See if an get waybar workspace hover looking nicer.
   - [ ] Nice to have
     - [ ] GTK theming
     - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
@@ -75,20 +75,8 @@ Also add =audit=1= to enable auditing.
   - [ ] Update whatami to enumerate mounted block devices.
   - [ ] Unfuck Emacs theming.  Maybe go back to ewal.
   - [ ] Improve Emacs sart-up speed.
-  - [ ] Find out why  can never see cdn77.
+  - [ ] Find out why I can never see cdn77.
   - [ ] Install =copyparty= onto pi.
-  - [X] Swap out TLP for whatever Cachy defaults to.
-  - [X] Look into meld - file/VC comparison.
-  - [X] Fix Emacs config - org blocks and checkboxes.
-  - [ ] Copy music onto phone if the combination of Windows 11 and Apple's garbage software doesn't give me fucking brain-damage.
-  - [X] Get udiskie to open folders in Thunar (may require un-fucking xdg-open?).
-  - [X] Add SwayNC.
-  - [X] Find out why hypridle isn't honouring full-screen video.
-  - [X] Thunar isn't remembering size or position.  Fix.  Check if it does in Niri.
-  - [X] Setup Cider in Emacs.
-  - [X] Add GTK/QT theming.
-  - [X] Add UFW back to installer.
-  - [ ] Check out the wallust emacs theme [[https://codeberg.org/explosion-mental/wallust-templates/src/branch/master/doom-wallust-dark-theme.el][here]].
 
 * The "is it done" checklist of doom
   - [X] General:
