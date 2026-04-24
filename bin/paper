@@ -3,7 +3,7 @@
 
 @supported_file_types = %w[PNG XPM JPEG TIFF PNM RAS BMP]
 @wallpaper = '~/Pictures/Wallpapers/current'
-@alpha = 60
+@alpha = 68
 
 def valid_image?(file)
   f_type = `file "#{file}" | cut -d " " -f 2`.strip
@@ -87,7 +87,7 @@ if %w[theme both].include?(ARGV[0])
     `kill -s sigusr2 waybar`
 
   system('pgrep emacs') &&
-    `emacsclient -e "(load-theme 'doom-wallust-dark t)"`
+    `emacsclient -e "(load-theme 'ewal-doom-one t)"`
 
   puts 'Terminal cient may need to be restarted to see change.'
 end

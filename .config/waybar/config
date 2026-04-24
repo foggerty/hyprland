@@ -179,7 +179,7 @@
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}%(󰚥) {icon}",
+    "format-charging": "(󰚥){capacity}% {icon}",
     "format-full": " ",
     "format-icons": [" ", " ", " ", " ", " "],
     "interval": 3,

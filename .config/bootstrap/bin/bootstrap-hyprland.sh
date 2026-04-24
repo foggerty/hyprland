@@ -44,7 +44,8 @@ setupTheme() {
     # Set GTK themes / keybindings.
     info "Setting up GTK."
     #gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
-    gsettings set org.gnome.desktop.interface gtk-theme Adapta
+    #gsettings set org.gnome.desktop.interface gtk-theme Adapta
+    gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto-Eta
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "Cantarell 12"
