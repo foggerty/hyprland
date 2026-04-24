@@ -2,7 +2,7 @@
  /* wallust template - colors-swaync */
 
 @define-color text {{foreground}};
-@define-color background rgba({{background | rgb}},0.{{alpha}});
+@define-color background rgba({{background | rgb}}, 0.{{alpha}});
 @define-color background-alt {{background}};
 @define-color cursor {{cursor}};
 @define-color hovered {{color12}};

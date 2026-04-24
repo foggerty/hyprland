@@ -1,11 +1,11 @@
-@define-color background-transparent rgba(0,0,10,0.68);
-@define-color foreground #B3DBEE;
-@define-color background #00000A;
-@define-color border #46657B;
-@define-color button-hover #3E819E;
+@define-color background-transparent rgba(0,1,10,0.68);
+@define-color foreground #E3F0F9;
+@define-color background #00010A;
+@define-color border #456E8C;
+@define-color button-hover #3480A6;
 
-@define-color color1 #42576A;
-@define-color color4 #397BA9;
+@define-color color1 #405C6F;
+@define-color color4 #3F7C9A;
 
 * {
     background-image: none;

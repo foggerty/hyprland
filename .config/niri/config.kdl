@@ -8,6 +8,7 @@ spawn-at-startup "lxpolkit"
 //spawn-at-startup "blueman-applet"
 spawn-at-startup "nm-applet"
 spawn-at-startup "journalctl-desktop-notification"
+spawn-at-startup "udiskie"
 spawn-at-startup "opensnitch-ui"
 
 prefer-no-csd

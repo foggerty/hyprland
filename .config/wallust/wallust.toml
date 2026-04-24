@@ -21,7 +21,7 @@ emacs.target = '~/.emacs.d/themes/doom-wallust-dark.el'
 emacs.template = 'doom-wallust-dark.el'
 
 emacs2.target = '~/.cache/wal/colors.json'
-emacs2.template = 'color-emacs.json'
+emacs2.template = 'colors-emacs.json'
 
 foot.target = '~/.config/foot/colors.ini'
 foot.template = 'colors-foot.ini'
