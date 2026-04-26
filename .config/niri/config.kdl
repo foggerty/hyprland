@@ -31,7 +31,7 @@ environment {
 
 xwayland-satellite {
     // off
-    path "xwayland-satellite"
+    //path "xwayland-satellite"
 }
 
 blur {
@@ -265,7 +265,6 @@ window-rule {
 
 // Blur windows that aren't aware of Wayland protocol: ext-background-effect
 window-rule {
-    match app-id=r#"foot"#
     match app-id=r#"emacs"#
 
     background-effect {
@@ -282,6 +281,8 @@ window-rule {
 // Blur layers
 layer-rule {
     match namespace="waybar"
+    match namespace="logout_dialog"
+
     background-effect {
         blur true
     }

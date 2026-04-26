@@ -64,7 +64,6 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Go through latest Niri config - get blur working first!
   - [ ] Theme Niri
   - [ ] Fix emacs transparency in Niri.
   - [ ] Setup swap, forget scripting it for now.
@@ -78,6 +77,7 @@ Also add =audit=1= to enable auditing.
   - [ ] Update whatami to enumerate mounted block devices.
   - [ ] Improve Emacs sart-up speed.
   - [ ] Find out why I can never see cdn77.
+  - [X] Go through latest Niri config - get blur working first!
   - [X] Unfuck Emacs theming.  Maybe go back to ewal.
 
 * The "is it done" checklist of doom
