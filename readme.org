@@ -64,10 +64,10 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Go through latest Niri config.
-  - [ ] Setup swap, forget scripting it for now.
+  - [ ] Go through latest Niri config - get blur working first!
   - [ ] Theme Niri
   - [ ] Fix emacs transparency in Niri.
+  - [ ] Setup swap, forget scripting it for now.
   - [ ] Theme SwayNC.
   - [ ] See if can get waybar workspace hover looking nicer.
   - [ ] Nice to have

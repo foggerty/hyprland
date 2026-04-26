@@ -1,3 +1,10 @@
 overview {
     backdrop-color "#000302"
 }
+
+layout {
+    insert-hint {
+        color "#94735F"
+    }
+}
+
