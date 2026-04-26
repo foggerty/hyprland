@@ -64,19 +64,21 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
+  - [ ] Go through latest Niri config.
+  - [ ] Setup swap, forget scripting it for now.
+  - [ ] Theme Niri
+  - [ ] Fix emacs transparency in Niri.
   - [ ] Theme SwayNC.
-  - [ ] Fix emacs theming - fucking again.
-  - [ ] See if an get waybar workspace hover looking nicer.
+  - [ ] See if can get waybar workspace hover looking nicer.
   - [ ] Nice to have
     - [ ] GTK theming
     - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
     - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
   - [ ] Add Gateway to whatami IP.
   - [ ] Update whatami to enumerate mounted block devices.
-  - [ ] Unfuck Emacs theming.  Maybe go back to ewal.
   - [ ] Improve Emacs sart-up speed.
   - [ ] Find out why I can never see cdn77.
-  - [ ] Install =copyparty= onto pi.
+  - [X] Unfuck Emacs theming.  Maybe go back to ewal.
 
 * The "is it done" checklist of doom
   - [X] General:

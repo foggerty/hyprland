@@ -81,7 +81,7 @@ end
 if %w[theme both].include?(ARGV[0])
   apply_theme(@paper_path)
 
-  # restart('swaync')
+  restart('swaync')
 
   system('pgrep waybar') &&
     `kill -s sigusr2 waybar`

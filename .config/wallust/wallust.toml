@@ -38,6 +38,9 @@ gtk3.template = 'colors-gtk.css'
 kitty.target = '~/.config/kitty/colors.conf'
 kitty.template = 'colors-kitty.conf'
 
+niri.target = '~/.config/niri/colors.kdl'
+niri.template = 'colors-niri.kdl'
+
 rofi.target = '~/.config/rofi/colors.rasi'
 rofi.template = 'colors-rofi.rasi'
 
