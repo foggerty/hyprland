@@ -29,6 +29,19 @@ environment {
     XDG_STATE_HOME "~/.local/state"
 }
 
+xwayland-satellite {
+    // off
+    path "xwayland-satellite"
+}
+
+blur {
+    // off
+    passes 3
+    offset 3.0
+    noise 0.02
+    saturation 1.5
+}
+
 hotkey-overlay {
     skip-at-startup
 }
@@ -38,6 +51,10 @@ switch-events {
 }
 
 input {
+    workspace-auto-back-and-forth
+    warp-mouse-to-focus mode="center-xy"
+    focus-follows-mouse max-scroll-amount="95%"
+
     keyboard {
         xkb {
             options "ctrl:nocaps" // xkeyboard-config(7).
@@ -67,16 +84,17 @@ input {
         // accel-profile "flat"
         // scroll-method "no-scroll"
     }
-
-    // warp-mouse-to-focus
-    focus-follows-mouse max-scroll-amount="95%"
 }
 
 output "eDP-1" {
     // off
     scale 1.0
     transform "normal"
-    position x=1280 y=0
+    position x=1920 y=0
+
+    hot-corners {
+        top-left
+    }
 }
 
 layout {
@@ -104,10 +122,14 @@ layout {
         // fixed 1920 //sets the width in logical pixels exactly.
     }
 
-    // preset-window-heights { } // used with Mod+Shift+r
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    }
 
     focus-ring {
-        // Uncomment this line to disable the focus ring.
         // off
 
         width 1
@@ -211,29 +233,62 @@ animations {
 }
 
 
-// Open the Firefox picture-in-picture player as floating by default.
+// Rules for all windows.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    geometry-corner-radius 12
+    clip-to-geometry true
+
+    popups {
+        // Match the default GTK 3 popup corner radius.
+        geometry-corner-radius 6
+        opacity 0.65
+
+        background-effect {
+            blur true
+        }
+    }
+}
+
+// Float Firefox picture-in-picture player.
+window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
 }
 
+// Somw windows should default to floating
 window-rule {
     match app-id=r#"galculator"#
+    match app-id=r#"thunar"#
+
     open-floating true
 }
 
+// Blur windows that aren't aware of Wayland protocol: ext-background-effect
 window-rule {
-    match app-id=r#"thunar"#
-    open-floating true
+    match app-id=r#"foot"#
+    match app-id=r#"emacs"#
+
+    background-effect {
+        blur true
+    }
+}
+
+// Make Rofi FLOAT.
+// layer-rule {
+//     match namespace="^rofi$"
+//     baba-is-float true
+// }
+
+// Blur layers
+layer-rule {
+    match namespace="waybar"
+    background-effect {
+        blur true
+    }
 }
 
 // Rule for all windows - rounded corners.
 window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
 }
 
 binds {

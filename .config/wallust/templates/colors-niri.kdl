@@ -1,5 +1,5 @@
 overview {
-    backdrop-color "{{background}}"
+    backdrop-color "{{color4}}"
 }
 
 layout {
@@ -7,4 +7,3 @@ layout {
         color "{{color3}}"
     }
 }
-

@@ -1,10 +1,9 @@
 overview {
-    backdrop-color "#000302"
+    backdrop-color "#3F7C9A"
 }
 
 layout {
     insert-hint {
-        color "#94735F"
+        color "#477C9E"
     }
 }
-
