@@ -91,6 +91,7 @@ button {
 
 #network,
 #pulseaudio,
+#power-profiles-daemon,
 #tray {
     padding-right: 20px;
 }
