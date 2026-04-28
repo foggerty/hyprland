@@ -3,6 +3,8 @@ overview {
 }
 
 layout {
+    background-color "transparent"
+    
     insert-hint {
         color "{{color3}}"
     }

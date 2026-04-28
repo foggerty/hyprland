@@ -1,5 +1,6 @@
 {
   "layer": "bottom",
+  "opacity": 0.99,
   "exclusive": true,
   "height": 42,
   "spacing": 12,

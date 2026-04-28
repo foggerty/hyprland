@@ -6,13 +6,13 @@
 }
 {
   "label" : "logout",
-  "action" : "hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit",
-  "keybind" : "e",
+  "action" : "niri msg action quit",
+  "keybind" : "o",
   "circular": true
 }
 {
   "label" : "shutdown",
-  "action" : "hyprshutdown -p 'systemctl poweroff'",
+  "action" : "systemctl halt",
   "keybind" : "s",
   "circular": true
 }

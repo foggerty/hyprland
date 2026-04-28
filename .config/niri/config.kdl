@@ -1,15 +1,15 @@
 // `niri msg outputs` will list outputs.
 
 spawn-at-startup "awww-daemon"
-spawn-at-startup "Waybar"
+spawn-at-startup "waybar"
 spawn-at-startup "swaync"
 spawn-at-startup "swayidle"
 spawn-at-startup "lxpolkit"
 //spawn-at-startup "blueman-applet"
 spawn-at-startup "nm-applet"
-spawn-at-startup "journalctl-desktop-notification"
+//spawn-at-startup "journalctl-desktop-notification"
 spawn-at-startup "udiskie"
-spawn-at-startup "opensnitch-ui"
+//spawn-at-startup "opensnitch-ui"
 
 prefer-no-csd
 
@@ -198,6 +198,12 @@ layer-rule {
     }
 }
 
+// Put swaybg inside the overview backdrop.
+layer-rule {
+    match namespace="awww-daemon"
+    //place-within-backdrop true
+}
+
 // Waybar
 layer-rule {
     match namespace="waybar"
@@ -222,81 +228,61 @@ layer-rule {
     }
 }
 
-// Find more animations here: https://github.com/XansiVA/nirimation/tree/main/animations
 animations {
+    // Uncomment to turn off all animations.
+    // You can also put "off" into each individual animation to disable it.
+    // off
+
+    // Slow down all animations by this factor. Values below 1 speed them up instead.
+    // slowdown 3.0
+
+    // Individual animations.
+
     workspace-switch {
-        duration-ms 300
-        curve "ease-out-cubic"
+        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
     }
+
     window-open {
-        duration-ms 200
-        curve "linear"
-        custom-shader r"
-        vec4 pixelate_open(vec3 coords_geo, vec3 size_geo) {
-        // Discard pixels outside window bounds
-        if (coords_geo.x < 0.0 || coords_geo.x > 1.0 || coords_geo.y < 0.0 || coords_geo.y > 1.0) {
-        return vec4(0.0);
+        duration-ms 250
+        curve "ease-out-quad"
     }
-        float progress = niri_clamped_progress;
-        float border_width = 0.008; // Adjust based on your border size
-        vec2 coords = coords_geo.xy;
-        // Check if we're in the border region
-        bool in_border = coords.x < border_width || coords.x > (1.0 - border_width) ||
-        coords.y < border_width || coords.y > (1.0 - border_width);
-        // Only pixelate the inner content, not the border
-        if (!in_border) {
-        float pixel_size = (1.0 - progress) * 0.1;
-        if (pixel_size > 0.0) {
-        coords = floor(coords / pixel_size) * pixel_size + pixel_size * 0.5;
-    }
-        // Clamp sampling to avoid border area
-        coords = clamp(coords, border_width, 1.0 - border_width);
-    }
-        vec3 new_coords = vec3(coords, 1.0);
-        vec3 coords_tex = niri_geo_to_tex * new_coords;
-        vec4 color = texture2D(niri_tex, coords_tex.st);
-        color.a *= progress;
-        return color;
-    }
-        vec4 open_color(vec3 coords_geo, vec3 size_geo) {
-        return pixelate_open(coords_geo, size_geo);
-    }
-        "
-    }
+
     window-close {
-        duration-ms 200
-        curve "linear"
-        custom-shader r"
-        vec4 pixelate_close(vec3 coords_geo, vec3 size_geo) {
-        // Discard pixels outside window bounds
-        if (coords_geo.x < 0.0 || coords_geo.x > 1.0 || coords_geo.y < 0.0 || coords_geo.y > 1.0) {
-        return vec4(0.0);
+        duration-ms 250
+        curve "ease-out-quad"
     }
-        float progress = niri_clamped_progress;
-        float border_width = 0.008;
-        vec2 coords = coords_geo.xy;
-        // Check if we're in the border region
-        bool in_border = coords.x < border_width || coords.x > (1.0 - border_width) ||
-        coords.y < border_width || coords.y > (1.0 - border_width);
-        // Only pixelate the inner content, not the border
-        if (!in_border) {
-        float pixel_size = progress * 0.1;
-        if (pixel_size > 0.0) {
-        coords = floor(coords / pixel_size) * pixel_size + pixel_size * 0.5;
+
+    horizontal-view-movement {
+        spring damping-ratio=1.0 stiffness=600 epsilon=0.0001
     }
-        // Clamp sampling to avoid border area
-        coords = clamp(coords, border_width, 1.0 - border_width);
+
+    window-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
     }
-        vec3 new_coords = vec3(coords, 1.0);
-        vec3 coords_tex = niri_geo_to_tex * new_coords;
-        vec4 color = texture2D(niri_tex, coords_tex.st);
-        color.a *= (1.0 - progress);
-        return color;
+
+    window-resize {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
     }
-        vec4 close_color(vec3 coords_geo, vec3 size_geo) {
-        return pixelate_close(coords_geo, size_geo);
+
+    config-notification-open-close {
+        spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
     }
-        "
+
+    exit-confirmation-open-close {
+        spring damping-ratio=0.6 stiffness=500 epsilon=0.01
+    }
+
+    screenshot-ui-open {
+        duration-ms 250
+        curve "ease-out-quad"
+    }
+
+    overview-open-close {
+        spring damping-ratio=0.9 stiffness=1000 epsilon=0.001
+    }
+
+    recent-windows-close {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.001
     }
 }
 

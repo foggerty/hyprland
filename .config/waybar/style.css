@@ -12,7 +12,8 @@ window#waybar {
     transition-property: background-color;
     transition-duration: .2s;
     border-radius: 18px;
-    /* box-shadow: 10px 10px rgba(00, 00, 00, 20); */
+    margin: 0px;
+    padding: 0px;
 }
 
 label#pulseaudio {
@@ -22,7 +23,6 @@ label#pulseaudio {
 button {
     color: grey;
     background-color: transparent;
-    box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
     min-width: 10px;
@@ -91,7 +91,10 @@ button {
 
 #network,
 #pulseaudio,
-#power-profiles-daemon,
 #tray {
     padding-right: 20px;
+}
+
+#power-profiles-daemon {
+    padding-right: 5px;
 }

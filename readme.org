@@ -64,11 +64,10 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
-  - [ ] Theme Niri
-  - [ ] Fix emacs transparency in Niri.
+  - [ ] Fix mimetype mapping.
+  - [ ] WLogout - create script to shutdow Niri first.
   - [ ] Setup swap, forget scripting it for now.
   - [ ] Theme SwayNC.
-  - [ ] See if can get waybar workspace hover looking nicer.
   - [ ] Nice to have
     - [ ] GTK theming
     - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
@@ -77,6 +76,9 @@ Also add =audit=1= to enable auditing.
   - [ ] Update whatami to enumerate mounted block devices.
   - [ ] Improve Emacs sart-up speed.
   - [ ] Find out why I can never see cdn77.
+  - [X] See if can get waybar workspace hover looking nicer.
+  - [X] Theme Niri
+  - [X] Fix emacs transparency in Niri.
   - [X] Go through latest Niri config - get blur working first!
   - [X] Unfuck Emacs theming.  Maybe go back to ewal.
 
