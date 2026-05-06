@@ -39,12 +39,19 @@
       "custom/tux",
       "custom/logout",
       "custom/display",
+      "custom/look"
     ]
   },
 
   "custom/tux": {
     "format": "",
     "tooltip-format": "BTW...."
+  },
+
+  "custom/look": {
+    "format": "",
+    "on-click": "~/bin/toggle nwg-look",
+    "tooltip-format": "GTK Theme/Icon Settings"
   },
 
   "custom/logout": {

@@ -46,6 +46,7 @@ setupTheme() {
     #gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
     #gsettings set org.gnome.desktop.interface gtk-theme Adapta
     gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto-Eta
+    #gsettings set org.gnome.desktop.interface gtk-theme Adwaita
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "Cantarell 12"
@@ -162,7 +163,7 @@ installPackages() {
     desktop="avahi \
          blueman \
          cliphist wl-clipboard \
-         hyprland hyprlock hypridle hyprshot hyprshutdown hyprsysteminfo hyprhyprpwcenter \
+         hyprland hyprlock hypridle hyprshot hyprshutdown hyprsysteminfo hyprpwcenter \
          evince \
          foliate \
          galculator \
@@ -171,7 +172,7 @@ installPackages() {
          journalctl-desktop-notification \
          mpd rmpc \
          pamixer \
-         nwg-displays \
+         nwg-displays nwg-look \
          rofi \
          ristretto \
          starship \
@@ -210,13 +211,12 @@ installPackages() {
               python-qt-material \
               ufw"
     terminal="bash-completion foot starship tealdeer"
-    theme="adw-gtk-theme
-         adapta-gtk-theme \
+    theme="adapta-gtk-theme \
          kora-icon-theme morewaita-icon-theme \
          imagemagick \
          plymouth-theme-cyanide-git \
          qt6ct \
-	 wallust"
+         wallust"
     utilities="7zip zip unrar-free unzip \
          btop htop \
          bat bat-extras \

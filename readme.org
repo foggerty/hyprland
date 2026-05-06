@@ -65,7 +65,7 @@ Also add =audit=1= to enable auditing.
 
 * Still left to do
   - [ ] Fix mimetype mapping.
-  - [ ] WLogout - create script to shutdow Niri first.
+  - [ ] Fix Emacs transparency.
   - [ ] Setup swap, forget scripting it for now.
   - [ ] Theme SwayNC.
   - [ ] Nice to have

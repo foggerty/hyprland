@@ -7,7 +7,8 @@
 
 window#waybar {
     background-color: @background-transparent;
-    border: 2px solid @color13;
+    border: 2px solid;
+    border-color: @color13;
     color: white;
     transition-property: background-color;
     transition-duration: .2s;
@@ -58,7 +59,8 @@ button {
 #custom-monitor,
 #custom-display,
 #custom-logout,
-#custom-info {
+#custom-info,
+#custom-look {
     color:@color0;
     margin-left: 10px;
     margin-right: 18px;
@@ -70,7 +72,8 @@ button {
 #custom-monitor:hover,
 #custom-display:hover,
 #custom-logout:hover,
-#custom-info:hover {
+#custom-info:hover,
+#custom-look:hover {
     color: @color13;
 }
 

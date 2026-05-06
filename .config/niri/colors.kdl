@@ -1,11 +1,11 @@
 overview {
-    backdrop-color "#3E80AE"
+    backdrop-color "#48859C"
 }
 
 layout {
-    //background-color "transparent"
-
+    background-color "transparent"
+    
     insert-hint {
-        color "#3D6C8C"
+        color "#637B7F"
     }
 }

@@ -12,7 +12,7 @@
 }
 {
   "label" : "shutdown",
-  "action" : "systemctl halt",
+  "action" : "systemctl poweroff",
   "keybind" : "s",
   "circular": true
 }
