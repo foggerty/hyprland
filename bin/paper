@@ -86,6 +86,9 @@ if %w[theme both].include?(ARGV[0])
   system('pgrep waybar') &&
     `kill -s sigusr2 waybar`
 
+  system('pgrep foot') &&
+    `kill -s sigusr1 foot`
+
   system('pgrep emacs') &&
     `emacsclient -e "(load-theme 'ewal-doom-one t)"`
 

@@ -138,7 +138,7 @@ layout {
     }
 
     shadow {
-        on
+        off
         softness 60
         spread   10
         offset x=25 y=5
@@ -172,16 +172,18 @@ window-rule {
 
 // Somw windows should default to floating
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    match app-id=r#"galculator"#
-    match app-id=r#"thunar"#
+    match app-id="firefox$" title="^Picture-in-Picture$"
+    match app-id="galculator"
+    match app-id="thunar"
+    match app-id="nwg-look"
+    match app-id="nwg-displays"
 
     open-floating true
 }
 
 // Blur windows that aren't aware of Wayland protocol: ext-background-effect
 window-rule {
-    match app-id=".*emacs.*"
+    match app-id=".*Emacs.*"
 
     background-effect {
         blur true
@@ -191,10 +193,10 @@ window-rule {
 // WLogout
 layer-rule {
     match namespace="logout_dialog"
-    match namespace="rofi"
 
     background-effect {
         blur true
+        xray false
     }
 }
 

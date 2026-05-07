@@ -19,6 +19,7 @@ window#waybar {
 
 label#pulseaudio {
     margin-left: 0px;
+    margin-right: 4px;
 }
 
 button {
