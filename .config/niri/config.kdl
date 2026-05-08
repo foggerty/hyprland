@@ -132,7 +132,7 @@ layout {
     focus-ring {
         // off
 
-        width 1
+        width 2
         active-color "#7fc8ff"
         inactive-color "#505050"
     }
@@ -183,7 +183,7 @@ window-rule {
 
 // Blur windows that aren't aware of Wayland protocol: ext-background-effect
 window-rule {
-    match app-id=".*Emacs.*"
+    match app-id="emacs"
 
     background-effect {
         blur true

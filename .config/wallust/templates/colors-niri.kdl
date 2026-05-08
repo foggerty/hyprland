@@ -4,8 +4,13 @@ overview {
 
 layout {
     background-color "transparent"
-    
+
     insert-hint {
         color "{{color3}}"
+    }
+
+    focus-ring {
+        active-color "{{color13}}"
+        inactive-color "{{color4}}"
     }
 }

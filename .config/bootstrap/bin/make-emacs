@@ -10,29 +10,33 @@ if [[ ! -d "emacs" ]]; then
     git clone https://github.com/emacs-mirror/emacs --depth=1 --branch=emacs-30
     pushd emacs
 
-    ./autogen.sh
-
-    ./configure --with-pgtk \
-                --with-tree-sitter \
-                --with-sound=no \
-                --with-imagemagick \
-                --without-selinux \
-                --without-gconf \
-                --without-gsettings \
-                --without-xinput2 \
-                --disable-gc-mark-trace \
-                --without-toolit-scroll-bars \
-                --without-xaw3d \
-                --without-xim \
-                --without-xdbe \
-                --with-small-ja-dic
 else
     pushd emacs
-    make clean
-    git pull
 fi
 
-export CFLAGS="-march=native -O2 -pipe -fomit-frame-pointer"
+make clean
+
+git pull --rebase
+
+./autogen.sh
+
+./configure --with-pgtk \
+            --with-tree-sitter \
+            --with-sound=no \
+            --with-imagemagick \
+            --without-selinux \
+            --without-gconf \
+            --without-gsettings \
+            --without-xinput2 \
+            --disable-gc-mark-trace \
+            --without-xaw3d \
+            --without-xim \
+            --without-xdbe \
+            --with-small-ja-dic
+
+
+#export CFLAGS="-march=native -O2 -pipe -fomit-frame-pointer"
+export CFLAGS="-march=native -O2 -pipe"
 export MAKEFLAGS="-j$(nproc)"
 
 make && sudo make install

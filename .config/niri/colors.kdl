@@ -4,8 +4,13 @@ overview {
 
 layout {
     background-color "transparent"
-    
+
     insert-hint {
         color "#5B6E72"
+    }
+
+    focus-ring {
+        active-color "#678778"
+        inactive-color "#7D7E84"
     }
 }

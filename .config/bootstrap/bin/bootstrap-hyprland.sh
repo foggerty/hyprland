@@ -204,7 +204,7 @@ installPackages() {
          ttf-linux-libertine ttf-liberation \
          ttf-sourcecodepro-nerd"
     greeter="greetd greetd-tuigreet"
-    libraries="libgccjit lua-luv libappindicator-gtk3"
+    libraries="libgccjit lua-luv libappindicator-gtk3 libotf"
     networking="iwd networkmanager network-manager-applet"
     security="lxsession
               opensnitch \
