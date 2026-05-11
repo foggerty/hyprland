@@ -32,7 +32,7 @@ configuration {
     handle-color:                @selected;
     background-color:            @background-transparent;
     foreground-color:            @foreground;
-    alternate-background:        @background-alt;
+    alternate-background:        @background-transparent;
     normal-background:           @background;
     normal-foreground:           @foreground;
     urgent-background:           @urgent;

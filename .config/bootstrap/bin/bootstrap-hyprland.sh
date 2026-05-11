@@ -86,9 +86,9 @@ setupNetworkManager() {
 setupServices() {
     # List of system services to enable/start.
     services=(avahi-daemon \
-              bluetooth \
-              greetd \
-              opensnitchd)
+                  bluetooth \
+                  greetd \
+                  opensnitchd)
 
     # List of user services to enable/start.
     user_services=(emacs foot-server mpd)
@@ -172,7 +172,7 @@ installPackages() {
          journalctl-desktop-notification \
          mpd rmpc \
          pamixer \
-         nwg-displays nwg-look \
+         nwg-displays
          rofi \
          ristretto \
          starship \
@@ -211,9 +211,10 @@ installPackages() {
               python-qt-material \
               ufw"
     terminal="bash-completion foot starship tealdeer"
-    theme="adapta-gtk-theme \
+    theme="deepin-gtk-theme \
          kora-icon-theme morewaita-icon-theme \
          imagemagick \
+         nwg-look \
          plymouth-theme-cyanide-git \
          qt6ct \
          wallust"
@@ -269,12 +270,12 @@ rebuildKernel() {
 # Install paru if missing.
 which paru > /dev/null || installParu
 
-run "Install packages? " installPackages
-run "Setup theme? " setupTheme
-run "Setup displaymanager? " setupDisplayManager
+run "Install packages? "      installPackages
+run "Setup theme? "           setupTheme
+run "Setup displaymanager? "  setupDisplayManager
 run "Setup Network Manager? " setupNetworkManager
-run "Setup environment? " setupEnvironment
-run "Setup services? " setupServices
+run "Setup environment? "     setupEnvironment
+run "Setup services? "        setupServices
 run "Rebuild kernel images??" rebuildKernel
 
 echo "Reboot recomnended to start all services."

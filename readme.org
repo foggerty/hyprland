@@ -64,8 +64,9 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
+  - [ ] Add bounce animation to wlogout.
   - [ ] Fix mimetype mapping.
-  - [ ] Setup swap, forget scripting it for now.
+  - [ ] Fix Emacs inverse colors in terminal.
   - [ ] Theme SwayNC.
   - [ ] Nice to have
     - [ ] GTK theming
@@ -75,7 +76,9 @@ Also add =audit=1= to enable auditing.
   - [ ] Update whatami to enumerate mounted block devices.
   - [ ] Improve Emacs sart-up speed.
   - [ ] Find out why I can never see cdn77.
-  - [X] Fix Emacs transparency.
+  - [X] Fix Emacs transparency (a-fucking-gain).
+  - [X] Add blur to wlogout.
+  - [X] Setup swap, forget scripting it for now.
   - [X] See if can get waybar workspace hover looking nicer.
   - [X] Theme Niri
   - [X] Fix emacs transparency in Niri.

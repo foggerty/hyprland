@@ -14,9 +14,9 @@
 
 window {
     font-size: 20pt;
-    background-color: rgba(0, 0, 0,{{alpha}});
+    background-color: rgba({{background | rgb}},0.{{alpha}});
     background-size: cover;
-}
+    }
 
 button {
     background-color: @color1;

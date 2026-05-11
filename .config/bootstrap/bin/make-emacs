@@ -21,6 +21,9 @@ git pull --rebase
 ./autogen.sh
 
 ./configure --with-pgtk \
+            --with-cairo \
+            --with-harfbuzz \
+            --with-libsystemd \
             --with-tree-sitter \
             --with-sound=no \
             --with-imagemagick \
