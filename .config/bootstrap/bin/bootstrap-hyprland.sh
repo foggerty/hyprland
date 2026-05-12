@@ -162,6 +162,7 @@ installPackages() {
     browser="firefox"
     desktop="avahi \
          blueman \
+         cachy-update \
          cliphist wl-clipboard \
          hyprland hyprlock hypridle hyprshot hyprshutdown hyprsysteminfo hyprpwcenter \
          evince \

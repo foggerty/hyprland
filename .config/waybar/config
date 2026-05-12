@@ -14,7 +14,6 @@
     "memory",
     "cpu",
     "temperature",
-    "mpd"
   ],
   "modules-center": [
     "clock"
@@ -162,13 +161,14 @@
   "cpu": {
     "format": "cpu: {usage}%",
     "tooltip": false,
-    "on-click": "gnome-system-monitor",
+    "on-click": "",
     "interval": 1
   },
 
   "memory": {
+    "tooltip": false,
     "format": "mem: {}%",
-    "on-click": "alacritty -e gtop"
+    "on-click": ""
   },
 
   "temperature": {
@@ -178,6 +178,7 @@
           "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon7/temp2_input"
         ],
     "format": "{temperatureC}°C",
+    "tooltip": false,    
   },
 
   "battery": {

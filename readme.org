@@ -4,12 +4,22 @@ Some theming has been ruthlessly stolen from great projects, such as:
 
 Why?  Because fuck CSS, that's why.
 
-* Installation
-This setup is intended for an intel laptop using WiFi.
+I want a small as possible (in mem and disk) tiling desktop.  It should:
+ - Be something that I could give to a noob who's interested in learning.
+ - Use as few packages from the AUR as possible (mostly just cosmetic).
+ - Not make any assumptions about the user's prefered editor (i.e. use POSIX variables like $EDITOR).  Yes, I've defaulted SUPER+E to open Emacs, but it could open any editor.  /I/ however, retain full rights to make (possibly vile) assumptions about a user based entirely on their preferred editor ;-)
+ - Support any file manager the user wants, Thunar or a CLI etc.  Note that while it's nice of Thunar to auto-mount USB devices for me, it's something that the desktop should handle; in other words a CLI file-manager should be able to access a USB key in the absence of Thunar.
+ - Do the usual Bluetooth/WiFi things that people expect laptops to do.
+ - Not care about how it's launched (SystemD or greetd) - although to be fair I am running foot server via a SystemD user file, just because it's easier.  Ideally, this should be trivial to port to a BSD.
+ - Have reasonable secure defaults (still to work out app armor).
 
+Other than that, it's what works for me now.  If you want it to work differently for you, then it should be reasonably obvious where to look, and documented with links to more info.
+
+* Installation
  - Install Cachy (mannually setting up BTRFS snapshot support is a pain, hence Cachy, but will still work 100% with vanilla Arch).  Make sure =NetworkManager= and =Pipewire= are installed.
  - Ensure all of your drivers are installed (Cachy installer should detect/install what you need, otherwise consult the Arch Wiki).  For an example of the kinds of drivers you need, look [[file:.config/bootstrap/bin/bootstrap-laptop.sh][here]].
- - Run =$HOME/bin/bootstrap=-hyprland.
+ - Run =$HOME/bin/bootstrap-laptop=
+ - Run =$HOME/bin/bootstrap-hyprland=
  - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
  - See if there's anything specific for your [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
  - If using an intel GPU, add =i915_enable_rc6=1 i915_enable_fbc=1= to the kernel cmd line for extra power-saving.
@@ -64,6 +74,7 @@ Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot param
 Also add =audit=1= to enable auditing.
 
 * Still left to do
+  - [ ] Does the
   - [ ] Add bounce animation to wlogout.
   - [ ] Fix mimetype mapping.
   - [ ] Fix Emacs inverse colors in terminal.
