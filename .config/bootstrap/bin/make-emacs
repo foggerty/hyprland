@@ -7,42 +7,65 @@ mkdir -p ~/dev
 pushd ~/dev
 
 if [[ ! -d "emacs" ]]; then
-    git clone https://github.com/emacs-mirror/emacs --depth=1 --branch=emacs-30
+    git clone https://github.com/emacs-mirror/emacs --depth=1 --branch emacs-30
     pushd emacs
-
 else
     pushd emacs
+    git pull --rebase
 fi
 
-make clean
-
-git pull --rebase
+git reset --hard HEAD
+git clean -f -d -x
+rm -rf .git/hooks/*
 
 ./autogen.sh
 
-./configure --with-pgtk \
-            --with-cairo \
-            --with-harfbuzz \
-            --with-libsystemd \
-            --with-tree-sitter \
-            --with-sound=no \
-            --with-imagemagick \
-            --without-selinux \
-            --without-gconf \
-            --without-gsettings \
-            --without-xinput2 \
-            --disable-gc-mark-trace \
-            --without-xaw3d \
-            --without-xim \
-            --without-xdbe \
-            --with-small-ja-dic
+# https://www.jamescherti.com/compiling-emacs/
 
+./configure \
+    --disable-acl \
+    --disable-gc-mark-trace \
+    --disable-xattr \
+    --with-cairo \
+    --with-file-notification=inotify \
+    --with-gsettings \
+    --with-harfbuzz \
+    --with-imagemagick \
+    -with-libsystemd \
+    --with-modules \
+    --with-pgtk \
+    --with-small-ja-dic \
+    --with-threads \
+    --with-tree-sitter \
+    --with-xml2 \
+    --with-libgmp \
+    --without-compress-install \
+    --without-gconf \
+    --without-gpm \
+    --without-gsettings \
+    --without-hesiod \
+    --without-imagemagick \
+    --without-included-regex \
+    --without-kerberos \
+    --without-kerberos5 \
+    --without-libotf \
+    --without-mail-unlink \
+    --without-pop \
+    --without-selinux \
+    --without-sound \
+    --without-x \
+    --without-xaw3d \
+    --without-xdbe \
+    --without-xdbe \
+    --without-xft \
+    --without-xim \
+    --without-xinput2
 
-#export CFLAGS="-march=native -O2 -pipe -fomit-frame-pointer"
-export CFLAGS="-march=native -O2 -pipe"
+export CFLAGS="-O2 -pipe -march=native -mtune=native -fno-omit-frame-pointer -fno-plt -flto=auto"
+export LDFLAGS="-Wl,-O2 -Wl,-z,now -Wl,-z,relro -Wl,--sort-common -Wl,--as-needed -Wl,-z,pack-relative-relocs -flto=auto"
 export MAKEFLAGS="-j$(nproc)"
 
-make && sudo make install
+make && sudo make install-strip
 
 popd
 popd

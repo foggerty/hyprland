@@ -43,10 +43,7 @@ setupTheme() {
 
     # Set GTK themes / keybindings.
     info "Setting up GTK."
-    #gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
-    #gsettings set org.gnome.desktop.interface gtk-theme Adapta
-    gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto-Eta
-    #gsettings set org.gnome.desktop.interface gtk-theme Adwaita
+    gsettings set org.gnome.desktop.interface gtk-theme depin-dark
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "Cantarell 12"
@@ -184,7 +181,8 @@ installPackages() {
          wlogout \
          vlc vlc-plugin-ffmpeg \
          xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
-         xdg-terminal-exec"
+         xdg-terminal-exec \
+         zeal"
     development="cmake make"
     # I build Emacs manualy, so not included here.  Vi?  Vim?  Never heard of
     # em.

@@ -1,16 +1,16 @@
 overview {
-    backdrop-color "#9599A6"
+    backdrop-color "#758598"
 }
 
 layout {
-    background-color "#9599A6"
+    background-color "#758598"
 
     insert-hint {
-        color "#7E8CAD"
+        color "#6C7077"
     }
 
     focus-ring {
-        active-color "#CBD6F2"
-        inactive-color "#9599A6"
+        active-color "#A2B6CE"
+        inactive-color "#758598"
     }
 }

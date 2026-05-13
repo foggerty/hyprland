@@ -11,9 +11,13 @@ I want a small as possible (in mem and disk) tiling desktop.  It should:
  - Support any file manager the user wants, Thunar or a CLI etc.  Note that while it's nice of Thunar to auto-mount USB devices for me, it's something that the desktop should handle; in other words a CLI file-manager should be able to access a USB key in the absence of Thunar.
  - Do the usual Bluetooth/WiFi things that people expect laptops to do.
  - Not care about how it's launched (SystemD or greetd) - although to be fair I am running foot server via a SystemD user file, just because it's easier.  Ideally, this should be trivial to port to a BSD.
- - Have reasonable secure defaults (still to work out app armor).
+ - Have reasonable secure defaults (still to work out app armour).
 
 Other than that, it's what works for me now.  If you want it to work differently for you, then it should be reasonably obvious where to look, and documented with links to more info.
+
+It should be unlike ML4W etc, because while it's pretty well designed and modular, I get the impression that every peice has the expectation, even if not the requirement, that every other piece will always be there.  I'd like to be able to easily switch out pieces,
+
+Don't use shitty defaults if they don't add any real value.  i.e. the default calendar in Waybar is barely providing value other than "I need to look up what day the 17th next month is".  Which, to be fair, is bloody useful when you need it, and often suprisingly hard to lookup without, say, a calendar.  Actually it looks pretty good with current theming, and hello to anyone reading this, to my chain-of-thought ramblings.  I'm trying to think of a reason to get rid of it, but not sure what to replace it with.  Emacs calendar?  I don't like a) connecting to Google calendar from Linux (not until they release a decent API or driver) or b) using Emacs for anything other than editing, as it's still essentially a single-threaded backend.
 
 * Installation
  - Install Cachy (mannually setting up BTRFS snapshot support is a pain, hence Cachy, but will still work 100% with vanilla Arch).  Make sure =NetworkManager= and =Pipewire= are installed.
@@ -30,13 +34,13 @@ Other than that, it's what works for me now.  If you want it to work differently
     May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.  WARNING: this will disable some multi-media keys, along with the power button (although long-press to power-off still works).
 
 * Changing theme
-Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= or right-click and select =Theme= on an image in Thunar (this will call the same script).
+Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= from the command line, or right-click and select =Theme= on an image in Thunar (this will call the same script).
 
 =paper= will set the wallpaper, =theme= will set the theme (based off of the image's colors) and =both= will do both.
 
 * Screenshots
 
-The mandatory =fastfetch= shot:
+The mandatory 'fetch' shot:
 
 [[file:Pictures/info.png]]
 
@@ -69,24 +73,22 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 |             4 |        3 |       7 |
 |---------------+----------+---------|
 
-* AppArmor
-Add =lsm=landlock,lockdown,yama,integrity,apparmor,bpf= to the kernel boot parameters.
-Also add =audit=1= to enable auditing.
-
 * Still left to do
-  - [ ] Does the
-  - [ ] Add bounce animation to wlogout.
-  - [ ] Fix mimetype mapping.
+  - [ ] [[https://www.jamescherti.com/compiling-emacs/][Damn it....]]
+  - [ ] Fix swaync's notification colors - no contrast in buttons.
   - [ ] Fix Emacs inverse colors in terminal.
   - [ ] Theme SwayNC.
-  - [ ] Nice to have
-    - [ ] GTK theming
-    - [ ] Add setupSwap/hibernate to bootstrap script (swapfile, look into partition later).
-    - [ ] Closing the laptop lid should first sleep (done) and then hibernate (requires sawp file and kernel parameters etc.)
+  - [ ] Power button should hibernate with short-press, shutdown with long.
+  - [ ] Laptop lid should first sleep then hibernate.
+  - [ ] Can UDiskie or udisks handle USB mounting when in a TTY session?
   - [ ] Add Gateway and DNS to whatami.
   - [ ] Update whatami to enumerate mounted block devices.
   - [ ] Improve Emacs sart-up speed.
-  - [ ] Find out why I can never see cdn77.
+  - [ ] Add bounce animation to wlogout?
+  - [ ] Nice to have
+    - [ ] GTK theming
+    - [ ] Add setup swap/hibernate to bootstrap script (swapfile only).
+  - [X] Fix mimetype mapping.
   - [X] Fix Emacs transparency (a-fucking-gain).
   - [X] Add blur to wlogout.
   - [X] Setup swap, forget scripting it for now.
@@ -97,36 +99,38 @@ Also add =audit=1= to enable auditing.
   - [X] Unfuck Emacs theming.  Maybe go back to ewal.
 
 * The "is it done" checklist of doom
-  - [X] General:
-    - [X] Desktop portal is running.
-    - [X] Notifications are working.
-    - [X] Clipboard helper.
-    - [X] Screenshot tool.
-    - [X] All of the fonts [[https://www.cogsci.ed.ac.uk/=richard/unicode-sample.html][here]] are readable.
-  - [X] Can build emacs with =PGTK=, =NativeCompilation= and =TreeSitter.=
-  - [X] Plugin another monitor (or two) and see if everything still works.
-  - [-] Application support:
-    * [X] Steam.
+  - [ ] General:
+    - [ ] Desktop portal is running.
+    - [ ] Notifications are working.
+    - [ ] Clipboard helper.
+    - [ ] Screenshot tool.
+    - [ ] All of the fonts [[https://www.cogsci.ed.ac.uk/=richard/unicode-sample.html][here]] are readable.
+    - [ ] Mime types are setup
+  - [ ] Plugin another monitor (or two) and see if everything still works.
+  - [ ] Application support:
+    * [ ] Steam.
     * [ ] Zoom - web.
     * [ ] Zoom - native.
-    * [X] Open/extract/create .zip, .rar, .7zip files from file-manager.
-  - [X] Networking:
-    * [X] Can browse SAMBA shares from file-manager.
-    * [X] Can browse with AVAHI (i.e. ping hostname.local).
-  - [X] Firefox:
-    * [X] Firefox is using GPU for video rendering (intel-gpu-tools/intel_gpu_top).
-  - [X] Security
-    * [X] Passing score (70%) on lynis. (Screw it 68% is good enough.)
-  - [-] Laptop:
-    * [X] Wifi is working, can browse and connect
-    * [-] Ditto for Bluetooth.
+    * [ ] Open/extract/create .zip, .rar, .7zip files from file-manager.
+  - [ ] Networking:
+    * [ ] Can browse SAMBA shares from file-manager.
+    * [ ] Can open SAMBA shares from file-manager.
+    * [ ] Can browse with AVAHI (i.e. ping hostname.local).
+    * [ ] Can access airdrop
+  - [ ] Firefox:
+    * [ ] Firefox is using GPU for video rendering (intel-gpu-tools/intel_gpu_top).
+  - [ ] Security
+    * [ ] Passing score (70%) on lynis. (Screw it 68% is good enough.)
+  - [ ] Laptop:
+    * [ ] Wifi is working, can browse and connect
+    * [ ] Ditto for Bluetooth.
       * [ ] Can connet a mouse
-      * [X] Can connect headphones
-    * [X] Lid sleeps & locks.
-    * [X] Can read from SD card.
-  - [X] Theme
-    - [X] Can right-click in file-manager and set theme.
-  - [X] USB drives are auto-mounted.
+      * [ ] Can connect headphones
+    * [ ] Lid sleeps & locks.
+    * [ ] Can read from SD card.
+    * [ ] USB drives are auto-mounted.
+  - [ ] Theme
+    - [ ] Can right-click in file-manager and set theme.
 
 Images in =$HOME/Pictures/Wallpapers= are copyright their respective owners, and were nabbed/copied from =https:/wallpaperaccess.com=.
 

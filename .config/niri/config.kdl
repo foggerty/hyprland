@@ -11,6 +11,7 @@ spawn-at-startup "lxpolkit"
 spawn-at-startup "nm-applet"
 spawn-at-startup "udiskie"
 spawn-at-startup "opensnitch-ui"
+spawn-at-startup "zeal"
 //spawn-at-startup "blueman-applet"
 //spawn-at-startup "arch-update" "--tray"
 //spawn-at-startup "journalctl-desktop-notification"
@@ -42,9 +43,9 @@ xwayland-satellite {
 blur {
     // off
     passes 3
-    offset 3.0
-    noise 0.02
-    saturation 1.5
+    offset 2
+    noise 0
+    saturation 1.25
 }
 
 hotkey-overlay {
@@ -117,7 +118,7 @@ layout {
         color "ffc87f80"
     }
 
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.66667; }
     preset-column-widths { // user with Mod+R
         // The default preset widths are 1/3, 1/2 and 2/3 of the output.
         //proportion 0.33333
@@ -136,7 +137,6 @@ layout {
 
     focus-ring {
         // off
-
         width 2
         active-color "#7fc8ff"
         inactive-color "#505050"
@@ -148,7 +148,7 @@ layout {
         spread   10
         offset x=25 y=5
         draw-behind-window false
-        color "#000000a0"
+        color "#00000000"
     }
 
     struts {
@@ -165,8 +165,8 @@ window-rule {
     clip-to-geometry true
 
     popups {
-        opacity 0.75
-        geometry-corner-radius 6
+        opacity 0.68
+        geometry-corner-radius 12
 
         background-effect {
             blur true
@@ -194,6 +194,16 @@ window-rule {
 
     background-effect {
         blur true
+    }
+}
+
+// Foot - want xray when it's floating.
+window-rule {
+    match app-id="foot"
+    match app-id="footclient"
+
+    background-effect {
+        xray false
     }
 }
 
@@ -245,6 +255,12 @@ layer-rule {
             xray false
         }
     }
+}
+
+// awww-daemon
+layer-rule {
+    match namespace="awww-daemon"
+    //place-within-backdrop true
 }
 
 animations {
