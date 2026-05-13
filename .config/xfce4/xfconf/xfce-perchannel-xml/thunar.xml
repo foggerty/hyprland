@@ -11,5 +11,5 @@
   <property name="last-details-view-column-widths" type="string" value="50,50,127,50,50,88,50,50,152,50,50,76,50,159"/>
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="misc-volume-management" type="bool" value="false"/>
-  <property name="last-show-hidden" type="bool" value="true"/>
+  <property name="last-show-hidden" type="bool" value="false"/>
 </channel>

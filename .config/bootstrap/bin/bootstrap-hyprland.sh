@@ -43,7 +43,7 @@ setupTheme() {
 
     # Set GTK themes / keybindings.
     info "Setting up GTK."
-    gsettings set org.gnome.desktop.interface gtk-theme depin-dark
+    gsettings set org.gnome.desktop.interface gtk-theme deepin-dark
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "Cantarell 12"
@@ -65,15 +65,15 @@ setupTheme() {
 setupDisplayManager() {
     info "Setting up Greetd/"
     sudo mkdir -p /etc/geetd
-    sudo cp ~/.config/bootstrap/greetd/config.toml /etc/greetd/
+    sudo cp ~/.config/bootstrap/etc/greetd/config.toml /etc/greetd/
 }
 
 setupNetworkManager() {
     info "Configuring network-manager (using iwd as wireless backend)".
     sudo mkdir -p /etc/iwd
-    sudo cp ~/.config/bootstrap/networking/iwd_main.conf /etc/iwd/main.conf
+    sudo cp ~/.config/bootstrap/etc/iwd/iwd_main.conf /etc/iwd/main.conf
     sudo mkdir -p /etc/NetworkManager/conf.d/
-    sudo cp ~/.config/bootstrap/networking/nm_wifi_backend.conf /etc/NetworkManager/conf.d/wifi_backend.conf
+    sudo cp ~/.config/bootstrap/etc/iwd/nm_wifi_backend.conf /etc/NetworkManager/conf.d/wifi_backend.conf
 
     sudo systemctl enable NetworkManager
     sudo systemctl disable wpa_supplicant
@@ -85,7 +85,8 @@ setupServices() {
     services=(avahi-daemon \
                   bluetooth \
                   greetd \
-                  opensnitchd)
+                  opensnitchd \
+                  ufw)
 
     # List of user services to enable/start.
     user_services=(emacs foot-server mpd)
@@ -132,10 +133,6 @@ setupEnvironment() {
     #info "Setting capabilities for gnome-keyring-daemon."
     #sudo setcap cap_ipc_lock=+ep /usr/bin/gnome-keyring-daemon
 
-    # Sets umask and prevents various kernel modules from being loaded.
-    info "Running hardening script."
-    ~/.config/bootstrap/hardening/harden.sh
-
     # Stop pacman from creating autostart files etc.
     for ex in "${EXCLUDE_FILES[@]}"
     do
@@ -145,23 +142,15 @@ setupEnvironment() {
             sudo sed -i "/\[options\]/a $ex" /etc/pacman.conf
         fi
     done
-
-    # TODO! - Recreate this - think it was something from power-saving?
-
-    # Set defaults for udisks
-    info "Setting up udisks/udiskie"
-    sudo mkdir -p /etc/udisks2
-    sudo cp "$HOME/.config/bootstrap/usb/mount_options.conf" /etc/udisks2
 }
 
 installPackages() {
-    basics="man linux-firmware openssh terminus-font"
+    basics="man linux-firmware openssh"
     browser="firefox"
     desktop="avahi \
          blueman \
          cachy-update \
          cliphist wl-clipboard \
-         hyprland hyprlock hypridle hyprshot hyprshutdown hyprsysteminfo hyprpwcenter \
          evince \
          foliate \
          galculator \
@@ -180,7 +169,7 @@ installPackages() {
          uwsm \
          wlogout \
          vlc vlc-plugin-ffmpeg \
-         xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
+         xdg-desktop-portal-gtk \
          xdg-terminal-exec \
          zeal"
     development="cmake make"
@@ -203,8 +192,18 @@ installPackages() {
          ttf-linux-libertine ttf-liberation \
          ttf-sourcecodepro-nerd"
     greeter="greetd greetd-tuigreet"
+    hyprland="hyprland \
+              hyprlock \
+              hypridle \
+              hyprshot \
+              hyprshutdown \
+              hyprsysteminfo \
+              hyprpwcenter \
+              wlr-dpms \
+              xdg-desktop-portal-hyprland"
     libraries="libgccjit lua-luv libappindicator-gtk3 libotf"
     networking="iwd networkmanager network-manager-applet"
+    niri="niri xdg-desktop-portal-gtk"
     security="lxsession
               opensnitch \
               python-qt-material \
@@ -214,7 +213,7 @@ installPackages() {
          kora-icon-theme morewaita-icon-theme \
          imagemagick \
          nwg-look \
-         plymouth-theme-cyanide-git \
+
          qt6ct \
          wallust"
     utilities="7zip zip unrar-free unzip \
@@ -248,6 +247,8 @@ installPackages() {
          $theme            \
          $utilities"
 
+    desktop="$niri"
+
     # Install requirements for bootstrap
     info Installing git and base-devel.
     paru --needed -S git base-devel
@@ -255,15 +256,24 @@ installPackages() {
     # Install packages
     info "Installing packages."
     paru --needed --skipreview -Syu $to_install
+    paru --needed --skipreview -Syu $desktop
 
     if [[ "$?" -ne 0 ]]; then
         exit
     fi
 }
 
+enableUfw() {
+    sudo ufw default deny
+    sudo ufw allow from 192.168.0.0/24
+    sudo ufw allow Deluge
+
+    sudo ufw enable
+}
+
 rebuildKernel() {
     info Rebuiding kernel init images
-    sudo mkinitcpio -P
+    sudo limine-mkinitcpio -P
 }
 
 # Install paru if missing.
@@ -275,6 +285,7 @@ run "Setup displaymanager? "  setupDisplayManager
 run "Setup Network Manager? " setupNetworkManager
 run "Setup environment? "     setupEnvironment
 run "Setup services? "        setupServices
-run "Rebuild kernel images??" rebuildKernel
+run "Setup UFW? "             setupUfw
+run "Rebuild kernel images ?" rebuildKernel
 
 echo "Reboot recomnended to start all services."

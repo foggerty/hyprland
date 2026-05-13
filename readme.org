@@ -8,7 +8,7 @@ I want a small as possible (in mem and disk) tiling desktop.  It should:
  - Be something that I could give to a noob who's interested in learning.
  - Use as few packages from the AUR as possible (mostly just cosmetic).
  - Not make any assumptions about the user's prefered editor (i.e. use POSIX variables like $EDITOR).  Yes, I've defaulted SUPER+E to open Emacs, but it could open any editor.  /I/ however, retain full rights to make (possibly vile) assumptions about a user based entirely on their preferred editor ;-)
- - Support any file manager the user wants, Thunar or a CLI etc.  Note that while it's nice of Thunar to auto-mount USB devices for me, it's something that the desktop should handle; in other words a CLI file-manager should be able to access a USB key in the absence of Thunar.
+ - Support any file manager the user wants, Thunar or a CLI etc.  For example, while it's nice of Thunar to auto-mount USB devices for me, it's something that the desktop should handle; in other words a CLI file-manager should be able to access a USB key in the absence of Thunar.  Getting it working in a raw TTY may be an issue....
  - Do the usual Bluetooth/WiFi things that people expect laptops to do.
  - Not care about how it's launched (SystemD or greetd) - although to be fair I am running foot server via a SystemD user file, just because it's easier.  Ideally, this should be trivial to port to a BSD.
  - Have reasonable secure defaults (still to work out app armour).
@@ -17,7 +17,7 @@ Other than that, it's what works for me now.  If you want it to work differently
 
 It should be unlike ML4W etc, because while it's pretty well designed and modular, I get the impression that every peice has the expectation, even if not the requirement, that every other piece will always be there.  I'd like to be able to easily switch out pieces,
 
-Don't use shitty defaults if they don't add any real value.  i.e. the default calendar in Waybar is barely providing value other than "I need to look up what day the 17th next month is".  Which, to be fair, is bloody useful when you need it, and often suprisingly hard to lookup without, say, a calendar.  Actually it looks pretty good with current theming, and hello to anyone reading this, to my chain-of-thought ramblings.  I'm trying to think of a reason to get rid of it, but not sure what to replace it with.  Emacs calendar?  I don't like a) connecting to Google calendar from Linux (not until they release a decent API or driver) or b) using Emacs for anything other than editing, as it's still essentially a single-threaded backend.
+Don't use shitty defaults if they don't add any real value.  i.e. the default calendar in Waybar is barely providing value other than "I need to look up what day the 17th next month is".  Which, to be fair, is bloody useful when you need it, and often suprisingly hard to lookup without say, a calendar.  Actually it looks pretty good with current theming, and hello to anyone reading this, to my chain-of-thought ramblings.  I'm trying to think of a reason to get rid of it, but not sure what to replace it with.  Emacs calendar?  I don't like a) connecting to Google calendar from Linux (not until they release a decent API or driver) or b) using Emacs for anything other than editing, as it's still essentially a single-threaded backend.
 
 * Installation
  - Install Cachy (mannually setting up BTRFS snapshot support is a pain, hence Cachy, but will still work 100% with vanilla Arch).  Make sure =NetworkManager= and =Pipewire= are installed.
@@ -31,7 +31,7 @@ Don't use shitty defaults if they don't add any real value.  i.e. the default ca
  - Optional if you a) want hibernate to work and b) have a sufficiently sized swap partition:
     Enable zswap as detailed [[https://wiki.cachyos.org/configuration/general_system_tweaks/#switching-from-zram-to-zswap][here]].  For vanilla Arch, check the [[https://wiki.archlinux.org/title/Zswap][Wiki]].
 
-    May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.  WARNING: this will disable some multi-media keys, along with the power button (although long-press to power-off still works).
+    May also need to add =module_blacklist=intel_hid= owing to a kernel bug if using an intel laptop.  WARNING: this will disable some multi-media keys, along with the power button (although long-press to power-off still works).  NOTE: This seems to be fixed in the 7.0 kernel?
 
 * Changing theme
 Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= from the command line, or right-click and select =Theme= on an image in Thunar (this will call the same script).
@@ -74,29 +74,31 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 |---------------+----------+---------|
 
 * Still left to do
-  - [ ] [[https://www.jamescherti.com/compiling-emacs/][Damn it....]]
-  - [ ] Fix swaync's notification colors - no contrast in buttons.
-  - [ ] Fix Emacs inverse colors in terminal.
-  - [ ] Theme SwayNC.
-  - [ ] Power button should hibernate with short-press, shutdown with long.
-  - [ ] Laptop lid should first sleep then hibernate.
-  - [ ] Can UDiskie or udisks handle USB mounting when in a TTY session?
-  - [ ] Add Gateway and DNS to whatami.
-  - [ ] Update whatami to enumerate mounted block devices.
-  - [ ] Improve Emacs sart-up speed.
-  - [ ] Add bounce animation to wlogout?
-  - [ ] Nice to have
-    - [ ] GTK theming
-    - [ ] Add setup swap/hibernate to bootstrap script (swapfile only).
-  - [X] Fix mimetype mapping.
-  - [X] Fix Emacs transparency (a-fucking-gain).
-  - [X] Add blur to wlogout.
-  - [X] Setup swap, forget scripting it for now.
-  - [X] See if can get waybar workspace hover looking nicer.
-  - [X] Theme Niri
-  - [X] Fix emacs transparency in Niri.
-  - [X] Go through latest Niri config - get blur working first!
-  - [X] Unfuck Emacs theming.  Maybe go back to ewal.
+ - [ ] [[https://www.jamescherti.com/compiling-emacs/][Damn it....]]
+ - [ ] 
+ - [ ] Fix swaync's notification colors - no contrast in buttons.
+ - [ ] Fix Emacs inverse colors in terminal.
+ - [ ] Un-fuck Waybar's "issues" with blur/alpha.
+ - [ ] Theme SwayNC.
+ - [ ] Power button should hibernate with short-press, shutdown with long.
+ - [ ] Laptop lid should first sleep then hibernate.
+ - [ ] Udisks to handle [[https://wiki.archlinux.org/title/Udisks][USB mounting when in a TTY session]]?
+ - [ ] Add Gateway and DNS to whatami.
+ - [ ] Update whatami to enumerate mounted block devices.
+ - [ ] Improve Emacs sart-up speed.
+ - [ ] Add bounce animation to wlogout?
+ - [ ] Nice to have
+   - [ ] GTK theming
+   - [ ] Add setup swap/hibernate to bootstrap script (swapfile only).
+ - [X] Fix mimetype mapping.
+ - [X] Fix Emacs transparency (a-fucking-gain).
+ - [X] Add blur to wlogout.
+ - [X] Setup swap, forget scripting it for now.
+ - [X] See if can get waybar workspace hover looking nicer.
+ - [X] Theme Niri
+ - [X] Fix emacs transparency in Niri.
+ - [X] Go through latest Niri config - get blur working first!
+ - [X] Unfuck Emacs theming.  Maybe go back to ewal.
 
 * The "is it done" checklist of doom
   - [ ] General:
@@ -130,7 +132,7 @@ Note that the odd-looking numbering is because Intel number their virtual core l
     * [ ] Can read from SD card.
     * [ ] USB drives are auto-mounted.
   - [ ] Theme
-    - [ ] Can right-click in file-manager and set theme.
+    - [ ] Can right-click images in file-manager and set theme/wallpaper.
 
 Images in =$HOME/Pictures/Wallpapers= are copyright their respective owners, and were nabbed/copied from =https:/wallpaperaccess.com=.
 

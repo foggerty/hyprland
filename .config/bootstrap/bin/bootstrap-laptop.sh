@@ -19,25 +19,14 @@ installPackages() {
 
     power="brightnessctl \
        lm_sensors \
-       thermald \
-       tlp \
-       wlr-dpms"
-
-    security="ufw"
+       thermald"
 
     to_install="$graphics_drivers \
             $graphics_intel \
-            $power \
-            $security"
+            $power"
 
     info "Installing packages."
     paru --needed --skipreview -Syu $to_install > /dev/null
-}
-
-setupTLP() {
-    # Copy TLP configuration.
-    info "Setting TLP configuration."
-    sudo cp ~/.config/bootstrap/tlp/10-grayarea.conf /etc/tlp.d/
 }
 
 detectSensors() {
@@ -47,23 +36,13 @@ detectSensors() {
 
 enableServices() {
     info "Enabling laptop services."
-    services=(thermald tlp ufw)
+    services=(thermald)
 
     for service in "${services[@]}"; do
         sudo systemctl enable --now "$service" -q
     done
 }
 
-enableUfw() {
-    sudo ufw default deny
-    sudo ufw allow from 192.168.0.0/24
-    sudo ufw allow Deluge
-
-    sudo ufw enable
-}
-
 run "Install packages? " installPackages
-run "Enable UFW? " enableUfw
-run "Setup TLP? " setupTLP
 run "Run detect sensors? " detectSensors
 run "Enable services? " enableServices
