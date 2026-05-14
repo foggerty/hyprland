@@ -46,9 +46,9 @@ setupTheme() {
     gsettings set org.gnome.desktop.interface gtk-theme deepin-dark
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
-    gsettings set org.gnome.desktop.interface font-name "Cantarell 12"
-    gsettings set org.gnome.desktop.interface document-font-name "Cantarell 12"
-    gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 12"
+    gsettings set org.gnome.desktop.interface font-name "Cantarell 13"
+    gsettings set org.gnome.desktop.interface document-font-name "Cantarell 13"
+    gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 13"
     gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
     # Update kora icon theme to use MoreWaita as a fallback.
@@ -56,10 +56,6 @@ setupTheme() {
         info "Adding MoreWaita as fallback to Kora icons."
         sudo sed -i -r 's/^Inherits=.*$/Inherits=morewaita/' /usr/share/icons/kora/index.theme
     fi
-
-    # Setup plymouth theme
-    info "Setting plymouth theme."
-    sudo plymouth-set-default-theme -R cyanide
 }
 
 setupDisplayManager() {
@@ -159,14 +155,12 @@ installPackages() {
          journalctl-desktop-notification \
          mpd rmpc \
          pamixer \
-         nwg-displays
+         nwg-displays \
          rofi \
-         ristretto \
-         starship \
+         ristretto\
          swaync swaylock swayidle \
          swww \
          waybar \
-         uwsm \
          wlogout \
          vlc vlc-plugin-ffmpeg \
          xdg-desktop-portal-gtk \
@@ -175,11 +169,10 @@ installPackages() {
     development="cmake make"
     # I build Emacs manualy, so not included here.  Vi?  Vim?  Never heard of
     # em.
-    editor="aspell aspell-en meld tree-sitter"
+    editor="aspell aspell-en tree-sitter"
     file_manager="file-roller \
          ffmpegthumbnailer \
          gvfs gvfs-smb \
-         libgsf poppler-glib \
          nfs-utils \
          thunar thunar-archive-plugin thunar-volman \
          thunar-media-tags-plugin \
@@ -188,7 +181,7 @@ installPackages() {
          cantarell-fonts \
          font-manager \
          otf-font-awesome \
-         noto-fonts noto-fonts-cjk noto-fonts-emoji \
+         noto-fonts-cjk noto-fonts-emoji \
          ttf-linux-libertine ttf-liberation \
          ttf-sourcecodepro-nerd"
     greeter="greetd greetd-tuigreet"
@@ -201,7 +194,7 @@ installPackages() {
               hyprpwcenter \
               wlr-dpms \
               xdg-desktop-portal-hyprland"
-    libraries="libgccjit lua-luv libappindicator-gtk3 libotf"
+    libraries="libgccjit lua-luv libotf"
     networking="iwd networkmanager network-manager-applet"
     niri="niri xdg-desktop-portal-gtk"
     security="lxsession
@@ -213,15 +206,14 @@ installPackages() {
          kora-icon-theme morewaita-icon-theme \
          imagemagick \
          nwg-look \
-
          qt6ct \
          wallust"
     utilities="7zip zip unrar-free unzip \
          btop htop \
-         bat bat-extras \
+         bat \
          btrfs-assistant \
          figlet \
-         fzf
+         fzf \
          lshw lsof \
          mc \
          ncdu \

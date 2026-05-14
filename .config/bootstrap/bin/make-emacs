@@ -25,6 +25,7 @@ rm -rf .git/hooks/*
 ./configure \
     --disable-acl \
     --disable-gc-mark-trace \
+    --enable-link-time-optimization \
     --disable-xattr \
     --with-cairo \
     --with-file-notification=inotify \
@@ -39,10 +40,8 @@ rm -rf .git/hooks/*
     --with-tree-sitter \
     --with-xml2 \
     --with-libgmp \
-    --without-compress-install \
     --without-gconf \
     --without-gpm \
-    --without-gsettings \
     --without-hesiod \
     --without-imagemagick \
     --without-included-regex \
@@ -51,8 +50,16 @@ rm -rf .git/hooks/*
     --without-libotf \
     --without-mail-unlink \
     --without-pop \
+    --without-gif \
+    --without-jpeg \
+    --without-png \
+    --without-rsvg \
+    --without-tiff \
+    --without-xpm \
+    --without-webp \
     --without-selinux \
     --without-sound \
+    --without-toolkit-scroll-bars \
     --without-x \
     --without-xaw3d \
     --without-xdbe \

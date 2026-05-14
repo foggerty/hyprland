@@ -32,7 +32,7 @@ def apply_paper(paper)
 end
 
 def apply_theme(paper)
-  `wallust run #{paper} -a #{@alpha}`
+  `wallust -q run #{paper} -a #{@alpha}`
 end
 
 def restart(app)

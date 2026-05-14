@@ -59,10 +59,12 @@ diskUsageRoot=$(diskUsage /)
 diskUsageBoot=$(diskUsage /boot)
 ip=$(ip route get 1 | cut -d " " -f 7)
 sched=$(scheduler)
+arch=$(gcc -march=native -Q --help=target | grep -- '-march=   ' | cut -f 3)
 
 displayHostname
 
 info "Kernel Version:"     "$kernel"
+info "Architectue:"        "$arch"
 info "Govener:"            "$govener"
 info "SCX Scheduler:"      "$sched"
 info "Disk usage (/):"     "$diskUsageRoot"
