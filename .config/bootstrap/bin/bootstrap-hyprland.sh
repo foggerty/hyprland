@@ -64,12 +64,12 @@ setupDisplayManager() {
     sudo cp ~/.config/bootstrap/etc/greetd/config.toml /etc/greetd/
 }
 
-setupNetworkManager() {
+setupIwd() {
     info "Configuring network-manager (using iwd as wireless backend)".
     sudo mkdir -p /etc/iwd
     sudo cp ~/.config/bootstrap/etc/iwd/iwd_main.conf /etc/iwd/main.conf
     sudo mkdir -p /etc/NetworkManager/conf.d/
-    sudo cp ~/.config/bootstrap/etc/iwd/nm_wifi_backend.conf /etc/NetworkManager/conf.d/wifi_backend.conf
+    sudo cp ~/.config/bootstrap/etc/NetworkManager/conf.d/wifi_backend.conf /etc/NetworkManager/conf.d/wifi_backend.conf
 
     sudo systemctl enable NetworkManager
     sudo systemctl disable wpa_supplicant
@@ -112,9 +112,10 @@ setupEnvironment() {
     # still exist is wasted overhead.
     sudo systemctl --global disable xdg-user-dirs-update -q
 
-    # Setup default mime-types
-    info "Setting mime-type defaults."
-    "$HOME"/.config/bootstrap/bin/set-mime-defaults.sh
+    # Setup default mime-types - only uncomment if you're read the script and
+    # understand it.
+    # info "Setting mime-type defaults."
+    # "$HOME"/.config/bootstrap/bin/set-mime-defaults.sh
 
     # Setup locale
     info "Setting XDG locale."
@@ -274,7 +275,7 @@ which paru > /dev/null || installParu
 run "Install packages? "      installPackages
 run "Setup theme? "           setupTheme
 run "Setup displaymanager? "  setupDisplayManager
-run "Setup Network Manager? " setupNetworkManager
+run "Replace WPA with IWD? "  setupIwd
 run "Setup environment? "     setupEnvironment
 run "Setup services? "        setupServices
 run "Setup UFW? "             setupUfw

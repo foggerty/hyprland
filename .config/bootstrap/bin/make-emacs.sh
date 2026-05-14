@@ -1,4 +1,5 @@
 #!/bin/sh
+# https://www.jamescherti.com/compiling-emacs/
 
 set -o errexit
 
@@ -11,16 +12,15 @@ if [[ ! -d "emacs" ]]; then
     pushd emacs
 else
     pushd emacs
+
+    git reset --hard HEAD
+    git clean -f -d -x
+    rm -rf .git/hooks/*
+
     git pull --rebase
 fi
 
-git reset --hard HEAD
-git clean -f -d -x
-rm -rf .git/hooks/*
-
 ./autogen.sh
-
-# https://www.jamescherti.com/compiling-emacs/
 
 ./configure \
     --disable-acl \
@@ -32,7 +32,7 @@ rm -rf .git/hooks/*
     --with-gsettings \
     --with-harfbuzz \
     --with-imagemagick \
-    -with-libsystemd \
+    --with-libsystemd \
     --with-modules \
     --with-pgtk \
     --with-small-ja-dic \
@@ -59,7 +59,6 @@ rm -rf .git/hooks/*
     --without-webp \
     --without-selinux \
     --without-sound \
-    --without-toolkit-scroll-bars \
     --without-x \
     --without-xaw3d \
     --without-xdbe \
@@ -68,8 +67,12 @@ rm -rf .git/hooks/*
     --without-xim \
     --without-xinput2
 
-export CFLAGS="-O2 -pipe -march=native -mtune=native -fno-omit-frame-pointer -fno-plt -flto=auto"
-export LDFLAGS="-Wl,-O2 -Wl,-z,now -Wl,-z,relro -Wl,--sort-common -Wl,--as-needed -Wl,-z,pack-relative-relocs -flto=auto"
+#export CFLAGS="-O2 -pipe -march=native -mtune=native -fno-omit-frame-pointer -fno-plt -flto=auto"
+export CFLAGS="-O2 -pipe -march=native -mtune=native -fno-omit-frame-pointer -flto=auto"
+
+#export LDFLAGS="-Wl,-O2 -Wl,-z,now -Wl,-z,relro -Wl,--sort-common -Wl,--as-needed -Wl,-z,pack-relative-relocs -flto=auto"
+export LDFLAGS="-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,pack-relative-relocs -flto=auto"
+
 export MAKEFLAGS="-j$(nproc)"
 
 make && sudo make install-strip

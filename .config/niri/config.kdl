@@ -184,6 +184,7 @@ window-rule {
     match app-id="nwg-displays"
     match app-id="blueman"
     match app-id="opensnitch_ui"
+    match app-id="org.cachyos.scx-manager"
 
     open-floating true
 }

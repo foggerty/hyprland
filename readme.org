@@ -17,7 +17,7 @@ Other than that, it's what works for me now.  If you want it to work differently
 
 It should be unlike ML4W etc, because while it's pretty well designed and modular, I get the impression that every peice has the expectation, even if not the requirement, that every other piece will always be there.  I'd like to be able to easily switch out pieces,
 
-Don't use shitty defaults if they don't add any real value.  i.e. the default calendar in Waybar is barely providing value other than "I need to look up what day the 17th next month is".  Which, to be fair, is bloody useful when you need it, and often suprisingly hard to lookup without say, a calendar.  Actually it looks pretty good with current theming, and hello to anyone reading this, to my chain-of-thought ramblings.  I'm trying to think of a reason to get rid of it, but not sure what to replace it with.  Emacs calendar?  I don't like a) connecting to Google calendar from Linux (not until they release a decent API or driver) or b) using Emacs for anything other than editing, as it's still essentially a single-threaded backend.
+Don't use shitty defaults if they don't add any real value.  i.e. the default calendar in Waybar is barely providing value other than "I need to look up what day the 17th next month is".  Which, to be fair, is bloody useful when you need it, and is often suprisingly hard to lookup without say, a calendar.  Actually it looks pretty good with current theming, and hello to anyone reading this, to my chain-of-thought ramblings.  I'm trying to think of a reason to get rid of it, but not sure what to replace it with.  Emacs calendar?  I don't like a) connecting to Google calendar from Linux (not until they release a decent API or driver) or b) using Emacs for anything other than editing, as it's still essentially a single-threaded backend.
 
 * Installation
  - Install Cachy (mannually setting up BTRFS snapshot support is a pain, hence Cachy, but will still work 100% with vanilla Arch).  Make sure =NetworkManager= and =Pipewire= are installed.
@@ -40,7 +40,7 @@ Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= from t
 
 * Screenshots
 
-The mandatory 'fetch' shot:
+eThe mandatory 'fetch' shot:
 
 [[file:Pictures/info.png]]
 
@@ -104,12 +104,11 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 
 * The "is it done" checklist of doom
   - [ ] General:
-    - [ ] Desktop portal is running.
-    - [ ] Notifications are working.
+    - [ ] Notifications.
     - [ ] Clipboard helper.
     - [ ] Screenshot tool.
     - [ ] All of the fonts [[https://www.cogsci.ed.ac.uk/=richard/unicode-sample.html][here]] are readable.
-    - [ ] Mime types are setup
+    - [ ] Mime types are setup.
   - [ ] Plugin another monitor (or two) and see if everything still works.
   - [ ] Application support:
     * [ ] Steam.
@@ -120,7 +119,7 @@ Note that the odd-looking numbering is because Intel number their virtual core l
     * [ ] Can browse SAMBA shares from file-manager.
     * [ ] Can open SAMBA shares from file-manager.
     * [ ] Can browse with AVAHI (i.e. ping hostname.local).
-    * [ ] Can access airdrop
+    * [ ] Can access airdrop.
   - [ ] Firefox:
     * [ ] Firefox is using GPU for video rendering (intel-gpu-tools/intel_gpu_top).
   - [ ] Security
