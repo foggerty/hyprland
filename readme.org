@@ -74,6 +74,7 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
+ - [ ] Turn off bloody matching highlight in eglot, or find out how to speed up LSP/Eglot.
  - [ ] Power button should hibernate with short-press, shutdown with long.
  - [ ] Laptop lid should first sleep then hibernate.
  - [ ] Fix swaync's notification colors - no contrast in buttons.
