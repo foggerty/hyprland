@@ -27,8 +27,9 @@ environment {
     GTK_USE_PORTAL "1"
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
     QT_QPA_PLATFORM "wayland;xcb"
-    QT_QPA_PLATFORMTHEME "gtk3"
-    QT_QUICK_CONTROLS_STYLE "org.hyprland.style"
+    // If using foot as a daemon, then this variable will need to be set in
+    // either the Systemd unit file, or your own .profile file.
+    QT_QPA_PLATFORMTHEME "qt6ct"
     QT_SCALE_FACTOR "1"
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
     XCURSOR_SIZE "16"
@@ -270,12 +271,12 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    slowdown 1.5
 
     // Individual animations.
 
     workspace-switch {
-        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+        spring damping-ratio=0.8 stiffness=1000 epsilon=0.0001
     }
 
     window-open {
@@ -289,11 +290,11 @@ animations {
     }
 
     horizontal-view-movement {
-        spring damping-ratio=1.0 stiffness=600 epsilon=0.0001
+        spring damping-ratio=0.9 stiffness=600 epsilon=0.0001
     }
 
     window-movement {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+        spring damping-ratio=0.9 stiffness=800 epsilon=0.0001
     }
 
     window-resize {
@@ -301,7 +302,7 @@ animations {
     }
 
     config-notification-open-close {
-        spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
+        spring damping-ratio=0.6 stiffness=600 epsilon=0.001
     }
 
     exit-confirmation-open-close {
@@ -314,7 +315,7 @@ animations {
     }
 
     overview-open-close {
-        spring damping-ratio=0.9 stiffness=1000 epsilon=0.001
+        spring damping-ratio=1.0 stiffness=400 epsilon=0.001
     }
 
     recent-windows-close {

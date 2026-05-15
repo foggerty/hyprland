@@ -50,29 +50,17 @@ fi
     --without-libotf \
     --without-mail-unlink \
     --without-pop \
-    --without-gif \
-    --without-jpeg \
-    --without-png \
-    --without-rsvg \
-    --without-tiff \
-    --without-xpm \
-    --without-webp \
     --without-selinux \
     --without-sound \
     --without-x \
     --without-xaw3d \
     --without-xdbe \
-    --without-xdbe \
     --without-xft \
     --without-xim \
     --without-xinput2
 
-#export CFLAGS="-O2 -pipe -march=native -mtune=native -fno-omit-frame-pointer -fno-plt -flto=auto"
-export CFLAGS="-O2 -pipe -march=native -mtune=native -fno-omit-frame-pointer -flto=auto"
-
-#export LDFLAGS="-Wl,-O2 -Wl,-z,now -Wl,-z,relro -Wl,--sort-common -Wl,--as-needed -Wl,-z,pack-relative-relocs -flto=auto"
+export CFLAGS="-O2 -pipe -march=native -mtune=native -fno-omit-frame-pointer -fno-plt -flto=auto"
 export LDFLAGS="-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,pack-relative-relocs -flto=auto"
-
 export MAKEFLAGS="-j$(nproc)"
 
 make && sudo make install-strip

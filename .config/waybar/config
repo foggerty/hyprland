@@ -14,6 +14,7 @@
     "memory",
     "cpu",
     "temperature",
+    "mpd"
   ],
   "modules-center": [
     "clock"
@@ -122,7 +123,7 @@
 
   "mpd": {
     "on-click": "rmpc togglepause",
-    "on-click-right": "pkill rmpc || hyprctl dispatch \"exec [float; size 80% 80%] foot -e rmpc\"",
+    "on-click-right": "pkill rmpc || footclient rmpc",
 
     "format": "{stateIcon}    {artist}/{title}",
     "format-disconnected": "MPD - Disconnected",
@@ -178,7 +179,7 @@
           "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon7/temp2_input"
         ],
     "format": "{temperatureC}°C",
-    "tooltip": false,    
+    "tooltip": false,
   },
 
   "battery": {

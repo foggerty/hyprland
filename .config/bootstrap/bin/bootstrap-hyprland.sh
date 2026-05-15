@@ -46,9 +46,9 @@ setupTheme() {
     gsettings set org.gnome.desktop.interface gtk-theme deepin-dark
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
-    gsettings set org.gnome.desktop.interface font-name "Cantarell 13"
-    gsettings set org.gnome.desktop.interface document-font-name "Cantarell 13"
-    gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 13"
+    gsettings set org.gnome.desktop.interface font-name "sans 13"
+    gsettings set org.gnome.desktop.interface document-font-name "sans 13"
+    gsettings set org.gnome.desktop.interface monospace-font-name "monospace 13"
     gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
     # Update kora icon theme to use MoreWaita as a fallback.
