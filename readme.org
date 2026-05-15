@@ -74,17 +74,16 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
- - [ ] Can I setup as many .css files as possible, to use the fonts set by gsettings?
  - [ ] Power button should hibernate with short-press, shutdown with long.
  - [ ] Laptop lid should first sleep then hibernate.
  - [ ] Fix swaync's notification colors - no contrast in buttons.
  - [ ] Fix Emacs inverse colors in terminal.
  - [ ] Copy music back onto laptop and find a decent music player or mpd client.
  - [ ] Un-fuck Waybar's "issues" with blur/alpha.
- - [ ] Can Emacs git thingie be used for CLI merging?
+ - [ ] Can magit be used for CLI merging?
  - [ ] Theme SwayNC.
  - [ ] Udisks to handle [[https://wiki.archlinux.org/title/Udisks][USB mounting when in a TTY session]]?
- - [ ] Add host (XPS 13 9380)
+ - [ ] Add host (XPS 13 9380) to whatami
  - [ ] Add Gateway and DNS to whatami.
  - [ ] Update whatami to enumerate mounted block devices.
  - [ ] Improve Emacs sart-up speed.
@@ -96,6 +95,7 @@ I /think/ AMD does it differently; sensibly, I hope.
    - [ ] GTK theming
    - [ ] QT theming
    - [ ] Add setup swap/hibernate to bootstrap script (swapfile only).
+ - [X] Can I setup as many .css files as possible, to use the fonts set by gsettings?
  - [X] Fix mimetype mapping.
  - [X] Fix Emacs transparency (a-fucking-gain).
  - [X] Add blur to wlogout.
