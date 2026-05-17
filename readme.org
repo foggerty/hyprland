@@ -17,15 +17,20 @@ I want a small as possible (in mem and disk) tiling desktop.  It should:
  - Be able to swap out/in different WMs, inc Hyprland, and the OpenBox-like one.
  - Have a small enough installation footprint that I know what (mostly) every package does, or at the very least, /why/ it's been installed.  Or to put it another way, I should be able to justify every package being installed.
 
-Other than that, it's what works for me now.  If you want it to work differently for you, then it should be reasonably obvious where to look, and documented with links to more info.
-
-It should be unlike ML4W etc, because while it's pretty well designed and modular, I get the impression that every peice has the expectation( even if not the requirement), that every other piece will always be there.
+Other than that, it's what works for me now.  If you want it to work differently for you, then it should be reasonably obvious and documented where to look.
 
 Don't use shitty defaults if they don't add any real value.  i.e. the default calendar in Waybar is barely providing value other than "I need to look up what day the 17th this month is".  Which, to be fair, is bloody useful when you need it, and is often suprisingly hard to lookup without say, a calendar.  Actually it looks pretty good with current theming, and hello to anyone reading this, to my chain-of-thought ramblings.  I'm trying to think of a reason to get rid of it, but not sure what to replace it with.  I don't like a) connecting to Google calendar from Linux (not until they release a decent API or client) or b) using Emacs for anything other than editing, as it's still essentially a single-threaded backend.
 
 * Installation
  - Install Cachy (mannually setting up BTRFS snapshot support is a pain, hence Cachy, but will still work 100% with vanilla Arch).  Make sure =NetworkManager= and =Pipewire= are installed.
  - Ensure all of your drivers are installed (Cachy installer should detect/install what you need, otherwise consult the Arch Wiki).  For an example of the kinds of drivers you need, look [[file:.config/bootstrap/bin/bootstrap-laptop.sh][here]].
+ - Clone this repo into =~/=
+   #+begin_src bash
+   cd ~
+   git init
+   git remote add origin https://github.com/foggerty/hyprland
+   git pull
+   #+end_src
  - Run =$HOME/bin/bootstrap-hyprland=
  - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
  - See if there's anything specific for your [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
@@ -74,28 +79,28 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
- - [ ] Turn off bloody matching highlight in eglot, or find out how to speed up LSP/Eglot.
- - [ ] Power button should hibernate with short-press, shutdown with long.
- - [ ] Laptop lid should first sleep then hibernate.
- - [ ] Fix swaync's notification colors - no contrast in buttons.
  - [ ] Fix Emacs inverse colors in terminal.
- - [ ] Copy music back onto laptop and find a decent music player or mpd client.
  - [ ] Un-fuck Waybar's "issues" with blur/alpha.
- - [ ] Can magit be used for CLI merging?
- - [ ] Theme SwayNC.
- - [ ] Udisks to handle [[https://wiki.archlinux.org/title/Udisks][USB mounting when in a TTY session]]?
- - [ ] Add host (XPS 13 9380) to whatami
- - [ ] Add Gateway and DNS to whatami.
- - [ ] Update whatami to enumerate mounted block devices.
  - [ ] Improve Emacs sart-up speed.
+ - [ ] Udisks to handle [[https://wiki.archlinux.org/title/Udisks][USB mounting when in a TTY session]]?
+ - [ ] Power button should hibernate with short-press, shutdown with long.
+ - [ ] Turn off bloody matching highlight in eglot, or find out how to speed up LSP/Eglot.
+ - [ ] Laptop lid should first sleep then hibernate.
+ - [ ] Copy music back onto laptop and find a decent music player or mpd client.
+ - [ ] Can magit be used for CLI merging?
+ - [ ] Add Gateway and DNS to whatami (maybe rewrite in Ruby first?)
+ - [ ] Update whatami to enumerate mounted block devices.
  - [ ] Add bounce animation to wlogout?
- - [ ] At the least, get GTK and QT on a matchonig theme.
+ - [ ] At the least, get GTK and QT on a matching theme.
  - [ ] Update Hyprland config.
  - [ ] Setup the Openbox clone (use desktop for that).
  - [ ] Nice to have
    - [ ] GTK theming
    - [ ] QT theming
    - [ ] Add setup swap/hibernate to bootstrap script (swapfile only).
+ - [X] Add host (XPS 13 9380) to whatami
+ - [X] Theme SwayNC.
+ - [X] Fix swaync's notification colors - no contrast in buttons.
  - [X] Can I setup as many .css files as possible, to use the fonts set by gsettings?
  - [X] Fix mimetype mapping.
  - [X] Fix Emacs transparency (a-fucking-gain).

@@ -43,7 +43,7 @@ setupTheme() {
 
     # Set GTK themes / keybindings.
     info "Setting up GTK."
-    gsettings set org.gnome.desktop.interface gtk-theme deepin-dark
+    gsettings set org.gnome.desktop.interface gtk-theme deepin
     gsettings set org.gnome.desktop.interface icon-theme kora
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "sans 13"
@@ -159,13 +159,14 @@ installPackages() {
          nwg-displays \
          rofi \
          ristretto\
-         swaync swaylock swayidle \
+         swaylock swayidle \
          swww \
          waybar \
          wlogout \
          vlc vlc-plugin-ffmpeg \
          xdg-desktop-portal-gtk \
          xdg-terminal-exec \
+         xfce4-notifyd \
          zeal"
     development="cmake make"
     # I build Emacs manualy, so not included here.  Vi?  Vim?  Never heard of

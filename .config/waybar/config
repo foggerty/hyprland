@@ -14,7 +14,6 @@
     "memory",
     "cpu",
     "temperature",
-    "mpd"
   ],
   "modules-center": [
     "clock"

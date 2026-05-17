@@ -5,7 +5,8 @@ include "monitor.kdl"
 
 spawn-at-startup "awww-daemon"
 spawn-at-startup "waybar"
-spawn-at-startup "swaync"
+//spawn-at-startup "swaync"
+spawn-at-startup "/usr/lib/xfce4/notifyd/xfce4-notifyd"
 spawn-at-startup "swayidle"
 spawn-at-startup "lxpolkit"
 spawn-at-startup "nm-applet"
@@ -280,12 +281,12 @@ animations {
     }
 
     window-open {
-        duration-ms 250
+        duration-ms 100
         curve "ease-out-quad"
     }
 
     window-close {
-        duration-ms 250
+        duration-ms 100
         curve "ease-out-quad"
     }
 

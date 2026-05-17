@@ -60,11 +60,14 @@ diskUsageBoot=$(diskUsage /boot)
 ip=$(ip route get 1 | cut -d " " -f 7)
 sched=$(scheduler)
 arch=$(gcc -march=native -Q --help=target | grep -- '-march=   ' | cut -f 3)
+vendor=$(cat /sys/devices/virtual/dmi/id/board_vendor)
+productName=$(cat /sys/devices/virtual/dmi/id/product_name)
 
 displayHostname
 
-info "Kernel Version:"     "$kernel"
+info "Hardware:"           "$vendor - $productName"
 info "Architectue:"        "$arch"
+info "Kernel Version:"     "$kernel"
 info "Govener:"            "$govener"
 info "SCX Scheduler:"      "$sched"
 info "Disk usage (/):"     "$diskUsageRoot"
