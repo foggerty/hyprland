@@ -44,6 +44,8 @@ button {
     color: white;
     background: @color3;
     border-radius: 3px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 #hardware {
@@ -87,12 +89,10 @@ button {
 #network,
 #pulseaudio,
 #temperature,
-#wireplumber,
-power-profiles-daemon {
+#wireplumber{
     padding-left: 20px;
 }
 
-#network,
 #tray {
     padding-right: 20px;
 }
