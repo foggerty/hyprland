@@ -23,6 +23,7 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 environment {
+    GTK_A11Y "none"
     GTK_BACKEND "wayland"
     GTK_SCALE "1"
     GTK_USE_PORTAL "1"

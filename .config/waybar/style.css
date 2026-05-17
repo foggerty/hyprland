@@ -79,8 +79,7 @@ button {
 }
 
 #backlight,
-#clock,
-#batteryv
+#battery,
 #cpu,
 #disk,
 #memory,
@@ -89,16 +88,11 @@ button {
 #pulseaudio,
 #temperature,
 #wireplumber,
-#tray {
+power-profiles-daemon {
     padding-left: 20px;
 }
 
 #network,
-#pulseaudio,
 #tray {
     padding-right: 20px;
-}
-
-#power-profiles-daemon {
-    padding-right: 5px;
 }

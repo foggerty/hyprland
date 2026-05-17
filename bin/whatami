@@ -59,7 +59,7 @@ diskUsageRoot=$(diskUsage /)
 diskUsageBoot=$(diskUsage /boot)
 ip=$(ip route get 1 | cut -d " " -f 7)
 sched=$(scheduler)
-arch=$(gcc -march=native -Q --help=target | grep -- '-march=   ' | cut -f 3)
+arch=$(gcc -march=native -Q --help=target | grep -- '\-march=  ' | cut -f 3)
 vendor=$(cat /sys/devices/virtual/dmi/id/board_vendor)
 productName=$(cat /sys/devices/virtual/dmi/id/product_name)
 
