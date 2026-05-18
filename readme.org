@@ -80,6 +80,7 @@ I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
  - [ ] Fix Emacs inverse colors in terminal.
+ - [ ] Double-check emacs-wayland patch file for treesitter.
  - [ ] Un-fuck Waybar's "issues" with blur/alpha.
  - [ ] Improve Emacs sart-up speed.
  - [ ] Udisks to handle [[https://wiki.archlinux.org/title/Udisks][USB mounting when in a TTY session]]?

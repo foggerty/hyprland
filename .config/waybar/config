@@ -108,15 +108,8 @@
     ]
   },
 
-  "hyprland/workspaces": {
-    "format": "{id}",
-    "on-click": "activate",
-    "persistent-workspaces": {
-      "*": 4
-    }
-  },
-
   "niri/workspaces": {
+    "transition-duration": 0,
     "format": "{value}"
   },
 
@@ -187,7 +180,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{capacity}%  {icon} ",
+    "format": "{capacity}%  {icon}",
     "format-charging": "{capacity}%  (󰚥) {icon}",
     "format-full": " ",
     "format-icons": [" ", " ", " ", " ", " "],
