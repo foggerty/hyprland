@@ -5,8 +5,7 @@ include "monitor.kdl"
 
 spawn-at-startup "awww-daemon"
 spawn-at-startup "waybar"
-//spawn-at-startup "swaync"
-spawn-at-startup "/usr/lib/xfce4/notifyd/xfce4-notifyd"
+//spawn-at-startup "/usr/lib/xfce4/notifyd/xfce4-notifyd"
 spawn-at-startup "swayidle"
 spawn-at-startup "lxpolkit"
 spawn-at-startup "nm-applet"
@@ -15,7 +14,7 @@ spawn-at-startup "opensnitch-ui"
 //spawn-at-startup "zeal"
 //spawn-at-startup "blueman-applet"
 //spawn-at-startup "arch-update" "--tray"
-//spawn-at-startup "journalctl-desktop-notification"
+spawn-at-startup "journalctl-desktop-notification"
 //spawn-at-startup "foot" "-s"
 
 prefer-no-csd

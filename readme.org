@@ -79,13 +79,16 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
+ - [ ] Fix Emacs inverse colors in terminal.
+ - [ ] Disable TPM?  I never use it unless I run Windows 11 as a VM.  That said, look into storing ssh keys in TPM, that does sound useful.
+ - [ ] Add cgroups to linux notebook.
  - [ ] Improve Emacs sart-up speed.
- - [ ] Re-install virt-manager and check fonts:
+   - :bind, :hook, :mode > :init, :config and preface.
+ - [ ] Re-install virt-manager and check icons:
    - [ ] Uninstall Kora and MoreWaita
    - [ ] Install Kora (don't set fallback)
    - [ ] Test
    - [ ] If no go, try setting adwaita as fallback.
- - [ ] Fix Emacs inverse colors in terminal.
  - [ ] Un-fuck Waybar's "issues" with blur/alpha.
  - [ ] Udisks to handle [[https://wiki.archlinux.org/title/Udisks][USB mounting when in a TTY session]]?
  - [ ] Power button should hibernate with short-press, shutdown with long.
@@ -96,7 +99,7 @@ I /think/ AMD does it differently; sensibly, I hope.
  - [ ] Add Gateway and DNS to whatami (maybe rewrite in Ruby first?)
  - [ ] Update whatami to enumerate mounted block devices.
  - [ ] Add bounce animation to wlogout?
- - [ ] At the least, get GTK and QT on a matching theme.
+ - [ ] At the least, get GTK and QT on a [[https://wiki.archlinux.org/title/Uniform_look_for_Qt_and_GTK_applications][matching theme]].
  - [ ] Update Hyprland config.
  - [ ] Setup the Openbox clone (use desktop for that).
  - [ ] Nice to have
