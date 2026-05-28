@@ -5,7 +5,7 @@ include "monitor.kdl"
 
 spawn-at-startup "awww-daemon"
 spawn-at-startup "waybar"
-//spawn-at-startup "/usr/lib/xfce4/notifyd/xfce4-notifyd"
+spawn-at-startup "/usr/lib/xfce4/notifyd/xfce4-notifyd"
 spawn-at-startup "swayidle"
 spawn-at-startup "lxpolkit"
 spawn-at-startup "nm-applet"
@@ -14,7 +14,7 @@ spawn-at-startup "opensnitch-ui"
 //spawn-at-startup "zeal"
 //spawn-at-startup "blueman-applet"
 //spawn-at-startup "arch-update" "--tray"
-spawn-at-startup "journalctl-desktop-notification"
+//spawn-at-startup "journalctl-desktop-notification"
 //spawn-at-startup "foot" "-s"
 
 prefer-no-csd
@@ -30,7 +30,7 @@ environment {
     QT_QPA_PLATFORM "wayland;xcb"
     // If using foot as a daemon, then this variable will need to be set in
     // either the Systemd unit file, or your own .profile file.
-    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_QPA_PLATFORMTHEME "gtk3"
     QT_SCALE_FACTOR "1"
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
     XCURSOR_SIZE "16"
@@ -167,11 +167,11 @@ window-rule {
     clip-to-geometry true
 
     popups {
-        opacity 0.68
+        opacity 1.0
         geometry-corner-radius 12
 
         background-effect {
-            blur true
+            blur false
             xray false
         }
     }
@@ -187,6 +187,9 @@ window-rule {
     match app-id="blueman"
     match app-id="opensnitch_ui"
     match app-id="org.cachyos.scx-manager"
+    match app-id="udiskie"
+    match app-id="hyprpwcenter"
+    match app-id="org.pulseaudio.pavucontrol"
 
     open-floating true
 }

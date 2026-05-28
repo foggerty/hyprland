@@ -50,12 +50,6 @@ setupTheme() {
     gsettings set org.gnome.desktop.interface document-font-name "sans 13"
     gsettings set org.gnome.desktop.interface monospace-font-name "monospace 13"
     gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-
-    # Update kora icon theme to use MoreWaita as a fallback.
-    if ! grep "morewaita" /usr/share/icons/kora/index.theme; then
-        info "Adding MoreWaita as fallback to Kora icons."
-        sudo sed -i -r 's/^Inherits=.*$/Inherits=morewaita/' /usr/share/icons/kora/index.theme
-    fi
 }
 
 setupDisplayManager() {
@@ -198,7 +192,7 @@ installPackages() {
               xdg-desktop-portal-hyprland"
     libraries="libgccjit lua-luv libotf"
     networking="iwd networkmanager network-manager-applet"
-    niri="niri xdg-desktop-portal-gtk"
+    niri="niri pavucontrol xdg-desktop-portal-gtk"
     security="lxsession
               opensnitch \
               python-qt-material \

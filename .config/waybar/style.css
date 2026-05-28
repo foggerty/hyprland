@@ -38,7 +38,12 @@ button {
     color: white;
 }
 
-#workspaces button:hover {
+#battery {
+    border-radius: 3px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+}#workspaces button:hover {
     color: white;
     background: @color3;
     border-radius: 3px;

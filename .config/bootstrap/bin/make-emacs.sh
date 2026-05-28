@@ -20,6 +20,10 @@ else
     git pull --rebase
 fi
 
+git apply ~/.config/bootstrap/patches/emacs/01_all_treesit-0.26.patch
+git apply ~/.config/bootstrap/patches/emacs/02_all_ts-query-pred.patch
+
+
 ./autogen.sh
 
 ./configure \

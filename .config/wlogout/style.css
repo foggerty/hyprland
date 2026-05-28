@@ -1,10 +1,10 @@
-@define-color foreground #D5D9DD;
-@define-color background #131417;
-@define-color border #505A67;
-@define-color button-hover #78818B;
+@define-color foreground #E0EAF0;
+@define-color background #141518;
+@define-color border #4A5663;
+@define-color button-hover #6E8898;
 
-@define-color color1 #3F4852;
-@define-color color4 #677786;
+@define-color color1 #43484F;
+@define-color color4 #5E7282;
 
 * {
     background-image: none;
@@ -14,7 +14,7 @@
 
 window {
     font-size: 20pt;
-    background-color: rgba(19,20,23,0.75);
+    background-color: rgba(20,21,24,0.75);
     background-size: cover;
     }
 

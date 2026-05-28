@@ -210,7 +210,7 @@
   },
 
   "pulseaudio": {
-    "on-click": "hyprpwcenter",
+    "on-click": "pavucontrol",
     "format": "{volume}% {icon}",
     "format-muted": "",
     "format-icons": {
