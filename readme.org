@@ -79,23 +79,23 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
- - [ ] Add patches from Arch into make-emacs script.
  - [ ] Power button should hibernate with short-press, shutdown with long.
- - [ ] Add Gateway and DNS to whatami (maybe rewrite in Ruby first?)
- - [ ] Udisks to handle [[https://wiki.archlinux.org/title/Udisks][USB mounting when in a TTY session]]?
- - [ ] Turn off bloody matching highlight in eglot, or find out how to speed up LSP/Eglot.
  - [ ] Laptop lid/manually locking should first sleep then hibernate.
+ - [ ] Add Gateway and DNS to whatami.
+ - [ ] Udisks to handle [[https://wiki.archlinux.org/title/Udisks][USB mounting when in a TTY session]]?
+ - [ ] Fix Emacs inverse colors in terminal.
+ - [ ] Turn off bloody matching highlight in eglot, or find out how to speed up LSP/Eglot.
  - [ ] Copy music back onto laptop and find a decent music player or mpd client.
  - [ ] Can magit be used for CLI merging?
  - [ ] Recreate Hyprland config.
  - [ ] Setup the Openbox clone (use desktop for that).
- - [ ] Fix Emacs inverse colors in terminal.
  - [ ] Un-fuck Waybar's "issues" with blur/alpha.
  - [ ] At the least, get GTK and QT on a [[https://wiki.archlinux.org/title/Uniform_look_for_Qt_and_GTK_applications][matching theme]].
  - [ ] Nice to have
    - [ ] GTK theming
    - [ ] QT theming
    - [ ] Add setup swap/hibernate to bootstrap script (swapfile only).
+ - [X] Add patches from Arch into make-emacs script.
  - [X] Fix styling for battery applet for low-power.
 
 * The "is it done" checklist of doom

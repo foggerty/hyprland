@@ -1,5 +1,6 @@
 before-sleep 'swaylock'
 
-# Screen timeouts.
-timeout 180 'swaylock lock'
+# Screen/suspend timeouts.
+timeout 180 'swaylock'
 timeout 300 'systemctl suspend'
+timeout 420 'systemctl hibernate'

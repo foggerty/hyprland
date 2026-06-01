@@ -32,18 +32,16 @@ button {
     background-color: transparent;
     color: grey;
     min-width: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 #workspaces button.active {
     color: white;
 }
 
-#battery {
-    border-radius: 3px;
-    margin-top: 8px;
-    margin-bottom: 8px;
 
-}#workspaces button:hover {
+#workspaces button:hover {
     color: white;
     background: @color3;
     border-radius: 3px;
@@ -95,6 +93,9 @@ button {
 #wireplumber,
 #power-profiles-daemon
 {
+    border-radius: 3px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     padding-left: 30px;
 }
 
