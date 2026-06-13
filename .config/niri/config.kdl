@@ -171,7 +171,7 @@ window-rule {
         geometry-corner-radius 12
 
         background-effect {
-            blur false
+            blur true
             xray false
         }
     }
@@ -190,6 +190,8 @@ window-rule {
     match app-id="udiskie"
     match app-id="hyprpwcenter"
     match app-id="org.pulseaudio.pavucontrol"
+    match app-id="nm-applet"
+    match app-id="nm-connection-editor"
 
     open-floating true
 }
@@ -197,6 +199,10 @@ window-rule {
 // Blur windows that aren't aware of Wayland protocol: ext-background-effect
 window-rule {
     match app-id="emacs"
+    match app-id="thunar"
+    match app-id="nm-connection-editor"
+    match app-id="nm-applet"
+    match app-id="galculator"
 
     background-effect {
         blur true

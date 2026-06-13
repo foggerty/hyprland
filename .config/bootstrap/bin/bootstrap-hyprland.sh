@@ -44,7 +44,7 @@ setupTheme() {
     # Set GTK themes / keybindings.
     info "Setting up GTK."
     gsettings set org.gnome.desktop.interface gtk-theme deepin
-    gsettings set org.gnome.desktop.interface icon-theme kora
+    gsettings set org.gnome.desktop.interface icon-theme Mint-X-Aqua
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "sans 13"
     gsettings set org.gnome.desktop.interface document-font-name "sans 13"
@@ -199,7 +199,7 @@ installPackages() {
               ufw"
     terminal="bash-completion foot starship tealdeer"
     theme="deepin-gtk-theme \
-         kora-icon-theme morewaita-icon-theme \
+         mint-x-icons \
          imagemagick \
          nwg-look \
          qt6ct \

@@ -176,9 +176,9 @@
 
   "battery": {
     "states": {
-      "good": 95,
-      "warning": 90,
-      "critical": 15
+      "good": 35,
+      "warning": 15,
+      "critical": 5
     },
     "format": "{capacity}%  {icon}",
     "format-charging": "{capacity}% (󱐋) {icon}",
