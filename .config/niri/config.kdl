@@ -203,6 +203,7 @@ window-rule {
     match app-id="nm-connection-editor"
     match app-id="nm-applet"
     match app-id="galculator"
+    match app-id="nwg-look"
 
     background-effect {
         blur true
