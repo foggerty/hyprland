@@ -43,8 +43,8 @@ setupTheme() {
 
     # Set GTK themes / keybindings.
     info "Setting up GTK."
-    gsettings set org.gnome.desktop.interface gtk-theme deepin
-    gsettings set org.gnome.desktop.interface icon-theme Mint-X-Aqua
+    gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
+    gsettings set org.gnome.desktop.interface icon-theme Obsidian
     gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
     gsettings set org.gnome.desktop.interface font-name "sans 13"
     gsettings set org.gnome.desktop.interface document-font-name "sans 13"
@@ -199,7 +199,7 @@ installPackages() {
               ufw"
     terminal="bash-completion foot starship tealdeer"
     theme="deepin-gtk-theme \
-         mint-x-icons \
+         obsidion-icon-thene \
          imagemagick \
          nwg-look \
          qt6ct \
@@ -239,12 +239,12 @@ installPackages() {
 
     # Install requirements for bootstrap
     info Installing git and base-devel.
-    paru --needed -S git base-devel
+    pacman --needed -S git base-devel
 
     # Install packages
     info "Installing packages."
-    paru --needed --skipreview -Syu $to_install
-    paru --needed --skipreview -Syu $desktop
+    pacman --needed -Syu $to_install
+    pacman --needed -Syu $desktop
 
     if [[ "$?" -ne 0 ]]; then
         exit
@@ -264,8 +264,8 @@ rebuildKernel() {
     sudo limine-mkinitcpio -P
 }
 
-# Install paru if missing.
-which paru > /dev/null || installParu
+# Install pacman if missing.
+which pacman > /dev/null || installParu
 
 run "Install packages? "      installPackages
 run "Setup theme? "           setupTheme

@@ -166,6 +166,10 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 
+    background-effect {
+        xray false
+    }
+
     popups {
         opacity 1.0
         geometry-corner-radius 12
