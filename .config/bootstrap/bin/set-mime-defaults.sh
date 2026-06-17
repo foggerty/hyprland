@@ -1,4 +1,5 @@
 #!/bin/bash
+
 declare -A -r mimeTypes=(
     ["application/json"]="emacsclient.desktop"
     ["application/pdf"]="okularApplication_pdf.desktop"
@@ -20,6 +21,7 @@ declare -A -r mimeTypes=(
     ["text/org"]="emacsclient.desktop"
     ["text/plain"]="emacsclient.desktop"
     ["text/markdown"]="emacsclient.desktop"
+    ["text/css"]="emacsclient.desktop"
 
     ["application/pdf"]="org.gnome.Evince.desktop"
 )
