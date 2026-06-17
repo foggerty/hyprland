@@ -192,10 +192,10 @@
     "tooltip-format": "Power Profile: {profile}\nDriver: {driver}",
     "tooltip" : true,
     "format-icons": {
-      "default": "󱐋",
-      "performance": "󱐋",
-      "balanced": "󰗑",
-      "power-saver": "󰌪"
+      "default": " 󱐋 ",
+      "performance": " 󱐋 ",
+      "balanced": " 󰗑 ",
+      "power-saver": " 󰌪 "
     }
   },
 
@@ -211,7 +211,7 @@
 
   "pulseaudio": {
     "on-click": "pavucontrol",
-    "format": "{volume}% {icon}",
+    "format": "{icon}",
     "format-muted": "",
     "format-icons": {
       "default": [" ", " ", " "]

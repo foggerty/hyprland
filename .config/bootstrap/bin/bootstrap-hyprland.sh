@@ -214,8 +214,7 @@ installPackages() {
          mc \
          ncdu \
          pacman-contrib \
-         pciutils \
-         qman \
+         pciutils\
          ripgrep \
          util-linux \
          tree"
@@ -239,19 +238,19 @@ installPackages() {
 
     # Install requirements for bootstrap
     info Installing git and base-devel.
-    pacman --needed -S git base-devel
+    sudo pacman --needed -S git base-devel
 
     # Install packages
     info "Installing packages."
-    pacman --needed -Syu $to_install
-    pacman --needed -Syu $desktop
+    sudo pacman --needed -Syu $to_install
+    sudo pacman --needed -Syu $desktop
 
     if [[ "$?" -ne 0 ]]; then
         exit
     fi
 }
 
-enableUfw() {
+setupUfw() {
     sudo ufw default deny
     sudo ufw allow from 192.168.0.0/24
     sudo ufw allow Deluge

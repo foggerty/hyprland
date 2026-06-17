@@ -32,7 +32,7 @@ hypr.template = 'colors-hyprland.conf'
 hyprtoolkit.target = '~/.config/hypr/colors-toolkit.conf'
 hyprtoolkit.template = 'colors-hyprtoolkit.conf'
 
-gtk3.target = '~/.config/gtk-3.0/colors.css'
+gtk3.target = '~/.config/gtk-3.0/gtk.css'
 gtk3.template = 'colors-gtk.css'
 
 kitty.target = '~/.config/kitty/colors.conf'

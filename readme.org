@@ -1,4 +1,4 @@
-Some theming has been ruthlessly stolen from great projects, such as:
+Some theming has been ruthlessly stolen from such great projects as:
  - [[https://github.com/JaKooLit/Hyprland-Dots][JaKoolLit]]
  - [[https://ml4w.com/][ML4W]]
 
@@ -87,14 +87,14 @@ I /think/ AMD does it differently; sensibly, I hope.
  - [ ] Turn off bloody matching highlight in eglot, or find out how to speed up LSP/Eglot.
  - [ ] Copy music back onto laptop and find a decent music player or mpd client.
  - [ ] Can magit be used for CLI merging?
+ - [ ] Un-fuck Waybar's "issues" with blur/alpha in Niri.
+ - [-] Themes!  Oh gods I loathe CSS and theming in general:
+   - [X] GTK3 :: Use adw-gtk3 to pair with Wallust.
+   - [X] QT6 :: Uses a built-in theme that matches the GTK3 theme's look.
+   - [ ] QT5 :: Is supposed to do the same thing that QT6 does, but is no longer maintained.
+   - [ ] GTK4 :: Fuck only knows.
  - [ ] Recreate Hyprland config.
  - [ ] Setup the Openbox clone (use desktop for that).
- - [ ] Un-fuck Waybar's "issues" with blur/alpha.
- - [ ] At the least, get GTK and QT on a [[https://wiki.archlinux.org/title/Uniform_look_for_Qt_and_GTK_applications][matching theme]].
- - [ ] Nice to have
-   - [ ] GTK theming
-   - [ ] QT theming
-   - [ ] Add setup swap/hibernate to bootstrap script (swapfile only).
  - [X] Add patches from Arch into make-emacs script.
  - [X] Fix styling for battery applet for low-power.
 

@@ -1,22 +1,61 @@
-/*
-* GTK Colors
-* Generated with Matugen
+/* CSS variables for wallust
+ * You can use this template by adding the following to wallust.toml:
+css = { src = "colors.css", dst = "~/.config/" }
 */
 
-@define-color accent_color {{color0}};
-@define-color accent_fg_color {{color1}};
-@define-color accent_bg_color {{color2}};
-@define-color window_bg_color rgba({{background | rgb}},0.{{alpha}});
+@define-color accent_color {{color1}};
+@define-color accent_bg_color {{color9}};
+@define-color accent_fg_color #ffffff;
+
+@define-color destructive_color #ff7b63;
+@define-color destructive_bg_color #c01c28;
+@define-color destructive_fg_color #ffffff;
+@define-color success_color #8ff0a4;
+@define-color success_bg_color #26a269;
+@define-color success_fg_color #ffffff;
+@define-color warning_color #f8e45c;
+@define-color warning_bg_color #cd9309;
+@define-color warning_fg_color rgba(0, 0, 0, 0.1);
+@define-color error_color #ff7b63;
+@define-color error_bg_color #c01c28;
+@define-color error_fg_color #ffffff;
+
+@define-color window_bg_color alpha({{background}}, 0.80);
 @define-color window_fg_color {{foreground}};
+@define-color view_bg_color alpha({{color13}},0.1);
+@define-color view_fg_color #ffffff;
 @define-color headerbar_bg_color {{color0}};
-@define-color headerbar_fg_color {{color1}};
-@define-color popover_bg_color rgba({{background | rgb}},0.60);
-@define-color popover_fg_color {{color8}};
-@define-color view_bg_color rgba({{background | rgb}},0.60);
-@define-color view_fg_color {{foreground}};
-@define-color card_bg_color {{color11}};
-@define-color card_fg_color {{color12}};
+@define-color headerbar_fg_color #ffffff;
+@define-color headerbar_border_color #ffffff;
+@define-color headerbar_backdrop_color #242424;
+@define-color headerbar_shade_color rgba(0, 0, 0, 0.36);
+@define-color card_bg_color rgba(255, 255, 255, 0.08);
+@define-color card_fg_color #ffffff;
+@define-color card_shade_color rgba(0, 0, 0, 0.36);
+@define-color popover_bg_color alpha({{color0}},0.1);
+@define-color popover_fg_color #ffffff;
+@define-color shade_color rgba(0, 0, 0, 0.36);
+@define-color scrollbar_outline_color rgba(0, 0, 0, 0.5);
+@define-color borders alpha(red, 0.15);
 @define-color sidebar_bg_color {{color13}};
-@define-color sidebar_fg_color {{color1}};
+@define-color sidebar_fg_color {{color7}};
 @define-color sidebar_border_color @window_bg_color;
-@define-color sidebar_backdrop_color @window_bg_color;
+
+
+
+.placessidebar {
+    background-color: transparent;
+    backdrop-filter: blur(100px);
+}
+.navigation-sidebar {
+    background-color: transparent;
+    backdrop-filter: blur(100px);
+}
+.top-bar {
+    background-color: alpha({{color13}},0.1);
+    backdrop-filter: blur(100px);
+}
+.sidebar-pane {
+    background: transparent;
+    backdrop-filter: blur(100px);
+}

@@ -167,7 +167,8 @@ window-rule {
     clip-to-geometry true
 
     background-effect {
-        xray false
+        blur true
+        xray true
     }
 
     popups {
@@ -200,17 +201,13 @@ window-rule {
     open-floating true
 }
 
-// Blur windows that aren't aware of Wayland protocol: ext-background-effect
+// Applications that don't recognise Wayland blur protocol.
 window-rule {
-    match app-id="emacs"
-    match app-id="thunar"
-    match app-id="nm-connection-editor"
-    match app-id="nm-applet"
-    match app-id="galculator"
-    match app-id="nwg-look"
+    match app-id="firefox"
 
     background-effect {
         blur true
+        xray false
     }
 }
 
@@ -234,15 +231,6 @@ layer-rule {
     }
 }
 
-// Rofi
-layer-rule {
-    match namespace="rofi"
-
-    background-effect {
-        blur false
-    }
-}
-
 // Put swaybg inside the overview backdrop.
 // Doesn't work well with awww?
 layer-rule {
@@ -253,7 +241,7 @@ layer-rule {
 // Waybar
 layer-rule {
     match namespace="waybar"
-    opacity 1.0
+    opacity 0.99
 
     shadow {
         //on
@@ -261,10 +249,10 @@ layer-rule {
 
     background-effect {
         blur true
+        xray false
     }
 
     popups {
-        opacity 0.75
         geometry-corner-radius 6
 
         background-effect {
