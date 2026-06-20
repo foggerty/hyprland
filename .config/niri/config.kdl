@@ -241,15 +241,14 @@ layer-rule {
 // Waybar
 layer-rule {
     match namespace="waybar"
-    opacity 0.99
+    //opacity 0.99
 
     shadow {
-        //on
+        // on
     }
 
     background-effect {
         blur true
-        xray false
     }
 
     popups {

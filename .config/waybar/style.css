@@ -1,11 +1,12 @@
 @import "/home/matt/.config/waybar/colors.css";
 
 * {
-    font-family: "sans";
+    font-family: "symbols,sans";
     font-size: 16px;
 }
 
 window#waybar {
+
     background-color: @background-transparent;
     border: 2px solid;
     border-color: @color13;

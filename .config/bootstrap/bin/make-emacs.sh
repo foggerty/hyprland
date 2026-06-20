@@ -8,7 +8,7 @@ mkdir -p ~/dev
 pushd ~/dev
 
 if [[ ! -d "emacs" ]]; then
-    git clone https://github.com/emacs-mirror/emacs --depth=1 --branch emacs-30
+    git clone https://github.com/emacs-mirror/emacs --depth=1 --branch emacs-31
     pushd emacs
 else
     pushd emacs
@@ -20,46 +20,26 @@ else
     git pull --rebase
 fi
 
-git apply ~/.config/bootstrap/patches/emacs/01_all_treesit-0.26.patch
-git apply ~/.config/bootstrap/patches/emacs/02_all_ts-query-pred.patch
-
-
 ./autogen.sh
 
 ./configure \
-    --disable-acl \
     --disable-gc-mark-trace \
-    --enable-link-time-optimization \
     --disable-xattr \
-    --with-cairo \
+    --enable-gtk-deprecation-warnings \
     --with-file-notification=inotify \
-    --with-gsettings \
-    --with-harfbuzz \
     --with-imagemagick \
     --with-libsystemd \
-    --with-modules \
     --with-pgtk \
-    --with-small-ja-dic \
-    --with-threads \
+    --with-small-ja-dic\
     --with-tree-sitter \
-    --with-xml2 \
-    --with-libgmp \
-    --without-gconf \
-    --without-gpm \
     --without-hesiod \
-    --without-imagemagick \
-    --without-included-regex \
-    --without-kerberos \
-    --without-kerberos5 \
     --without-libotf \
     --without-mail-unlink \
     --without-pop \
     --without-selinux \
     --without-sound \
-    --without-x \
     --without-xaw3d \
     --without-xdbe \
-    --without-xft \
     --without-xim \
     --without-xinput2
 

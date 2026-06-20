@@ -176,10 +176,8 @@ installPackages() {
     fonts="adobe-source-code-pro-fonts \
          cantarell-fonts \
          font-manager \
-         otf-font-awesome \
          noto-fonts-cjk noto-fonts-emoji \
-         ttf-linux-libertine ttf-liberation \
-         ttf-sourcecodepro-nerd"
+         ttf-nerd-fonts-symbols-mono"
     greeter="greetd greetd-tuigreet"
     hyprland="hyprland \
               hyprlock \
