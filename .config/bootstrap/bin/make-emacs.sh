@@ -33,7 +33,6 @@ fi
     --with-small-ja-dic\
     --with-tree-sitter \
     --without-hesiod \
-    --without-libotf \
     --without-mail-unlink \
     --without-pop \
     --without-selinux \

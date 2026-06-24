@@ -6,31 +6,29 @@ Why?  Because fuck CSS, that's why.
 
 I want a small as possible (in mem and disk) tiling desktop.  It should:
  - Be something that I could give to a noob who's interested in learning.
- - Use as few packages from the AUR as possible (mostly just cosmetic).
+ - Use zero AUR packages.
  - NOT use any Electron apps.
- - Not involve AI in any shape or form, this is a learning exercise.
+ - Not involve AI in any shape or form.
  - Not make any assumptions about the user's prefered editor (i.e. use POSIX variables like $EDITOR).  /I/ however, retain full rights to make (possibly vile) assumptions about a user based entirely on their preferred editor ;-)
  - Support any file manager the user wants, Thunar or a CLI etc.  For example, while it's nice of Thunar to auto-mount USB devices for me, it's something that the desktop should handle; in other words a CLI file-manager should be able to access a USB key in the absence of Thunar.  Getting it working in a raw TTY may be an issue....
  - Do the usual Bluetooth/WiFi things that people expect laptops to do.
- - Not care about how it's launched (SystemD or greetd) - although to be fair I am running foot server via a SystemD user file, just because it's easier.  Ideally, this should be trivial to port to a BSD.
+ - Not care about how it's launched (SystemD or greetd) - although to be fair I am running foot server via a SystemD user service, just because it's easier.  Ideally, this should be trivial to port to a BSD.
  - Have reasonable secure defaults (still to work out app armour).
  - Be able to swap out/in different WMs, inc Hyprland, and the OpenBox-like one.
  - Have a small enough installation footprint that I know what (mostly) every package does, or at the very least, /why/ it's been installed.  Or to put it another way, I should be able to justify every package being installed.
 
 Other than that, it's what works for me now.  If you want it to work differently for you, then it should be reasonably obvious and documented where to look.
 
-Don't use shitty defaults if they don't add any real value.  i.e. the default calendar in Waybar is barely providing value other than "I need to look up what day the 17th this month is".  Which, to be fair, is bloody useful when you need it, and is often suprisingly hard to lookup without say, a calendar.  Actually it looks pretty good with current theming, and hello to anyone reading this, to my chain-of-thought ramblings.  I'm trying to think of a reason to get rid of it, but not sure what to replace it with.  I don't like a) connecting to Google calendar from Linux (not until they release a decent API or client) or b) using Emacs for anything other than editing, as it's still essentially a single-threaded backend.
-
 * Installation
  - Install Cachy (mannually setting up BTRFS snapshot support is a pain, hence Cachy, but will still work 100% with vanilla Arch).  Make sure =NetworkManager= and =Pipewire= are installed.
  - Ensure all of your drivers are installed (Cachy installer should detect/install what you need, otherwise consult the Arch Wiki).  For an example of the kinds of drivers you need, look [[file:.config/bootstrap/bin/bootstrap-laptop.sh][here]].
  - Clone this repo into =~/=
-   #+begin_src bash
-   cd ~
-   git init
-   git remote add origin https://github.com/foggerty/hyprland
-   git pull
-   #+end_src
+     #+begin_src bash
+     cd ~
+     git init
+     git remote add origin https://github.com/foggerty/hyprland
+     git pull
+     #+end_src
  - Run =$HOME/bin/bootstrap-hyprland=
  - Find out if your hardware is supported by [[https://wiki.archlinux.org/title/Fwupd][fwupd]] and update your firmware if so.
  - See if there's anything specific for your [[https://wiki.archlinux.org/title/Category:Laptops][laptop.]]
@@ -40,10 +38,7 @@ Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= from t
 
 =paper= will set the wallpaper, =theme= will set the theme (based off of the image's colors) and =both= will do both.
 
-* How CSS selectors work, and how to determine available classes
-Beause I have to look it up every bloody time.
 * Screenshots
-
 The mandatory 'fetch' shot:
 
 [[file:Pictures/info.png]]
@@ -53,14 +48,14 @@ Add =intel_iommu=on= to kernel parameter.
 
 To pin VM to given cores, use the following in the VM's XML:
 #+begin_src xml
-<vcpu placement="static">4</vcpu>
-<cputune>
-  <vcpupin vcpu="0" cpuset="2"/>
-  <vcpupin vcpu="1" cpuset="6"/>
-  <vcpupin vcpu="2" cpuset="3"/>
-  <vcpupin vcpu="3" cpuset="7"/>
-</cputune>
-#+end_src
+  <vcpu placement="static">4</vcpu>
+  <cputune>
+    <vcpupin vcpu="0" cpuset="2"/>
+    <vcpupin vcpu="1" cpuset="6"/>
+    <vcpupin vcpu="2" cpuset="3"/>
+    <vcpupin vcpu="3" cpuset="7"/>
+  </cputune>
+  #+end_src
 
 Can then add the following to =/etc/systemd/system.conf= so that the host OS doesn't use those cores.
 
@@ -79,21 +74,21 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
+ - [ ] Get emacs server working again for graphical clients.
+ - [ ] Recreate Hyprland config.
  - [ ] Power button should hibernate with short-press, shutdown with long.
  - [ ] Laptop lid/manually locking should first sleep then hibernate.
  - [ ] Add Gateway and DNS to whatami.
  - [ ] Udisks to handle [[https://wiki.archlinux.org/title/Udisks][USB mounting when in a TTY session]]?
- - [ ] Fix Emacs inverse colors in terminal.
  - [ ] Turn off bloody matching highlight in eglot, or find out how to speed up LSP/Eglot.
  - [ ] Copy music back onto laptop and find a decent music player or mpd client.
  - [ ] Can magit be used for CLI merging?
- - [ ] Un-fuck Waybar's "issues" with blur/alpha in Niri.
  - [-] Themes!  Oh gods I loathe CSS and theming in general:
    - [X] GTK3 :: Use adw-gtk3 to pair with Wallust.
    - [X] QT6 :: Uses a built-in theme that matches the GTK3 theme's look.
    - [ ] QT5 :: Is supposed to do the same thing that QT6 does, but is no longer maintained.
    - [ ] GTK4 :: Fuck only knows.
- - [ ] Recreate Hyprland config.
+ - [X] Fix Emacs inverse colors in terminal.
  - [ ] Setup the Openbox clone (use desktop for that).
  - [X] Add patches from Arch into make-emacs script.
  - [X] Fix styling for battery applet for low-power.
