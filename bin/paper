@@ -92,7 +92,7 @@ if %w[theme both].include?(ARGV[0])
     `kill -s sigusr1 foot`
 
   system('pgrep emacs') &&
-    `emacsclient -e "(load-theme 'ewal-doom-one t)"`
+    `emacsclient -e "(load-theme 'doom-wallust-dark t)"`
 
   puts 'Terminal server (foot) may need to be restarted to see change.'
 end

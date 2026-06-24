@@ -18,10 +18,10 @@ check_contrast = true
 
 [templates]
 emacs-dark.target = '~/.emacs.d/themes/doom-wallust-dark-theme.el'
-emacs-dark.template = 'colors-emacs.el'
+emacs-dark.template = 'doom-wallust-dark-theme.el'
 
 emacs-light.target = '~/.emacs.d/themes/doom-wallust-light-theme.el'
-emacs-light.template = 'colors-emacs.el'
+emacs-light.template = 'doom-wallust-light-theme.el'
 
 foot.target = '~/.config/foot/colors.ini'
 foot.template = 'colors-foot.ini'

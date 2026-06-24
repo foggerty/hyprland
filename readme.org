@@ -74,7 +74,7 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
- - [ ] Get emacs server working again for graphical clients.
+ - [ ] Figure our why Emacs theme no longer with with terminal client.
  - [ ] Recreate Hyprland config.
  - [ ] Power button should hibernate with short-press, shutdown with long.
  - [ ] Laptop lid/manually locking should first sleep then hibernate.
@@ -88,6 +88,7 @@ I /think/ AMD does it differently; sensibly, I hope.
    - [X] QT6 :: Uses a built-in theme that matches the GTK3 theme's look.
    - [ ] QT5 :: Is supposed to do the same thing that QT6 does, but is no longer maintained.
    - [ ] GTK4 :: Fuck only knows.
+ - [X] Get emacs server working again for graphical clients.
  - [X] Fix Emacs inverse colors in terminal.
  - [ ] Setup the Openbox clone (use desktop for that).
  - [X] Add patches from Arch into make-emacs script.

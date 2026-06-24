@@ -19,7 +19,7 @@
     "clock"
   ],
   "modules-right": [
-    "niri/workspaces",
+    "hyprland/workspaces",
     "pulseaudio",
     "battery",
     "power-profiles-daemon",
@@ -106,6 +106,14 @@
         "tooltip-icon-size": 24
       }
     ]
+  },
+
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "on-click": "activate",
+    "persistent-workspaces": {
+      "*": 4
+    }
   },
 
   "niri/workspaces": {
