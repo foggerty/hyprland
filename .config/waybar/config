@@ -1,228 +1,230 @@
 {
-  "layer": "top",
-  "opacity": 0.99,
-  "exclusive": true,
-  "height": 42,
-  "spacing": 12,
-  "margin-left": 6,
-  "margin-right": 6,
-  "margin-top": 6,
-  "reload-style-on-change": true,
-  "modules-left": [
-    "group/hardware",
-    "privacy",
-    "memory",
-    "cpu",
-    "temperature",
-  ],
-  "modules-center": [
-    "clock"
-  ],
-  "modules-right": [
-    "hyprland/workspaces",
-    "pulseaudio",
-    "battery",
-    "power-profiles-daemon",
-    "network",
-    "tray"
-  ],
+    "layer": "top",
+    "opacity": 0.99,
+    "exclusive": true,
+    "height": 42,
+    "spacing": 12,
+    "margin-left": 6,
+    "margin-right": 6,
+    "margin-top": 6,
+    "reload-style-on-change": true,
+    "modules-left": [
+        "group/hardware",
+        "privacy",
+        "memory",
+        "cpu",
+        "temperature",
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "niri/workspaces",
+        "pulseaudio",
+        "battery",
+        "power-profiles-daemon",
+        "network",
+        "tray"
+    ],
 
-  "group/hardware": {
-    "orientation": "horizontal",
-    "drawer": {
-      "click-to-reveal": true,
-      "transition-duration": 500,
-      "transition-left-to-right": true
+    "group/hardware": {
+        "orientation": "horizontal",
+        "drawer": {
+            "click-to-reveal": true,
+            "transition-duration": 350,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/tux",
+            "custom/monitor",
+            "custom/display",
+            "custom/look",
+            "custom/logout"
+        ]
     },
-    "modules": [
-      "custom/tux",
-      "custom/logout",
-      "custom/display",
-      "custom/look"
-    ]
-  },
 
-  "custom/tux": {
-    "format": "",
-    "tooltip-format": "BTW...."
-  },
-
-  "custom/look": {
-    "format": "",
-    "on-click": "~/bin/toggle nwg-look",
-    "tooltip-format": "GTK Theme/Icon Settings"
-  },
-
-  "custom/logout": {
-    "format": "",
-    "on-click": "wlogout -b 5 -T 400px -B 400px -p layer-shell",
-    "tooltip-format": "Session management."
-  },
-
-  "custom/power": {
-    "exec": "tlp-stat --mode",
-    "format": "󰂄",
-    "interval": 5,
-    "on-click": "~/bin/toggle-power",
-    "tooltip-format": "Change power-profile.  Currently({})"
-  },
-
-  "custom/monitor": {
-    "format": "",
-    "on-click": "stacer",
-    "tooltip-format": "Open Mission Center"
-  },
-
-  "custom/display": {
-    "format": "󰍹",
-    "on-click": "nwg-displays",
-    "tooltip-format": "Configure display(s)"
-  },
-
-  "custom/info": {
-    "format": "",
-    "on-click": "~/bin/toggle hyprsysteminfo",
-    "tooltip-format": ""
-  },
-
-  "privacy": {
-    "icon-spacing": 4,
-    "icon-size": 18,
-    "transition-duration": 250,
-    "modules": [
-      {
-        "type": "screenshare",
-        "tooltip": true,
-        "tooltip-icon-size": 24
-      },
-      {
-        "type": "audio-out",
-        "tooltip": true,
-        "tooltip-icon-size": 24
-      },
-      {
-        "type": "audio-in",
-        "tooltip": true,
-        "tooltip-icon-size": 24
-      }
-    ]
-  },
-
-  "hyprland/workspaces": {
-    "format": "{id}",
-    "on-click": "activate",
-    "persistent-workspaces": {
-      "*": 4
-    }
-  },
-
-  "niri/workspaces": {
-    "transition-duration": 0,
-    "format": "{value}"
-  },
-
-  "mpd": {
-    "on-click": "rmpc togglepause",
-    "on-click-right": "pkill rmpc || footclient rmpc",
-
-    "format": "{stateIcon}    {artist}/{title}",
-    "format-disconnected": "MPD - Disconnected",
-    "format-stopped": "MPD - Stopped",
-    "interval": 10,
-    "consume-icons": {
-      "on": " "
+    "custom/tux": {
+        "format": "",
+        "tooltip-format": "BTW...."
     },
-    "random-icons": {
-      "off": "",
-      "on": ""
+
+    "custom/look": {
+        "format": "",
+        "on-click": "~/bin/toggle nwg-look",
+        "tooltip-format": "GTK Theme/Icon Settings"
     },
-    "repeat-icons": {
-      "on": ""
+
+    "custom/logout": {
+        "format": "",
+        "on-click": "wlogout -b 5 -T 400px -B 400px -p layer-shell",
+        "tooltip-format": "Session management."
     },
-    "single-icons": {
-      "on": "1 "
+
+    "custom/power": {
+        "exec": "tlp-stat --mode",
+        "format": "󰂄",
+        "interval": 5,
+        "on-click": "~/bin/toggle-power",
+        "tooltip-format": "Change power-profile.  Currently({})"
     },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
+
+    "custom/monitor": {
+        "format": "",
+        "on-click": "resources",
+        "tooltip-format": "Sytem Monitor"
     },
-  },
 
-  "tray": {
-    "icon-size": 16,
-    "spacing": 10
-  },
+    "custom/display": {
+        "format": "󰍹",
+        "on-click": "nwg-displays",
+        "tooltip-format": "Configure display(s)"
+    },
 
-  "clock": {
-    "timezone": "Pacific/Auckland",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%a %d %b - %I:%M %p}"
-  },
+    "custom/info": {
+        "format": "",
+        "on-click": "~/bin/toggle hyprsysteminfo",
+        "tooltip-format": ""
+    },
 
-  "cpu": {
-    "format": "cpu: {usage}%",
-    "tooltip": false,
-    "on-click": "",
-    "interval": 1
-  },
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
+    },
 
-  "memory": {
-    "tooltip": false,
-    "format": "mem: {}%",
-    "on-click": ""
-  },
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "*": 4
+        }
+    },
 
-  "temperature": {
-    "hwmon-path":
+    "niri/workspaces": {
+        "transition-duration": 0,
+        "format": "{value}"
+    },
+
+    "mpd": {
+        "on-click": "rmpc togglepause",
+        "on-click-right": "pkill rmpc || footclient rmpc",
+
+        "format": "{stateIcon}    {artist}/{title}",
+        "format-disconnected": "MPD - Disconnected",
+        "format-stopped": "MPD - Stopped",
+        "interval": 10,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "",
+            "on": ""
+        },
+        "repeat-icons": {
+            "on": ""
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+    "clock": {
+        "timezone": "Pacific/Auckland",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a %d %b - %I:%M %p}"
+    },
+
+    "cpu": {
+        "format": "cpu: {usage}%",
+        "tooltip": false,
+        "on-click": "",
+        "interval": 1
+    },
+
+    "memory": {
+        "tooltip": false,
+        "format": "mem: {}%",
+        "on-click": ""
+    },
+
+    "temperature": {
+        "hwmon-path":
         [
-          "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon6/temp2_input",
-          "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon7/temp2_input"
+            "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon6/temp2_input",
+            "/sys/bus/platform/devices/coretemp.0/hwmon/hwmon7/temp2_input"
         ],
-    "format": "{temperatureC}°C",
-    "tooltip": false,
-  },
-
-  "battery": {
-    "states": {
-      "good": 35,
-      "warning": 15,
-      "critical": 5
+        "format": "{temperatureC}°C",
+        "tooltip": false,
     },
-    "format": "{capacity}%  {icon}",
-    "format-charging": "{capacity}% (󱐋) {icon}",
-    "format-full": "",
-    "format-icons": ["", "", "", "", ""],
-    "interval": 3,
-  },
 
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power Profile: {profile}\nDriver: {driver}",
-    "tooltip" : true,
-    "format-icons": {
-      "default": "󱐋",
-      "performance": "󱐋",
-      "balanced": "󰗑",
-      "power-saver": "󰌪"
+    "battery": {
+        "states": {
+            "good": 35,
+            "warning": 15,
+            "critical": 5
+        },
+        "format": "{capacity}%  {icon}",
+        "format-charging": "{capacity}% (󱐋) {icon}",
+        "format-full": "",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 3,
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power Profile: {profile}\nDriver: {driver}",
+        "tooltip" : true,
+        "format-icons": {
+            "default": "󱐋",
+            "performance": "󱐋",
+            "balanced": "󰗑",
+            "power-saver": "󰌪"
+        }
+    },
+
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr} (gateway: {gwaddr})",
+        "on-click-right": "iwgtk"
+    },
+
+    "pulseaudio": {
+        "on-click": "pavucontrol",
+        "format": "{icon}",
+        "tooltip-format": "{desc}: {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        }
     }
-  },
-
-  "network": {
-    "format-wifi": "{essid} ({signalStrength}%)",
-    "format-ethernet": "{ipaddr}/{cidr}",
-    "tooltip-format": "{ifname} via {gwaddr}",
-    "format-linked": "{ifname} (No IP)",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr} (gateway: {gwaddr})",
-    "on-click-right": "iwgtk"
-  },
-
-  "pulseaudio": {
-    "on-click": "pavucontrol",
-    "format": "{icon}",
-    "format-muted": "",
-    "format-icons": {
-      "default": ["", "", ""]
-    }
-  }
 }

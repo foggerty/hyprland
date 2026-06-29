@@ -203,16 +203,17 @@ installPackages() {
          qt6ct \
          wallust"
     utilities="7zip zip unrar-free unzip \
-         btop htop \
          bat \
          btrfs-assistant \
          figlet \
          fzf \
+         htop \
          lshw lsof \
          mc \
          ncdu \
          pacman-contrib \
          pciutils\
+         resources \
          ripgrep \
          util-linux \
          tree"

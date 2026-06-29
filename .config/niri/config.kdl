@@ -197,6 +197,7 @@ window-rule {
     match app-id="org.pulseaudio.pavucontrol"
     match app-id="nm-applet"
     match app-id="nm-connection-editor"
+    match app-id="net.nokyan.Resources"
 
     open-floating true
 }
@@ -327,6 +328,8 @@ animations {
 
 binds {
     Mod+Shift+Slash                              { show-hotkey-overlay; }
+
+    Ctrl+Shift+Escape                            { spawn "resources"; }
 
     XF86AudioRaiseVolume  allow-when-locked=true { spawn "pamixer" "-i" "5"; }
     XF86AudioLowerVolume  allow-when-locked=true { spawn "pamixer" "-d" "5"; }
