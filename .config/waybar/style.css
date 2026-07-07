@@ -59,7 +59,11 @@ button {
     margin-top: 6px;
 }
 
-#custom-tux,
+#custom-tux {
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
 #custom-power,
 #custom-monitor,
 #custom-display,
