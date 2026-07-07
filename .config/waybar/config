@@ -2,7 +2,7 @@
     "layer": "top",
     "opacity": 0.99,
     "exclusive": true,
-    "height": 42,
+    "height": 30,
     "spacing": 12,
     "margin-left": 6,
     "margin-right": 6,
