@@ -32,7 +32,7 @@ def apply_paper(paper)
 end
 
 def apply_theme(paper)
-  `wallust -q run #{paper} -a #{@alpha}`
+  `matugen image #{paper} --opacity 0.#{@alpha}`
 end
 
 def restart(app)
@@ -92,7 +92,7 @@ if %w[theme both].include?(ARGV[0])
     `kill -s sigusr1 foot`
 
   system('pgrep emacs') &&
-    `emacsclient -e "(load-theme 'doom-wallust-dark t)"`
+    `emacsclient -e "(load-theme 'matugen t)"`
 
   puts 'Terminal server (foot) may need to be restarted to see change.'
 end

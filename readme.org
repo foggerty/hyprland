@@ -74,7 +74,8 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
- - [ ] Bug report for Doom themes - switch bacj to 30 first.
+ - [ ] Make colours in Rofi match (list items).
+ - [ ] Bug report for Doom themes - switch back to 30 first.
  - [ ] Look into =mpv= with =haruna= or =smplayer= as front-end.
  - [ ] Recreate Hyprland config.
  - [ ] Power button should hibernate with short-press, shutdown with long.
@@ -88,6 +89,7 @@ I /think/ AMD does it differently; sensibly, I hope.
    - [X] QT6 :: Uses a built-in theme that matches the GTK3 theme's look.
    - [ ] QT5 :: Is supposed to do the same thing that QT6 does, but is no longer maintained.
    - [ ] GTK4 :: Fuck only knows.
+ - [X] Hibernates on low-power.
  - [X] Figure our why Emacs theme no longer with with terminal client.
  - [X] Get emacs server working again for graphical clients.
  - [X] Fix Emacs inverse colors in terminal.

@@ -9,11 +9,11 @@ spawn-at-startup "/usr/lib/xfce4/notifyd/xfce4-notifyd"
 spawn-at-startup "swayidle"
 spawn-at-startup "lxpolkit"
 spawn-at-startup "nm-applet"
-spawn-at-startup "udiskie"
-spawn-at-startup "opensnitch-ui"
+spawn-at-startup "emacs --daemon"
+//spawn-at-startup "opensnitch-ui"
+//spawn-at-startup "udiskie"
 //spawn-at-startup "zeal"
 //spawn-at-startup "blueman-applet"
-//spawn-at-startup "arch-update" "--tray"
 //spawn-at-startup "journalctl-desktop-notification"
 //spawn-at-startup "foot" "-s"
 
@@ -44,8 +44,8 @@ xwayland-satellite {
 
 blur {
     // off
-    passes 3
-    offset 2
+    passes 2
+    offset 3
     noise 0
     saturation 1.25
 }
@@ -249,7 +249,7 @@ layer-rule {
     }
 
     background-effect {
-        blur true
+        //blur true
     }
 
     popups {

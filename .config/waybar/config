@@ -19,7 +19,7 @@
         "clock"
     ],
     "modules-right": [
-        "niri/workspaces",
+        "hyprland/workspaces",
         "pulseaudio",
         "battery",
         "power-profiles-daemon",

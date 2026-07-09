@@ -1,0 +1,38 @@
+[config]
+contrast = 1.0
+
+[templates.foot]
+input_path  = '~/.config/matugen/templates/foot.ini'
+output_path = '~/.config/foot/colors.ini'
+
+[templates.emacs]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.emacs.d/colors.css'
+
+# [templates.rofi]
+# input_path  = '~/.config/matugen/templates/rofi.rasi'
+# output_path = '~/.config/rofi/colors.rasi'
+
+[templates.hyprland]
+input_path  = '~/.config/matugen/templates/hyprland.conf'
+output_path = '~/.config/hypr/colors-hyprland.conf'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/waybar.css'
+output_path = '~/.config/waybar/colors.css'
+
+# [templates.gtk3]
+# input_path  = '~/.config/matugen/templates/gtk.css'
+# output_path = '~/.config/gtk-3.0/colors.css'
+
+# [templates.gtk4]
+# input_path  = '~/.config/matugen/templates/gtk.css'
+# output_path = '~/.config/gtk-4.0/colors.css'
+
+# [templates.qt5ct]
+# input_path  = '~/.config/matugen/templates/qt.css'
+# output_path = '~/.config/qt5ct/colors/matugen.conf'
+
+# [templates.qt6ct]
+# input_path  = '~/.config/matugen/templates/qt.css'
+# output_path = '~/.config/qt6vt/colors/matugen.conf'

@@ -14,48 +14,7 @@ configuration {
     }
 }
 
-@theme "~/.config/rofi/colors.rasi"
-
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* KooL Hyprland Rofi Style 4 */
-/* credit: https://github.com/adi1090x/rofi */
-
-/*****----- Global Properties -----*****/
-* {
-    background-alt: @color0;
-    /* selected uses color12, active uses color11 (match other working styles) */
-    selected:       @color12;
-    active:         @color11;
-    urgent:         @color13;
-
-    border-color:                @active;
-    handle-color:                @selected;
-    background-color:            @background-transparent;
-    foreground-color:            @foreground;
-    alternate-background:        @background-transparent;
-    normal-background:           @background;
-    normal-foreground:           @foreground;
-    urgent-background:           @urgent;
-    urgent-foreground:           @background;
-    active-background:           @active;
-    active-foreground:           @background;
-    /* force selection to use the selected accent, not imported selected-* values */
-    selected-normal-background:  @selected;
-    selected-normal-foreground:  @background;
-    selected-urgent-background:  @selected;
-    selected-urgent-foreground:  @background;
-    selected-active-background:  @selected;
-    selected-active-foreground:  @background;
-    alternate-normal-background: @background;
-    alternate-normal-foreground: @foreground;
-    alternate-urgent-background: @urgent;
-    alternate-urgent-foreground: @background;
-    alternate-active-background: @active;
-    alternate-active-foreground: @background;
-
-
-}
-
+@import "colors.rasi"
 
 /*****----- Main Window -----*****/
 window {
