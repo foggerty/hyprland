@@ -33,7 +33,8 @@ end
 
 def apply_theme(paper)
   # `wallust -q run #{paper} -a #{@alpha}`
-  `matugen image #{paper} --opacity 0.#{@alpha} -q --prefer darkness --source-color-index 0`
+  # prefer: darkness, lightness, saturation, less-saturation, value, closes-to-fallback
+  `matugen image #{paper} --opacity 0.#{@alpha} -q --prefer lightness --source-color-index 0`
 end
 
 def restart(app)
