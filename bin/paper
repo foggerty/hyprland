@@ -28,11 +28,12 @@ end
 
 def apply_paper(paper)
   `cp #{paper} #{@wallpaper}`
-  `awww img #{@wallpaper} --transition-duration 2 -t grow`
+  `awww img #{@wallpaper} --transition-duration 1 -t random`
 end
 
 def apply_theme(paper)
-  `matugen image #{paper} --opacity 0.#{@alpha}`
+  # `wallust -q run #{paper} -a #{@alpha}`
+  `matugen image #{paper} --opacity 0.#{@alpha} -q --prefer darkness --source-color-index 0`
 end
 
 def restart(app)

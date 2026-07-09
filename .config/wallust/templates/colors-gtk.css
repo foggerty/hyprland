@@ -3,8 +3,8 @@
 css = { src = "colors.css", dst = "~/.config/" }
 */
 
-@define-color accent_color {{color1}};
-@define-color accent_bg_color {{color9}};
+@define-color accent_color {{base16.base1.default.hex}};
+@define-color accent_bg_color {{base16.base9.default.hex}};
 @define-color accent_fg_color #ffffff;
 
 @define-color destructive_color #ff7b63;
@@ -22,9 +22,9 @@ css = { src = "colors.css", dst = "~/.config/" }
 
 @define-color window_bg_color alpha({{background}}, 0.80);
 @define-color window_fg_color {{foreground}};
-@define-color view_bg_color alpha({{color13}},0.1);
+@define-color view_bg_color alpha({{base16.base13.default.hex}},0.1);
 @define-color view_fg_color #ffffff;
-@define-color headerbar_bg_color {{color0}};
+@define-color headerbar_bg_color {{base16.base0.default.hex}};
 @define-color headerbar_fg_color #ffffff;
 @define-color headerbar_border_color #ffffff;
 @define-color headerbar_backdrop_color #242424;
@@ -37,8 +37,8 @@ css = { src = "colors.css", dst = "~/.config/" }
 @define-color shade_color rgba(0, 0, 0, 0.36);
 @define-color scrollbar_outline_color rgba(0, 0, 0, 0.5);
 @define-color borders alpha(red, 0.15);
-@define-color sidebar_bg_color {{color13}};
-@define-color sidebar_fg_color {{color7}};
+@define-color sidebar_bg_color {{base16.base13.default.hex}};
+@define-color sidebar_fg_color {{base16.base7.default.hex}};
 @define-color sidebar_border_color @window_bg_color;
 
 
@@ -52,7 +52,7 @@ css = { src = "colors.css", dst = "~/.config/" }
     backdrop-filter: blur(100px);
 }
 .top-bar {
-    background-color: alpha({{color13}},0.1);
+    background-color: alpha({{base16.base03.default.hex}},0.1);
     backdrop-filter: blur(100px);
 }
 .sidebar-pane {
