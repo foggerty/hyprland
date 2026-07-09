@@ -2,7 +2,6 @@
     "layer": "top",
     "opacity": 0.99,
     "exclusive": true,
-    "height": 30,
     "spacing": 12,
     "margin-left": 6,
     "margin-right": 6,
@@ -151,7 +150,8 @@
 
     "tray": {
         "icon-size": 16,
-        "spacing": 10
+        "spacing": 10,
+        "show-passive-items": true
     },
 
     "clock": {
@@ -208,7 +208,8 @@
         }
     },
 
-    "network": {
+
+"network": {
         "format-wifi": "{essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr}",
         "tooltip-format": "{ifname} via {gwaddr}",
