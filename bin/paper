@@ -3,7 +3,7 @@
 
 @supported_file_types = %w[PNG XPM JPEG TIFF PNM RAS BMP RIFF]
 @wallpaper = '~/Pictures/Wallpapers/current'
-@alpha = 75
+@alpha = 85
 
 def valid_image?(file)
   f_type = `file "#{file}" | cut -d " " -f 2`.strip
@@ -33,8 +33,19 @@ end
 
 def apply_theme(paper)
   # `wallust -q run #{paper} -a #{@alpha}`
-  # prefer: darkness, lightness, saturation, less-saturation, value, closes-to-fallback
-  `matugen image #{paper} --opacity 0.#{@alpha} -q --prefer lightness --source-color-index 0`
+
+  # prefer: darkness, lightness, saturation, less-saturation, value,
+  # closes-to-fallback
+  # type: scheme-content, scheme-expressive, scheme-fidelity,
+  # scheme-fruit-salad, scheme-monochrome, scheme-neutral,
+  # scheme-rainbow, scheme-tonal-spot(defaukt), scheme-vibrant
+
+  `matugen image #{paper} --contrast 0.0 \
+                          --opacity 0.#{@alpha} \
+                          --quiet \
+                          --type scheme-vibrant \
+                          --prefer darkness \
+                          --source-color-index 0`
 end
 
 def restart(app)

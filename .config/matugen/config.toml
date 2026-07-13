@@ -10,8 +10,8 @@ input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.emacs.d/colors.css'
 
 [templates.hyprland]
-input_path  = '~/.config/matugen/templates/hyprland.conf'
-output_path = '~/.config/hypr/colors-hyprland.conf'
+input_path  = '~/.config/matugen/templates/hyprland.lua'
+output_path = '~/.config/hypr/colors.lua'
 
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar.css'
