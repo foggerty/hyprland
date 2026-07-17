@@ -26,7 +26,7 @@ installPackages() {
             $power"
 
     info "Installing packages."
-    paru --needed --skipreview -Syu $to_install > /dev/null
+    sudo pacman --needed -Syu $to_install > /dev/null
 }
 
 detectSensors() {

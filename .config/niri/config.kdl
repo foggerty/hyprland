@@ -249,7 +249,7 @@ layer-rule {
     }
 
     background-effect {
-        //blur true
+        blur true
     }
 
     popups {

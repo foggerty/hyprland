@@ -79,7 +79,7 @@ setupServices() {
                   ufw)
 
     # List of user services to enable/start.
-    user_services=(emacs foot-server mpd)
+    user_services=(emacs foot-server)
 
     info "Enabling system services."
     for service in "${services[@]}"; do
@@ -147,20 +147,16 @@ installPackages() {
          galculator \
          pipewire pipewire-pulse wireplumber \
          power-profiles-daemon \
-         journalctl-desktop-notification \
-         mpd rmpc \
          pamixer \
          nwg-displays \
          rofi \
-         ristretto\
+         ristretto \
          swaylock swayidle \
          swww \
          waybar \
          wlogout \
-         vlc vlc-plugin-ffmpeg \
-         xdg-desktop-portal-gtk \
-         xdg-terminal-exec \
          xfce4-notifyd \
+         xdg-desktop-portal-gtk \
          zeal"
     development="cmake make"
     # I build Emacs manualy, so not included here.  Vi?  Vim?  Never heard of
@@ -172,7 +168,7 @@ installPackages() {
          nfs-utils \
          thunar thunar-archive-plugin thunar-volman \
          thunar-media-tags-plugin \
-         tumbler tumbler-extra-thumbnailers"
+         tumbler"
     fonts="adobe-source-code-pro-fonts \
          cantarell-fonts \
          font-manager \
@@ -180,28 +176,23 @@ installPackages() {
          ttf-nerd-fonts-symbols-mono"
     greeter="greetd greetd-tuigreet"
     hyprland="hyprland \
-              hyprlock \
-              hypridle \
-              hyprshot \
               hyprshutdown \
-              hyprsysteminfo \
               hyprpwcenter \
-              wlr-dpms \
               xdg-desktop-portal-hyprland"
     libraries="libgccjit lua-luv libotf"
     networking="iwd networkmanager network-manager-applet"
     niri="niri pavucontrol xdg-desktop-portal-gtk"
-    security="lxsession
-              opensnitch \
+    security="lxsession \
               python-qt-material \
               ufw"
     terminal="bash-completion foot starship tealdeer"
-    theme="deepin-gtk-theme \
-         obsidion-icon-thene \
+    theme="adw-gtk-theme \
+         obsidian-icon-theme \
          imagemagick \
+         matugen \
          nwg-look \
-         qt6ct \
-         wallust"
+         qt5ct \
+         qt6ct"
     utilities="7zip zip unrar-free unzip \
          bat \
          btrfs-assistant \
@@ -233,7 +224,7 @@ installPackages() {
          $theme            \
          $utilities"
 
-    desktop="$niri"
+    desktop="$hyprland"
 
     # Install requirements for bootstrap
     info Installing git and base-devel.

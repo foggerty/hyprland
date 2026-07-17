@@ -17,7 +17,7 @@ I want a small as possible (in mem and disk) tiling desktop.  It should:
  - Be able to swap out/in different WMs, inc Hyprland, and the OpenBox-like one.
  - Have a small enough installation footprint that I know what (mostly) every package does, or at the very least, /why/ it's been installed.  Or to put it another way, I should be able to justify every package being installed.
 
-Other than that, it's what works for me now.  If you want it to work differently for you, then it should be reasonably obvious and documented where to look.
+Other than that, it's what works for me now.
 
 * Installation
  - Install Cachy (mannually setting up BTRFS snapshot support is a pain, hence Cachy, but will still work 100% with vanilla Arch).  Make sure =NetworkManager= and =Pipewire= are installed.
@@ -74,12 +74,12 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
- - [ ] Make colours in Rofi match (list items).
- - [ ] Bug report for Doom themes - switch back to 30 first.
+ - [ ] Add blur hints back into Hyprland config.
+ - [ ] Fix Rofi theming.
+ - [ ] Setup Flameshot.
+ - [ ] Add hibernate to SwayIdle's settings.
  - [ ] Look into =mpv= with =haruna= or =smplayer= as front-end.
- - [ ] Recreate Hyprland config.
- - [ ] Power button should hibernate with short-press, shutdown with long.
- - [ ] Laptop lid/manually locking should first sleep then hibernate.
+ - [ ] Power button should hibernate with short-press, shutdown with long (me be broken with above intel settings..... fuck).
  - [ ] Add Gateway and DNS to whatami.
  - [ ] Udisks to handle [[https://wiki.archlinux.org/title/Udisks][USB mounting when in a TTY session]]?
  - [ ] Copy music back onto laptop and find a decent music player or mpd client.
