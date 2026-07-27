@@ -74,18 +74,18 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
- - [ ] Add blur hints back into Hyprland config.
+ - [ ] Standardise theme colours.
  - [ ] Fix Rofi theming.
  - [ ] Setup Flameshot.
  - [ ] Add hibernate to SwayIdle's settings.
- - [ ] Look into =mpv= with =haruna= or =smplayer= as front-end.
- - [ ] Power button should hibernate with short-press, shutdown with long (me be broken with above intel settings..... fuck).
  - [ ] Add Gateway and DNS to whatami.
+ - [ ] Look into =mpv= with =haruna= or =smplayer= as front-end.
+ - [ ] Power button should hibernate with short-press, shutdown with long (may be broken with above intel settings..... fuck).
  - [ ] Udisks to handle [[https://wiki.archlinux.org/title/Udisks][USB mounting when in a TTY session]]?
  - [ ] Copy music back onto laptop and find a decent music player or mpd client.
  - [ ] Can magit be used for CLI merging?
  - [-] Themes!  Oh gods I loathe CSS and theming in general:
-   - [X] GTK3 :: Use adw-gtk3 to pair with Wallust.
+   - [X] GTK3 :: Use adw-gtk3 to pair with Matugen.
    - [X] QT6 :: Uses a built-in theme that matches the GTK3 theme's look.
    - [ ] QT5 :: Is supposed to do the same thing that QT6 does, but is no longer maintained.
    - [ ] GTK4 :: Fuck only knows.
