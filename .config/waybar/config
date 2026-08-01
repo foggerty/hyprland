@@ -222,7 +222,7 @@
         "on-click": "pavucontrol",
         "format": "{icon}",
         "tooltip-format": "{desc}: {volume}%",
-        "format-muted": "",
+        "format-muted": "",
         "format-icons": {
             "default": ["", "", ""]
         }

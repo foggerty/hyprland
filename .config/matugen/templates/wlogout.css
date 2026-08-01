@@ -1,10 +1,10 @@
-@define-color foreground #5a5d5c;
-@define-color background #090d05;
-@define-color border #7b7d80;
-@define-color button-hover #191d16;
+@define-color foreground {{ base16.base05.default.hex }};
+@define-color background {{ base16.base00.default.hex }};
+@define-color border {{ base16.base07.default.hex}};
+@define-color button-hover {{base16.base01.default.hex}};
 
-@define-color color1 #191d16;
-@define-color color4 #4a4d4b;
+@define-color color1 {{base16.base01.default.hex}};
+@define-color color4 {{base16.base04.default.hex}};
 
 * {
     background-image: none;
@@ -14,7 +14,7 @@
 
 window {
     font-size: 20pt;
-    background-color: rgba(9, 13, 5, 0.85);
+    background-color: {{ base16.base00.default.rgba }};
     background-size: cover;
     }
 

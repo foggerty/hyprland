@@ -9,13 +9,19 @@ output_path = '~/.config/foot/colors.ini'
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.emacs.d/colors.css'
 
-[templates.hyprland]
-input_path  = '~/.config/matugen/templates/hyprland.lua'
-output_path = '~/.config/hypr/colors.lua'
+#[templates.hyprland]
+#input_path  = '~/.config/matugen/templates/hyprland.lua'
+#output_path = '~/.config/hypr/colors.lua'
+
+[templates.niri]
+input_path = '~/.config/matugen/templates/niri.kdl'
+output_path = '~/.config/niri/colors.kdl'
+post_hook = 'niri msg action load-config-file'
 
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar.css'
 output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
 
 [templates.wlogout]
 input_path = '~/.config/matugen/templates/wlogout.css'

@@ -74,6 +74,7 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
+ - [ ] Emacs - try out new FlyCheck.  https://emacsredux.com/blog/2026/07/29/flycheck-38/
  - [ ] Standardise theme colours.
  - [ ] Fix Rofi theming.
  - [ ] Setup Flameshot.
