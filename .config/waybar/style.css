@@ -66,6 +66,8 @@ button {
     padding-right: 6px;
 }
 
+#privacy,
+#custom-tux,
 #custom-power,
 #custom-monitor,
 #custom-display,
@@ -73,9 +75,9 @@ button {
 #custom-info,
 #custom-look {
     color: @secondary;
-    margin-left: 10px;
-    margin-right: 18px;
-    font-size: 20px
+    margin-left: 8px;
+    margin-right: 12px;
+    font-size: 16px;
 }
 
 #custom-tux:hover,
@@ -108,5 +110,9 @@ button {
 
 #tray {
     padding-right: 20px;
+    padding-left: 30px;
+}
+
+#privacy {
     padding-left: 30px;
 }

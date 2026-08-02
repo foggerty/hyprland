@@ -43,3 +43,7 @@ output_path = '~/.config/gtk-4.0/gtk.css'
 # [templates.qt6ct]
 # input_path  = '~/.config/matugen/templates/qt.css'
 # output_path = '~/.config/qt6vt/colors/matugen.conf'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi.rasi'
+output_path = '~/.config/rofi/colors.rasi'
