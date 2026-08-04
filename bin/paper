@@ -33,17 +33,17 @@ end
 
 def apply_theme(paper)
   # prefer: darkness, lightness, saturation, less-saturation, value,
-  # closes-to-fallback
+  # closest-to-fallback
   # type: scheme-content, scheme-expressive, scheme-fidelity,
   # scheme-fruit-salad, scheme-monochrome, scheme-neutral,
   # scheme-rainbow, scheme-tonal-spot(defaukt), scheme-vibrant
 
-  `matugen image #{paper} --contrast 0.3 \
+  `matugen image #{paper} --contrast 0.0 \
                           --opacity 0.#{@alpha} \
                           --quiet \
-                          --type scheme-neutral \
-                          --prefer saturation \
-                            --source-color-index 0`
+                          --type scheme-vibrant \
+                          --prefer darkness \
+                          --source-color-index 0`
 end
 
 def restart(app)
