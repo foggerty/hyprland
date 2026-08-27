@@ -45,3 +45,8 @@
 	fontdiff = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 	fontui = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 	matchtrackingbranch = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

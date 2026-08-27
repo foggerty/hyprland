@@ -16,6 +16,7 @@ I want a small as possible (in mem and disk) tiling desktop.  It should:
  - Have reasonable secure defaults (still to work out app armour).
  - Be able to swap out/in different WMs, inc Hyprland, and the OpenBox-like one.
  - Have a small enough installation footprint that I know what (mostly) every package does, or at the very least, /why/ it's been installed.  Or to put it another way, I should be able to justify every package being installed.
+ - Run on a potato.
 
 Other than that, it's what works for me now.
 
@@ -37,6 +38,8 @@ Other than that, it's what works for me now.
 Either use the script =$HOME/bin/paper [paper|theme|both] /path/to/image= from the command line, or right-click and select =Theme= on an image in Thunar (this will call the same script).
 
 =paper= will set the wallpaper, =theme= will set the theme (based off of the image's colors) and =both= will do both.
+
+Theme colours are generated with [[https://github.com/InioX/matugen][Matugem]], which uses the [[https://m3.material.io/styles/color/roles][Material You 3]] styling guideline.
 
 * Screenshots
 The mandatory 'fetch' shot:

@@ -8,8 +8,8 @@ layout {
     }
 
     border {
-        active-color   "#69e100"
-        inactive-color "#8c9383"
+        active-color   "#8c9383"
+        inactive-color "#96d4b5"
         urgent-color   "#ffb4ab"
     }
 
@@ -18,8 +18,8 @@ layout {
     }
 
     tab-indicator {
-        active-color   "#69e100"
-        inactive-color "#8c9383"
+        active-color   "#8c9383"
+        inactive-color "#96d4b5"
         urgent-color   "#ffb4ab"
     }
 
