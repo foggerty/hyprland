@@ -245,11 +245,11 @@ layer-rule {
     opacity 0.99
 
     shadow {
-        //on
+        // on
     }
 
     background-effect {
-        //blur true
+        blur true
     }
 
     popups {

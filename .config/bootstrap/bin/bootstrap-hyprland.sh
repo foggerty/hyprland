@@ -140,7 +140,6 @@ installPackages() {
     browser="firefox"
     desktop="avahi \
          blueman \
-         cachy-update \
          cliphist wl-clipboard \
          evince \
          foliate \
@@ -148,8 +147,7 @@ installPackages() {
          pipewire pipewire-pulse wireplumber \
          power-profiles-daemon \
          pamixer \
-         nwg-displays \
-         rofi \
+         nwg-displays nwg-look \
          ristretto \
          swaylock swayidle \
          swww \

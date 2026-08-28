@@ -3,24 +3,24 @@
  * This file is overwritten when you change wallpaper.
  */
 
-@define-color accent_color #69e100;
-@define-color accent_fg_color #153800;
-@define-color accent_bg_color #69e100;
+@define-color accent_color #72e000;
+@define-color accent_fg_color #183800;
+@define-color accent_bg_color #72e000;
 
 @define-color window_bg_color #0f150b;
-@define-color window_fg_color #dee5d3;
+@define-color window_fg_color #dfe5d3;
 
 @define-color headerbar_bg_color #0f150b;
-@define-color headerbar_fg_color #dee5d3;
+@define-color headerbar_fg_color #dfe5d3;
 
 @define-color popover_bg_color #0f150b;
-@define-color popover_fg_color #dee5d3;
+@define-color popover_fg_color #dfe5d3;
 
 @define-color view_bg_color #0f150b;
-@define-color view_fg_color #dee5d3;
+@define-color view_fg_color #dfe5d3;
 
 @define-color card_bg_color #0f150b;
-@define-color card_fg_color #dee5d3;
+@define-color card_fg_color #dfe5d3;
 
 @define-color sidebar_bg_color @window_bg_color;
 @define-color sidebar_fg_color @window_fg_color;
@@ -34,42 +34,42 @@
 .nautilus-window placessidebar list,
 placessidebar,
 placessidebar list {
-    background-color: #171d13 !important;
-    color: #dee5d3 !important;
+    background-color: #171d12 !important;
+    color: #dfe5d3 !important;
     border-right: none !important;
 }
 
 placessidebar row {
     background-color: transparent !important;
-    color: #dee5d3 !important;
+    color: #dfe5d3 !important;
 }
 
 placessidebar row:hover {
-    background-color: alpha(#69e100, 0.14) !important;
+    background-color: alpha(#72e000, 0.14) !important;
 }
 
 placessidebar row:selected,
 placessidebar row:selected:hover {
-    background-color: #69e100 !important;
-    color: #153800 !important;
+    background-color: #72e000 !important;
+    color: #183800 !important;
 }
 
 .nautilus-window headerbar {
     background-color: #0f150b !important;
-    color: #dee5d3 !important;
+    color: #dfe5d3 !important;
 }
 
 .nautilus-window .view {
     background-color: #0f150b !important;
-    color: #dee5d3 !important;
+    color: #dfe5d3 !important;
 }
 
 placessidebar image {
-    color: #dee5d3 !important;
+    color: #dfe5d3 !important;
 }
 
 placessidebar row:selected image {
-    color: #153800 !important;
+    color: #183800 !important;
 }
 
 separator.sidebar {
