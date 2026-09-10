@@ -3,24 +3,24 @@
  * This file is overwritten when you change wallpaper.
  */
 
-@define-color accent_color #6fd2ff;
-@define-color accent_fg_color #003547;
-@define-color accent_bg_color #6fd2ff;
+@define-color accent_color #00e608;
+@define-color accent_fg_color #003a00;
+@define-color accent_bg_color #00e608;
 
-@define-color window_bg_color #0a151a;
-@define-color window_fg_color #d9e4eb;
+@define-color window_bg_color #0e150c;
+@define-color window_fg_color #dde5d5;
 
-@define-color headerbar_bg_color #0a151a;
-@define-color headerbar_fg_color #d9e4eb;
+@define-color headerbar_bg_color #0e150c;
+@define-color headerbar_fg_color #dde5d5;
 
-@define-color popover_bg_color #0a151a;
-@define-color popover_fg_color #d9e4eb;
+@define-color popover_bg_color #0e150c;
+@define-color popover_fg_color #dde5d5;
 
-@define-color view_bg_color #0a151a;
-@define-color view_fg_color #d9e4eb;
+@define-color view_bg_color #0e150c;
+@define-color view_fg_color #dde5d5;
 
-@define-color card_bg_color #0a151a;
-@define-color card_fg_color #d9e4eb;
+@define-color card_bg_color #0e150c;
+@define-color card_fg_color #dde5d5;
 
 @define-color sidebar_bg_color @window_bg_color;
 @define-color sidebar_fg_color @window_fg_color;
@@ -34,45 +34,44 @@
 .nautilus-window placessidebar list,
 placessidebar,
 placessidebar list {
-    background-color: #131d22;
-    color: #d9e4eb;
+    background-color: #161e14;
+    color: #dde5d5;
     border-right: none;
 }
 
 placessidebar row {
     background-color: transparent;
-    color: #d9e4eb;
+    color: #dde5d5;
 }
 
 placessidebar row:hover {
-    background-color: alpha(#6fd2ff, 0.14);
+    background-color: alpha(#00e608, 0.14);
 }
 
 placessidebar row:selected,
 placessidebar row:selected:hover {
-    background-color: #6fd2ff;
-    color: #003547;
+    background-color: #00e608;
+    color: #003a00;
 }
 
 .nautilus-window headerbar {
-    background-color: #0a151a;
-    color: #d9e4eb;
+    background-color: #0e150c;
+    color: #dde5d5;
 }
 
 .nautilus-window .view {
-    background-color: #0a151a;
-    color: #d9e4eb;
+    background-color: #0e150c;
+    color: #dde5d5;
 }
 
 placessidebar image {
-    color: #d9e4eb;
+    color: #dde5d5;
 }
 
 placessidebar row:selected image {
-    color: #003547;
+    color: #003a00;
 }
 
 separator.sidebar {
     background-color: transparent;
 }
-

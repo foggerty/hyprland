@@ -63,10 +63,10 @@ post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings s
 input_path  = '~/.config/matugen/templates/gtk.css'
 output_path = '~/.config/gtk-4.0/gtk.css'
 
-# [templates.qt5ct]
-# input_path  = '~/.config/matugen/templates/qt.css'
-# output_path = '~/.config/qt5ct/colors/matugen.conf'
+[templates.qt5ct]
+input_path  = '~/.config/matugen/templates/qt.css'
+output_path = '~/.config/qt5ct/colors/matugen.conf'
 
-# [templates.qt6ct]
-# input_path  = '~/.config/matugen/templates/qt.css'
-# output_path = '~/.config/qt6vt/colors/matugen.conf'
+[templates.qt6ct]
+input_path  = '~/.config/matugen/templates/qt.css'
+output_path = '~/.config/qt6vt/colors/matugen.conf'
