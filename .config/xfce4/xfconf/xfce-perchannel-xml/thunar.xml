@@ -7,10 +7,12 @@
   <property name="last-window-width" type="int" value="1266"/>
   <property name="last-window-height" type="int" value="1010"/>
   <property name="last-window-maximized" type="bool" value="false"/>
-  <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
-  <property name="last-details-view-column-widths" type="string" value="50,50,111,50,50,88,50,50,728,50,50,63,50,162"/>
+  <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_50_PERCENT"/>
+  <property name="last-details-view-column-widths" type="string" value="50,114,124,50,50,88,70,123,618,75,111,66,101,162"/>
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="misc-volume-management" type="bool" value="false"/>
   <property name="last-show-hidden" type="bool" value="false"/>
   <property name="last-splitview-separator-position" type="int" value="-1"/>
+  <property name="last-details-view-visible-columns" type="string" value="THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_GROUP,THUNAR_COLUMN_NAME,THUNAR_COLUMN_OWNER,THUNAR_COLUMN_PERMISSIONS,THUNAR_COLUMN_SIZE"/>
+  <property name="misc-file-size-binary" type="bool" value="false"/>
 </channel>

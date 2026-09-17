@@ -186,7 +186,7 @@ window-rule {
 window-rule {
     match app-id="firefox$" title="^Picture-in-Picture$"
     match app-id="galculator"
-    match app-id="thunar"
+//    match app-id="thunar"
     match app-id="nwg-look"
     match app-id="nwg-displays"
     match app-id="blueman"
