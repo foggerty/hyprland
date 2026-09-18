@@ -77,14 +77,13 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
- - [ ] Setup Flameshot.
+ - [ ] Add Gateway and DNS to whatami.
  - [ ] Waybar and FUCKING BLUR.
  - [ ] Emacs - try out new FlyCheck.  https://emacsredux.com/blog/2026/07/29/flycheck-38/
  - [ ] Add hibernate to SwayIdle's settings.
- - [ ] Add Gateway and DNS to whatami.
  - [ ] Look into =mpv= with =haruna= or =smplayer= as front-end.
  - [ ] Power button should hibernate with short-press, shutdown with long (may be broken with above intel settings..... fuck).
- - [ ] Udisks to handle [[https://wiki.archlinux.org/title/Udisks][USB mounting when in a TTY session]]?
+ - [ ] Setup udev for USB auto-mounting.
  - [ ] Copy music back onto laptop and find a decent music player or mpd client.
  - [ ] Can magit be used for CLI merging?
  - [-] Themes!  Oh gods I loathe CSS and theming in general:
