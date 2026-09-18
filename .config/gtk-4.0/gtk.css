@@ -5,24 +5,24 @@
   wallpaper.
  */
 
-@define-color accent_color #69e100;
-@define-color accent_fg_color #153800;
-@define-color accent_bg_color #2f6c00;
+@define-color accent_color #00daf2;
+@define-color accent_fg_color #00363d;
+@define-color accent_bg_color #006874;
 
-@define-color window_bg_color #0f150b;
-@define-color window_fg_color #dee5d3;
+@define-color window_bg_color #091517;
+@define-color window_fg_color #d7e5e8;
 
-@define-color headerbar_bg_color #0f150b;
-@define-color headerbar_fg_color #dee5d3;
+@define-color headerbar_bg_color #091517;
+@define-color headerbar_fg_color #d7e5e8;
 
-@define-color popover_bg_color #0f150b;
-@define-color popover_fg_color #dee5d3;
+@define-color popover_bg_color #091517;
+@define-color popover_fg_color #d7e5e8;
 
-@define-color view_bg_color #0F150BD9;
-@define-color view_fg_color #dee5d3;
+@define-color view_bg_color #091517D9;
+@define-color view_fg_color #d7e5e8;
 
-@define-color card_bg_color #0f150b;
-@define-color card_fg_color #dee5d3;
+@define-color card_bg_color #091517;
+@define-color card_fg_color #d7e5e8;
 
 @define-color sidebar_bg_color @window_bg_color;
 @define-color sidebar_fg_color @window_fg_color;
@@ -30,5 +30,5 @@
 @define-color sidebar_backdrop_color @window_bg_color;
 
 .navigation-sidebar {
-    background-color: #171d13;
+    background-color: #111d20;
 }

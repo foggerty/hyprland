@@ -16,7 +16,7 @@ I want a small as possible (in mem and disk) tiling desktop.  It should:
  - Have reasonable secure defaults (still to work out app armour).
  - Be able to swap out/in different WMs, inc Hyprland, and the OpenBox-like one.
  - Have a small enough installation footprint that I know what (mostly) every package does, or at the very least, /why/ it's been installed.  Or to put it another way, I should be able to justify every package being installed.
- - Run on a potato.
+ - Run on a potato.u
 
 Other than that, it's what works for me now.
 
@@ -77,10 +77,9 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
- - [ ] Emacs - try out new FlyCheck.  https://emacsredux.com/blog/2026/07/29/flycheck-38/
- - [ ] Standardise theme colours.
- - [ ] Fix Rofi theming.
  - [ ] Setup Flameshot.
+ - [ ] Waybar and FUCKING BLUR.
+ - [ ] Emacs - try out new FlyCheck.  https://emacsredux.com/blog/2026/07/29/flycheck-38/
  - [ ] Add hibernate to SwayIdle's settings.
  - [ ] Add Gateway and DNS to whatami.
  - [ ] Look into =mpv= with =haruna= or =smplayer= as front-end.
@@ -93,6 +92,8 @@ I /think/ AMD does it differently; sensibly, I hope.
    - [X] QT6 :: Uses a built-in theme that matches the GTK3 theme's look.
    - [ ] QT5 :: Is supposed to do the same thing that QT6 does, but is no longer maintained.
    - [ ] GTK4 :: Fuck only knows.
+ - [X] =em= no longer opens files for some reason.
+ - [X] Standardise theme colours.
  - [X] Hibernates on low-power.
  - [X] Figure our why Emacs theme no longer with with terminal client.
  - [X] Get emacs server working again for graphical clients.
