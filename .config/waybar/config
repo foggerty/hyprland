@@ -220,6 +220,7 @@
 
     "pulseaudio": {
         "on-click": "pavucontrol",
+        "on-right-click": "qpwgraph",
         "format": "{icon}",
         "tooltip-format": "{desc}: {volume}%",
         "format-muted": "",

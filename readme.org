@@ -12,11 +12,10 @@ I want a small as possible (in mem and disk) tiling desktop.  It should:
  - Not make any assumptions about the user's prefered editor (i.e. use POSIX variables like $EDITOR).  /I/ however, retain full rights to make (possibly vile) assumptions about a user based entirely on their preferred editor ;-)
  - Support any file manager the user wants, Thunar or a CLI etc.  For example, while it's nice of Thunar to auto-mount USB devices for me, it's something that the desktop should handle; in other words a CLI file-manager should be able to access a USB key in the absence of Thunar.  Getting it working in a raw TTY may be an issue....
  - Do the usual Bluetooth/WiFi things that people expect laptops to do.
- - Not care about how it's launched (SystemD or greetd) - although to be fair I am running foot server via a SystemD user service, just because it's easier.  Ideally, this should be trivial to port to a BSD.
+ - Not care about how it's launched (SystemD or greetd).
  - Have reasonable secure defaults (still to work out app armour).
- - Be able to swap out/in different WMs, inc Hyprland, and the OpenBox-like one.
- - Have a small enough installation footprint that I know what (mostly) every package does, or at the very least, /why/ it's been installed.  Or to put it another way, I should be able to justify every package being installed.
- - Run on a potato.u
+ - Be able to justify every package being installed.
+ - Run on a potato.
 
 Other than that, it's what works for me now.
 
@@ -77,6 +76,7 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
+ - [ ] Add CachyOS timer service ('/etc/systemd/system/timers.target.wants/cachyos-rate-mirrors.timer') to pacman exclude list.
  - [ ] Add Gateway and DNS to whatami.
  - [ ] Waybar and FUCKING BLUR.
  - [ ] Emacs - try out new FlyCheck.  https://emacsredux.com/blog/2026/07/29/flycheck-38/
@@ -84,6 +84,7 @@ I /think/ AMD does it differently; sensibly, I hope.
  - [ ] Look into =mpv= with =haruna= or =smplayer= as front-end.
  - [ ] Power button should hibernate with short-press, shutdown with long (may be broken with above intel settings..... fuck).
  - [ ] Setup udev for USB auto-mounting.
+ - [ ] Tray-app that utilises it?  Because of the udev rules being root-only, may need a dbus service?
  - [ ] Copy music back onto laptop and find a decent music player or mpd client.
  - [ ] Can magit be used for CLI merging?
  - [-] Themes!  Oh gods I loathe CSS and theming in general:

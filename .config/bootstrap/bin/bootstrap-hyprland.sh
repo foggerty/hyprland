@@ -148,6 +148,7 @@ installPackages() {
          power-profiles-daemon \
          pamixer \
          nwg-displays nwg-look \
+         qpwgraph \
          ristretto \
          swaylock swayidle \
          swww \

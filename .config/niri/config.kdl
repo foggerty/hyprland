@@ -189,7 +189,7 @@ window-rule {
 window-rule {
     match app-id="firefox$" title="^Picture-in-Picture$"
     match app-id="galculator"
-//    match app-id="thunar"
+    match app-id="thunar"
     match app-id="nwg-look"
     match app-id="nwg-displays"
     match app-id="blueman"
@@ -471,7 +471,7 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P                                  { power-off-monitors; }
-    
+
     Mod+Shift+C hotkey-overlay-title="Calculator"                 { spawn "~/bin/toggle" "galculator"; }
     Mod+B hotkey-overlay-title="Web Browser"                      { spawn "firefox"; }
     Mod+H hotkey-overlay-title="File Browser: Thunar"             { spawn "thunar"; }
