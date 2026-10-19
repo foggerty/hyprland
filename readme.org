@@ -76,6 +76,8 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
+ - [ ] Setup script ToDo's.
+ - [ ] Setup script to remove auto-start crap (can I stop it at Niri's level, or is it a fucking dbus service?).
  - [ ] Add CachyOS timer service ('/etc/systemd/system/timers.target.wants/cachyos-rate-mirrors.timer') to pacman exclude list.
  - [ ] Add Gateway and DNS to whatami.
  - [ ] Waybar and FUCKING BLUR.
