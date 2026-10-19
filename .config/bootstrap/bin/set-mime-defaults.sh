@@ -16,7 +16,7 @@ declare -A -r mimeTypes=(
     ["image/png"]="org.xfce.ristretto.desktop"
     ["image/jpeg"]="org.xfce.ristretto.desktop"
     ["image/jpg"]="org.xfce.ristretto.desktop"
-    ["imagejgif"]="org.xfce.ristretto.desktop"
+    ["image/gif"]="org.xfce.ristretto.desktop"
 
     ["text/org"]="emacsclient.desktop"
     ["text/plain"]="emacsclient.desktop"

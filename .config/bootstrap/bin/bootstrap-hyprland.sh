@@ -8,26 +8,6 @@ EXCLUDE_FILES=(
     "NoExtract=/etc/xdg/autostart/*"
 )
 
-installParu() {
-    info "Installing Paru."
-
-    if [[ ! -d "$HOME/dev" ]]; then
-        mkdir ~/dev > /dev/null
-    fi
-
-    pushd "$HOME/dev" || exit 1
-
-    if [[ ! -d "$HOME/dev/paru" ]]; then
-        git clone https://aur.archlinux.org/paru.git
-    fi
-
-    cd paru || exit 1
-
-    makepkg -si
-
-    popd || exit 1
-}
-
 setupTheme() {
     # Remove Thunar's existing SetWallPaper menu item
     plugin="/usr/lib/thunarx-3/thunar-wallpaper-plugin.so"
@@ -53,7 +33,7 @@ setupTheme() {
 }
 
 setupDisplayManager() {
-    info "Setting up Greetd/"
+    info "Setting up Greetd."
     sudo mkdir -p /etc/geetd
     sudo cp ~/.config/bootstrap/etc/greetd/config.toml /etc/greetd/
 }
@@ -71,9 +51,9 @@ setupIwd() {
 }
 
 setupServices() {
+    # ToDo - move into a global so that setupIwd can append to it.
     # List of system services to enable/start.
     services=(avahi-daemon \
-                  bluetooth \
                   greetd \
                   opensnitchd \
                   ufw)
@@ -94,6 +74,10 @@ setupServices() {
 
 setupEnvironment() {
     # Readable font in the TTY
+    # Hey look, the grep expression doesn't consider that someone
+    # may have commented out font deliberitly.
+    # ToDo - remind user that they commented it out, so I'm assuming
+    # they did so for a reason.
     if ! grep "FONT=$CONSOLE_FONT" /etc/vconsole.conf; then
         echo "FONT=$CONSOLE_FONT" | sudo tee -a /etc/vconsole.conf
     fi
@@ -102,14 +86,9 @@ setupEnvironment() {
     info "Upading XDG user directories."
     xdg-user-dirs-update
 
-    # I don't plan on deleting these dierectories, so a service to ensure they
-    # still exist is wasted overhead.
-    sudo systemctl --global disable xdg-user-dirs-update -q
-
-    # Setup default mime-types - only uncomment if you're read the script and
-    # understand it.
-    # info "Setting mime-type defaults."
-    # "$HOME"/.config/bootstrap/bin/set-mime-defaults.sh
+    # Setup default mime-types
+    info "Setting mime-type defaults."
+    "$HOME"/.config/bootstrap/bin/set-mime-defaults.sh
 
     # Setup locale
     info "Setting XDG locale."
@@ -139,14 +118,16 @@ installPackages() {
     basics="man linux-firmware openssh"
     browser="firefox"
     desktop="avahi \
-         blueman \
          cliphist wl-clipboard \
+         deluge \
          evince \
          foliate \
          galculator \
+         opensnitch \
          pipewire pipewire-pulse wireplumber \
          power-profiles-daemon \
          pamixer \
+         qt5-wayland \
          nwg-displays nwg-look \
          qpwgraph \
          ristretto \
@@ -155,8 +136,7 @@ installPackages() {
          waybar \
          wlogout \
          xfce4-notifyd \
-         xdg-desktop-portal-gtk \
-         zeal"
+         xdg-desktop-portal-gtk"
     development="cmake make"
     # I build Emacs manualy, so not included here.  Vi?  Vim?  Never heard of
     # em.
@@ -179,10 +159,9 @@ installPackages() {
               hyprpwcenter \
               xdg-desktop-portal-hyprland"
     libraries="libgccjit lua-luv libotf"
-    networking="iwd networkmanager network-manager-applet"
+    networking="networkmanager network-manager-applet"
     niri="niri pavucontrol xdg-desktop-portal-gtk"
     security="lxsession \
-              python-qt-material \
               ufw"
     terminal="bash-completion foot starship tealdeer"
     theme="adw-gtk-theme \
@@ -223,7 +202,7 @@ installPackages() {
          $theme            \
          $utilities"
 
-    desktop="$hyprland"
+    desktop="$niri"
 
     # Install requirements for bootstrap
     info Installing git and base-devel.

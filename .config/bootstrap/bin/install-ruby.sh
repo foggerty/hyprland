@@ -2,5 +2,6 @@
 
 toInstall="ruby rubygems ruby-irb ruby-stdlib"
 
-paru --needed -S $toInstall
+sudo pacman --needed -S $toInstall
+
 gem install solargraph
