@@ -133,10 +133,13 @@ installPackages() {
          ristretto \
          swaylock swayidle \
          swww \
+         udiskie \
          waybar \
-         wlogout \
+
          xfce4-notifyd \
-         xdg-desktop-portal-gtk"
+         xdg-desktop-portal-gtk \
+	 xdg-user-dirs \
+	 xdg-utils"
     development="cmake make"
     # I build Emacs manualy, so not included here.  Vi?  Vim?  Never heard of
     # em.
@@ -158,7 +161,7 @@ installPackages() {
               hyprshutdown \
               hyprpwcenter \
               xdg-desktop-portal-hyprland"
-    libraries="libgccjit lua-luv libotf"
+    libraries="libgccjit lua-luv libotf tree-sitter"
     networking="networkmanager network-manager-applet"
     niri="niri pavucontrol xdg-desktop-portal-gtk"
     security="lxsession \
@@ -177,6 +180,8 @@ installPackages() {
          figlet \
          fzf \
          htop \
+         imagemagick \
+         less \
          lshw lsof \
          mc \
          ncdu \
@@ -185,7 +190,9 @@ installPackages() {
          resources \
          ripgrep \
          util-linux \
-         tree"
+         tealdeer \
+         tree \
+         which"
 
     to_install="$basics    \
          $browser          \
@@ -202,16 +209,16 @@ installPackages() {
          $theme            \
          $utilities"
 
-    desktop="$niri"
+    window_manager="$niri"
 
     # Install requirements for bootstrap
     info Installing git and base-devel.
-    sudo pacman --needed -S git base-devel
+    sudo pacman --needed -S git git-lfs base-devel
 
     # Install packages
     info "Installing packages."
     sudo pacman --needed -Syu $to_install
-    sudo pacman --needed -Syu $desktop
+    sudo pacman --needed -Syu $window_manager
 
     if [[ "$?" -ne 0 ]]; then
         exit
@@ -228,7 +235,7 @@ setupUfw() {
 
 rebuildKernel() {
     info Rebuiding kernel init images
-    sudo limine-mkinitcpio -P
+    sudo mkinitcpio -P
 }
 
 # Install pacman if missing.
