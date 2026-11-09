@@ -38,7 +38,7 @@ setupDisplayManager() {
     sudo cp ~/.config/bootstrap/etc/greetd/config.toml /etc/greetd/
 
     info "Setting up Mango session."
-    sudi mkdir -p /usr/share/wayland/sessions
+    sudo mkdir -p /usr/share/wayland/sessions
     sudo cp ~/.config/bootstrap/usr/share/wayland-sessions/mango.desktop /usr/share/wayland-sessions/ 
 }
 
