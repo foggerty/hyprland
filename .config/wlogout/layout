@@ -6,7 +6,7 @@
 }
 {
   "label" : "logout",
-  "action" : "niri msg action quit",
+  "action" : "uwsm stop",
   "keybind" : "o",
   "circular": true
 }

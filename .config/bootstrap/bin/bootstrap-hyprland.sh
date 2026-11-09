@@ -36,6 +36,10 @@ setupDisplayManager() {
     info "Setting up Greetd."
     sudo mkdir -p /etc/geetd
     sudo cp ~/.config/bootstrap/etc/greetd/config.toml /etc/greetd/
+
+    info "Setting up Mango session."
+    sudi mkdir -p /usr/share/wayland/sessions
+    sudo cp ~/.config/bootstrap/usr/share/wayland-sessions/mango.desktop /usr/share/wayland-sessions/ 
 }
 
 setupIwd() {
@@ -119,7 +123,6 @@ installPackages() {
     browser="firefox"
     desktop="avahi \
          cliphist wl-clipboard \
-         deluge \
          evince \
          foliate \
          galculator \
@@ -128,6 +131,7 @@ installPackages() {
          power-profiles-daemon \
          pamixer \
          qt5-wayland \
+         qt6-wayland \
          nwg-displays nwg-look \
          qpwgraph \
          ristretto \
@@ -135,7 +139,8 @@ installPackages() {
          swww \
          udiskie \
          waybar \
-
+         wlogout \
+         wlr-randr \
          xfce4-notifyd \
          xdg-desktop-portal-gtk \
 	 xdg-user-dirs \
@@ -156,12 +161,13 @@ installPackages() {
          font-manager \
          noto-fonts-cjk noto-fonts-emoji \
          ttf-nerd-fonts-symbols-mono"
-    greeter="greetd greetd-tuigreet"
+    greeter="greetd greetd-tuigreet uwsm"
     hyprland="hyprland \
               hyprshutdown \
               hyprpwcenter \
               xdg-desktop-portal-hyprland"
     libraries="libgccjit lua-luv libotf tree-sitter"
+    mangowm="mangowm xdg-desktop-portal-wlr"
     networking="networkmanager network-manager-applet"
     niri="niri pavucontrol xdg-desktop-portal-gtk"
     security="lxsession \
@@ -209,7 +215,7 @@ installPackages() {
          $theme            \
          $utilities"
 
-    window_manager="$niri"
+    window_manager="$mango"
 
     # Install requirements for bootstrap
     info Installing git and base-devel.

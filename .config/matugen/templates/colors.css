@@ -2,6 +2,9 @@
 * Css Colors
 * Generated with Matugen
 */
+
+@define-color background-transparent {{colors.surface.default.rgba}};
+
 <* for name, value in colors *>
     @define-color {{name}} {{value.default.hex}};
 <* endfor *>

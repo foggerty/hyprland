@@ -46,9 +46,13 @@ output_path = '~/.config/niri/colors.kdl'
 post_hook = 'niri msg action load-config-file'
 
 [templates.waybar]
-input_path = '~/.config/matugen/templates/waybar.css'
+input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
 post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.mangobar]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/mangobar/colors.css'
 
 [templates.wlogout]
 input_path = '~/.config/matugen/templates/wlogout.css'
@@ -70,3 +74,7 @@ output_path = '~/.config/qt5ct/colors/matugen.conf'
 [templates.qt6ct]
 input_path  = '~/.config/matugen/templates/qt.css'
 output_path = '~/.config/qt6vt/colors/matugen.conf'
+
+[templates.mangowm]
+input_path  = '~/.config/matugen/templates/mangowm.toml'
+output_path = '~/.config/mango/colors.toml'

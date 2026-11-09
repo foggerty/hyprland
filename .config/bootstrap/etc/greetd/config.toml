@@ -6,5 +6,5 @@ vt = next
 
 # The default session, also known as the greeter.
 [default_session]
-command= "tuigreet -t --remember --remember-user-session --theme 'border=cyan;text=white;prompt=cyan;time=white;action=white;button=cyan;container=black;input=cyan'"
+command= "tuigreet -b -t --background matrix --remember --remember-user-session --theme 'border=cyan;text=white;prompt=cyan;time=white;action=white;button=cyan;container=black;input=cyan'"
 user = "greeter"
