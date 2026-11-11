@@ -18,8 +18,6 @@
     "clock",
   ],
   "modules-right": [
-    "niri/workspaces",
-    "mango/layout",
     "mango/workspaces",
     "pulseaudio",
     "battery",
@@ -116,11 +114,6 @@
     "persistent-workspaces": {
       "*": 4
     }
-  },
-
-  "niri/workspaces": {
-    "transition-duration": 0,
-    "format": "{value}"
   },
 
   "mango/workspaces": {
