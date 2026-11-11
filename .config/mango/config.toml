@@ -27,7 +27,7 @@ exec_once = lxpolkit
 exec_once = nm-applet
 exec_once = emacs --daemon
 #exec_once = udiskie
-exec_once = opensnitch-ui
+#exec_once = opensnitch-ui
 
 blur = 1
 blur_layer = 1

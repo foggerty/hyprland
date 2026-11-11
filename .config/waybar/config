@@ -16,10 +16,10 @@
   ],
   "modules-center": [
     "clock",
-    "mango/layout"
   ],
   "modules-right": [
     "niri/workspaces",
+    "mango/layout",
     "mango/workspaces",
     "pulseaudio",
     "battery",
