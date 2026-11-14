@@ -38,8 +38,8 @@ setupDisplayManager() {
     sudo cp ~/.config/bootstrap/etc/greetd/config.toml /etc/greetd/
 
     info "Setting up Mango session."
-    sudo mkdir -p /usr/share/wayland/sessions
-    sudo cp ~/.config/bootstrap/usr/share/wayland-sessions/mango.desktop /usr/share/wayland-sessions/ 
+    sudo mkdir -p /usr/share/wayland-sessions
+    sudo cp ~/.config/bootstrap/usr/share/wayland-sessions/mango.desktop /usr/share/wayland-sessions/
 }
 
 setupIwd() {
@@ -215,7 +215,7 @@ installPackages() {
          $theme            \
          $utilities"
 
-    window_manager="$mango"
+    window_manager="$mangowm"
 
     # Install requirements for bootstrap
     info Installing git and base-devel.
