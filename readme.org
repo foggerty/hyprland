@@ -76,23 +76,24 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
+ - [ ] See if someone has made a Matugen template for Firefox.
+ - [ ] Fix find-file etc in Emacs - if I type "read" then "readme.org" should be at the /top/ of the list.
  - [ ] Setup script ToDo's.
- - [ ] Setup script to remove auto-start crap (can I stop it at Niri's level, or is it a fucking dbus service?).
+ - [ ] Add auto-start crap in pacman.conf overrides.
  - [ ] Add CachyOS timer service ('/etc/systemd/system/timers.target.wants/cachyos-rate-mirrors.timer') to pacman exclude list.
+ - [ ] Remove M-<left/right> from org-mode keymap.
  - [ ] Add Gateway and DNS to whatami.
- - [ ] Waybar and FUCKING BLUR.
  - [ ] Emacs - try out new FlyCheck.  https://emacsredux.com/blog/2026/07/29/flycheck-38/
  - [ ] Add hibernate to SwayIdle's settings.
  - [ ] Look into =mpv= with =haruna= or =smplayer= as front-end.
  - [ ] Power button should hibernate with short-press, shutdown with long (may be broken with above intel settings..... fuck).
  - [ ] Setup udev for USB auto-mounting.
- - [ ] Tray-app that utilises it?  Because of the udev rules being root-only, may need a dbus service?
  - [ ] Copy music back onto laptop and find a decent music player or mpd client.
  - [ ] Can magit be used for CLI merging?
  - [-] Themes!  Oh gods I loathe CSS and theming in general:
    - [X] GTK3 :: Use adw-gtk3 to pair with Matugen.
    - [X] QT6 :: Uses a built-in theme that matches the GTK3 theme's look.
-   - [ ] QT5 :: Is supposed to do the same thing that QT6 does, but is no longer maintained.
+   - [ ] QT5 :: As does QT5, but is no longer maintained.
    - [ ] GTK4 :: Fuck only knows.
  - [X] =em= no longer opens files for some reason.
  - [X] Standardise theme colours.

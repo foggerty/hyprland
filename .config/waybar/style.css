@@ -2,7 +2,7 @@
 
 * {
     font-family: "symbols,sans";
-    font-size: 16px;
+    font-size: 18px;
 }
 
 window#waybar {
@@ -98,11 +98,13 @@ button {
 {
     border-radius: 3px;
 
-    margin-top: 13px;
+    margin-top: 14px;
     margin-bottom: 8px;
     margin-left: 8px;
 
+
     padding-left: 30px;
+    padding-right: 6px;
 }
 
 #tray {
@@ -116,6 +118,7 @@ button {
 
 label#pulseaudio,
 label#battery{
+    margin-top: 10px;
     margin-left: 0px;
     margin-right: 8px;
 }

@@ -1,12 +1,14 @@
 # Theme
 source = ~/.config/mango/colors.toml
 
+# Deesktop / Monitor settings
+source = ~/.config/mango/monitors.conf
+
 [var]
 term = "footclient"
 browser = "firefox"
 
 [env]
-GTK_A11Y = "none"
 GTK_BACKEND = "wayland"
 GTK_SCALE = "1"
 GTK_USE_PORTAL = "1"
@@ -41,7 +43,7 @@ blur_params_saturation = 1.2
 
 shadows = 1
 layer_shadows = 1
-shadow_only_floating = 0
+shadow_only_floating = 1
 shadows_size = 10
 shadows_blur = 15
 shadows_position_x = 0
@@ -228,7 +230,7 @@ border_px = 2
 
 # switch window status
 "SUPER+CTRL+Tab" = "togglejump,"
-"SUPER+V" = "togglefloating,"
+"SUPER+S" = "togglefloating,"
 "SUPER+A" = "togglemaximizescreen,"
 "SUPER+F" = "togglefullscreen,"
 "SUPER+m" = "minimized,"
@@ -247,7 +249,7 @@ border_px = 2
 #"alt+shift+Return" = "dwindle_toggle_split_direction"
 
 # switch layout
-"SUPER+n" = "switch_layout"
+#"SUPER+n" = "switch_layout"
 
 # tag switch
 "SUPER+PRIOR" = "viewtoleft,0"
