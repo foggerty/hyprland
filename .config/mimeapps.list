@@ -1,0 +1,25 @@
+[Default Applications]
+text/x-readme=emacsclient.desktop
+text/x-makefile=emacsclient.desktop
+application/x-7z-compressed=thunar.desktop
+application/epub+zip=com.github.johnfactotum.Foliate.desktop
+application/x-tar=thunar.desktop
+application/zip=thunar.desktop
+image/jpeg=org.xfce.ristretto.desktop
+application/x-shellscript=emacsclient.desktop
+text/org=emacsclient.desktop
+text/markdown=emacsclient.desktop
+application/gzip=thunar.desktop
+text/plain=emacsclient.desktop
+application/xml=emacsclient.desktop
+application/pdf=org.gnome.Evince.desktop
+application/x-zerosize=emacsclient.desktop
+application/json=emacsclient.desktop
+text/css=emacsclient.desktop
+image/gif=org.xfce.ristretto.desktop
+image/jpg=org.xfce.ristretto.desktop
+image/png=org.xfce.ristretto.desktop
+
+[Added Associations]
+text/x-readme=emacsclient.desktop;
+text/x-makefile=emacsclient.desktop;

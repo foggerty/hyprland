@@ -22,6 +22,8 @@ declare -A -r mimeTypes=(
     ["text/plain"]="emacsclient.desktop"
     ["text/markdown"]="emacsclient.desktop"
     ["text/css"]="emacsclient.desktop"
+    ["text/x-readme"]="emacsclient.desktop"
+    ["text/x-makefile"]="emacsclient.desktop"
 
     ["application/pdf"]="org.gnome.Evince.desktop"
 )

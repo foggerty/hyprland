@@ -76,6 +76,7 @@ Note that the odd-looking numbering is because Intel number their virtual core l
 I /think/ AMD does it differently; sensibly, I hope.
 
 * Still left to do
+ - [ ] Make NM floating.
  - [ ] See if someone has made a Matugen template for Firefox.
  - [ ] Fix find-file etc in Emacs - if I type "read" then "readme.org" should be at the /top/ of the list.
  - [ ] Setup script ToDo's.

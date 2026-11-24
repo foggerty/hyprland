@@ -31,4 +31,4 @@
 
 .navigation-sidebar {
     background-color: {{colors.surface_container_low.default.hex}};
-}
+};

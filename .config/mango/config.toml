@@ -364,8 +364,7 @@ layout_name = "scroller"
 id = 9
 layout_name = "scroller"
 
-# layer rule
-
+# layer rules
 [[rule.layer_rule]]
 animation_type_open = "zoom"
 layer_name = "rofi"
@@ -374,7 +373,12 @@ layer_name = "rofi"
 animation_type_close = "zoom"
 layer_name = "rofi"
 
-# Application rules
+# Floating Applications / Windows
 [[rule.window_rule]]
 app_id = galculator
+is_floating = 1
+
+# Floating Applications / Windows
+[[rule.window_rule]]
+app_id = nm-connection-editor
 is_floating = 1
