@@ -36,15 +36,6 @@ output_path = '~/.config/foot/colors.ini'
 input_path = '~/.config/matugen/templates/emacs.el'
 output_path = '~/.emacs.d/themes/matugen-theme.el'
 
-#[templates.hyprland]
-#input_path  = '~/.config/matugen/templates/hyprland.lua'
-#output_path = '~/.config/hypr/colors.lua'
-
-# [templates.niri]
-# input_path = '~/.config/matugen/templates/niri.kdl'
-# output_path = '~/.config/niri/colors.kdl'
-# post_hook = 'niri msg action load-config-file'
-
 [templates.waybar]
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
