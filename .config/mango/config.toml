@@ -304,7 +304,7 @@ border_px = 2
 # Mouse Button Bindings
 # btn_left and btn_right can't bind none mod key
 "SUPER+btn_left" = "moveresize,curmove"
-"btn_middle" = "togglemaximizescreen,0"
+"SUPER+btn_middle" = "togglemaximizescreen,0"
 "SUPER+btn_right" = "moveresize,curresize"
 
 [axisbind.default]
