@@ -40,10 +40,10 @@ output_path = '~/.emacs.d/themes/matugen-theme.el'
 #input_path  = '~/.config/matugen/templates/hyprland.lua'
 #output_path = '~/.config/hypr/colors.lua'
 
-[templates.niri]
-input_path = '~/.config/matugen/templates/niri.kdl'
-output_path = '~/.config/niri/colors.kdl'
-post_hook = 'niri msg action load-config-file'
+# [templates.niri]
+# input_path = '~/.config/matugen/templates/niri.kdl'
+# output_path = '~/.config/niri/colors.kdl'
+# post_hook = 'niri msg action load-config-file'
 
 [templates.waybar]
 input_path = '~/.config/matugen/templates/colors.css'

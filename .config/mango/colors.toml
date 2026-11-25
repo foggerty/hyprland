@@ -1,9 +1,21 @@
 [global]
-root_color=0a151aff
-border_color=3e484eff
-focus_color=004d66ff
-maximized_screen_color=afc9e7ff
+root_color=0c141bff
+border_color=404850ff
+focus_color=004b74ff
+maximized_screen_color=b7c7eaff
 urgent_color=ffb4abff
-scratchpad_color=b0c6f9ff
-global_color=2f4961ff
-overlay_color=304671ff
+scratchpad_color=bec3faff
+global_color=384764ff
+overlay_color=3e4372ff
+
+# Jump label colors
+jump_label_decorate_focus_fg_color = 003351ff
+jump_label_decorate_focus_bg_color = 93ccffff
+jump_label_decorate_border_color = 8a919bff
+
+# Group bar colors
+group_bar_decorate_fg_color = dce3edff
+group_bar_decorate_bg_color = 0c141bff
+group_bar_decorate_focus_fg_color = 003351ff
+group_bar_decorate_focus_bg_color = 93ccffff
+group_bar_decorate_border_color = 8a919bff
